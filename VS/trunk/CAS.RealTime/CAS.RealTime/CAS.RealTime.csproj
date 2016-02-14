@@ -58,7 +58,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
+      <HintPath>..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
