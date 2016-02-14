@@ -90,6 +90,10 @@
     <ErrorReport>none</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -186,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cube.ico" />
+    <None Include="packages.config" />
     <None Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
@@ -212,13 +217,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RTLibComm\BK.RTLibComm.csproj">
-      <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
-      <Name>BK.RTLibComm</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.csproj">
+      <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
+      <Name>CAS.RealTime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
