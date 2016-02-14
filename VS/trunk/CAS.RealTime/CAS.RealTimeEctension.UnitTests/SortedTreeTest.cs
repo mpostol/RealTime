@@ -294,7 +294,7 @@ namespace CAS.Lib.RTLibCom.Tests
       SortedTree<ClassAsTreeValue<string>> tree = new SortedTree<ClassAsTreeValue<string>>();
       AddNodeWholeTreeTestHelper(ref tree);
 
-      string expected = "CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree`1[CAS.Lib.RTLibCom.Tests.SortedTreeTest+ClassAsTreeValue`1[System.String]] elements:{(K(Height:5)[0:(A(Height:4)[0:(C(Height:1)[]1:(D(Height:3)[0:(F(Height:1)[]1:(G(Height:2)[0:(J(Height:1)[]]]]](B(Height:4)[0:(E(Height:3)[0:(H(Height:2)[0:(J(Height:1)[]]1:(I(Height:1)[]]]}";
+      string expected = "CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1[CAS.Lib.RTLibCom.Tests.SortedTreeTest+ClassAsTreeValue`1[System.String]] elements:{(K(Height:5)[0:(A(Height:4)[0:(C(Height:1)[]1:(D(Height:3)[0:(F(Height:1)[]1:(G(Height:2)[0:(J(Height:1)[]]]]](B(Height:4)[0:(E(Height:3)[0:(H(Height:2)[0:(J(Height:1)[]]1:(I(Height:1)[]]]}";
       string actual = tree.ToString();
       Assert.AreEqual(expected, actual, "Wrong string representation");
     }

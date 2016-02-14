@@ -102,17 +102,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RTLibComm\BK.RTLibComm.csproj">
-      <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
-      <Name>BK.RTLibComm</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\RTLib\BK.RTLib.csproj">
-      <Project>{a6c02710-7ec3-43b1-8010-6f7b4926ec48}</Project>
-      <Name>BK.RTLib</Name>
-    </ProjectReference>
+    <None Include="cas.snk" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cas.snk" />
+    <ProjectReference Include="..\CAS.RealTimeEctension\CAS.RealTimeEctension.csproj">
+      <Project>{a6c02710-7ec3-43b1-8010-6f7b4926ec48}</Project>
+      <Name>CAS.RealTimeEctension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.csproj">
+      <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
+      <Name>CAS.RealTime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
