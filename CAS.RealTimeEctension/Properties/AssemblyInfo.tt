@@ -1,0 +1,40 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+//<summary>
+//  Title   : Assembly info for: <#=m_AssemblyTitle#>
+//  System  : Microsoft Visual C# .NET
+//  $LastChangedDate: 2014-10-17 23:06:15 +0200 (Pt, 17 paź 2014) $
+//  $Rev:  $
+//  $LastChangedBy:  $
+//  $URL:  $
+//  $Id:  $
+//
+//  <#=AssemblyCopyright#>
+//  <#=Phone#>
+//  <#=Email#>
+//  <#=Url#>
+//</summary>
+
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("<#=m_AssemblyTitle#>")]
+[assembly: AssemblyDescription("<#=CoreProductName#>: <#=m_AssemblyTitle#>")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("<#=AssemblyCompany#>")]
+[assembly: AssemblyProduct("<#=CoreProductName#>")]
+[assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
+[assembly: AssemblyTrademark("<#=CoreProductTrademark#>")]
+[assembly: AssemblyCulture("")]
+
+[assembly: ComVisible(false)]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("E538D4FB-831F-4414-B9B3-774C63D852FB")]
+[assembly: AssemblyVersion("<#= CoreProductVersion #>")]
+[assembly: AssemblyFileVersion("<#= CoreProductFileVersion #>")]
+
+<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\AssemblyInfo.t4" #>
+<#+
+string m_AssemblyTitle = "Real-time Class Library";
+#>
