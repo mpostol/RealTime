@@ -1,5 +1,5 @@
 ﻿//<summary>
-//  Title   : Assembly info for: Real-time Class Library
+//  Title   : Assembly info for: CAS.RealTime
 //  System  : Microsoft Visual C# .NET
 //  $LastChangedDate$
 //  $Rev$
@@ -7,7 +7,7 @@
 //  $URL$
 //  $Id$
 //
-//  Copyright (c) 2000-2015 CAS LODZ POLAND
+//  Copyright (c) 2000-2016 CAS LODZ POLAND
 //  +48 (42) 686 25 47
 //  techsupp@cas.eu
 //  www.cas.eu
@@ -17,18 +17,17 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Real-time Class Library")]
-[assembly: AssemblyDescription("CAS Framework Core: Real-time Class Library")]
+[assembly: AssemblyTitle("CAS.RealTime")]
+[assembly: AssemblyDescription("CAS.RealTime-RealTime library Extension")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CAS")]
 [assembly: AssemblyProduct("CAS Framework Core")]
-[assembly: AssemblyCopyright("Copyright (c) 2000-2015 CAS LODZ POLAND")]
-[assembly: AssemblyTrademark("CAS Framework")]
+[assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
+[assembly: AssemblyTrademark("CAS.RealTime-CAS Framework")]
 [assembly: AssemblyCulture("")]
-
 [assembly: ComVisible(false)]
-// The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("E538D4FB-831F-4414-B9B3-774C63D852FB")]
-[assembly: AssemblyVersion("5.00.02.*")]
-[assembly: AssemblyFileVersion("5.00.02")]
+[assembly: AssemblyVersion("5.0.2.*")]
+[assembly: AssemblyFileVersion("5.0.2")]
+
 
