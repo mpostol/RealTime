@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6C02710-7EC3-43B1-8010-6F7B4926EC48}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>cube.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CAS.RTLib</AssemblyName>
+    <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CAS.Lib.RTLib</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\..\..\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\CAS.RTLib.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\CAS.RTLib.XML</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>none</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\XML2DataSetIO.cs" />
+    <Compile Include="Management\AppConfigManagement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Management\ApplicationConfiguration.cs" />
+    <Compile Include="Management\ConnectionState.cs" />
+    <Compile Include="Management\IHtmlOutput.cs" />
+    <Compile Include="Management\IProtocol.cs" />
+    <Compile Include="Management\Protocol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\Condition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\ErrorsEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\EventsSynchronization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\ExceptionLoged.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\HandlerWaitTimeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\MonitoredThread.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\Port.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\WaitTimeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processes\Watchdog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UndoRedo\UndoRedoEventArgs.cs" />
+    <Compile Include="UndoRedo\UndoRedoException.cs" />
+    <Compile Include="UndoRedo\UndoRedoFieldOperation.cs" />
+    <Compile Include="UndoRedo\UndoRedoMenager.cs" />
+    <Compile Include="UndoRedo\UndoRedoOperationBase.cs" />
+    <Compile Include="UndoRedo\UndoRedoOperationType.cs" />
+    <Compile Include="UndoRedo\UndoRedoRowOperation.cs" />
+    <Compile Include="Utils\CodeBuilderBase.cs" />
+    <Compile Include="Utils\CSharpStreamCompiller.cs" />
+    <Compile Include="Utils\RelativeFilePathsCalculator.cs" />
+    <Compile Include="Utils\CodeBuilder.cs" />
+    <Compile Include="Utils\Collections\Generic\SortedTree.cs" />
+    <Compile Include="Utils\Collections\Generic\SortedTree.SortedTreeNode.cs" />
+    <Compile Include="Utils\Collections\IntPtrComparable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\Collections\QuickSort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\DateTimeProvider.cs" />
+    <Compile Include="Utils\GenericEnumTypeConverterHelper.cs" />
+    <Compile Include="Utils\UniqueNameGenerator.cs" />
+    <Compile Include="Utils\MinMaxAvr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\ReportGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Win32API\Application.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cas.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cube.ico" />
+    <None Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="Utils\Collections\Generic\SortedTree.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RTLibComm\BK.RTLibComm.csproj">
+      <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
+      <Name>BK.RTLibComm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

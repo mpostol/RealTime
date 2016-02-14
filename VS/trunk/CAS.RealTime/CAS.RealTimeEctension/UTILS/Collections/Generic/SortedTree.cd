@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree&lt;T&gt;">
+    <Position X="1" Y="0.75" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree&lt;T&gt;.SortedTreeNodeException">
+        <TypeIdentifier>
+          <NewMemberFileName>UTILS\Collections\Generic\SortedTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree&lt;T&gt;.SortedTreeNodeSortedList">
+        <TypeIdentifier>
+          <NewMemberFileName>UTILS\Collections\Generic\SortedTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree&lt;T&gt;.SortedTreeNodeList">
+        <TypeIdentifier>
+          <NewMemberFileName>UTILS\Collections\Generic\SortedTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>JCQIAEAABAABAIAMAACgAAQBEQAAEAAQQAADAAAYAQg=</HashCode>
+      <FileName>UTILS\Collections\Generic\SortedTree.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree&lt;T&gt;">
+    <Position X="5" Y="0.75" Width="4.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="CAS.Lib.RTLib.UTILS.Collections.Generic.SortedTree&lt;T&gt;.SortedTreeNode">
+        <TypeIdentifier>
+          <NewMemberFileName>UTILS\Collections\Generic\SortedTree.SortedTreeNode.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UTILS\Collections\Generic\SortedTree.SortedTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
