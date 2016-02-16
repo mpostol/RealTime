@@ -153,6 +153,7 @@
     <Content Include="Properties\CAS.RealTime.nuspec.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CAS.RealTime.nuspec.nuspec</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
