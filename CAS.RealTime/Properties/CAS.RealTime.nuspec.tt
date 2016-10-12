@@ -8,8 +8,8 @@
     <title><#=CASRealTimeTitle#></title>
     <authors><#=AssemblyCompany#></authors>
     <owners><#=Owner#></owners>
-    <projectUrl>svn://svnserver.hq.cas.com.pl/VS/trunk/CAS.RealTime</projectUrl>
-    <licenseUrl>http://www.cas.internetdsl.pl/commserver/P_DowloadCenter/Lic-09000401EN_License_Agreement.pdf</licenseUrl>
+    <projectUrl>svn://svnserver.hq.cas.com.pl/Products/CAS.RealTime</projectUrl>
+    <licenseUrl>http://www.commsvr.com/DownloadCenter/ProductSoftware/LicenseAgreement.aspx</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
     <description>
