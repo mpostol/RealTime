@@ -22,29 +22,28 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
 
 namespace CAS.Lib.RTLib.Management
 {
-	/// <summary>
-	/// Interface that provide main function for HTML output
-	/// </summary>
-	public interface IHtmlOutput
-	{
+  /// <summary>
+  /// Interface that provide main function for HTML output
+  /// </summary>
+  public interface IHtmlOutput
+  {
     /// <summary>
-    /// this function is for retreiving description fot this object in the HTML
+    /// this function is for retrieving description for this object in the HTML
     /// </summary>
     /// <returns>string with HTML output</returns>
-		string GetHtmlTableRowDescription();
+    string GetHtmlTableRowDescription();
     /// <summary>
-    /// this function is for retreiving data that represens that object
+    /// this function is for retrieving data that represents that object
     /// </summary>
     /// <returns>string with HTML data</returns>
-		string ToHtmlTableRow();
+    string ToHtmlTableRow();
     /// <summary>
-    /// this function is for retreiving data that represens that object (data + description)
+    /// this function is for retrieving data that represents that object (data + description)
     /// </summary>
     /// <returns>string with HTML data</returns>
     string ToHtml();
-	}
+  }
 }

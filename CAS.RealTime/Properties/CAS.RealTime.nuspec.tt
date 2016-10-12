@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id><#=CASRealTimeName#></id>
-    <version><#= CASRealTimeVersion #></version>
+    <version><#= CASRealTimeVersion #><#= CASRealTimePreRelease #></version>
     <title><#=CASRealTimeTitle#></title>
     <authors><#=AssemblyCompany#></authors>
     <owners><#=Owner#></owners>
@@ -28,6 +28,10 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLib.dll" target="lib\net451\CAS.RTLib.dll" />
+    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLib.XML" target="lib\net451\CAS.RTLib.XML" />
+    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLibComm.dll" target="lib\net451\CAS.RTLibComm.dll" />
+    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLibComm.xml" target="lib\net451\CAS.RTLibComm.xml" />
   </files>
 </package>
 
