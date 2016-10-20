@@ -20,7 +20,7 @@ using CAS.Lib.RTLib.Utils.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests
 {
   /// <summary>
   ///This is a test class for SortedTreeTest and is intended
@@ -60,41 +60,7 @@ namespace CAS.Lib.RTLibCom.Tests
       }
     }
 
-    private TestContext testContextInstance;
-
-    /// <summary>
-    ///Gets or sets the test context which provides
-    ///information about and functionality for the current test run.
-    ///</summary>
-    public TestContext TestContext
-    {
-      get
-      {
-        return testContextInstance;
-      }
-      set
-      {
-        testContextInstance = value;
-      }
-    }
-
     #region Additional test attributes
-    // 
-    //You can use the following additional attributes as you write your tests:
-    //
-    //Use ClassInitialize to run code before running the first test in the class
-    //[ClassInitialize()]
-    //public static void MyClassInitialize(TestContext testContext)
-    //{
-    //}
-    //
-    //Use ClassCleanup to run code after all tests in a class have run
-    //[ClassCleanup()]
-    //public static void MyClassCleanup()
-    //{
-    //}
-    //
-    //Use TestInitialize to run code before running each test
     /// <summary>
     /// Initializes this instance.
     /// </summary>
@@ -116,14 +82,8 @@ namespace CAS.Lib.RTLibCom.Tests
       M = new ClassAsTreeValue<string>("M");
       N = new ClassAsTreeValue<string>("N");
     }
-    //
-    //Use TestCleanup to run code after each test has run
-    //[TestCleanup()]
-    //public void MyTestCleanup()
-    //{
-    //}
-    //
     #endregion
+
     private ClassAsTreeValue<string> A, B, C, D, E, F, G, H, I, J, K, L, M, N;
     /// <summary>
     /// Helper that create the example tree.
@@ -271,7 +231,6 @@ namespace CAS.Lib.RTLibCom.Tests
     {
       SortedTree<ClassAsTreeValue<string>> tree = new SortedTree<ClassAsTreeValue<string>>();
       AddNodeWholeTreeTestHelper(ref tree);
-
       Assert.AreEqual(5, tree.Height, "Wrong Height of the tree");
     }
     /// <summary>
@@ -282,7 +241,6 @@ namespace CAS.Lib.RTLibCom.Tests
     {
       SortedTree<ClassAsTreeValue<string>> tree = new SortedTree<ClassAsTreeValue<string>>();
       AddNodeWholeTreeTestHelper(ref tree);
-
       Assert.AreEqual(11, tree.Count, "Wrong count of elements");
     }
     /// <summary>
@@ -685,7 +643,7 @@ namespace CAS.Lib.RTLibCom.Tests
       tree.RemoveValue(B, false);
       AreEqualGetFroeachRepresentationHelper("CFJGDAK", tree, "prep step3");
 
-      //test wlasciwy:
+      //main test
       //K
       //|
       //A     
@@ -704,8 +662,6 @@ namespace CAS.Lib.RTLibCom.Tests
       tree.ConnectTheTreeToTheNode(J, 0, tree2, 0);
       AreEqualGetFroeachRepresentationHelper("CFHIEBJGDAK", tree, "main test");
     }
-
-
     /// <summary>
     /// Tests the test node if can be connected.
     /// </summary>
@@ -858,9 +814,7 @@ namespace CAS.Lib.RTLibCom.Tests
       tree.ConnectTheNodeToOtherNode(L, 0, A, 0);
       tree.ConnectTheNodeToOtherNode(K, 0, A, 1);
       AreEqualGetFroeachRepresentationHelper("CAKL", tree, "after all (after splitter adding)");
-
     }
-
     /// <summary>
     /// Tests the move node to roots.
     /// </summary>

@@ -17,11 +17,11 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.RealTime.UnitTests.Instrumentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CAS.Lib.RTLib.Processes;
 using System;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests
 {
   /// <summary>
   /// class that is used to test the Watchdog (this is unit test class)

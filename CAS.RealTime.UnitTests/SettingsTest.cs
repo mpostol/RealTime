@@ -1,3 +1,4 @@
+using CAS.Lib.RTLib.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 //<summary>
 //  Title   : RTLib.Tests.Settings
@@ -20,7 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using TestAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace CAS.Lib.RTLib.Tests
+namespace CAS.RealTimeUnitTests
 {
   /// <summary>
   /// Test Settings unit tests.
@@ -34,7 +35,7 @@ namespace CAS.Lib.RTLib.Tests
     [TestMethod]
     public void SettingsTestFixture()
     {
-      TestAssert.AreEqual("CAS.Lib.RTLib", CAS.Lib.RTLib.Properties.Settings.Default.TraceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
+      TestAssert.AreEqual("CAS.Lib.RTLib", Settings.Default.TraceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
     }
   }
 }

@@ -30,37 +30,19 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace CAS.Lib.RTLib.Processes 
+namespace CAS.Lib.RTLib.Processes
 {
   /// <summary>
   /// Summary description for EventLogMonitor.
   /// </summary>
   public class EventLogMonitor
   {
+
     #region PRIVATE
     #region trace
-    /// <summary>
-    /// this name appears in the tracing messages
-    /// </summary>
-    private const string m_traceName = "TracesFromEventLogMonitor";
-    private static TraceSource m_TraceSource;
-    /// <summary>
-    /// Writes a trace event message to the trace listeners in the System.Diagnostics.TraceSource.Listeners collection 
-    /// using the specified event type and event identifier.
-    /// </summary>
-    /// <param name="pEventType">
-    /// One of the System.Diagnostics.TraceEventType values that specifies the event type of the trace data.
-    /// </param>
-    /// <param name="pId">A numeric identifier for the event.</param>
-    /// <param name="pMessage">The trace message to write.</param>
-    [Conditional( "TRACE" )]
-    public void TraceEvent( TraceEventType pEventType, int pId, string pMessage )
-    {
-      m_TraceSource.TraceEvent( pEventType, pId, m_traceName + ":" + pMessage );
-    }
     private static TraceEventType ConvertToTraceEventType(EventLogEntryType eventLogEntryType)
     {
-      switch ( eventLogEntryType )
+      switch (eventLogEntryType)
       {
         case EventLogEntryType.Error:
           return TraceEventType.Error;
@@ -78,7 +60,12 @@ namespace CAS.Lib.RTLib.Processes
     private short myCategory;
     private string myMessage;
     #endregion
+
     #region PRIVATE STATIC
+    /// <summary>
+    /// this name appears in the tracing messages
+    /// </summary>
+    private const string m_traceName = "TracesFromEventLogMonitor";
     /// <summary>
     /// elSource: The source by which the application is registered on the specified computer.
     /// </summary>
@@ -88,14 +75,17 @@ namespace CAS.Lib.RTLib.Processes
     /// Security, System, or a custom event log.
     /// </summary>
     private const string elLogName = "Application";
-    private static System.Diagnostics.EventLog eventLog;
+    private static EventLog eventLog;
+    private static TraceSource m_TraceSource;
+    //static constructor
     static EventLogMonitor()
     {
-      Assembly myAssemb = Assembly.GetExecutingAssembly();
-      AssemblyProductAttribute progName =
-        (AssemblyProductAttribute)Attribute.GetCustomAttribute(myAssemb, typeof(AssemblyProductAttribute), false);
-      if (progName != null) elSource = progName.Product;
-      else elSource = myAssemb.FullName;
+      Assembly _Assembly = Assembly.GetExecutingAssembly();
+      AssemblyProductAttribute progName = (AssemblyProductAttribute)Attribute.GetCustomAttribute(_Assembly, typeof(AssemblyProductAttribute), false);
+      if (progName != null)
+        elSource = progName.Product;
+      else
+        elSource = _Assembly.FullName;
       try
       {
         if (!EventLog.SourceExists(elSource))
@@ -105,25 +95,38 @@ namespace CAS.Lib.RTLib.Processes
       {
         //bool x = false;
       }
-      eventLog = new System.Diagnostics.EventLog();
+      eventLog = new EventLog();
       ((System.ComponentModel.ISupportInitialize)(eventLog)).BeginInit();
       eventLog.Source = elSource;
       ((System.ComponentModel.ISupportInitialize)(eventLog)).EndInit();
-
-      m_TraceSource = new TraceSource( m_traceName );
-
+      m_TraceSource = new TraceSource(m_traceName);
     }//EventLogMonitor
     #endregion
+
     #region PUBLIC
+    /// <summary>
+    /// Writes a trace event message to the trace listeners in the System.Diagnostics.TraceSource.Listeners collection 
+    /// using the specified event type and event identifier.
+    /// </summary>
+    /// <param name="pEventType">
+    /// One of the System.Diagnostics.TraceEventType values that specifies the event type of the trace data.
+    /// </param>
+    /// <param name="pId">A numeric identifier for the event.</param>
+    /// <param name="pMessage">The trace message to write.</param>
+    [Conditional("TRACE")]
+    public void TraceEvent(TraceEventType pEventType, int pId, string pMessage)
+    {
+      m_TraceSource.TraceEvent(pEventType, pId, m_traceName + ":" + pMessage);
+    }
     /// <summary>
     /// Writes to event log.
     /// </summary>
     /// <param name="Message">The message.</param>
     /// <param name="level">The level.</param>
     /// <param name="eventID">The event ID.</param>
-    public static void WriteToEventLog( string Message, System.Diagnostics.EventLogEntryType level, int eventID )
+    public static void WriteToEventLog(string Message, System.Diagnostics.EventLogEntryType level, int eventID)
     {
-      WriteToEventLog( Message, level, eventID, 0 );
+      WriteToEventLog(Message, level, eventID, 0);
     }
     /// <summary>
     /// Writes to event log.
@@ -132,7 +135,7 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="level">The level.</param>
     /// <param name="eventID">The event ID.</param>
     /// <param name="category">The category.</param>
-    public static void WriteToEventLog( string Message, System.Diagnostics.EventLogEntryType level,  int eventID, short category )
+    public static void WriteToEventLog(string Message, EventLogEntryType level, int eventID, short category)
     {
       new EventLogMonitor(Message, level, eventID, category).WriteEntry();
     }
@@ -141,27 +144,27 @@ namespace CAS.Lib.RTLib.Processes
     /// </summary>
     /// <param name="Message">The message.</param>
     /// <param name="level">The level.</param>
-    public static void WriteToEventLog( string Message, System.Diagnostics.EventLogEntryType level)
+    public static void WriteToEventLog(string Message, System.Diagnostics.EventLogEntryType level)
     {
-      WriteToEventLog( Message, level, 0 );
+      WriteToEventLog(Message, level, 0);
     }
     /// <summary>
     /// Writes to event log info.
     /// </summary>
     /// <param name="Message">The message.</param>
     /// <param name="eventID">The event ID.</param>
-    public static void WriteToEventLogInfo(string Message,int eventID)
+    public static void WriteToEventLogInfo(string Message, int eventID)
     {
-      WriteToEventLog(Message, System.Diagnostics.EventLogEntryType.Information,eventID);
+      WriteToEventLog(Message, EventLogEntryType.Information, eventID);
     }
     /// <summary>
     /// Writes to event log error.
     /// </summary>
     /// <param name="Message">The message.</param>
     /// <param name="eventID">The event ID.</param>
-    public static void WriteToEventLogError( string Message, int eventID )
+    public static void WriteToEventLogError(string Message, int eventID)
     {
-      WriteToEventLog(Message, System.Diagnostics.EventLogEntryType.Error);
+      WriteToEventLog(Message, EventLogEntryType.Error);
     }
     /// <summary>
     /// Writes an information type entry, with the given message text, to the event log.
@@ -169,7 +172,7 @@ namespace CAS.Lib.RTLib.Processes
     public void WriteEntry()
     {
       eventLog.WriteEntry(myMessage, myType, myEventID, myCategory);
-      TraceEvent(ConvertToTraceEventType(myType),myEventID,System.String.Format("Category: {0}, {1}",myCategory,myMessage));
+      TraceEvent(ConvertToTraceEventType(myType), myEventID, System.String.Format("Category: {0}, {1}", myCategory, myMessage));
     }
     /// <summary>
     /// set the event message

@@ -21,7 +21,7 @@ using CAS.Lib.RTLib.Processes;
 using CAS.Lib.RTLib.Utils;
 using System;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests.Instrumentation
 {
   internal class FacadeHandlerWaitTimeList : HandlerWaitTimeList<FacadeTODescriptor>
   {

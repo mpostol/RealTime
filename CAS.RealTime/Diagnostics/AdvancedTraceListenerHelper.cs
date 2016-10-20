@@ -13,118 +13,89 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.Lib.CodeProtect;
 using System;
 using System.Collections;
 using System.Diagnostics;
-using System.Reflection;
 using System.Text.RegularExpressions;
-using CAS.Lib.CodeProtect;
 
 namespace CAS.Lib.RTLib.Diagnostics
 {
-  internal class AdvancedTraceListenerHelper
+  internal static class AdvancedTraceListenerHelper
   {
     #region private
     private const string specialFormatToken = "|{0}|";
     private const string environmentVariablePattern = "\\%{0}\\%";
-    private const string applicationDataPathText = "ApplicationDataPath"; //path to application data folder
+    private const string applicationDataPathText = "|ApplicationDataPath|"; //path to application data folder
 
-    /// <summary>
-    /// Exception in advanced trace listener
-    /// </summary>
-    [Serializable]
-    private class AdvancedTraceListenerException: Exception
-    {
-      internal AdvancedTraceListenerException( string message ) : base( message ) { }
-    }
     /// <summary>
     /// Prepares the name of the log file.
     /// </summary>
     /// <param name="logFileName">Name of the log file.</param>
     /// <returns>Ready log filename</returns>
-    private static string PrepareLogFileName( string logFileName )
+    internal static string PrepareLogFileName(this string logFileName)
     {
-      if ( logFileName.Contains( "|ApplicationDataPath|" ) )
+      if (logFileName.Contains(applicationDataPathText))
       {
-        logFileName = logFileName.Replace( string.Format( specialFormatToken, applicationDataPathText ), InstallContextNames.ApplicationDataPath );
+        logFileName = logFileName.Replace(applicationDataPathText, InstallContextNames.ApplicationDataPath);
         return logFileName;
       }
       else
       {
-        foreach ( Environment.SpecialFolder folder in Enum.GetValues( typeof( Environment.SpecialFolder ) ) )
+        foreach (Environment.SpecialFolder folder in Enum.GetValues(typeof(Environment.SpecialFolder)))
         {
-          if ( !logFileName.Contains( "|" ) )
+          if (!logFileName.Contains("|"))
             break;
-          logFileName = logFileName.Replace( string.Format( specialFormatToken, folder.ToString() ), Environment.GetFolderPath( folder ) );
+          logFileName = logFileName.Replace(string.Format(specialFormatToken, folder.ToString()), Environment.GetFolderPath(folder));
         }
-        foreach ( DictionaryEntry variable in Environment.GetEnvironmentVariables() )
+        foreach (DictionaryEntry variable in Environment.GetEnvironmentVariables())
         {
-          if ( !logFileName.Contains( "%" ) )
+          if (!logFileName.Contains("%"))
             break;
-          logFileName = Regex.Replace( logFileName, string.Format( environmentVariablePattern, (string)variable.Key ), (string)variable.Value, RegexOptions.IgnoreCase );
+          logFileName = Regex.Replace(logFileName, string.Format(environmentVariablePattern, (string)variable.Key), (string)variable.Value, RegexOptions.IgnoreCase);
         }
         return logFileName;
       }
     }
     #endregion private
 
-    # region internal
-    /// <summary>
-    /// Prepares the and update log filename.
-    /// </summary>
-    /// <param name="textWriterTraceListener">The text writer trace listener.</param>
-    /// <param name="logFileName">Name of the log file.</param>
-    internal static void PrepareAndUpdateLogFilename( TextWriterTraceListener textWriterTraceListener, string logFileName )
-    {
-      try
-      {
-        string org_logFileName = logFileName;
-        logFileName = AdvancedTraceListenerHelper.PrepareLogFileName( logFileName );
-        if ( org_logFileName != logFileName )
-        {
-          FieldInfo fi = typeof( TextWriterTraceListener ).GetField( "fileName", BindingFlags.NonPublic | BindingFlags.Instance );
-          if ( fi != null )
-            fi.SetValue( textWriterTraceListener, logFileName );
-          else
-            throw new AdvancedTraceListenerException( "Current .NET framework is not supported." );
-        }
-      }
-      catch ( AdvancedTraceListenerException )
-      {
-        throw ;
-      }
-      catch ( Exception ) { }
-    }
-    #endregion internal
   }
   /// <summary>
-  /// Advanced delimited trace listener which derives from DelimitedListTraceListener and prepares the log file name
+  /// Advanced delimited trace listener which derives from DelimitedListTraceListener and prepares the log file name replacing the tags by the path to selected folder.
   /// </summary>
-  public class AdvancedDelimitedListTraceListener: DelimitedListTraceListener
+  public class AdvancedDelimitedListTraceListener : DelimitedListTraceListener
   {
     /// <summary>
     /// Initializes a new instance of the <see cref="AdvancedDelimitedListTraceListener"/> class.
     /// </summary>
     /// <param name="logFileName">Name of the log file.</param>
-    public AdvancedDelimitedListTraceListener( string logFileName )
-      : base( logFileName )
-    {
-      AdvancedTraceListenerHelper.PrepareAndUpdateLogFilename( this, logFileName );
-    }
+    /// <remarks>
+    /// The <paramref name="logFileName"/> may contain the following tags:
+    /// <c>|ApplicationDataPath|</c> by the ApplicationDataPath defined by the application manifest file.
+    /// <c>|{Environment.SpecialFolder}|</c> by the path to special folder
+    /// <c>|{environment variable}|</c> by the key value of this variable
+    /// </remarks>
+    public AdvancedDelimitedListTraceListener(string logFileName)
+      : base(logFileName.PrepareLogFileName())
+    { }
   }
   /// <summary>
-  /// Advanced delimited XML writer trace listener which derives from XmlWriterTraceListener and prepares the log file name
+  /// Advanced delimited XML writer trace listener which derives from XmlWriterTraceListener and prepares the log file name replacing the tags by the path to selected folder.
   /// </summary>
-  public class AdvancedXmlWriterTraceListener: XmlWriterTraceListener
+  public class AdvancedXmlWriterTraceListener : XmlWriterTraceListener
   {
     /// <summary>
     /// Initializes a new instance of the <see cref="AdvancedXmlWriterTraceListener"/> class.
     /// </summary>
     /// <param name="logFileName">Name of the log file.</param>
-    public AdvancedXmlWriterTraceListener( string logFileName )
-      : base( logFileName )
-    {
-      AdvancedTraceListenerHelper.PrepareAndUpdateLogFilename( this, logFileName );
-    }
+    /// <remarks>
+    /// The <paramref name="logFileName"/> may contain the following tags:
+    /// <c>|ApplicationDataPath|</c> by the ApplicationDataPath defined by the application manifest file.
+    /// <c>|{Environment.SpecialFolder}|</c> by the path to special folder
+    /// <c>|{environment variable}|</c> by the key value of this variable
+    /// </remarks>
+    public AdvancedXmlWriterTraceListener(string logFileName)
+      : base(logFileName.PrepareLogFileName())
+    { }
   }
 }

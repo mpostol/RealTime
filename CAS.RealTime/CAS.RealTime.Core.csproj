@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CAS.Lib.RTLib</RootNamespace>
-    <AssemblyName>CAS.RTLibComm</AssemblyName>
+    <AssemblyName>CAS.RealTime.Core</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
@@ -43,7 +43,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\CAS.RTLibComm.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CAS.RealTime.Core.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -54,7 +54,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>none</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\CAS.RTLibComm.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CAS.RealTime.Core.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -76,6 +76,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />

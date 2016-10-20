@@ -10,7 +10,7 @@
     <ApplicationIcon>cube.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>CAS.RTLib</AssemblyName>
+    <AssemblyName>CAS.RealTime</AssemblyName>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -76,7 +76,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>bin\Release\CAS.RTLib.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CAS.RealTime.xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -234,9 +234,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.csproj">
+    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.Core.csproj">
       <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
-      <Name>CAS.RealTime</Name>
+      <Name>CAS.RealTime.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
