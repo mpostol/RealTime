@@ -13,11 +13,12 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.RealTime.UnitTests.Instrumentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests
 {
   /// <summary>
   /// Summary description for UnitTest1
@@ -25,46 +26,8 @@ namespace CAS.Lib.RTLibCom.Tests
   [TestClass]
   public class HandlerWaitTimeListTest
   {
-    public HandlerWaitTimeListTest()
-    {
-    }
+    #region intrumentation
     private TestContext testContextInstance;
-    /// <summary>
-    ///Gets or sets the test context which provides
-    ///information about and functionality for the current test run.
-    ///</summary>
-    public TestContext TestContext
-    {
-      get
-      {
-        return testContextInstance;
-      }
-      set
-      {
-        testContextInstance = value;
-      }
-    }
-    #region Additional test attributes
-    //
-    // You can use the following additional attributes as you write your tests:
-    //
-    // Use ClassInitialize to run code before running the first test in the class
-    // [ClassInitialize()]
-    // public static void MyClassInitialize(TestContext testContext) { }
-    //
-    // Use ClassCleanup to run code after all tests in a class have run
-    // [ClassCleanup()]
-    // public static void MyClassCleanup() { }
-    //
-    // Use TestInitialize to run code before running each test 
-    // [TestInitialize()]
-    // public void MyTestInitialize() { }
-    //
-    // Use TestCleanup to run code after each test has run
-    // [TestCleanup()]
-    // public void MyTestCleanup() { }
-    //
-    #endregion
     /// <summary>
     /// This function is responsible for executing one test on the <see cref="HandlerWaitTimeList"/> (queue).
     /// </summary>
@@ -92,6 +55,8 @@ namespace CAS.Lib.RTLibCom.Tests
       Thread.Sleep(TimeSpan.FromSeconds(ConsistencyCheckAfterNumberOfSeconds));
       Assert.IsTrue(myList.Consistency(maxError), "The list is not consistent)");
     }
+    #endregion    
+    
     /// <summary>
     /// Test with auto-rest enabled and operation length 10 ms
     /// </summary>

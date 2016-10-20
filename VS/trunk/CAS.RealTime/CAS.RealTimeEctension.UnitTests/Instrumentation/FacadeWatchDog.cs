@@ -17,7 +17,7 @@ using CAS.Lib.RTLib.Processes;
 using System;
 using System.Threading;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests.Instrumentation
 {
   /// <summary>
   /// Facade class to test WatchDog

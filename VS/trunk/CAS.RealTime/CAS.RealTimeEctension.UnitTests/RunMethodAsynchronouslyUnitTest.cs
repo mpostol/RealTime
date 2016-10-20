@@ -12,21 +12,20 @@
 //  mailto://techsupp@cas.eu
 //  http://www.cas.eu
 //</summary>
-      
+
 using CAS.Lib.RTLib.Processes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests
 {
   [TestClass]
   public class RunMethodAsynchronouslyUnitTest
   {
-    private Condition m_MEthodFinished = new Condition();
     [TestMethod]
     public void RunMethodAsynchronouslyTestMethod()
     {
-      RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate(object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
+      RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate (object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
       runasync.RunAsync(new object[] { 5, 5 });
       bool _res = false;
       lock (this)
@@ -36,17 +35,20 @@ namespace CAS.Lib.RTLibCom.Tests
     [TestMethod]
     public void RunMethodAsynchronouslyTimeOutTestMethod()
     {
-      RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate(object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
+      RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate (object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
       runasync.RunAsync(new object[] { 5, 5 });
       bool _res = false;
       lock (this)
         _res = m_MEthodFinished.Wait(this, 500);
       Assert.IsFalse(_res, "Calling asynchronous method filed.");
     }
+    #region instrumentation
+    private Condition m_MEthodFinished = new Condition();
     private void WaitAndCheckConsistency(int par1, int par2)
     {
       Thread.Sleep(1000);
       m_MEthodFinished.Notify();
     }
+    #endregion
   }
 }

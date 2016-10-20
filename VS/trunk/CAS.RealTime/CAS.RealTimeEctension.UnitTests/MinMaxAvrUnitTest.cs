@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 using CAS.Lib.RTLib.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CAS.Lib.RTLibCom.Tests
+namespace CAS.RealTime.UnitTests
 {
   [TestClass]
   public class MinMaxAvrUnitTest
