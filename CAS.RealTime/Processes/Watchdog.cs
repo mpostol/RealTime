@@ -206,7 +206,7 @@ namespace CAS.Lib.RTLib.Processes
       {
         m_maxDelay = stopwatch.Elapsed;
         string message = String.Format(Resources.MaxDelayMessageFormat, m_maxDelay.TotalMilliseconds.ToString(), m_ObjectName, SourceName + ":" + MethodCallMessageToString(m_lastCall));
-        AssemblyTraceEvet.Trace(TraceEventType.Information, 267, "WatchdogProperty", message);
+        AssemblyTraceEvent.Trace(TraceEventType.Information, 267, "WatchdogProperty", message);
       }
 
     }
@@ -221,7 +221,7 @@ namespace CAS.Lib.RTLib.Processes
           MaxDelayMessage("Pendulum");
           stopwatch.Reset();
           string message = String.Format(Resources.RestartMessageFormat, m_ObjectName, MethodCallMessageToString(m_lastCall));
-          AssemblyTraceEvet.Trace(TraceEventType.Critical, 162, "WatchdogProperty", message);
+          AssemblyTraceEvent.Trace(TraceEventType.Critical, 162, "WatchdogProperty", message);
 #if DEBUG
           MarkRestart(message);
           //NUnit.Framework.Assert.Fail
@@ -305,12 +305,12 @@ namespace CAS.Lib.RTLib.Processes
         if (stopwatch.Elapsed > TimeSpan.Zero)
         {
           string message = String.Format(Resources.WatchdogStopwatchIsNotZeroMessageFormat, stopwatch.Elapsed.Milliseconds);
-          AssemblyTraceEvet.Trace(TraceEventType.Warning, 286, "WatchdogProperty", message);
+          AssemblyTraceEvent.Trace(TraceEventType.Warning, 286, "WatchdogProperty", message);
         }
         if (InsideWatchdogCoutner != 0)
         {
           string message = String.Format(Resources.InsideWatchdogMessageFormat, InsideWatchdogCoutner);
-          AssemblyTraceEvet.Trace(TraceEventType.Warning, 291, "WatchdogProperty", message);
+          AssemblyTraceEvent.Trace(TraceEventType.Warning, 291, "WatchdogProperty", message);
         }
 #if DEBUG
         string meth = MethodCallMessageToString(lastCall);

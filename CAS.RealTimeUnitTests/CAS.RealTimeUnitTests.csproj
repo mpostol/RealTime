@@ -78,7 +78,9 @@
       <HintPath>..\packages\CAS.CodeProtect.6.0.0-Charlie\lib\net451\Microsoft.Build.Utilities.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -88,6 +90,7 @@
   <ItemGroup>
     <Compile Include="AdvancedDelimitedListTraceListenerUnitTest.cs" />
     <Compile Include="CodeBuilderTest.cs" />
+    <Compile Include="Instrumentation\Extensions.cs" />
     <Compile Include="Instrumentation\FacadeHandlerWaitTimeList.cs" />
     <Compile Include="Instrumentation\FacadeWatchDog.cs" />
     <Compile Include="HandlerWaitTimeListTest.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="TestWatchdog.cs" />
     <Compile Include="MinMaxAvrUnitTest.cs" />
     <Compile Include="TimerTest.cs" />
+    <Compile Include="AssemblyTraceEventUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

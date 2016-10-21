@@ -46,6 +46,7 @@
     <DocumentationFile>bin\Debug\CAS.RealTime.Core.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>IDE0001,IDE0002,IDE0003</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -72,7 +73,7 @@
     <Compile Include="ICanBeAccepted.cs" />
     <Compile Include="ItemAccessRightsEnum.cs" />
     <Compile Include="Management\IProtocolParent.cs" />
-    <Compile Include="Processes\AssemblyTraceEvet.cs" />
+    <Compile Include="Processes\AssemblyTraceEvent.cs" />
     <Compile Include="Processes\Assertion.cs" />
     <Compile Include="Processes\EnvelopePool.cs" />
     <Compile Include="Processes\EventLogMonitor.cs" />
