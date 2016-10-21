@@ -17,37 +17,35 @@ namespace CAS.RealTime.UnitTests
   {
 
     [TestMethod]
-    public void ConstructorTestMethod1()
+    public void ConstructorTestMethod()
     {
-      string _tsetFileName = Path.Combine( Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TesFileName.log");
-      using (AdvancedDelimitedListTraceListener _Listener = new AdvancedDelimitedListTraceListener(_tsetFileName))
+      string _testFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TesFileName.log");
+      using (AdvancedDelimitedListTraceListener _Listener = new AdvancedDelimitedListTraceListener(_testFileName))
       {
         Assert.AreEqual(";", _Listener.Delimiter);
         Assert.IsNull(_Listener.Filter);
         Assert.IsTrue(String.IsNullOrEmpty(_Listener.Name));
         Assert.AreEqual(TraceOptions.None, _Listener.TraceOutputOptions);
         Assert.IsNotNull(_Listener.Writer);
-        Assert.AreEqual<string>(_tsetFileName, GetFileNAme(_Listener));
+        Assert.AreEqual<string>(_testFileName, GetFileNAme(_Listener));
       }
     }
     [TestMethod]
     public void ApplicationDataPathTestMethod1()
     {
-      string _tsetFileName = @"|ApplicationDataPath|\TesFileName.log";
-      using (AdvancedDelimitedListTraceListener _Listener = new AdvancedDelimitedListTraceListener(_tsetFileName))
-      {
-        Assert.AreEqual<string>(Path.Combine(InstallContextNames.ApplicationDataPath, "TesFileName.log"), GetFileNAme(_Listener));
-      }
+      AdvancedDelimitedListTraceListener.ApplicationDataPath = Path.Combine(InstallContextNames.ApplicationDataPath, Guid.NewGuid().ToString());
+      string _testFileName = @"|ApplicationDataPath|\TesFileName.log";
+      using (AdvancedDelimitedListTraceListener _Listener = new AdvancedDelimitedListTraceListener(_testFileName))
+        Assert.AreEqual<string>(Path.Combine(AdvancedDelimitedListTraceListener.ApplicationDataPath, "TesFileName.log"), GetFileNAme(_Listener));
     }
     [TestMethod]
     public void SpecialFolderPathTestMethod1()
     {
+      AdvancedDelimitedListTraceListener.ApplicationDataPath = InstallContextNames.ApplicationDataPath;
       Environment.SpecialFolder _testFolder = Environment.SpecialFolder.ApplicationData;
-      string _tsetFileName = $@"|{_testFolder}|\TesFileName.log";
-      using (AdvancedDelimitedListTraceListener _Listener = new AdvancedDelimitedListTraceListener(_tsetFileName))
-      {
+      string _testFileName = $@"|{_testFolder}|\TesFileName.log";
+      using (AdvancedDelimitedListTraceListener _Listener = new AdvancedDelimitedListTraceListener(_testFileName))
         Assert.AreEqual<string>(Path.Combine(Environment.GetFolderPath(_testFolder), "TesFileName.log"), GetFileNAme(_Listener));
-      }
     }
     [TestMethod]
     public void ConfigTraceSourceTest()
@@ -86,6 +84,8 @@ namespace CAS.RealTime.UnitTests
       //Trace
       Assert.IsFalse(Trace.Listeners.Cast<TraceListener>().Where<TraceListener>(x => x.Name == "LogFile").Any<TraceListener>());
     }
+
+    #region instrumantation
     private static string GetFileNAme(AdvancedDelimitedListTraceListener _listener)
     {
       FieldInfo fi = typeof(TextWriterTraceListener).GetField("fileName", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -107,5 +107,8 @@ namespace CAS.RealTime.UnitTests
         WriteCount++;
       }
     }
+
+    #endregion
+
   }
 }
