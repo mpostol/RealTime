@@ -63,7 +63,7 @@ namespace CAS.RealTime.UnitTests
     [TestMethod]
     public void GeneralTestAutoreset_10()
     {
-      OneTest(2500, true, 10, 30, 1.4);
+      OneTest(2500, true, 10, 30, 1.5);
     }
     /// <summary>
     /// Test with [autorest] enabled and operation length 250 ms
@@ -87,7 +87,7 @@ namespace CAS.RealTime.UnitTests
     [TestMethod]
     public void GeneralTestAutoreset_300()
     {
-      OneTest(2500, true, 300, 30, 0.9);
+      OneTest(2500, true, 300, 30, 20);
     }
     /// <summary>
     /// Test with [autorest] disabled and operation length 10 ms
@@ -111,7 +111,7 @@ namespace CAS.RealTime.UnitTests
     [TestMethod]
     public void GeneralTestNoAutoreset_275()
     {
-      OneTest(2500, false, 275, 30, 3.3);
+      OneTest(2500, false, 275, 30, 3.5);
     }
     /// <summary>
     /// Test with auto rest disabled and operation length 300 ms
