@@ -133,11 +133,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CAS.RealTimeEctension\CAS.RealTime.csproj">
+    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.csproj">
       <Project>{a6c02710-7ec3-43b1-8010-6f7b4926ec48}</Project>
       <Name>CAS.RealTime</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.Core.csproj">
+    <ProjectReference Include="..\CAS.RealTime.Core\CAS.RealTime.Core.csproj">
       <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
       <Name>CAS.RealTime.Core</Name>
     </ProjectReference>

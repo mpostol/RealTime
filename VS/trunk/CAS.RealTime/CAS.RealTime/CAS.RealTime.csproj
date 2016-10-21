@@ -234,7 +234,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CAS.RealTime\CAS.RealTime.Core.csproj">
+    <ProjectReference Include="..\CAS.RealTime.Core\CAS.RealTime.Core.csproj">
       <Project>{af9c3f96-3934-402b-9098-f1e4328097ef}</Project>
       <Name>CAS.RealTime.Core</Name>
     </ProjectReference>
