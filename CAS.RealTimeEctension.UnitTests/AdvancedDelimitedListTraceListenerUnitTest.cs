@@ -6,11 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
-namespace CAS.RealTimeUnitTests
+namespace CAS.RealTime.UnitTests
 {
   [TestClass]
   public class AdvancedDelimitedListTraceListenerUnitTest

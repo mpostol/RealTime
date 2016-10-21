@@ -13,14 +13,14 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.Lib.RTLib.Processes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CAS.RealTimeUnitTests
+namespace CAS.RealTime.UnitTests
 {
   /// <summary>
-  ///This is a test class for TimerTest and is intended
-  ///to contain all TimerTest Unit Tests
+  ///This is a test class for TimerTest and is intended to contain all TimerTest Unit Tests
   ///</summary>
   [TestClass()]
   public class TimerTest
@@ -36,7 +36,7 @@ namespace CAS.RealTimeUnitTests
       mySW.Start();
       object monitor = new object();
       lock ( monitor )
-        CAS.Lib.RTLib.Processes.Timer.WaitTimeout( myTimeout, mySW, monitor );
+        Timer.WaitTimeout( myTimeout, mySW, monitor );
       Assert.IsTrue( mySW.Elapsed > myTimeout );
     }
     /// <summary>
@@ -51,12 +51,11 @@ namespace CAS.RealTimeUnitTests
         TimeSpan myTimeout = TimeSpan.FromSeconds( 1 );
         System.Diagnostics.Stopwatch mySW = new System.Diagnostics.Stopwatch();
         mySW.Start();
-        CAS.Lib.RTLib.Processes.Timer.WaitTimeout( myTimeout, mySW );
+        Timer.WaitTimeout( myTimeout, mySW );
         TimeSpan elapsed = mySW.Elapsed;
-        Assert.IsTrue( elapsed >= myTimeout && elapsed < ( myTimeout + TimeSpan.FromMilliseconds( 20 ) ) );
+        Assert.IsTrue( elapsed >= myTimeout && elapsed < ( myTimeout + TimeSpan.FromMilliseconds( 20 ) ), $"At {i} elapsed = {elapsed}" );
         //mma.Add = Convert.ToInt64( elapsed.TotalMilliseconds );
       }
-      //TestContext.WriteLine( mma.ToString() );
     }
   }
 }
