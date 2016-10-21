@@ -53,7 +53,7 @@ namespace CAS.RealTime.UnitTests
         mySW.Start();
         Timer.WaitTimeout( myTimeout, mySW );
         TimeSpan elapsed = mySW.Elapsed;
-        Assert.IsTrue( elapsed >= myTimeout && elapsed < ( myTimeout + TimeSpan.FromMilliseconds( 20 ) ), $"At {i} elapsed = {elapsed}" );
+        Assert.IsTrue( elapsed >= myTimeout && elapsed < ( myTimeout + TimeSpan.FromMilliseconds( 40 ) ), $"At {i} elapsed = {elapsed}" );
         //mma.Add = Convert.ToInt64( elapsed.TotalMilliseconds );
       }
     }

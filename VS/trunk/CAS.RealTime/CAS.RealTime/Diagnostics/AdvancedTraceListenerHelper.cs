@@ -13,7 +13,6 @@
 //  http://www.cas.eu
 //</summary>
 
-using CAS.Lib.CodeProtect;
 using System;
 using System.Collections;
 using System.Diagnostics;
@@ -23,6 +22,7 @@ namespace CAS.Lib.RTLib.Diagnostics
 {
   internal static class AdvancedTraceListenerHelper
   {
+
     #region private
     private const string specialFormatToken = "|{0}|";
     private const string environmentVariablePattern = "\\%{0}\\%";
@@ -32,14 +32,12 @@ namespace CAS.Lib.RTLib.Diagnostics
     /// Prepares the name of the log file.
     /// </summary>
     /// <param name="logFileName">Name of the log file.</param>
-    /// <returns>Ready log filename</returns>
-    internal static string PrepareLogFileName(this string logFileName)
+    /// <param name="applicationDataPath">The application data path.</param>
+    /// <returns>Log filename after replacing tags by associated values.</returns>
+    internal static string PrepareLogFileName(this string logFileName, string applicationDataPath)
     {
       if (logFileName.Contains(applicationDataPathText))
-      {
-        logFileName = logFileName.Replace(applicationDataPathText, InstallContextNames.ApplicationDataPath);
-        return logFileName;
-      }
+        return logFileName.Replace(applicationDataPathText, applicationDataPath);
       else
       {
         foreach (Environment.SpecialFolder folder in Enum.GetValues(typeof(Environment.SpecialFolder)))
@@ -66,18 +64,29 @@ namespace CAS.Lib.RTLib.Diagnostics
   public class AdvancedDelimitedListTraceListener : DelimitedListTraceListener
   {
     /// <summary>
-    /// Initializes a new instance of the <see cref="AdvancedDelimitedListTraceListener"/> class.
+    /// Initializes a new instance of the <see cref="AdvancedDelimitedListTraceListener" /> class.
     /// </summary>
     /// <param name="logFileName">Name of the log file.</param>
-    /// <remarks>
-    /// The <paramref name="logFileName"/> may contain the following tags:
-    /// <c>|ApplicationDataPath|</c> by the ApplicationDataPath defined by the application manifest file.
+    /// <remarks>The <paramref name="logFileName" /> may contain the following tags:
+    /// <c>|ApplicationDataPath|</c> by the <see cref="AdvancedDelimitedListTraceListener.ApplicationDataPath"/>.
     /// <c>|{Environment.SpecialFolder}|</c> by the path to special folder
-    /// <c>|{environment variable}|</c> by the key value of this variable
-    /// </remarks>
+    /// <c>|{environment variable}|</c> by the key value of this variable</remarks>
     public AdvancedDelimitedListTraceListener(string logFileName)
-      : base(logFileName.PrepareLogFileName())
+      : base(logFileName.PrepareLogFileName(ApplicationDataPath))
     { }
+    /// <summary>
+    /// Gets or sets the application data path to be used as location of the log file.
+    /// </summary>
+    /// <remarks>
+    /// Initially this property is set to <see cref="Environment.CurrentDirectory"/>, and to take effect must be reassigned before creation <see cref="TraceSource"/> associated with this class.
+    /// </remarks>
+    /// <value>The application data path.</value>
+    public static string ApplicationDataPath
+    {
+      get { return m_ApplicationDataPath; }
+      set { m_ApplicationDataPath = value; }
+    }
+    private static string m_ApplicationDataPath = Environment.CurrentDirectory;
   }
   /// <summary>
   /// Advanced delimited XML writer trace listener which derives from XmlWriterTraceListener and prepares the log file name replacing the tags by the path to selected folder.
@@ -85,17 +94,28 @@ namespace CAS.Lib.RTLib.Diagnostics
   public class AdvancedXmlWriterTraceListener : XmlWriterTraceListener
   {
     /// <summary>
-    /// Initializes a new instance of the <see cref="AdvancedXmlWriterTraceListener"/> class.
+    /// Initializes a new instance of the <see cref="AdvancedXmlWriterTraceListener" /> class.
     /// </summary>
     /// <param name="logFileName">Name of the log file.</param>
-    /// <remarks>
-    /// The <paramref name="logFileName"/> may contain the following tags:
-    /// <c>|ApplicationDataPath|</c> by the ApplicationDataPath defined by the application manifest file.
+    /// <remarks>The <paramref name="logFileName" /> may contain the following tags:
+    /// <c>|ApplicationDataPath|</c> by the <see cref="AdvancedDelimitedListTraceListener.ApplicationDataPath"/>.
     /// <c>|{Environment.SpecialFolder}|</c> by the path to special folder
-    /// <c>|{environment variable}|</c> by the key value of this variable
-    /// </remarks>
+    /// <c>|{environment variable}|</c> by the key value of this variable</remarks>
     public AdvancedXmlWriterTraceListener(string logFileName)
-      : base(logFileName.PrepareLogFileName())
+      : base(logFileName.PrepareLogFileName(ApplicationDataPath))
     { }
+    /// <summary>
+    /// Gets or sets the application data path to be used as location of the log file.
+    /// </summary>
+    /// <remarks>
+    /// Initially this property is set to <see cref="Environment.CurrentDirectory"/>, and to take effect must be reassigned before creation <see cref="TraceSource"/> associated with this class.
+    /// </remarks>
+    /// <value>The application data path.</value>
+    public static string ApplicationDataPath
+    {
+      get { return m_ApplicationDataPath; }
+      set { m_ApplicationDataPath = value; }
+    }
+    private static string m_ApplicationDataPath = Environment.CurrentDirectory;
   }
 }
