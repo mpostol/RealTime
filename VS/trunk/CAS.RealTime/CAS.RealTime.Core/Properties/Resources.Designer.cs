@@ -59,50 +59,5 @@ namespace CAS.Lib.RTLib.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exception has beet catch: {0}  at {1} with call stack {2}.
-        /// </summary>
-        internal static string ExceptionTraceFormat {
-            get {
-                return ResourceManager.GetString("ExceptionTraceFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There are {0} processes inside Watchdog..
-        /// </summary>
-        internal static string InsideWatchdogMessageFormat {
-            get {
-                return ResourceManager.GetString("InsideWatchdogMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New maximum delay = {0} mS reached at {1} while calling {2}.
-        /// </summary>
-        internal static string MaxDelayMessageFormat {
-            get {
-                return ResourceManager.GetString("MaxDelayMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to I had to reboot the system at: {0} while calling {1}.
-        /// </summary>
-        internal static string RestartMessageFormat {
-            get {
-                return ResourceManager.GetString("RestartMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stopwatch expected value should be 0, but the value is {0} ms..
-        /// </summary>
-        internal static string WatchdogStopwatchIsNotZeroMessageFormat {
-            get {
-                return ResourceManager.GetString("WatchdogStopwatchIsNotZeroMessageFormat", resourceCulture);
-            }
-        }
     }
 }

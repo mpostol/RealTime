@@ -7,11 +7,7 @@
 //  $URL$
 //  $Id$
 //  History :
-//    MZBRZEZNY - 2007-02-12:
-//    Zmieniono niektore wartosci bledow (UWAGA: kody bledow nie moga byc wieksze niz 65535!!)
 //    MZbrzezny - 06-08-2004: created
-//    <Author> - <date>:
-//    <description>
 //
 //  Copyright (C)2006, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
@@ -27,63 +23,176 @@ namespace CAS.Lib.RTLib.Processes
   //EventID = Error + ErrorCause*1000
   //
   /// <summary>
-  /// Define error numbers
+  /// Enum that gives number for error in trace messages
   /// </summary>
-  [Obsolete(@"It conflicts with the C:\MPVS\CASTrunk\PR36-CAS_MAIN_CORE_PCKG\RTLib\Processes\ErrorsEnum.cs")]
+  [Obsolete("Trace related error must be defined in context of application")]
   public enum Error: int
   {
-    //ApplicationLayer_NULL_protocol = 100, //RTLib
-    //ApplicationLayer_MBUS_PRIVATE_MBUS_message = 200, //RTLib
-    //ApplicationLayer_SBUS_PRIVATE_SBUS_message = 250, //SBUS_PLUGIN
     /// <summary>
-    /// ApplicationLayer_SBUS_PRIVATE_SBUSbase_message
+    /// error in ApplicationLayer Null protocol
+    /// </summary>
+    ApplicationLayer_NULL_protocol = 100, //RTLib
+    /// <summary>
+    /// error in MBUS message
+    /// </summary>
+    ApplicationLayer_MBUS_PRIVATE_MBUS_message = 200, //MBUS_PLUGIN
+    /// <summary>
+    /// error in SBUS message
+    /// </summary>
+    ApplicationLayer_SBUS_PRIVATE_SBUS_message = 250, //SBUS_PLUGIN
+    /// <summary>
+    /// error in SBUS base message (common for RS and NET)
     /// </summary>
     ApplicationLayer_SBUS_PRIVATE_SBUSbase_message = 260, //SBUS_PLUGIN
-    //ApplicationLayer_SBUS_PRIVATE_SBUSnet_message = 270, //SBUS_PLUGIN
-    //CommunicationLayer_UMessage = 300, //RTLib
-    //BaseStation_Segment = 400, //Commserver
-    //ApplicationLayer_MBUS_MBUS_ApplicationLayerMaster = 500, //RTLib
-    //ApplicationLayer_SBUS_SBUS_ApplicationLayerMaster = 550, //RTLib
     /// <summary>
-    /// ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave
+    /// error in SBUS net message
     /// </summary>
-    ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave = 560, //RTLib
-    //ApplicationLayer_SBUS_SBUS_ApplicationLayerCommon = 570, //RTLib
-    //Processes_IEnvelope = 600, //RTLib
-    //BaseStation_DataQueue = 700, //Commserver
-    //BaseStation_BaseStation_Management = 800,  //Commserver
-
-    ////RTLib
-    //Vacat = 10000,
-    //RTLib_AppConfigManagement = 11000,
-    //ApplicationLayer_InterfaceNotImplementedException = 12000,
-    //RTLib_AppAdditionalInfos = 13000,
-    //// CommClient
-    //CommClient_BaseStation_Initialization = 20000,
-    //CommClient_OPC_Interface = 20100,
-    //// CommServer
-    //CommServer_OPC_Interface = 30000,
-    //NetworkConfig_ApplicationProtocol = 30100,
-    //CommServer_Configuration = 30200,
+    ApplicationLayer_SBUS_PRIVATE_SBUSnet_message = 270, //SBUS_PLUGIN
     /// <summary>
-    /// CommServer_EC2EC3_symulator
+    /// error in umessage
+    /// </summary>
+    CommunicationLayer_UMessage = 300, //RTLib
+    /// <summary>
+    /// error in envelope
+    /// </summary>
+    Processes_IEnvelope = 600, //RTLib
+    /// <summary>
+    /// error in DataQueue
+    /// </summary>
+    BaseStation_DataQueue = 700, //Commserver
+    /// <summary>
+    /// Error in BaseStattion Management
+    /// </summary>
+    BaseStation_BaseStation_Management = 800,  //Commserver
+
+    //RTLib
+    /// <summary>
+    /// Reserved for future use
+    /// </summary>
+    Vacat = 10000,
+    /// <summary>
+    /// Error in RTLib: Application configuration management
+    /// </summary>
+    RTLib_AppConfigManagement = 11000,
+    /// <summary>
+    ///Error in  RTLib: Application Layer ApplicationLayer_InterfaceNotImplementedException
+    /// </summary>
+    ApplicationLayer_InterfaceNotImplementedException = 12000,
+    /// <summary>
+    /// Error in RTLib: Application additional information 
+    /// </summary>
+    RTLib_AppAdditionalInfos = 13000,
+    // CommClient
+    /// <summary>
+    /// Error in CommClient_BaseStation_Initialization
+    /// </summary>
+    CommClient_BaseStation_Initialization = 20000,
+    /// <summary>
+    /// Error in CommClient_OPC_Interface
+    /// </summary>
+    CommClient_OPC_Interface = 20100,
+    // CommServer
+    /// <summary>
+    /// Error in CommServer_OPC_Interface
+    /// </summary>
+    CommServer_OPC_Interface = 30000,
+    /// <summary>
+    /// Error in NetworkConfig_ApplicationProtocol
+    /// </summary>
+    NetworkConfig_ApplicationProtocol = 30100,
+    /// <summary>
+    /// Error in CommServer_Configuration
+    /// </summary>
+    CommServer_Configuration = 30200,
+    /// <summary>
+    /// Error in CommServer_EC2EC3_symulator
     /// </summary>
     CommServer_EC2EC3_symulator = 30200,
-    //CommServer_CommServerComponent = 30300,
-    ////opc_da_netserver
-    //CAS_OpcSvr_Da_NETServer_Server = 50000,
-    //CAS_OpcSvr_Da_NETServer_DaServerBUSSniffer = 50001,
-    //CAS_OpcSvr_Da_NETServer_Subscription = 50100,
-    ////devicesymulator'
-    //CAS_OpcSvr_Da_NETServer_Initialization = 55000,
-    ////CommunicationLayer
-    //CommunicationLayer = 60000,
-    //CommunicationLayer_Net_to_Serial = 60100
+    /// <summary>
+    /// Error in CommServer_CommServerComponent
+    /// </summary>
+    CommServer_CommServerComponent = 30300,
+    // DataPorter
+    /// <summary>
+    /// Error in DataPorter_OPC_Interface
+    /// </summary>
+    DataPorter_OPC_Interface = 40100,
+    /// <summary>
+    /// Error in DataPorter_ApplicationConfiguration
+    /// </summary>
+    DataPorter_ApplicationConfiguration = 40200,
+    /// <summary>
+    /// Error in DataPorter_Transaction_OperationDBThread
+    /// </summary>
+    DataPorter_Transaction_OperationDBThread = 40300,
+    /// <summary>
+    ///  Error in DataPorter_OPCBufferedDataAccess
+    /// </summary>
+    DataPorter_OPCBufferedDataAccess = 40400,
+    /// <summary>
+    /// Error in DataPorter_OPCRealtimeDataAccess
+    /// </summary>
+    DataPorter_OPCRealtimeDataAccess = 40500,
+    /// <summary>
+    /// Error in DataPorter_OPCDataQueue
+    /// </summary>
+    DataPorter_OPCDataQueue = 40600,
+    /// <summary>
+    /// Error in DataPorter_gui
+    /// </summary>
+    DataPorter_gui = 40700,
+    /// <summary>
+    /// Error in DataPorter_Servers
+    /// </summary>
+    DataPorter_BufferedAccessTransaction = 40800,
+    /// <summary>
+    /// Error in DataPorter_Servers
+    /// </summary>
+    DataPorter_Servers = 40900,
+    //opc_da_netserver
+    /// <summary>
+    /// Error in CAS_OpcSvr_Da_NETServer_Server
+    /// </summary>
+    CAS_OpcSvr_Da_NETServer_Server = 50000,
+    /// <summary>
+    /// Error in CAS_OpcSvr_Da_NETServer_DaServerBUSSniffer
+    /// </summary>
+    CAS_OpcSvr_Da_NETServer_DaServerBUSSniffer = 50001,
+    /// <summary>
+    /// Error in CAS_OpcSvr_Da_NETServer_Subscription
+    /// </summary>
+    CAS_OpcSvr_Da_NETServer_Subscription = 50100,
+    //devicesymulator'
+    /// <summary>
+    /// Error in CAS_OpcSvr_Da_NETServer_Initialization
+    /// </summary>
+    CAS_OpcSvr_Da_NETServer_Initialization = 55000,
+    //CommunicationLayer
+    /// <summary>
+    /// Error in CommunicationLayer
+    /// </summary>
+    CommunicationLayer = 60000,
+    /// <summary>
+    /// Error in CommunicationLayer_Net_to_Serial
+    /// </summary>
+    CommunicationLayer_Net_to_Serial = 60100
   }
-  //public enum ErrorCauseMask: int
-  //{
-  //  Processes_EventLogMonitor_WriteEntry = 0000,
-  //  Processes_Assertion_Assert = 1000,
-  //  Processes_MonitoredThread = 2000,
-  //}
+  /// <summary>
+  /// mask for error cause
+  /// </summary>
+  public enum ErrorCauseMask: int
+  {
+    /// <summary>
+    /// CommClient_BaseStation_Initialization
+    /// </summary>
+    Processes_EventLogMonitor_WriteEntry = 0000,
+    /// <summary>
+    /// Processes_Assertion_Assert
+    /// </summary>
+    Processes_Assertion_Assert = 1000,
+    /// <summary>
+    /// Processes_MonitoredThread
+    /// </summary>
+    Processes_MonitoredThread = 2000,
+  }
 }

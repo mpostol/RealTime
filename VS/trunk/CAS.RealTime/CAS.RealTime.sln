@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAS.RealTime.Core", "CAS.RealTime\CAS.RealTime.Core.csproj", "{AF9C3F96-3934-402B-9098-F1E4328097EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAS.RealTime.Core", "CAS.RealTime.Core\CAS.RealTime.Core.csproj", "{AF9C3F96-3934-402B-9098-F1E4328097EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAS.RealTime", "CAS.RealTimeEctension\CAS.RealTime.csproj", "{A6C02710-7EC3-43B1-8010-6F7B4926EC48}"
 EndProject
