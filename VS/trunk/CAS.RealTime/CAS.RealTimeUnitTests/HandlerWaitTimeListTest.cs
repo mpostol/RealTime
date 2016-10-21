@@ -27,7 +27,6 @@ namespace CAS.RealTime.UnitTests
   public class HandlerWaitTimeListTest
   {
     #region intrumentation
-    private TestContext testContextInstance;
     /// <summary>
     /// This function is responsible for executing one test on the <see cref="HandlerWaitTimeList"/> (queue).
     /// </summary>

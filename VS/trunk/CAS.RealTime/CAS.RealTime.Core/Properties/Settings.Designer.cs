@@ -25,7 +25,7 @@ namespace CAS.Lib.RTLib.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CAS.Lib.RTLib")]
+        [global::System.Configuration.DefaultSettingValueAttribute("CAS.RealTime")]
         public string TraceName {
             get {
                 return ((string)(this["TraceName"]));

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="TraceName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">CAS.Lib.RTLib</Value>
+      <Value Profile="(Default)">CAS.RealTime</Value>
     </Setting>
   </Settings>
 </SettingsFile>

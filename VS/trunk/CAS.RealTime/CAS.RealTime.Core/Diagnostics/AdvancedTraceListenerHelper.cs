@@ -55,6 +55,10 @@ namespace CAS.Lib.RTLib.Diagnostics
         return logFileName;
       }
     }
+    internal static string NormalizePath (this string path)
+    {
+      return path;
+    }
     #endregion private
 
   }

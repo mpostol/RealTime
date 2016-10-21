@@ -22,32 +22,31 @@ using System.Text;
 namespace CAS.Lib.RTLib.Processes
 {
   /// <summary>
-  /// Class responsible for tracing. Created
+  /// Class responsible for tracing.
   /// </summary>
   public class TraceEvent
   {
     #region private
     private TraceSource m_traceSource;
-
-    private void PrivateTrace( TraceEventType type, int id, string message )
+    private void PrivateTrace(TraceEventType type, int id, string message)
     {
       try
       {
-        m_traceSource.TraceEvent( type, id, message );
+        m_traceSource.TraceEvent(type, id, message);
         m_traceSource.Flush();
       }
-      catch ( IOException ) { }
+      catch (IOException) { }
     }
     #endregion
 
-    #region creator
+    #region constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="TraceEvent"/> class.
     /// </summary>
     /// <param name="sourceName">The source name.</param>
-    public TraceEvent( string sourceName )
+    public TraceEvent(string sourceName)
     {
-      m_traceSource = new TraceSource( sourceName );
+      m_traceSource = new TraceSource(sourceName);
     }
     /// <summary>
     /// Releases unmanaged resources and performs other cleanup operations before the
@@ -58,6 +57,7 @@ namespace CAS.Lib.RTLib.Processes
       TraceEventClose();
     }
     #endregion
+
     #region public
     /// <summary>
     ///Close the local <see cref="TraceSource"/>
@@ -69,9 +69,7 @@ namespace CAS.Lib.RTLib.Processes
         m_traceSource.Flush();
         m_traceSource.Close();
       }
-      catch ( ObjectDisposedException )
-      {
-      }
+      catch (ObjectDisposedException) { }
     }
     /// <summary>
     /// regular trace message
@@ -80,9 +78,9 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="id">user identifier for the message</param>
     /// <param name="source">source of message</param>
     /// <param name="message">message that we want to trace</param>
-    public void Trace( TraceEventType type, int id, string source, string message )
+    public void Trace(TraceEventType type, int id, string source, string message)
     {
-      PrivateTrace( type, id, source + ": " + message );
+      PrivateTrace(type, id, source + ": " + message);
     }
     /// <summary>
     /// verbose trace message
@@ -90,9 +88,9 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="id">user identifier for the message</param>
     /// <param name="source">source of message</param>
     /// <param name="message">message that we want to trace</param>
-    public void TraceVerbose( int id, string source, string message )
+    public void TraceVerbose(int id, string source, string message)
     {
-      Trace( TraceEventType.Verbose, id, source, message );
+      Trace(TraceEventType.Verbose, id, source, message);
     }
     /// <summary>
     /// information trace message
@@ -100,9 +98,9 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="id">user identifier for the message</param>
     /// <param name="source">source of message</param>
     /// <param name="message">message that we want to trace</param>
-    public void TraceInformation( int id, string source, string message )
+    public void TraceInformation(int id, string source, string message)
     {
-      Trace( TraceEventType.Information, id, source, message );
+      Trace(TraceEventType.Information, id, source, message);
     }
     /// <summary>
     /// warning trace message
@@ -110,9 +108,9 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="id">user identifier for the message</param>
     /// <param name="source">source of message</param>
     /// <param name="message">message that we want to trace</param>
-    public void TraceWarning( int id, string source, string message )
+    public void TraceWarning(int id, string source, string message)
     {
-      Trace( TraceEventType.Warning, id, source, message );
+      Trace(TraceEventType.Warning, id, source, message);
     }
     /// <summary>
     /// error trace message
@@ -120,31 +118,32 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="id">user identifier for the message</param>
     /// <param name="source">source of message</param>
     /// <param name="message">message that we want to trace</param>
-    public void TraceError( int id, string source, string message )
+    public void TraceError(int id, string source, string message)
     {
-      Trace( TraceEventType.Error, id, source, message );
+      Trace(TraceEventType.Error, id, source, message);
     }
     /// <summary>
     /// Gets the message with exception name from exception including inner exception.
     /// </summary>
     /// <param name="ex">The ex.</param>
     /// <returns>the whole message</returns>
-    public static string GetMessageWithExceptionNameFromExceptionIncludingInnerException( Exception ex )
+    public static string GetMessageWithExceptionNameFromExceptionIncludingInnerException(Exception ex)
     {
-      StringBuilder sb = new StringBuilder( ex.GetType().ToString() );
-      sb.Append( ":" );
-      sb.Append( ex.Message );
+      StringBuilder sb = new StringBuilder(ex.GetType().ToString());
+      sb.Append(":");
+      sb.Append(ex.Message);
       Exception InnerEx = ex.InnerException;
-      while ( InnerEx != null )
+      while (InnerEx != null)
       {
-        sb.Append( "; " );
-        sb.Append( InnerEx.GetType().ToString() );
-        sb.Append( ":" );
-        sb.Append( InnerEx.Message );
+        sb.Append("; ");
+        sb.Append(InnerEx.GetType().ToString());
+        sb.Append(":");
+        sb.Append(InnerEx.Message);
         InnerEx = InnerEx.InnerException;
       }
       return sb.ToString();
     }
     #endregion
+
   }
 }
