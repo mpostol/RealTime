@@ -16,7 +16,7 @@ namespace CAS.RealTime.UnitTests
     [TestMethod]
     public void SettingsTestFixture()
     {
-      Assert.AreEqual("CAS.Lib.RTLib", Settings.Default.TraceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
+      Assert.AreEqual("CAS.RealTime", Settings.Default.TraceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
     }
   }
 }
