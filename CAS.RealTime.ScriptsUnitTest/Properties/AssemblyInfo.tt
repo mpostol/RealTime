@@ -1,0 +1,37 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+//_______________________________________________________________
+//  Title   :  Assembly info for: <#=m_AssemblyTitle#>
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate:  $
+//  $Rev:  $
+//  $LastChangedBy: $
+//  $URL:  $
+//  $Id:  $
+//
+//  <#=AssemblyCopyright#>
+//  <#=Phone#>
+//  <#=Email#>
+//  <#=Url#>
+//_______________________________________________________________
+
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("<#=m_AssemblyTitle#>")]
+[assembly: AssemblyDescription("Scripts Prototyping Workspace for <#=m_AssemblyTitle#>")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("<#=AssemblyCompany#>")]
+[assembly: AssemblyProduct("<#=DefaultProductName#>")]
+[assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
+[assembly: AssemblyTrademark("<#=DefaultProductTrademark#>")]
+[assembly: AssemblyCulture("")]
+[assembly: Guid("1978B4D2-ACDF-4164-9677-BBEC3B858A45")]
+[assembly: ComVisible(false)]
+[assembly: AssemblyVersion("<#= CASRealTimeVersion #>.*")]
+[assembly: AssemblyFileVersion("<#= CASRealTimeVersion #>")]
+
+<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+<#+
+string m_AssemblyTitle = "CAS.RealTime.Scripts.UnitTest";
+#>
