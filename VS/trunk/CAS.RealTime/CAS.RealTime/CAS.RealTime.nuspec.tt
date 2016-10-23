@@ -24,15 +24,15 @@
     <copyright><#=AssemblyCopyright#></copyright>
     <tags>CAS Software, RealTime, CAS Framework.</tags>
     <dependencies>
-      <dependency id="CAS.CodeProtect" version="5.0.2" />
+      <dependency id="CAS.CodeProtect" version="6.0.1" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLib.dll" target="lib\net451\CAS.RTLib.dll" />
-    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLib.XML" target="lib\net451\CAS.RTLib.XML" />
-    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLibComm.dll" target="lib\net451\CAS.RTLibComm.dll" />
-    <file src="..\..\CAS.RealTimeEctension\bin\Release\CAS.RTLibComm.xml" target="lib\net451\CAS.RTLibComm.xml" />
+    <file src="bin\Release\CAS.RealTime.Core.dll" target="lib\net451\CAS.RealTime.Core.dll" />
+    <file src="bin\Release\CAS.RealTime.Core.xml" target="lib\net451\CAS.RealTime.Core.xml" />
+    <file src="bin\Release\CAS.RealTime.dll" target="lib\net451\CAS.RealTime.dll" />
+    <file src="bin\Release\CAS.RealTime.XML" target="lib\net451\CAS.RealTime.XML" />
   </files>
 </package>
 
-<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+<#@ include file = "..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
