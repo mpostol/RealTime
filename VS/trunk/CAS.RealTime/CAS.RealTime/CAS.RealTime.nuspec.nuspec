@@ -26,6 +26,10 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="bin\Release\CAS.RealTime.Core.dll" target="lib\net451\CAS.RealTime.Core.dll" />
+    <file src="bin\Release\CAS.RealTime.Core.xml" target="lib\net451\CAS.RealTime.Core.xml" />
+    <file src="bin\Release\CAS.RealTime.dll" target="lib\net451\CAS.RealTime.dll" />
+    <file src="bin\Release\CAS.RealTime.XML" target="lib\net451\CAS.RealTime.XML" />
   </files>
 </package>
 
