@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="15062441-64f0-4ade-afdb-c4a9a13b3740" Title="CAS.Lib.RTLib Namespace" Url="html/N-CAS.Lib.RTLib.htm">
+    <HelpTOCNode Id="54ca40fb-e7fc-4c97-9ea5-f2367ffbe4d0" Title="ICanBeAccepted Interface" Url="html/T-CAS.Lib.RTLib.ICanBeAccepted.htm">
+      <HelpTOCNode Title="ICanBeAccepted Members" Url="html/AllMembers.T-CAS.Lib.RTLib.ICanBeAccepted.htm" />
+      <HelpTOCNode Id="573df3c3-7f4a-44b3-ae31-9b16470f4eb7" Title="ICanBeAccepted Methods" Url="html/Methods.T-CAS.Lib.RTLib.ICanBeAccepted.htm">
+        <HelpTOCNode Title="CanBeAccepted Method " Url="html/M-CAS.Lib.RTLib.ICanBeAccepted.CanBeAccepted.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ItemAccessRights Enumeration" Url="html/T-CAS.Lib.RTLib.ItemAccessRights.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="9333f474-2e47-46b0-b871-542998454dae" Title="CAS.Lib.RTLib.Database Namespace" Url="html/N-CAS.Lib.RTLib.Database.htm">
+    <HelpTOCNode Id="dd7383ad-7198-4f4e-959d-f4642c0c892c" Title="XML2DataSetIO Class" Url="html/T-CAS.Lib.RTLib.Database.XML2DataSetIO.htm">
+      <HelpTOCNode Title="XML2DataSetIO Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Database.XML2DataSetIO.htm" />
+      <HelpTOCNode Id="dc9f7290-b967-4ed5-a866-05820b377747" Title="XML2DataSetIO Methods" Url="html/Methods.T-CAS.Lib.RTLib.Database.XML2DataSetIO.htm">
+        <HelpTOCNode Id="6e0e3ca1-5379-4549-a021-59035dd11843" Title="readXMLFile Method " Url="html/Overload-CAS.Lib.RTLib.Database.XML2DataSetIO.readXMLFile.htm">
+          <HelpTOCNode Title="readXMLFile Method (DataSet, String)" Url="html/M-CAS.Lib.RTLib.Database.XML2DataSetIO.readXMLFile.htm" />
+          <HelpTOCNode Title="readXMLFile Method (DataSet, String, Boolean)" Url="html/M-CAS.Lib.RTLib.Database.XML2DataSetIO.readXMLFile_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="writeXMLFile Method " Url="html/M-CAS.Lib.RTLib.Database.XML2DataSetIO.writeXMLFile.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="e344c69a-76ea-4a21-9e84-cf9fa44b09f0" Title="CAS.Lib.RTLib.Management Namespace" Url="html/N-CAS.Lib.RTLib.Management.htm">
+    <HelpTOCNode Id="b2eabea4-61c3-4684-b56e-67e5cb57c475" Title="AppConfigManagement Class" Url="html/T-CAS.Lib.RTLib.Management.AppConfigManagement.htm">
+      <HelpTOCNode Title="AppConfigManagement Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.AppConfigManagement.htm" />
+      <HelpTOCNode Id="1e975faf-cd4e-4b77-a365-3596dd5fb002" Title="AppConfigManagement Fields" Url="html/Fields.T-CAS.Lib.RTLib.Management.AppConfigManagement.htm">
+        <HelpTOCNode Title="filename Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.filename.htm" />
+        <HelpTOCNode Title="MinAvgMax_CharacterGap_management Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.MinAvgMax_CharacterGap_management.htm" />
+        <HelpTOCNode Title="MinAvgMax_FrameResponse_management Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.MinAvgMax_FrameResponse_management.htm" />
+        <HelpTOCNode Title="MinAvgMax_Group_management Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.MinAvgMax_Group_management.htm" />
+        <HelpTOCNode Title="MinAvgMax_Group_Read_management Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.MinAvgMax_Group_Read_management.htm" />
+        <HelpTOCNode Title="MinAvgMax_Tag_management Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.MinAvgMax_Tag_management.htm" />
+        <HelpTOCNode Title="MinAvgMax_Transaction_management Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.MinAvgMax_Transaction_management.htm" />
+        <HelpTOCNode Title="PLCNaN Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.PLCNaN.htm" />
+        <HelpTOCNode Title="UseLocalTime Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.UseLocalTime.htm" />
+        <HelpTOCNode Title="UseTimeStampToCheckForUpdate Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.UseTimeStampToCheckForUpdate.htm" />
+        <HelpTOCNode Title="WaitForFirstGroupUpdateSendInMiliSec Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.WaitForFirstGroupUpdateSendInMiliSec.htm" />
+        <HelpTOCNode Title="WaitForReconnectServerInSec Field" Url="html/F-CAS.Lib.RTLib.Management.AppConfigManagement.WaitForReconnectServerInSec.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AppConfigManagement Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.AppConfigManagement.htm" />
+      <HelpTOCNode Id="7a8cb18f-a301-4ac4-a609-b8b8041112dd" Title="AppConfigManagement Properties" Url="html/Properties.T-CAS.Lib.RTLib.Management.AppConfigManagement.htm">
+        <HelpTOCNode Title="OPCPathChannels Property " Url="html/P-CAS.Lib.RTLib.Management.AppConfigManagement.OPCPathChannels.htm" />
+        <HelpTOCNode Title="OPCPathStations Property " Url="html/P-CAS.Lib.RTLib.Management.AppConfigManagement.OPCPathStations.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="71f88022-0a60-4d00-b4bb-19b2457e075d" Title="ApplicationConfiguration Class" Url="html/T-CAS.Lib.RTLib.Management.ApplicationConfiguration.htm">
+      <HelpTOCNode Title="ApplicationConfiguration Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.ApplicationConfiguration.htm" />
+      <HelpTOCNode Id="7f1af7b0-363d-4a9a-bb0b-fd27234f2723" Title="ApplicationConfiguration Fields" Url="html/Fields.T-CAS.Lib.RTLib.Management.ApplicationConfiguration.htm">
+        <HelpTOCNode Title="ConfigFilePath Field" Url="html/F-CAS.Lib.RTLib.Management.ApplicationConfiguration.ConfigFilePath.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1e4c127c-cca8-436e-94a0-96429f7e38dd" Title="ApplicationConfiguration Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.ApplicationConfiguration.htm">
+        <HelpTOCNode Id="2bf816d4-42c2-42fc-b3e5-552837dd3a1a" Title="GetAppSetting Method " Url="html/Overload-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting.htm">
+          <HelpTOCNode Title="GetAppSetting Method (String, String)" Url="html/M-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting.htm" />
+          <HelpTOCNode Title="GetAppSetting Method (String, Int32)" Url="html/M-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting_1.htm" />
+          <HelpTOCNode Title="GetAppSetting Method (String, UInt32)" Url="html/M-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting_2.htm" />
+          <HelpTOCNode Title="GetAppSetting Method (String, UInt16)" Url="html/M-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting_3.htm" />
+          <HelpTOCNode Title="GetAppSetting Method (String, Single)" Url="html/M-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting_4.htm" />
+          <HelpTOCNode Title="GetAppSetting Method (String, Boolean)" Url="html/M-CAS.Lib.RTLib.Management.ApplicationConfiguration.GetAppSetting_5.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9559983b-efec-4482-a4ba-9aa1f9d32a36" Title="ConnectionState Class" Url="html/T-CAS.Lib.RTLib.Management.ConnectionState.htm">
+      <HelpTOCNode Title="ConnectionState Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.ConnectionState.htm" />
+      <HelpTOCNode Title="ConnectionState Constructor " Url="html/M-CAS.Lib.RTLib.Management.ConnectionState.-ctor.htm" />
+      <HelpTOCNode Title="ConnectionState Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.ConnectionState.htm" />
+      <HelpTOCNode Id="43f33076-6fb2-4242-ad39-29c977de4f3a" Title="ConnectionState Properties" Url="html/Properties.T-CAS.Lib.RTLib.Management.ConnectionState.htm">
+        <HelpTOCNode Title="ActivTime Property " Url="html/P-CAS.Lib.RTLib.Management.ConnectionState.ActivTime.htm" />
+        <HelpTOCNode Title="CurrState Property " Url="html/P-CAS.Lib.RTLib.Management.ConnectionState.CurrState.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="70ec941e-9148-49dd-ad4c-13b69af0105e" Title="ConnectionState Events" Url="html/Events.T-CAS.Lib.RTLib.Management.ConnectionState.htm">
+        <HelpTOCNode Title="MarkNewState Event" Url="html/E-CAS.Lib.RTLib.Management.ConnectionState.MarkNewState.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ConnectionState.StateChanged Delegate" Url="html/T-CAS.Lib.RTLib.Management.ConnectionState.StateChanged.htm" />
+    <HelpTOCNode Title="ConnectionState.States Enumeration" Url="html/T-CAS.Lib.RTLib.Management.ConnectionState.States.htm" />
+    <HelpTOCNode Id="7174b11d-e97d-4596-acfb-7bef2b65df32" Title="IHtmlOutput Interface" Url="html/T-CAS.Lib.RTLib.Management.IHtmlOutput.htm">
+      <HelpTOCNode Title="IHtmlOutput Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.IHtmlOutput.htm" />
+      <HelpTOCNode Id="5691375f-f7d2-490f-b0fb-353875f66bc7" Title="IHtmlOutput Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.IHtmlOutput.htm">
+        <HelpTOCNode Title="GetHtmlTableRowDescription Method " Url="html/M-CAS.Lib.RTLib.Management.IHtmlOutput.GetHtmlTableRowDescription.htm" />
+        <HelpTOCNode Title="ToHtml Method " Url="html/M-CAS.Lib.RTLib.Management.IHtmlOutput.ToHtml.htm" />
+        <HelpTOCNode Title="ToHtmlTableRow Method " Url="html/M-CAS.Lib.RTLib.Management.IHtmlOutput.ToHtmlTableRow.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="878e8905-b774-4b52-85a1-736a22535422" Title="IProtocol Interface" Url="html/T-CAS.Lib.RTLib.Management.IProtocol.htm">
+      <HelpTOCNode Title="IProtocol Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.IProtocol.htm" />
+      <HelpTOCNode Id="0990283e-7ece-4c12-a44c-c699fc8007dd" Title="IProtocol Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.IProtocol.htm">
+        <HelpTOCNode Title="ResetStatistics Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocol.ResetStatistics.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1c768804-b4af-4632-800e-19859ae5f969" Title="IProtocol Properties" Url="html/Properties.T-CAS.Lib.RTLib.Management.IProtocol.htm">
+        <HelpTOCNode Title="GetRxBytesTransferred Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetRxBytesTransferred.htm" />
+        <HelpTOCNode Title="GetRXDBFail Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetRXDBFail.htm" />
+        <HelpTOCNode Title="GetRXDBSucc Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetRXDBSucc.htm" />
+        <HelpTOCNode Title="GetStRxCRCErrorCounter Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxCRCErrorCounter.htm" />
+        <HelpTOCNode Title="GetStRxFragmentedCounter Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxFragmentedCounter.htm" />
+        <HelpTOCNode Title="GetStRxFrameCounter Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxFrameCounter.htm" />
+        <HelpTOCNode Title="GetStRxInvalid Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxInvalid.htm" />
+        <HelpTOCNode Title="GetStRxNAKCounter Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxNAKCounter.htm" />
+        <HelpTOCNode Title="GetStRxNoResponseCounter Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxNoResponseCounter.htm" />
+        <HelpTOCNode Title="GetStRxSynchError Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStRxSynchError.htm" />
+        <HelpTOCNode Title="GetStTxFrameCounter Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetStTxFrameCounter.htm" />
+        <HelpTOCNode Title="GetTimeCharGap Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetTimeCharGap.htm" />
+        <HelpTOCNode Title="GetTimeMaxResponseDelay Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetTimeMaxResponseDelay.htm" />
+        <HelpTOCNode Title="GetTxBytesTransferred Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetTxBytesTransferred.htm" />
+        <HelpTOCNode Title="GetTXDBFail Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetTXDBFail.htm" />
+        <HelpTOCNode Title="GetTXDBSucc Property " Url="html/P-CAS.Lib.RTLib.Management.IProtocol.GetTXDBSucc.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3a717d02-3e45-43c6-9b18-e5a6a6ad98f1" Title="IProtocolParent Interface" Url="html/T-CAS.Lib.RTLib.Management.IProtocolParent.htm">
+      <HelpTOCNode Title="IProtocolParent Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.IProtocolParent.htm" />
+      <HelpTOCNode Id="f710f10a-6eef-4aaf-8b33-9d9495124beb" Title="IProtocolParent Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.IProtocolParent.htm">
+        <HelpTOCNode Title="IncStRxCRCErrorCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxCRCErrorCounter.htm" />
+        <HelpTOCNode Title="IncStRxFragmentedCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxFragmentedCounter.htm" />
+        <HelpTOCNode Title="IncStRxFrameCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxFrameCounter.htm" />
+        <HelpTOCNode Title="IncStRxInvalid Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxInvalid.htm" />
+        <HelpTOCNode Title="IncStRxNAKCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxNAKCounter.htm" />
+        <HelpTOCNode Title="IncStRxNoResponseCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxNoResponseCounter.htm" />
+        <HelpTOCNode Title="IncStRxSynchError Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStRxSynchError.htm" />
+        <HelpTOCNode Title="IncStTxACKCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStTxACKCounter.htm" />
+        <HelpTOCNode Title="IncStTxDATACounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStTxDATACounter.htm" />
+        <HelpTOCNode Title="IncStTxFrameCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStTxFrameCounter.htm" />
+        <HelpTOCNode Title="IncStTxNAKCounter Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.IncStTxNAKCounter.htm" />
+        <HelpTOCNode Title="RxDataBlock Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.RxDataBlock.htm" />
+        <HelpTOCNode Title="TimeCharGapAdd Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.TimeCharGapAdd.htm" />
+        <HelpTOCNode Title="TimeMaxResponseDelayAdd Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.TimeMaxResponseDelayAdd.htm" />
+        <HelpTOCNode Title="TxDataBlock Method " Url="html/M-CAS.Lib.RTLib.Management.IProtocolParent.TxDataBlock.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b1dd9ce4-92aa-4b76-b1b9-b0b125274a6f" Title="Protocol Class" Url="html/T-CAS.Lib.RTLib.Management.Protocol.htm">
+      <HelpTOCNode Title="Protocol Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.Protocol.htm" />
+      <HelpTOCNode Id="ff8c2841-ca06-4c7d-86dc-042cd0630fda" Title="Protocol Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.Protocol.htm">
+        <HelpTOCNode Title="CreateNewProtocol Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.CreateNewProtocol.htm" />
+        <HelpTOCNode Title="GetProtocolStatistics Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.GetProtocolStatistics.htm" />
+        <HelpTOCNode Title="IncStRxCRCErrorCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxCRCErrorCounter.htm" />
+        <HelpTOCNode Title="IncStRxFragmentedCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxFragmentedCounter.htm" />
+        <HelpTOCNode Title="IncStRxFrameCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxFrameCounter.htm" />
+        <HelpTOCNode Title="IncStRxInvalid Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxInvalid.htm" />
+        <HelpTOCNode Title="IncStRxNAKCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxNAKCounter.htm" />
+        <HelpTOCNode Title="IncStRxNoResponseCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxNoResponseCounter.htm" />
+        <HelpTOCNode Title="IncStRxSynchError Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStRxSynchError.htm" />
+        <HelpTOCNode Title="IncStTxACKCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStTxACKCounter.htm" />
+        <HelpTOCNode Title="IncStTxDATACounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStTxDATACounter.htm" />
+        <HelpTOCNode Title="IncStTxFrameCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStTxFrameCounter.htm" />
+        <HelpTOCNode Title="IncStTxNAKCounter Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.IncStTxNAKCounter.htm" />
+        <HelpTOCNode Title="RxDataBlock Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.RxDataBlock.htm" />
+        <HelpTOCNode Title="TimeCharGapAdd Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.TimeCharGapAdd.htm" />
+        <HelpTOCNode Title="TimeMaxResponseDelayAdd Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.TimeMaxResponseDelayAdd.htm" />
+        <HelpTOCNode Title="TimeSlaveResponseDelayResetAndStart Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.TimeSlaveResponseDelayResetAndStart.htm" />
+        <HelpTOCNode Title="TimeSlaveResponseDelayStop Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.TimeSlaveResponseDelayStop.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.ToString.htm" />
+        <HelpTOCNode Title="TxDataBlock Method " Url="html/M-CAS.Lib.RTLib.Management.Protocol.TxDataBlock.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f42670b4-e3e4-4657-b686-ea80a1b75df3" Title="Protocol Properties" Url="html/Properties.T-CAS.Lib.RTLib.Management.Protocol.htm">
+        <HelpTOCNode Title="GetProtDescriptions Property " Url="html/P-CAS.Lib.RTLib.Management.Protocol.GetProtDescriptions.htm" />
+        <HelpTOCNode Title="TimeSlaveResponseDelayMsValue Property " Url="html/P-CAS.Lib.RTLib.Management.Protocol.TimeSlaveResponseDelayMsValue.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="774ebf1e-099a-44e9-a0a9-dc2b942b45e3" Title="ProtocolDsc Structure" Url="html/T-CAS.Lib.RTLib.Management.ProtocolDsc.htm">
+      <HelpTOCNode Title="ProtocolDsc Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Management.ProtocolDsc.htm" />
+      <HelpTOCNode Id="1cee9075-fcc9-4b82-9df2-1f089ef1c786" Title="ProtocolDsc Fields" Url="html/Fields.T-CAS.Lib.RTLib.Management.ProtocolDsc.htm">
+        <HelpTOCNode Title="m_ID Field" Url="html/F-CAS.Lib.RTLib.Management.ProtocolDsc.m_ID.htm" />
+        <HelpTOCNode Title="m_Name Field" Url="html/F-CAS.Lib.RTLib.Management.ProtocolDsc.m_Name.htm" />
+        <HelpTOCNode Title="m_protocolPar Field" Url="html/F-CAS.Lib.RTLib.Management.ProtocolDsc.m_protocolPar.htm" />
+        <HelpTOCNode Title="m_protocolPar_humanreadable Field" Url="html/F-CAS.Lib.RTLib.Management.ProtocolDsc.m_protocolPar_humanreadable.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="92cc77c4-4c55-400f-83c1-46487562f216" Title="ProtocolDsc Methods" Url="html/Methods.T-CAS.Lib.RTLib.Management.ProtocolDsc.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.RTLib.Management.ProtocolDsc.ToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="1477216a-015d-477f-9541-1b5671c07d87" Title="CAS.Lib.RTLib.Processes Namespace" Url="html/N-CAS.Lib.RTLib.Processes.htm">
+    <HelpTOCNode Id="bee4587d-64cc-4985-9fe3-2f5a929a47dd" Title="AssemblyTraceEvent Class" Url="html/T-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.htm">
+      <HelpTOCNode Title="AssemblyTraceEvent Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.htm" />
+      <HelpTOCNode Id="e07ebade-37ab-41a5-8087-f01d5eb8679e" Title="AssemblyTraceEvent Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.htm">
+        <HelpTOCNode Title="Trace Method " Url="html/M-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.Trace.htm" />
+        <HelpTOCNode Title="TraceVerbose Method " Url="html/M-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.TraceVerbose.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="74eccd10-2d8b-4dd6-b4fb-f0e928b5d120" Title="AssemblyTraceEvent Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.htm">
+        <HelpTOCNode Title="AssemblyTraceSource Property " Url="html/P-CAS.Lib.RTLib.Processes.AssemblyTraceEvent.AssemblyTraceSource.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="70e62c1b-9dc2-499e-9986-b06d1f9cc13d" Title="Assertion Class" Url="html/T-CAS.Lib.RTLib.Processes.Assertion.htm">
+      <HelpTOCNode Title="Assertion Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.Assertion.htm" />
+      <HelpTOCNode Id="eb2623d5-cce9-493d-95a7-7b32b14bbf63" Title="Assertion Constructor " Url="html/Overload-CAS.Lib.RTLib.Processes.Assertion.-ctor.htm">
+        <HelpTOCNode Title="Assertion Constructor " Url="html/M-CAS.Lib.RTLib.Processes.Assertion.-ctor.htm" />
+        <HelpTOCNode Title="Assertion Constructor (String, Int32, Boolean)" Url="html/M-CAS.Lib.RTLib.Processes.Assertion.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="493ead55-3e79-4c0c-9a29-dd3dced11615" Title="Assertion Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.Assertion.htm">
+        <HelpTOCNode Id="d35795fd-41f1-43bb-8937-dfa41b3279d9" Title="Assert Method " Url="html/Overload-CAS.Lib.RTLib.Processes.Assertion.Assert.htm">
+          <HelpTOCNode Title="Assert Method (Boolean, Int16)" Url="html/M-CAS.Lib.RTLib.Processes.Assertion.Assert.htm" />
+          <HelpTOCNode Title="Assert Method (Boolean, Int16, String)" Url="html/M-CAS.Lib.RTLib.Processes.Assertion.Assert_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4103af59-64bd-4218-b2f2-3b928e0227af" Title="ThrowAssertion Method " Url="html/Overload-CAS.Lib.RTLib.Processes.Assertion.ThrowAssertion.htm">
+          <HelpTOCNode Title="ThrowAssertion Method (Boolean, Int16, String)" Url="html/M-CAS.Lib.RTLib.Processes.Assertion.ThrowAssertion.htm" />
+          <HelpTOCNode Title="ThrowAssertion Method (Boolean, Int16, Boolean)" Url="html/M-CAS.Lib.RTLib.Processes.Assertion.ThrowAssertion_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="Assertion Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.Assertion.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5f76063c-23ee-47d8-bc65-8a107098f630" Title="Condition Class" Url="html/T-CAS.Lib.RTLib.Processes.Condition.htm">
+      <HelpTOCNode Title="Condition Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.Condition.htm" />
+      <HelpTOCNode Id="255a5730-693c-44c1-b511-d73128a3c172" Title="Condition Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.Condition.htm">
+        <HelpTOCNode Title="IsAwaiting Method " Url="html/M-CAS.Lib.RTLib.Processes.Condition.IsAwaiting.htm" />
+        <HelpTOCNode Title="Notify Method " Url="html/M-CAS.Lib.RTLib.Processes.Condition.Notify.htm" />
+        <HelpTOCNode Title="NotifyAll Method " Url="html/M-CAS.Lib.RTLib.Processes.Condition.NotifyAll.htm" />
+        <HelpTOCNode Id="dfd17741-c8ae-44a2-a871-c2c1f133526a" Title="Wait Method " Url="html/Overload-CAS.Lib.RTLib.Processes.Condition.Wait.htm">
+          <HelpTOCNode Title="Wait Method (Object)" Url="html/M-CAS.Lib.RTLib.Processes.Condition.Wait.htm" />
+          <HelpTOCNode Title="Wait Method (Object, Int32)" Url="html/M-CAS.Lib.RTLib.Processes.Condition.Wait_1.htm" />
+          <HelpTOCNode Title="Wait Method (Object, TimeSpan)" Url="html/M-CAS.Lib.RTLib.Processes.Condition.Wait_2.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0486fd65-5fdf-4ef8-855d-d5e7b8512856" Title="EnvelopePool Class" Url="html/T-CAS.Lib.RTLib.Processes.EnvelopePool.htm">
+      <HelpTOCNode Title="EnvelopePool Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.EnvelopePool.htm" />
+      <HelpTOCNode Title="EnvelopePool Constructor " Url="html/M-CAS.Lib.RTLib.Processes.EnvelopePool.-ctor.htm" />
+      <HelpTOCNode Id="53020922-2a03-42ff-b85f-afedde31ab00" Title="EnvelopePool Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.EnvelopePool.htm">
+        <HelpTOCNode Title="GetEmptyEnvelope Method " Url="html/M-CAS.Lib.RTLib.Processes.EnvelopePool.GetEmptyEnvelope.htm" />
+        <HelpTOCNode Title="ReturnEmptyEnvelope Method " Url="html/M-CAS.Lib.RTLib.Processes.EnvelopePool.ReturnEmptyEnvelope.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="EnvelopePool.CreateEnvelope Delegate" Url="html/T-CAS.Lib.RTLib.Processes.EnvelopePool.CreateEnvelope.htm" />
+    <HelpTOCNode Title="Error Enumeration" Url="html/T-CAS.Lib.RTLib.Processes.Error.htm" />
+    <HelpTOCNode Title="ErrorCauseMask Enumeration" Url="html/T-CAS.Lib.RTLib.Processes.ErrorCauseMask.htm" />
+    <HelpTOCNode Id="4d730460-004e-4e5b-9cbc-da5508402dc3" Title="EventLogMonitor Class" Url="html/T-CAS.Lib.RTLib.Processes.EventLogMonitor.htm">
+      <HelpTOCNode Title="EventLogMonitor Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.EventLogMonitor.htm" />
+      <HelpTOCNode Title="EventLogMonitor Constructor (String, EventLogEntryType, Int32, Int16)" Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.-ctor.htm" />
+      <HelpTOCNode Id="f7ba13f1-a3df-447b-8810-f1bfe97f155e" Title="EventLogMonitor Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.EventLogMonitor.htm">
+        <HelpTOCNode Title="TraceEvent Method " Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.TraceEvent.htm" />
+        <HelpTOCNode Title="WriteEntry Method " Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteEntry.htm" />
+        <HelpTOCNode Id="9b56dfca-2e45-4a5d-a269-804c00884487" Title="WriteToEventLog Method " Url="html/Overload-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog.htm">
+          <HelpTOCNode Title="WriteToEventLog Method (String, EventLogEntryType, Int32)" Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog.htm" />
+          <HelpTOCNode Title="WriteToEventLog Method (String, EventLogEntryType, Int32, Int16)" Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog_1.htm" />
+          <HelpTOCNode Title="WriteToEventLog Method (String, EventLogEntryType)" Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WriteToEventLogError Method " Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLogError.htm" />
+        <HelpTOCNode Title="WriteToEventLogInfo Method " Url="html/M-CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLogInfo.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b95d4d9a-7e12-4a97-aa43-1a745e892951" Title="EventLogMonitor Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.EventLogMonitor.htm">
+        <HelpTOCNode Title="GetMessage Property " Url="html/P-CAS.Lib.RTLib.Processes.EventLogMonitor.GetMessage.htm" />
+        <HelpTOCNode Title="SetCategory Property " Url="html/P-CAS.Lib.RTLib.Processes.EventLogMonitor.SetCategory.htm" />
+        <HelpTOCNode Title="SetMessage Property " Url="html/P-CAS.Lib.RTLib.Processes.EventLogMonitor.SetMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7353cf4b-f221-4fd9-991c-08c5731911bd" Title="EventsSynchronization Class" Url="html/T-CAS.Lib.RTLib.Processes.EventsSynchronization.htm">
+      <HelpTOCNode Title="EventsSynchronization Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.EventsSynchronization.htm" />
+      <HelpTOCNode Id="d84d400a-2827-4cde-839c-3807464c8177" Title="EventsSynchronization Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.EventsSynchronization.htm">
+        <HelpTOCNode Id="2f578e04-fe5e-41c2-b40d-e1a25e1dcbd3" Title="GetEvent Method " Url="html/Overload-CAS.Lib.RTLib.Processes.EventsSynchronization.GetEvent.htm">
+          <HelpTOCNode Title="GetEvent Method (Object, Int32, Object)" Url="html/M-CAS.Lib.RTLib.Processes.EventsSynchronization.GetEvent.htm" />
+          <HelpTOCNode Title="GetEvent Method (Object, Int32)" Url="html/M-CAS.Lib.RTLib.Processes.EventsSynchronization.GetEvent_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="94fb4320-a775-4463-b2c5-15deef3809e9" Title="SetEvent Method " Url="html/Overload-CAS.Lib.RTLib.Processes.EventsSynchronization.SetEvent.htm">
+          <HelpTOCNode Title="SetEvent Method (Object, Object)" Url="html/M-CAS.Lib.RTLib.Processes.EventsSynchronization.SetEvent.htm" />
+          <HelpTOCNode Title="SetEvent Method (Object)" Url="html/M-CAS.Lib.RTLib.Processes.EventsSynchronization.SetEvent_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5ea05261-89fd-4787-88a1-0ed520b21aa5" Title="EventWaitHandleTimeOut Class" Url="html/T-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.htm">
+      <HelpTOCNode Title="EventWaitHandleTimeOut Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.htm" />
+      <HelpTOCNode Title="EventWaitHandleTimeOut Constructor " Url="html/M-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.-ctor.htm" />
+      <HelpTOCNode Id="d2e90867-f7e9-41ee-8fad-f2017337b7b5" Title="EventWaitHandleTimeOut Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.htm">
+        <HelpTOCNode Title="Reset Method " Url="html/M-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.Reset.htm" />
+        <HelpTOCNode Title="Set Method " Url="html/M-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.Set.htm" />
+        <HelpTOCNode Title="WaitOne Method " Url="html/M-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.WaitOne.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d8681b61-4c7e-44f9-8b5a-8c52283a2d55" Title="EventWaitHandleTimeOut Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.htm">
+        <HelpTOCNode Title="State Property " Url="html/P-CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.State.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f6216724-abd4-43ae-9dda-b9b85de1b6be" Title="ExceptionLoged Class" Url="html/T-CAS.Lib.RTLib.Processes.ExceptionLoged.htm">
+      <HelpTOCNode Title="ExceptionLoged Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.ExceptionLoged.htm" />
+      <HelpTOCNode Title="ExceptionLoged Constructor " Url="html/M-CAS.Lib.RTLib.Processes.ExceptionLoged.-ctor.htm" />
+      <HelpTOCNode Title="ExceptionLoged Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.ExceptionLoged.htm" />
+      <HelpTOCNode Title="ExceptionLoged Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.ExceptionLoged.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="73bf1821-af08-45cc-8bfe-e75302d4a60b" Title="HandlerWaitTimeList(TElement) Class" Url="html/T-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.htm">
+      <HelpTOCNode Title="HandlerWaitTimeList(TElement) Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.htm" />
+      <HelpTOCNode Id="17b05056-1f3d-40c2-938d-136777a7c9e0" Title="HandlerWaitTimeList(TElement) Constructor " Url="html/Overload-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.-ctor.htm">
+        <HelpTOCNode Title="HandlerWaitTimeList(TElement) Constructor (Boolean, String, Boolean)" Url="html/M-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.-ctor.htm" />
+        <HelpTOCNode Title="HandlerWaitTimeList(TElement) Constructor (Boolean, String)" Url="html/M-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="HandlerWaitTimeList(TElement) Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.htm" />
+      <HelpTOCNode Title="HandlerWaitTimeList(TElement) Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.HandlerWaitTimeList-1.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f04b9a7b-6f22-4cc0-b99b-d4462f752874" Title="IDBuffer Interface" Url="html/T-CAS.Lib.RTLib.Processes.IDBuffer.htm">
+      <HelpTOCNode Title="IDBuffer Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.IDBuffer.htm" />
+      <HelpTOCNode Id="6a56813e-cc20-4bd7-bd89-f6d1f8d32700" Title="IDBuffer Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.IDBuffer.htm">
+        <HelpTOCNode Title="CopyFromBuffor Method " Url="html/M-CAS.Lib.RTLib.Processes.IDBuffer.CopyFromBuffor.htm" />
+        <HelpTOCNode Title="CopyToBuffor Method " Url="html/M-CAS.Lib.RTLib.Processes.IDBuffer.CopyToBuffor.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4423df52-6a97-43ce-8ef7-b6939ea0d3b5" Title="IDBuffer Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.IDBuffer.htm">
+        <HelpTOCNode Title="uMessagePtr Property " Url="html/P-CAS.Lib.RTLib.Processes.IDBuffer.uMessagePtr.htm" />
+        <HelpTOCNode Title="userBuffLength Property " Url="html/P-CAS.Lib.RTLib.Processes.IDBuffer.userBuffLength.htm" />
+        <HelpTOCNode Title="userDataLength Property " Url="html/P-CAS.Lib.RTLib.Processes.IDBuffer.userDataLength.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f4c07245-3895-4aea-a72e-a87ad0d2c3d9" Title="IEnvelope Interface" Url="html/T-CAS.Lib.RTLib.Processes.IEnvelope.htm">
+      <HelpTOCNode Title="IEnvelope Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.IEnvelope.htm" />
+      <HelpTOCNode Id="4eb79ac4-f215-43b1-be1e-5750dc9d1439" Title="IEnvelope Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.IEnvelope.htm">
+        <HelpTOCNode Title="ReturnEmptyEnvelope Method " Url="html/M-CAS.Lib.RTLib.Processes.IEnvelope.ReturnEmptyEnvelope.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="97604bba-4a14-4d59-bf4f-0485726d7d06" Title="IEnvelope Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.IEnvelope.htm">
+        <HelpTOCNode Title="InPool Property " Url="html/P-CAS.Lib.RTLib.Processes.IEnvelope.InPool.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="15cbc4d1-d74d-4119-84f3-0738e4782107" Title="Manager Class" Url="html/T-CAS.Lib.RTLib.Processes.Manager.htm">
+      <HelpTOCNode Title="Manager Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.Manager.htm" />
+      <HelpTOCNode Id="a02ba51c-cecd-4f93-9e58-c76ae2d26081" Title="Manager Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.Manager.htm">
+        <HelpTOCNode Title="AddToErrorQueue Method " Url="html/M-CAS.Lib.RTLib.Processes.Manager.AddToErrorQueue.htm" />
+        <HelpTOCNode Title="Assert Method " Url="html/M-CAS.Lib.RTLib.Processes.Manager.Assert.htm" />
+        <HelpTOCNode Title="ForceReboot Method " Url="html/M-CAS.Lib.RTLib.Processes.Manager.ForceReboot.htm" />
+        <HelpTOCNode Title="Reboot Method " Url="html/M-CAS.Lib.RTLib.Processes.Manager.Reboot.htm" />
+        <HelpTOCNode Id="6a558cb8-9aa9-4baf-a58c-15e7790237a3" Title="StartProcess Method " Url="html/Overload-CAS.Lib.RTLib.Processes.Manager.StartProcess.htm">
+          <HelpTOCNode Title="StartProcess Method (ThreadStart)" Url="html/M-CAS.Lib.RTLib.Processes.Manager.StartProcess.htm" />
+          <HelpTOCNode Title="StartProcess Method (ThreadStart, String)" Url="html/M-CAS.Lib.RTLib.Processes.Manager.StartProcess_1.htm" />
+          <HelpTOCNode Title="StartProcess Method (ThreadStart, String, Boolean, ThreadPriority)" Url="html/M-CAS.Lib.RTLib.Processes.Manager.StartProcess_2.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cff58255-64e1-459d-bd4a-f16dd7f26f5a" Title="Manager Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.Manager.htm">
+        <HelpTOCNode Title="NumOfErrors Property " Url="html/P-CAS.Lib.RTLib.Processes.Manager.NumOfErrors.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="53265595-0787-4c9e-a2d8-4e63e67fe11c" Title="MonitoredThread Class" Url="html/T-CAS.Lib.RTLib.Processes.MonitoredThread.htm">
+      <HelpTOCNode Title="MonitoredThread Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.MonitoredThread.htm" />
+      <HelpTOCNode Title="MonitoredThread Constructor (UInt16, String, Int32, ThreadStart, String, Boolean, ThreadPriority)" Url="html/M-CAS.Lib.RTLib.Processes.MonitoredThread.-ctor.htm" />
+      <HelpTOCNode Id="2578740c-299b-4601-a877-0a241aee5cc1" Title="MonitoredThread Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.MonitoredThread.htm">
+        <HelpTOCNode Id="c8b5a3e5-bac5-47a6-b507-2b1ea43ae19f" Title="ResetWatchDog Method " Url="html/Overload-CAS.Lib.RTLib.Processes.MonitoredThread.ResetWatchDog.htm">
+          <HelpTOCNode Title="ResetWatchDog Method (Int16)" Url="html/M-CAS.Lib.RTLib.Processes.MonitoredThread.ResetWatchDog.htm" />
+          <HelpTOCNode Title="ResetWatchDog Method (Int16, UInt16)" Url="html/M-CAS.Lib.RTLib.Processes.MonitoredThread.ResetWatchDog_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="97bbea72-44b4-4659-a97f-e78aff57008b" Title="Port Class" Url="html/T-CAS.Lib.RTLib.Processes.Port.htm">
+      <HelpTOCNode Title="Port Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.Port.htm" />
+      <HelpTOCNode Id="f6293860-68d6-4bf3-a42f-fc10eddadc3d" Title="Port Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.Port.htm">
+        <HelpTOCNode Title="Clear Method " Url="html/M-CAS.Lib.RTLib.Processes.Port.Clear.htm" />
+        <HelpTOCNode Title="Close Method " Url="html/M-CAS.Lib.RTLib.Processes.Port.Close.htm" />
+        <HelpTOCNode Title="Open Method " Url="html/M-CAS.Lib.RTLib.Processes.Port.Open.htm" />
+        <HelpTOCNode Title="SendMsg Method " Url="html/M-CAS.Lib.RTLib.Processes.Port.SendMsg.htm" />
+        <HelpTOCNode Title="WaitMsg Method " Url="html/M-CAS.Lib.RTLib.Processes.Port.WaitMsg.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a9131241-c568-4f89-84d2-cf029a75a0d0" Title="Port Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.Port.htm">
+        <HelpTOCNode Title="Count Property " Url="html/P-CAS.Lib.RTLib.Processes.Port.Count.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f8b58a8f-bfed-4666-8167-c94df8f956e3" Title="RunMethodAsynchronously Class" Url="html/T-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.htm">
+      <HelpTOCNode Title="RunMethodAsynchronously Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.htm" />
+      <HelpTOCNode Title="RunMethodAsynchronously Constructor " Url="html/M-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.-ctor.htm" />
+      <HelpTOCNode Id="68cc2a7c-4f07-4b69-8158-3b9836604db3" Title="RunMethodAsynchronously Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.htm">
+        <HelpTOCNode Id="7c1ffb3e-7087-45c3-b4b1-d0a40edda8d9" Title="RunAsync Method " Url="html/Overload-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.RunAsync.htm">
+          <HelpTOCNode Title="RunAsync Method (Object[])" Url="html/M-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.RunAsync.htm" />
+          <HelpTOCNode Title="RunAsync Method " Url="html/M-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.RunAsync_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="RunMethodAsynchronously.AsyncOperation Delegate" Url="html/T-CAS.Lib.RTLib.Processes.RunMethodAsynchronously.AsyncOperation.htm" />
+    <HelpTOCNode Id="c006f2ca-c341-4797-ad9f-8ba771d80cee" Title="Stopwatch Class" Url="html/T-CAS.Lib.RTLib.Processes.Stopwatch.htm">
+      <HelpTOCNode Title="Stopwatch Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.Stopwatch.htm" />
+      <HelpTOCNode Title="Stopwatch Constructor " Url="html/M-CAS.Lib.RTLib.Processes.Stopwatch.-ctor.htm" />
+      <HelpTOCNode Id="da7f5368-ad49-4dec-a3a6-ee035086bfcb" Title="Stopwatch Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.Stopwatch.htm">
+        <HelpTOCNode Title="ConvertTo_ms Method " Url="html/M-CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_ms.htm" />
+        <HelpTOCNode Title="ConvertTo_s Method " Url="html/M-CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_s.htm" />
+        <HelpTOCNode Title="ConvertTo_us Method " Url="html/M-CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_us.htm" />
+        <HelpTOCNode Title="StartReset Method " Url="html/M-CAS.Lib.RTLib.Processes.Stopwatch.StartReset.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e4ca9fdb-ef44-4bd6-86f1-ae1176a6d8eb" Title="Stopwatch Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.Stopwatch.htm">
+        <HelpTOCNode Title="IsRunning Property " Url="html/P-CAS.Lib.RTLib.Processes.Stopwatch.IsRunning.htm" />
+        <HelpTOCNode Title="Read Property " Url="html/P-CAS.Lib.RTLib.Processes.Stopwatch.Read.htm" />
+        <HelpTOCNode Title="Reset Property " Url="html/P-CAS.Lib.RTLib.Processes.Stopwatch.Reset.htm" />
+        <HelpTOCNode Title="Start Property " Url="html/P-CAS.Lib.RTLib.Processes.Stopwatch.Start.htm" />
+        <HelpTOCNode Title="Stop Property " Url="html/P-CAS.Lib.RTLib.Processes.Stopwatch.Stop.htm" />
+        <HelpTOCNode Title="SWFrequency Property " Url="html/P-CAS.Lib.RTLib.Processes.Stopwatch.SWFrequency.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="226d0773-b0be-472e-a1d9-1c44cf40692c" Title="Timer Class" Url="html/T-CAS.Lib.RTLib.Processes.Timer.htm">
+      <HelpTOCNode Title="Timer Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.Timer.htm" />
+      <HelpTOCNode Id="743aab2d-2f4e-4dc5-9d47-b5f777e33df0" Title="Timer Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.Timer.htm">
+        <HelpTOCNode Title="FromUSeconds Method " Url="html/M-CAS.Lib.RTLib.Processes.Timer.FromUSeconds.htm" />
+        <HelpTOCNode Title="Max Method " Url="html/M-CAS.Lib.RTLib.Processes.Timer.Max.htm" />
+        <HelpTOCNode Title="Min Method " Url="html/M-CAS.Lib.RTLib.Processes.Timer.Min.htm" />
+        <HelpTOCNode Title="ToUSeconds Method " Url="html/M-CAS.Lib.RTLib.Processes.Timer.ToUSeconds.htm" />
+        <HelpTOCNode Title="Wait Method " Url="html/M-CAS.Lib.RTLib.Processes.Timer.Wait.htm" />
+        <HelpTOCNode Id="7ddd7661-927f-4d31-9cb3-9e647c574a54" Title="WaitTimeout Method " Url="html/Overload-CAS.Lib.RTLib.Processes.Timer.WaitTimeout.htm">
+          <HelpTOCNode Title="WaitTimeout Method (TimeSpan, Stopwatch)" Url="html/M-CAS.Lib.RTLib.Processes.Timer.WaitTimeout.htm" />
+          <HelpTOCNode Title="WaitTimeout Method (TimeSpan, Stopwatch, Object)" Url="html/M-CAS.Lib.RTLib.Processes.Timer.WaitTimeout_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="5b4ae72e-2e95-433f-89ce-162d5d0237f9" Title="Timer Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.Timer.htm">
+        <HelpTOCNode Title="TInOneSecond Property " Url="html/P-CAS.Lib.RTLib.Processes.Timer.TInOneSecond.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a2537f53-96ff-4d8c-9457-9f1b404af371" Title="TraceEvent Class" Url="html/T-CAS.Lib.RTLib.Processes.TraceEvent.htm">
+      <HelpTOCNode Title="TraceEvent Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.TraceEvent.htm" />
+      <HelpTOCNode Title="TraceEvent Constructor " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.-ctor.htm" />
+      <HelpTOCNode Id="d54caf2a-69a1-457e-8414-ee2a5622d408" Title="TraceEvent Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.TraceEvent.htm">
+        <HelpTOCNode Title="GetMessageWithExceptionNameFromExceptionIncludingInnerException Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.GetMessageWithExceptionNameFromExceptionIncludingInnerException.htm" />
+        <HelpTOCNode Title="Trace Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.Trace.htm" />
+        <HelpTOCNode Title="TraceError Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.TraceError.htm" />
+        <HelpTOCNode Title="TraceEventClose Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.TraceEventClose.htm" />
+        <HelpTOCNode Title="TraceInformation Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.TraceInformation.htm" />
+        <HelpTOCNode Title="TraceVerbose Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.TraceVerbose.htm" />
+        <HelpTOCNode Title="TraceWarning Method " Url="html/M-CAS.Lib.RTLib.Processes.TraceEvent.TraceWarning.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d234f5ef-6f41-435e-b722-a49d6f077402" Title="WaitTimeList(TElement) Class" Url="html/T-CAS.Lib.RTLib.Processes.WaitTimeList-1.htm">
+      <HelpTOCNode Title="WaitTimeList(TElement) Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.WaitTimeList-1.htm" />
+      <HelpTOCNode Id="716e6e61-964a-4554-b947-6b88843d1e30" Title="WaitTimeList(TElement) Constructor " Url="html/Overload-CAS.Lib.RTLib.Processes.WaitTimeList-1.-ctor.htm">
+        <HelpTOCNode Title="WaitTimeList(TElement) Constructor (String, Boolean)" Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.-ctor.htm" />
+        <HelpTOCNode Title="WaitTimeList(TElement) Constructor (String)" Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1b23e3b6-9f53-4c99-a844-4360237194d5" Title="WaitTimeList(TElement) Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.WaitTimeList-1.htm">
+        <HelpTOCNode Title="DisableListManagerThread Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.DisableListManagerThread.htm" />
+        <HelpTOCNode Title="Dispose Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.Dispose.htm" />
+        <HelpTOCNode Title="EnableListManagerThread Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.EnableListManagerThread.htm" />
+        <HelpTOCNode Title="NewOvertimeCoefficient Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.NewOvertimeCoefficient.htm" />
+        <HelpTOCNode Title="RemoveItem Method (TElement)" Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.RemoveItem.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.ToString.htm" />
+        <HelpTOCNode Title="WaitRemoveItem Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.WaitRemoveItem.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="09f83c69-64c3-4da1-8517-ff7e46034c29" Title="WaitTimeList(TElement) Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.WaitTimeList-1.htm">
+        <HelpTOCNode Title="IsReadyToRemoved Property " Url="html/P-CAS.Lib.RTLib.Processes.WaitTimeList-1.IsReadyToRemoved.htm" />
+        <HelpTOCNode Title="QueueLength Property " Url="html/P-CAS.Lib.RTLib.Processes.WaitTimeList-1.QueueLength.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0eccff36-192c-4da8-83f7-49fe1beb687b" Title="WaitTimeList(TElement).TODescriptor Class" Url="html/T-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.htm">
+      <HelpTOCNode Title="WaitTimeList(TElement).TODescriptor Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.htm" />
+      <HelpTOCNode Title="TODescriptor Constructor " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.-ctor.htm" />
+      <HelpTOCNode Id="769950d9-581e-4f6a-a38e-be44c879bde3" Title="WaitTimeList(TElement).TODescriptor Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.htm">
+        <HelpTOCNode Title="ClearCounter Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.ClearCounter.htm" />
+        <HelpTOCNode Title="Remove Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.Remove.htm" />
+        <HelpTOCNode Title="ResetCounter Method " Url="html/M-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.ResetCounter.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5a1cee6b-8713-4e3c-b976-56c59b1143fa" Title="WaitTimeList(TElement).TODescriptor Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.htm">
+        <HelpTOCNode Title="Cycle Property " Url="html/P-CAS.Lib.RTLib.Processes.WaitTimeList-1.TODescriptor.Cycle.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="72de3cd4-0028-40f1-81d4-6051bbc6c55e" Title="WatchdogAttribute Class" Url="html/T-CAS.Lib.RTLib.Processes.WatchdogAttribute.htm">
+      <HelpTOCNode Title="WatchdogAttribute Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.WatchdogAttribute.htm" />
+      <HelpTOCNode Id="d8bab8d2-6a9a-4343-819e-c9a3c8dd0712" Title="WatchdogAttribute Constructor " Url="html/Overload-CAS.Lib.RTLib.Processes.WatchdogAttribute.-ctor.htm">
+        <HelpTOCNode Title="WatchdogAttribute Constructor " Url="html/M-CAS.Lib.RTLib.Processes.WatchdogAttribute.-ctor.htm" />
+        <HelpTOCNode Title="WatchdogAttribute Constructor (String, Int32)" Url="html/M-CAS.Lib.RTLib.Processes.WatchdogAttribute.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4227c9b1-9f76-4458-8cc3-5727ba997229" Title="WatchdogAttribute Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.WatchdogAttribute.htm">
+        <HelpTOCNode Title="GetPropertiesForNewContext Method " Url="html/M-CAS.Lib.RTLib.Processes.WatchdogAttribute.GetPropertiesForNewContext.htm" />
+        <HelpTOCNode Title="IsContextOK Method " Url="html/M-CAS.Lib.RTLib.Processes.WatchdogAttribute.IsContextOK.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="WatchdogAttribute Properties" Url="html/Properties.T-CAS.Lib.RTLib.Processes.WatchdogAttribute.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="49c38f3b-63d3-4150-8b69-a554f63ab129" Title="WatchdogProperty Class" Url="html/T-CAS.Lib.RTLib.Processes.WatchdogProperty.htm">
+      <HelpTOCNode Title="WatchdogProperty Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.WatchdogProperty.htm" />
+      <HelpTOCNode Title="WatchdogProperty Constructor " Url="html/M-CAS.Lib.RTLib.Processes.WatchdogProperty.-ctor.htm" />
+      <HelpTOCNode Id="af3c352d-3a1f-4cf3-9709-93fd51c03620" Title="WatchdogProperty Fields" Url="html/Fields.T-CAS.Lib.RTLib.Processes.WatchdogProperty.htm">
+        <HelpTOCNode Title="count Field" Url="html/F-CAS.Lib.RTLib.Processes.WatchdogProperty.count.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a3dbe2f3-d0f7-4c3c-af2b-27fecec839d6" Title="WatchdogProperty Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.WatchdogProperty.htm">
+        <HelpTOCNode Title="EnterWatchdog Method " Url="html/M-CAS.Lib.RTLib.Processes.WatchdogProperty.EnterWatchdog.htm" />
+        <HelpTOCNode Title="ExitWatchdog Method " Url="html/M-CAS.Lib.RTLib.Processes.WatchdogProperty.ExitWatchdog.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c1fc521e-da37-4ad2-b373-7606a6f82de3" Title="WatchdogSink Class" Url="html/T-CAS.Lib.RTLib.Processes.WatchdogSink.htm">
+      <HelpTOCNode Title="WatchdogSink Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Processes.WatchdogSink.htm" />
+      <HelpTOCNode Title="WatchdogSink Methods" Url="html/Methods.T-CAS.Lib.RTLib.Processes.WatchdogSink.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="0ec81aad-5f8b-43a4-8022-8a6d532c6733" Title="CAS.Lib.RTLib.UndoRedo Namespace" Url="html/N-CAS.Lib.RTLib.UndoRedo.htm">
+    <HelpTOCNode Id="3ca70187-d29d-4993-b8a5-62990b3911aa" Title="UndoRedoEventArgs Class" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.htm">
+      <HelpTOCNode Title="UndoRedoEventArgs Members" Url="html/AllMembers.T-CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.htm" />
+      <HelpTOCNode Title="UndoRedoEventArgs Constructor " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.-ctor.htm" />
+      <HelpTOCNode Title="UndoRedoEventArgs Methods" Url="html/Methods.T-CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.htm" />
+      <HelpTOCNode Id="21edf7c8-2cb9-40a7-8883-44b52fd6ae63" Title="UndoRedoEventArgs Properties" Url="html/Properties.T-CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.htm">
+        <HelpTOCNode Title="Record Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.Record.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e929521d-ac42-4d45-82ae-25abf6ca27e3" Title="UndoRedoException Class" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoException.htm">
+      <HelpTOCNode Title="UndoRedoException Members" Url="html/AllMembers.T-CAS.Lib.RTLib.UndoRedo.UndoRedoException.htm" />
+      <HelpTOCNode Title="UndoRedoException Constructor " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoException.-ctor.htm" />
+      <HelpTOCNode Title="UndoRedoException Methods" Url="html/Methods.T-CAS.Lib.RTLib.UndoRedo.UndoRedoException.htm" />
+      <HelpTOCNode Title="UndoRedoException Properties" Url="html/Properties.T-CAS.Lib.RTLib.UndoRedo.UndoRedoException.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="1f7f9c95-ad39-4940-bf34-3315bd15bb04" Title="UndoRedoFieldOperation Class" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.htm">
+      <HelpTOCNode Title="UndoRedoFieldOperation Members" Url="html/AllMembers.T-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.htm" />
+      <HelpTOCNode Title="UndoRedoFieldOperation Constructor " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.-ctor.htm" />
+      <HelpTOCNode Title="UndoRedoFieldOperation Methods" Url="html/Methods.T-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.htm" />
+      <HelpTOCNode Id="566ae889-c2a0-4a4d-a801-d03256e7773a" Title="UndoRedoFieldOperation Properties" Url="html/Properties.T-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.htm">
+        <HelpTOCNode Title="ColumnName Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.ColumnName.htm" />
+        <HelpTOCNode Title="NewValue Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.NewValue.htm" />
+        <HelpTOCNode Title="OldValue Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.OldValue.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ceb40d3d-c725-46df-9af3-16ca39fd0398" Title="UndoRedoMenager Class" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.htm">
+      <HelpTOCNode Title="UndoRedoMenager Members" Url="html/AllMembers.T-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.htm" />
+      <HelpTOCNode Title="UndoRedoMenager Constructor " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.-ctor.htm" />
+      <HelpTOCNode Id="5db79e11-e31f-4e27-a1d1-603d19badec1" Title="UndoRedoMenager Methods" Url="html/Methods.T-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.htm">
+        <HelpTOCNode Title="AcceptChanges Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.AcceptChanges.htm" />
+        <HelpTOCNode Title="Apply Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Apply.htm" />
+        <HelpTOCNode Title="BeginTransaction Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.BeginTransaction.htm" />
+        <HelpTOCNode Title="ClearLog Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.ClearLog.htm" />
+        <HelpTOCNode Title="CollectUncommittedRows Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.CollectUncommittedRows.htm" />
+        <HelpTOCNode Title="Delete Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Delete.htm" />
+        <HelpTOCNode Title="EndTransaction Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.EndTransaction.htm" />
+        <HelpTOCNode Title="RejectChanges Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RejectChanges.htm" />
+        <HelpTOCNode Title="ResumeLogging Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.ResumeLogging.htm" />
+        <HelpTOCNode Title="Revert Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Revert.htm" />
+        <HelpTOCNode Title="RevertTransaction Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RevertTransaction.htm" />
+        <HelpTOCNode Title="SuspendLogging Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.SuspendLogging.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b0874282-7ad4-405a-94d3-1e031c345025" Title="UndoRedoMenager Properties" Url="html/Properties.T-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.htm">
+        <HelpTOCNode Title="Log Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Log.htm" />
+        <HelpTOCNode Title="SourceDataSet Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.SourceDataSet.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5dd78e95-7bfc-4356-8400-2dbe83b5ec0a" Title="UndoRedoMenager Events" Url="html/Events.T-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.htm">
+        <HelpTOCNode Title="RedoUndoOperationAdded Event" Url="html/E-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RedoUndoOperationAdded.htm" />
+        <HelpTOCNode Title="RedoUndoOperationAdding Event" Url="html/E-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RedoUndoOperationAdding.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="UndoRedoMenager.OperationDlgt Delegate" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OperationDlgt.htm" />
+    <HelpTOCNode Id="1c1321d3-5962-42eb-b33e-a99515f6a16f" Title="UndoRedoOperationBase Class" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.htm">
+      <HelpTOCNode Title="UndoRedoOperationBase Members" Url="html/AllMembers.T-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.htm" />
+      <HelpTOCNode Title="UndoRedoOperationBase Methods" Url="html/Methods.T-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.htm" />
+      <HelpTOCNode Id="301450fd-c7aa-4de1-814e-ae2536e598c7" Title="UndoRedoOperationBase Properties" Url="html/Properties.T-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.htm">
+        <HelpTOCNode Title="ID Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.ID.htm" />
+        <HelpTOCNode Title="OperationType Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.OperationType.htm" />
+        <HelpTOCNode Title="Row Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.Row.htm" />
+        <HelpTOCNode Title="Table Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.Table.htm" />
+        <HelpTOCNode Title="TransactionId Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.TransactionId.htm" />
+        <HelpTOCNode Title="WasDeleted Property " Url="html/P-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.WasDeleted.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="UndoRedoOperationBaseType Enumeration" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBaseType.htm" />
+    <HelpTOCNode Id="6dacbfbe-177c-495d-8ea5-84b8578180da" Title="UndoRedoRowOperation Class" Url="html/T-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.htm">
+      <HelpTOCNode Title="UndoRedoRowOperation Members" Url="html/AllMembers.T-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.htm" />
+      <HelpTOCNode Title="UndoRedoRowOperation Constructor " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.-ctor.htm" />
+      <HelpTOCNode Id="1c03f8b4-2e84-4783-b2ac-5d0eb3035876" Title="UndoRedoRowOperation Methods" Url="html/Methods.T-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.htm">
+        <HelpTOCNode Title="AddColumnNameValuePair Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.AddColumnNameValuePair.htm" />
+        <HelpTOCNode Title="GetValue Method " Url="html/M-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.GetValue.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="UndoRedoRowOperation Properties" Url="html/Properties.T-CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="0dca7cc8-3295-4f52-91b1-9af18d488ad0" Title="CAS.Lib.RTLib.Utils Namespace" Url="html/N-CAS.Lib.RTLib.Utils.htm">
+    <HelpTOCNode Id="3e2bce05-a70c-425b-9354-f94848b5fff2" Title="CodeBuilder Class" Url="html/T-CAS.Lib.RTLib.Utils.CodeBuilder.htm">
+      <HelpTOCNode Title="CodeBuilder Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.CodeBuilder.htm" />
+      <HelpTOCNode Title="CodeBuilder Constructor " Url="html/M-CAS.Lib.RTLib.Utils.CodeBuilder.-ctor.htm" />
+      <HelpTOCNode Id="ee1a7a74-82fb-4376-8ed4-a57971a7af65" Title="CodeBuilder Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.CodeBuilder.htm">
+        <HelpTOCNode Title="RunCode Method " Url="html/M-CAS.Lib.RTLib.Utils.CodeBuilder.RunCode.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0e9efb60-5fa1-4cae-9e9f-a6492811c82e" Title="CodeBuilder Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.CodeBuilder.htm">
+        <HelpTOCNode Title="OutputTextFromLastRun Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilder.OutputTextFromLastRun.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5a2e9ec9-f642-4e21-8869-0a6dd6070cb2" Title="CodeBuilderBase Class" Url="html/T-CAS.Lib.RTLib.Utils.CodeBuilderBase.htm">
+      <HelpTOCNode Title="CodeBuilderBase Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.CodeBuilderBase.htm" />
+      <HelpTOCNode Id="4f73105e-5a9c-49de-b288-c824862bcb38" Title="CodeBuilderBase Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.CodeBuilderBase.htm">
+        <HelpTOCNode Title="CompiledAssembly Method " Url="html/M-CAS.Lib.RTLib.Utils.CodeBuilderBase.CompiledAssembly.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a2a6a173-a85c-4395-b44a-35fcc1c88fd0" Title="CodeBuilderBase Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.CodeBuilderBase.htm">
+        <HelpTOCNode Title="ErrorText Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilderBase.ErrorText.htm" />
+        <HelpTOCNode Title="IsReadyToUse Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilderBase.IsReadyToUse.htm" />
+        <HelpTOCNode Title="ReferencedAsseblies Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilderBase.ReferencedAsseblies.htm" />
+        <HelpTOCNode Title="Results Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilderBase.Results.htm" />
+        <HelpTOCNode Title="Source Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilderBase.Source.htm" />
+        <HelpTOCNode Title="SourceCode Property " Url="html/P-CAS.Lib.RTLib.Utils.CodeBuilderBase.SourceCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c038706c-64a5-4a09-abf9-71722244fd40" Title="CSharpStreamCompiller Class" Url="html/T-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.htm">
+      <HelpTOCNode Title="CSharpStreamCompiller Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.htm" />
+      <HelpTOCNode Id="246544f2-9cd9-4e9a-9254-96bca10ea0e8" Title="CSharpStreamCompiller Constructor " Url="html/Overload-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.-ctor.htm">
+        <HelpTOCNode Title="CSharpStreamCompiller Constructor (Stream, String[])" Url="html/M-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.-ctor.htm" />
+        <HelpTOCNode Title="CSharpStreamCompiller Constructor (String, String[])" Url="html/M-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="CSharpStreamCompiller Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.htm" />
+      <HelpTOCNode Title="CSharpStreamCompiller Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.CSharpStreamCompiller.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="28d54bb5-4556-4433-af07-65f72e6d2f40" Title="DateTimeProvider Class" Url="html/T-CAS.Lib.RTLib.Utils.DateTimeProvider.htm">
+      <HelpTOCNode Title="DateTimeProvider Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.DateTimeProvider.htm" />
+      <HelpTOCNode Id="1385e677-7bbd-41c7-b4f3-3712b4e25902" Title="DateTimeProvider Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.DateTimeProvider.htm">
+        <HelpTOCNode Title="GetCurrentTime Method " Url="html/M-CAS.Lib.RTLib.Utils.DateTimeProvider.GetCurrentTime.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dd07a134-d9d7-4270-8211-db148f4d1f2e" Title="GenericEnumTypeConverterHelper(EnumType) Class" Url="html/T-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.htm">
+      <HelpTOCNode Title="GenericEnumTypeConverterHelper(EnumType) Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.htm" />
+      <HelpTOCNode Id="19139965-cdd9-4b98-a3cd-aca5744e7657" Title="GenericEnumTypeConverterHelper(EnumType) Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.htm">
+        <HelpTOCNode Title="GetNameFromValue Method " Url="html/M-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetNameFromValue.htm" />
+        <HelpTOCNode Id="37733575-0a2a-4206-a6d5-0324021e1cc1" Title="GetStandardValues Method " Url="html/Overload-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetStandardValues.htm">
+          <HelpTOCNode Title="GetStandardValues Method " Url="html/M-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetStandardValues.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e109488f-8448-4238-a093-6771cdac59fb" Title="GetStandardValuesExclusive Method " Url="html/Overload-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetStandardValuesExclusive.htm">
+          <HelpTOCNode Title="GetStandardValuesExclusive Method " Url="html/M-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetStandardValuesExclusive.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f15046ff-f7ce-4687-96b0-1d40e198c7f9" Title="GetStandardValuesSupported Method " Url="html/Overload-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetStandardValuesSupported.htm">
+          <HelpTOCNode Title="GetStandardValuesSupported Method " Url="html/M-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetStandardValuesSupported.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetValueFromString Method " Url="html/M-CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper-1.GetValueFromString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="003faa15-cc75-4db7-adaf-2d109b557f74" Title="MinMaxAvr Class" Url="html/T-CAS.Lib.RTLib.Utils.MinMaxAvr.htm">
+      <HelpTOCNode Title="MinMaxAvr Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.MinMaxAvr.htm" />
+      <HelpTOCNode Title="MinMaxAvr Constructor " Url="html/M-CAS.Lib.RTLib.Utils.MinMaxAvr.-ctor.htm" />
+      <HelpTOCNode Id="76b6dd22-4cc3-40ac-87e3-06e066d3feed" Title="MinMaxAvr Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.MinMaxAvr.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.RTLib.Utils.MinMaxAvr.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d0be4f93-968a-42b6-bf50-6c3a627327b9" Title="MinMaxAvr Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.MinMaxAvr.htm">
+        <HelpTOCNode Title="Add Property " Url="html/P-CAS.Lib.RTLib.Utils.MinMaxAvr.Add.htm" />
+        <HelpTOCNode Title="Avr Property " Url="html/P-CAS.Lib.RTLib.Utils.MinMaxAvr.Avr.htm" />
+        <HelpTOCNode Title="Max Property " Url="html/P-CAS.Lib.RTLib.Utils.MinMaxAvr.Max.htm" />
+        <HelpTOCNode Title="Min Property " Url="html/P-CAS.Lib.RTLib.Utils.MinMaxAvr.Min.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f713a014-02db-417a-b8e1-bd00ec4dd18c" Title="MinMaxAvr Events" Url="html/Events.T-CAS.Lib.RTLib.Utils.MinMaxAvr.htm">
+        <HelpTOCNode Title="markNewVal Event" Url="html/E-CAS.Lib.RTLib.Utils.MinMaxAvr.markNewVal.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="MinMaxAvr.newVal Delegate" Url="html/T-CAS.Lib.RTLib.Utils.MinMaxAvr.newVal.htm" />
+    <HelpTOCNode Id="3db22a28-d4e7-4966-b49d-6cc5785f161b" Title="RelativeFilePathsCalculator Class" Url="html/T-CAS.Lib.RTLib.Utils.RelativeFilePathsCalculator.htm">
+      <HelpTOCNode Title="RelativeFilePathsCalculator Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.RelativeFilePathsCalculator.htm" />
+      <HelpTOCNode Id="94c4aadb-1b8a-4966-8aa0-de8a7eb18174" Title="RelativeFilePathsCalculator Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.RelativeFilePathsCalculator.htm">
+        <HelpTOCNode Title="GetAbsolutePathToFileInApplicationDataFolder Method " Url="html/M-CAS.Lib.RTLib.Utils.RelativeFilePathsCalculator.GetAbsolutePathToFileInApplicationDataFolder.htm" />
+        <HelpTOCNode Title="TestIfPathIsAbsolute Method " Url="html/M-CAS.Lib.RTLib.Utils.RelativeFilePathsCalculator.TestIfPathIsAbsolute.htm" />
+        <HelpTOCNode Title="TryComputeRelativePath Method " Url="html/M-CAS.Lib.RTLib.Utils.RelativeFilePathsCalculator.TryComputeRelativePath.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4568c51e-f89b-4233-b328-b9113a95f172" Title="ReportGenerator Class" Url="html/T-CAS.Lib.RTLib.Utils.ReportGenerator.htm">
+      <HelpTOCNode Title="ReportGenerator Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.ReportGenerator.htm" />
+      <HelpTOCNode Title="ReportGenerator Constructor " Url="html/M-CAS.Lib.RTLib.Utils.ReportGenerator.-ctor.htm" />
+      <HelpTOCNode Id="9da140d2-47e9-4de4-b474-1006fdf62512" Title="ReportGenerator Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.ReportGenerator.htm">
+        <HelpTOCNode Id="c4a6cb7d-6085-4e7e-ab61-9ce8b0426b23" Title="DisplayReport Method " Url="html/Overload-CAS.Lib.RTLib.Utils.ReportGenerator.DisplayReport.htm">
+          <HelpTOCNode Title="DisplayReport Method " Url="html/M-CAS.Lib.RTLib.Utils.ReportGenerator.DisplayReport.htm" />
+          <HelpTOCNode Title="DisplayReport Method (String)" Url="html/M-CAS.Lib.RTLib.Utils.ReportGenerator.DisplayReport_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetReportString Method " Url="html/M-CAS.Lib.RTLib.Utils.ReportGenerator.GetReportString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9bdb3f19-1a75-4ea7-ac33-54c0f11bc7d4" Title="UniqueNameGenerator Class" Url="html/T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.htm">
+      <HelpTOCNode Title="UniqueNameGenerator Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.htm" />
+      <HelpTOCNode Title="UniqueNameGenerator Constructor " Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.-ctor.htm" />
+      <HelpTOCNode Id="46f58d18-0fc6-48ba-89cb-c6f11f232aef" Title="UniqueNameGenerator Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.htm">
+        <HelpTOCNode Id="d428696d-3d83-4dc4-94c8-a16fba4912a1" Title="AddName Method " Url="html/Overload-CAS.Lib.RTLib.Utils.UniqueNameGenerator.AddName.htm">
+          <HelpTOCNode Title="AddName Method (String, Boolean)" Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.AddName.htm" />
+          <HelpTOCNode Title="AddName Method (String)" Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.AddName_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CheckIfNameExists Method " Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.CheckIfNameExists.htm" />
+        <HelpTOCNode Title="CheckIfNameExistsAndReturnSuggestedName Method " Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.CheckIfNameExistsAndReturnSuggestedName.htm" />
+        <HelpTOCNode Title="GenerateNewName Method " Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.GenerateNewName.htm" />
+        <HelpTOCNode Title="RemoveName Method " Url="html/M-CAS.Lib.RTLib.Utils.UniqueNameGenerator.RemoveName.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f63d4089-382c-4412-885d-29679e1a09fa" Title="UniqueNameGenerator.UniqueNameGeneratorException Class" Url="html/T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm">
+      <HelpTOCNode Title="UniqueNameGenerator.UniqueNameGeneratorException Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" />
+      <HelpTOCNode Title="UniqueNameGenerator.UniqueNameGeneratorException Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" />
+      <HelpTOCNode Title="UniqueNameGenerator.UniqueNameGeneratorException Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f664349c-f07c-4311-815d-1e57d332e28f" Title="CAS.Lib.RTLib.Utils.Collections Namespace" Url="html/N-CAS.Lib.RTLib.Utils.Collections.htm">
+    <HelpTOCNode Id="3fa88c61-5625-48c5-b59d-46bdd4dc346a" Title="QuickSort Class" Url="html/T-CAS.Lib.RTLib.Utils.Collections.QuickSort.htm">
+      <HelpTOCNode Title="QuickSort Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.Collections.QuickSort.htm" />
+      <HelpTOCNode Title="QuickSort Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.Collections.QuickSort.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="3e80ebbf-738a-495a-94ab-e81d93a43cb7" Title="CAS.Lib.RTLib.Utils.Collections.Generic Namespace" Url="html/N-CAS.Lib.RTLib.Utils.Collections.Generic.htm">
+    <HelpTOCNode Id="a606650e-e808-4b3d-b929-c1ddcaa687df" Title="SortedTree(T) Class" Url="html/T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.htm">
+      <HelpTOCNode Title="SortedTree(T) Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.htm" />
+      <HelpTOCNode Title="SortedTree(T) Constructor " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.-ctor.htm" />
+      <HelpTOCNode Id="a377a959-6e31-4346-9c89-74ecffb18e09" Title="SortedTree(T) Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.htm">
+        <HelpTOCNode Id="b74248ff-9677-4cb2-9636-65381a2a8347" Title="AddNode Method " Url="html/Overload-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.AddNode.htm">
+          <HelpTOCNode Title="AddNode Method (T)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.AddNode.htm" />
+          <HelpTOCNode Title="AddNode Method (T, Int32, T, Int32)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.AddNode_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ConnectTheNodeToOtherNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.ConnectTheNodeToOtherNode.htm" />
+        <HelpTOCNode Title="ConnectTheTreeToTheNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.ConnectTheTreeToTheNode.htm" />
+        <HelpTOCNode Title="GetHeightOfTheNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.GetHeightOfTheNode.htm" />
+        <HelpTOCNode Title="GetNextUnvisited Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.GetNextUnvisited.htm" />
+        <HelpTOCNode Title="GetNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.GetNode.htm" />
+        <HelpTOCNode Title="GetNodesFromLevel Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.GetNodesFromLevel.htm" />
+        <HelpTOCNode Title="GetRoots Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.GetRoots.htm" />
+        <HelpTOCNode Title="GetSubtreeFromNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.GetSubtreeFromNode.htm" />
+        <HelpTOCNode Title="MarkAllUnvisited Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.MarkAllUnvisited.htm" />
+        <HelpTOCNode Title="MoveNodeToRoots Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.MoveNodeToRoots.htm" />
+        <HelpTOCNode Title="RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots.htm" />
+        <HelpTOCNode Title="RemoveValue Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.RemoveValue.htm" />
+        <HelpTOCNode Title="TestNodeIfCanBeConnected Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.TestNodeIfCanBeConnected.htm" />
+        <HelpTOCNode Title="TestTreeIfCanBeConnected Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.TestTreeIfCanBeConnected.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="598fbb94-ca8b-48af-8776-e6e691244d62" Title="SortedTree(T) Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.htm">
+        <HelpTOCNode Title="Count Property " Url="html/P-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.Count.htm" />
+        <HelpTOCNode Title="Height Property " Url="html/P-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.Height.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e28266ba-8431-4b47-9baf-7e8d4733c9bf" Title="SortedTree(T) Events" Url="html/Events.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.htm">
+        <HelpTOCNode Title="TreeHasChanged Event" Url="html/E-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.TreeHasChanged.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ac0aa63f-0a39-4b1a-a6d2-22234b26d2b9" Title="SortedTree(T).SortedTreeNode Class" Url="html/T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm">
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNode Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm" />
+      <HelpTOCNode Id="323c7ed9-1a00-41f6-b382-c016365306d8" Title="SortedTree(T).SortedTreeNode Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm">
+        <HelpTOCNode Title="AddThisNodeToAnotherTree Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.AddThisNodeToAnotherTree.htm" />
+        <HelpTOCNode Title="Equals Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.Equals.htm" />
+        <HelpTOCNode Title="GetChildNodes Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetChildNodes.htm" />
+        <HelpTOCNode Title="GetFirstParentNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetFirstParentNode.htm" />
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetHashCode.htm" />
+        <HelpTOCNode Title="GetNextUnvisited Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetNextUnvisited.htm" />
+        <HelpTOCNode Title="GetNode Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetNode.htm" />
+        <HelpTOCNode Title="GetNodesFromLevel Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetNodesFromLevel.htm" />
+        <HelpTOCNode Title="GetParentConnectorNumber Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetParentConnectorNumber.htm" />
+        <HelpTOCNode Title="GetParentNodeByParentNodeNumber Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetParentNodeByParentNodeNumber.htm" />
+        <HelpTOCNode Title="MarkAllUnvisited Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.MarkAllUnvisited.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ba230e21-deb5-4359-9c26-e958e6e2d966" Title="SortedTree(T).SortedTreeNode Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm">
+        <HelpTOCNode Title="ParentNodesCount Property " Url="html/P-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.ParentNodesCount.htm" />
+        <HelpTOCNode Title="Value Property " Url="html/P-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.Value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8bc5252c-8429-41ac-9cf5-c43a52b548c1" Title="SortedTree(T).SortedTreeNodeException Class" Url="html/T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm">
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeException Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" />
+      <HelpTOCNode Title="SortedTreeNodeException Constructor " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.-ctor.htm" />
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeException Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" />
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeException Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="8b700699-1b03-4271-8a56-8055b92babef" Title="SortedTree(T).SortedTreeNodeList Class" Url="html/T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm">
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeList Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm" />
+      <HelpTOCNode Id="cce7852a-cd28-4168-8e34-d1007624fb42" Title="SortedTreeNodeList Constructor " Url="html/Overload-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor.htm">
+        <HelpTOCNode Title="SortedTreeNodeList Constructor " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor.htm" />
+        <HelpTOCNode Title="SortedTreeNodeList Constructor (SortedTreeNodeSortedList)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor_1.htm" />
+        <HelpTOCNode Title="SortedTreeNodeList Constructor (SortedTreeNodeList)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6e9a32d1-ff0f-45c6-ab5b-d39362052a64" Title="SortedTree(T).SortedTreeNodeList Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm">
+        <HelpTOCNode Id="1daeed62-c6cd-4a6f-b2cb-b79aac8551a4" Title="Add Method " Url="html/Overload-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.Add.htm">
+          <HelpTOCNode Title="Add Method (SortedTreeNodeSortedList)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.Add.htm" />
+          <HelpTOCNode Title="Add Method (SortedTreeNodeList)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.Add_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetFirstNodeFromThisCollection Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.GetFirstNodeFromThisCollection.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeList Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6abdd0ff-151e-42f1-bbcc-75d9f5126e57" Title="SortedTree(T).SortedTreeNodeSortedList Class" Url="html/T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm">
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeSortedList Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm" />
+      <HelpTOCNode Id="93010215-316c-4f37-89e7-157e449d89f3" Title="SortedTreeNodeSortedList Constructor " Url="html/Overload-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.-ctor.htm">
+        <HelpTOCNode Title="SortedTreeNodeSortedList Constructor " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.-ctor.htm" />
+        <HelpTOCNode Title="SortedTreeNodeSortedList Constructor (SortedTreeNodeSortedList)" Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b61a4d24-4c4d-4508-9aa2-725b27e0d211" Title="SortedTree(T).SortedTreeNodeSortedList Methods" Url="html/Methods.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm">
+        <HelpTOCNode Id="f82bafc3-a842-4394-8559-c4f06672b562" Title="Add Method " Url="html/Overload-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.Add.htm">
+          <HelpTOCNode Title="Add Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.Add.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetFirstNodeFromThisCollection Method " Url="html/M-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.GetFirstNodeFromThisCollection.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="SortedTree(T).SortedTreeNodeSortedList Properties" Url="html/Properties.T-CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="55535cc7-c720-49a9-b4bf-65a42d298e81" Title="CAS.Lib.RTLib.Win32API Namespace" Url="html/N-CAS.Lib.RTLib.Win32API.htm">
+    <HelpTOCNode Id="3f8c9db9-a163-4b7d-b456-89395eb13ea7" Title="Application Class" Url="html/T-CAS.Lib.RTLib.Win32API.Application.htm">
+      <HelpTOCNode Title="Application Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.Application.htm" />
+      <HelpTOCNode Title="Application Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.Application.htm" />
+      <HelpTOCNode Id="a71bd989-f005-4397-85d1-88eb1946f299" Title="Application Properties" Url="html/Properties.T-CAS.Lib.RTLib.Win32API.Application.htm">
+        <HelpTOCNode Title="Path Property " Url="html/P-CAS.Lib.RTLib.Win32API.Application.Path.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a4fb5b91-c61e-43e3-a87f-967d38a896a9" Title="OperatingSystem Class" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.htm">
+      <HelpTOCNode Title="OperatingSystem Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.OperatingSystem.htm" />
+      <HelpTOCNode Id="1ef5d122-8f93-4015-b544-1f0b2f84e731" Title="OperatingSystem Constructor " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor.htm">
+        <HelpTOCNode Title="OperatingSystem Constructor " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (String)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_1.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementScope, String)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_2.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementPath, ObjectGetOptions)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_3.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementScope, ManagementPath)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_4.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementPath)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_5.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementScope, ManagementPath, ObjectGetOptions)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_6.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementObject)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_7.htm" />
+        <HelpTOCNode Title="OperatingSystem Constructor (ManagementBaseObject)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.-ctor_8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ca2d8b59-27da-48c4-86dd-60706aad10d9" Title="OperatingSystem Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.OperatingSystem.htm">
+        <HelpTOCNode Title="CommitObject Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.CommitObject.htm" />
+        <HelpTOCNode Title="CreateInstance Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.CreateInstance.htm" />
+        <HelpTOCNode Title="Delete Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.Delete.htm" />
+        <HelpTOCNode Title="ForceReboot Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.ForceReboot.htm" />
+        <HelpTOCNode Id="50c3d095-ff12-4f1e-a689-81ec6def79b5" Title="GetInstances Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances.htm">
+          <HelpTOCNode Title="GetInstances Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances.htm" />
+          <HelpTOCNode Title="GetInstances Method (String)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_1.htm" />
+          <HelpTOCNode Title="GetInstances Method (String[])" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_2.htm" />
+          <HelpTOCNode Title="GetInstances Method (String, String[])" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_3.htm" />
+          <HelpTOCNode Title="GetInstances Method (ManagementScope, EnumerationOptions)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_4.htm" />
+          <HelpTOCNode Title="GetInstances Method (ManagementScope, String)" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_5.htm" />
+          <HelpTOCNode Title="GetInstances Method (ManagementScope, String[])" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_6.htm" />
+          <HelpTOCNode Title="GetInstances Method (ManagementScope, String, String[])" Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.GetInstances_7.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Reboot Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.Reboot.htm" />
+        <HelpTOCNode Title="Shutdown Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.Shutdown.htm" />
+        <HelpTOCNode Title="Win32Shutdown Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.Win32Shutdown.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4f16fee1-4e2e-474a-9abe-fa32117bfc6d" Title="OperatingSystem Properties" Url="html/Properties.T-CAS.Lib.RTLib.Win32API.OperatingSystem.htm">
+        <HelpTOCNode Title="AutoCommit Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.AutoCommit.htm" />
+        <HelpTOCNode Title="BootDevice Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.BootDevice.htm" />
+        <HelpTOCNode Title="BuildNumber Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.BuildNumber.htm" />
+        <HelpTOCNode Title="BuildType Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.BuildType.htm" />
+        <HelpTOCNode Title="Caption Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Caption.htm" />
+        <HelpTOCNode Title="CodeSet Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CodeSet.htm" />
+        <HelpTOCNode Title="CountryCode Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CountryCode.htm" />
+        <HelpTOCNode Title="CreationClassName Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CreationClassName.htm" />
+        <HelpTOCNode Title="CSCreationClassName Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CSCreationClassName.htm" />
+        <HelpTOCNode Title="CSDVersion Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CSDVersion.htm" />
+        <HelpTOCNode Title="CSName Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CSName.htm" />
+        <HelpTOCNode Title="CurrentTimeZone Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.CurrentTimeZone.htm" />
+        <HelpTOCNode Title="Debug Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Debug.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Description.htm" />
+        <HelpTOCNode Title="Distributed Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Distributed.htm" />
+        <HelpTOCNode Title="ForegroundApplicationBoost Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ForegroundApplicationBoost.htm" />
+        <HelpTOCNode Title="FreePhysicalMemory Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.FreePhysicalMemory.htm" />
+        <HelpTOCNode Title="FreeSpaceInPagingFiles Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.FreeSpaceInPagingFiles.htm" />
+        <HelpTOCNode Title="FreeVirtualMemory Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.FreeVirtualMemory.htm" />
+        <HelpTOCNode Title="InstallDate Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.InstallDate.htm" />
+        <HelpTOCNode Title="IsCurrentTimeZoneNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsCurrentTimeZoneNull.htm" />
+        <HelpTOCNode Title="IsDebugNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsDebugNull.htm" />
+        <HelpTOCNode Title="IsDistributedNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsDistributedNull.htm" />
+        <HelpTOCNode Title="IsForegroundApplicationBoostNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsForegroundApplicationBoostNull.htm" />
+        <HelpTOCNode Title="IsFreePhysicalMemoryNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsFreePhysicalMemoryNull.htm" />
+        <HelpTOCNode Title="IsFreeSpaceInPagingFilesNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsFreeSpaceInPagingFilesNull.htm" />
+        <HelpTOCNode Title="IsFreeVirtualMemoryNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsFreeVirtualMemoryNull.htm" />
+        <HelpTOCNode Title="IsInstallDateNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsInstallDateNull.htm" />
+        <HelpTOCNode Title="IsLastBootUpTimeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsLastBootUpTimeNull.htm" />
+        <HelpTOCNode Title="IsLocalDateTimeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsLocalDateTimeNull.htm" />
+        <HelpTOCNode Title="IsMaxNumberOfProcessesNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsMaxNumberOfProcessesNull.htm" />
+        <HelpTOCNode Title="IsMaxProcessMemorySizeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsMaxProcessMemorySizeNull.htm" />
+        <HelpTOCNode Title="IsNumberOfLicensedUsersNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsNumberOfLicensedUsersNull.htm" />
+        <HelpTOCNode Title="IsNumberOfProcessesNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsNumberOfProcessesNull.htm" />
+        <HelpTOCNode Title="IsNumberOfUsersNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsNumberOfUsersNull.htm" />
+        <HelpTOCNode Title="IsOSLanguageNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsOSLanguageNull.htm" />
+        <HelpTOCNode Title="IsOSProductSuiteNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsOSProductSuiteNull.htm" />
+        <HelpTOCNode Title="IsOSTypeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsOSTypeNull.htm" />
+        <HelpTOCNode Title="IsPrimaryNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsPrimaryNull.htm" />
+        <HelpTOCNode Title="IsQuantumLengthNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsQuantumLengthNull.htm" />
+        <HelpTOCNode Title="IsQuantumTypeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsQuantumTypeNull.htm" />
+        <HelpTOCNode Title="IsServicePackMajorVersionNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsServicePackMajorVersionNull.htm" />
+        <HelpTOCNode Title="IsServicePackMinorVersionNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsServicePackMinorVersionNull.htm" />
+        <HelpTOCNode Title="IsSizeStoredInPagingFilesNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsSizeStoredInPagingFilesNull.htm" />
+        <HelpTOCNode Title="IsTotalSwapSpaceSizeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsTotalSwapSpaceSizeNull.htm" />
+        <HelpTOCNode Title="IsTotalVirtualMemorySizeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsTotalVirtualMemorySizeNull.htm" />
+        <HelpTOCNode Title="IsTotalVisibleMemorySizeNull Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.IsTotalVisibleMemorySizeNull.htm" />
+        <HelpTOCNode Title="LastBootUpTime Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.LastBootUpTime.htm" />
+        <HelpTOCNode Title="LateBoundObject Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.LateBoundObject.htm" />
+        <HelpTOCNode Title="LocalDateTime Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.LocalDateTime.htm" />
+        <HelpTOCNode Title="Locale Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Locale.htm" />
+        <HelpTOCNode Title="ManagementClassName Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementClassName.htm" />
+        <HelpTOCNode Title="Manufacturer Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Manufacturer.htm" />
+        <HelpTOCNode Title="MaxNumberOfProcesses Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.MaxNumberOfProcesses.htm" />
+        <HelpTOCNode Title="MaxProcessMemorySize Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.MaxProcessMemorySize.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Name.htm" />
+        <HelpTOCNode Title="NumberOfLicensedUsers Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.NumberOfLicensedUsers.htm" />
+        <HelpTOCNode Title="NumberOfProcesses Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.NumberOfProcesses.htm" />
+        <HelpTOCNode Title="NumberOfUsers Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.NumberOfUsers.htm" />
+        <HelpTOCNode Title="Organization Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Organization.htm" />
+        <HelpTOCNode Title="OriginatingNamespace Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OriginatingNamespace.htm" />
+        <HelpTOCNode Title="OSLanguage Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OSLanguage.htm" />
+        <HelpTOCNode Title="OSProductSuite Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OSProductSuite.htm" />
+        <HelpTOCNode Title="OSType Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OSType.htm" />
+        <HelpTOCNode Title="OtherTypeDescription Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OtherTypeDescription.htm" />
+        <HelpTOCNode Title="Path Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Path.htm" />
+        <HelpTOCNode Title="PlusProductID Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.PlusProductID.htm" />
+        <HelpTOCNode Title="PlusVersionNumber Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.PlusVersionNumber.htm" />
+        <HelpTOCNode Title="Primary Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Primary.htm" />
+        <HelpTOCNode Title="QuantumLength Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.QuantumLength.htm" />
+        <HelpTOCNode Title="QuantumType Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.QuantumType.htm" />
+        <HelpTOCNode Title="RegisteredUser Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.RegisteredUser.htm" />
+        <HelpTOCNode Title="Scope Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Scope.htm" />
+        <HelpTOCNode Title="SerialNumber Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.SerialNumber.htm" />
+        <HelpTOCNode Title="ServicePackMajorVersion Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ServicePackMajorVersion.htm" />
+        <HelpTOCNode Title="ServicePackMinorVersion Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ServicePackMinorVersion.htm" />
+        <HelpTOCNode Title="SizeStoredInPagingFiles Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.SizeStoredInPagingFiles.htm" />
+        <HelpTOCNode Title="StaticScope Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.StaticScope.htm" />
+        <HelpTOCNode Title="Status Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Status.htm" />
+        <HelpTOCNode Title="SystemDevice Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.SystemDevice.htm" />
+        <HelpTOCNode Title="SystemDirectory Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.SystemDirectory.htm" />
+        <HelpTOCNode Title="SystemProperties Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.SystemProperties.htm" />
+        <HelpTOCNode Title="TotalSwapSpaceSize Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.TotalSwapSpaceSize.htm" />
+        <HelpTOCNode Title="TotalVirtualMemorySize Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.TotalVirtualMemorySize.htm" />
+        <HelpTOCNode Title="TotalVisibleMemorySize Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.TotalVisibleMemorySize.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.Version.htm" />
+        <HelpTOCNode Title="WindowsDirectory Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.WindowsDirectory.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="OperatingSystem Events" Url="html/Events.T-CAS.Lib.RTLib.Win32API.OperatingSystem.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="OperatingSystem.ForegroundApplicationBoostValues Enumeration" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.ForegroundApplicationBoostValues.htm" />
+    <HelpTOCNode Id="e1215e50-bd4b-4220-aa8a-718ac41ca0ca" Title="OperatingSystem.ManagementSystemProperties Class" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.htm">
+      <HelpTOCNode Title="OperatingSystem.ManagementSystemProperties Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.htm" />
+      <HelpTOCNode Title="ManagementSystemProperties Constructor " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.-ctor.htm" />
+      <HelpTOCNode Title="OperatingSystem.ManagementSystemProperties Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.htm" />
+      <HelpTOCNode Id="6cb9d41a-14ba-4a59-b07f-ba053df6dcf6" Title="OperatingSystem.ManagementSystemProperties Properties" Url="html/Properties.T-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.htm">
+        <HelpTOCNode Title="CLASS Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.CLASS.htm" />
+        <HelpTOCNode Title="DERIVATION Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.DERIVATION.htm" />
+        <HelpTOCNode Title="DYNASTY Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.DYNASTY.htm" />
+        <HelpTOCNode Title="GENUS Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.GENUS.htm" />
+        <HelpTOCNode Title="NAMESPACE Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.NAMESPACE.htm" />
+        <HelpTOCNode Title="PATH Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.PATH.htm" />
+        <HelpTOCNode Title="PROPERTY_COUNT Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.PROPERTY_COUNT.htm" />
+        <HelpTOCNode Title="RELPATH Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.RELPATH.htm" />
+        <HelpTOCNode Title="SERVER Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.SERVER.htm" />
+        <HelpTOCNode Title="SUPERCLASS Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.ManagementSystemProperties.SUPERCLASS.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3c6b1d86-54e9-4d85-9da4-2b3aeb4e85aa" Title="OperatingSystem.OperatingSystemCollection Class" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.htm">
+      <HelpTOCNode Title="OperatingSystem.OperatingSystemCollection Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.htm" />
+      <HelpTOCNode Title="OperatingSystemCollection Constructor " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.-ctor.htm" />
+      <HelpTOCNode Id="1ccac715-6326-47df-9db3-25f63a4d1207" Title="OperatingSystem.OperatingSystemCollection Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.htm">
+        <HelpTOCNode Title="CopyTo Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.CopyTo.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.GetEnumerator.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a7765d5c-ecec-4df5-b9ce-f9f01debc7f2" Title="OperatingSystem.OperatingSystemCollection Properties" Url="html/Properties.T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.htm">
+        <HelpTOCNode Title="Count Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.Count.htm" />
+        <HelpTOCNode Title="IsSynchronized Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.IsSynchronized.htm" />
+        <HelpTOCNode Title="SyncRoot Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.SyncRoot.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c5801a7c-a98e-4dad-bdab-e46b9da0e669" Title="OperatingSystemCollection.OperatingSystemEnumerator Class" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.htm">
+      <HelpTOCNode Title="OperatingSystemCollection.OperatingSystemEnumerator Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.htm" />
+      <HelpTOCNode Title="OperatingSystemEnumerator Constructor " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.-ctor.htm" />
+      <HelpTOCNode Id="63773994-e3cb-48be-95f1-38d12b8ed0d7" Title="OperatingSystemCollection.OperatingSystemEnumerator Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.htm">
+        <HelpTOCNode Title="MoveNext Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.MoveNext.htm" />
+        <HelpTOCNode Title="Reset Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.Reset.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a587b845-3003-4610-94ed-6edb1d9ae8c7" Title="OperatingSystemCollection.OperatingSystemEnumerator Properties" Url="html/Properties.T-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.htm">
+        <HelpTOCNode Title="Current Property " Url="html/P-CAS.Lib.RTLib.Win32API.OperatingSystem.OperatingSystemCollection.OperatingSystemEnumerator.Current.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="OperatingSystem.OSProductSuiteValues Enumeration" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.OSProductSuiteValues.htm" />
+    <HelpTOCNode Title="OperatingSystem.OSTypeValues Enumeration" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.OSTypeValues.htm" />
+    <HelpTOCNode Title="OperatingSystem.QuantumLengthValues Enumeration" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.QuantumLengthValues.htm" />
+    <HelpTOCNode Title="OperatingSystem.QuantumTypeValues Enumeration" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.QuantumTypeValues.htm" />
+    <HelpTOCNode Id="11c8a8a1-ebe8-4e1d-8ae9-a80527f0e253" Title="OperatingSystem.WMIValueTypeConverter Class" Url="html/T-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.htm">
+      <HelpTOCNode Title="OperatingSystem.WMIValueTypeConverter Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.htm" />
+      <HelpTOCNode Title="WMIValueTypeConverter Constructor " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.-ctor.htm" />
+      <HelpTOCNode Id="eca0b58b-4bfa-4dd8-a1f0-3aa53199a08b" Title="OperatingSystem.WMIValueTypeConverter Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.htm">
+        <HelpTOCNode Id="8894b1c9-576c-481d-9d59-5aadd7733871" Title="CanConvertFrom Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.CanConvertFrom.htm">
+          <HelpTOCNode Title="CanConvertFrom Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.CanConvertFrom.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="efe2f0f6-774b-40b1-b78f-17c107a345ad" Title="CanConvertTo Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.CanConvertTo.htm">
+          <HelpTOCNode Title="CanConvertTo Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.CanConvertTo.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a2f12e46-5db2-4d3f-a067-b13f36832906" Title="ConvertFrom Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.ConvertFrom.htm">
+          <HelpTOCNode Title="ConvertFrom Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.ConvertFrom.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="47aff749-3e76-4112-b8cf-db41ae690dcd" Title="ConvertTo Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.ConvertTo.htm">
+          <HelpTOCNode Title="ConvertTo Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.ConvertTo.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e275df17-bd98-469f-88a5-9676cdbe8f81" Title="CreateInstance Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.CreateInstance.htm">
+          <HelpTOCNode Title="CreateInstance Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.CreateInstance.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0c3a2556-ed71-4b9f-a349-add69c480e06" Title="GetCreateInstanceSupported Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetCreateInstanceSupported.htm">
+          <HelpTOCNode Title="GetCreateInstanceSupported Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetCreateInstanceSupported.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="44467ba2-dcd8-4472-a341-b840433014d4" Title="GetProperties Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetProperties.htm">
+          <HelpTOCNode Title="GetProperties Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetProperties.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5c99be9d-c520-4efc-a5c0-3c7dd4db0faa" Title="GetPropertiesSupported Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetPropertiesSupported.htm">
+          <HelpTOCNode Title="GetPropertiesSupported Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetPropertiesSupported.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="53157af3-5fb5-473c-9175-4abf773be81f" Title="GetStandardValues Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetStandardValues.htm">
+          <HelpTOCNode Title="GetStandardValues Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetStandardValues.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="bebc4fa6-ef8f-4c99-9389-d81c537f060e" Title="GetStandardValuesExclusive Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetStandardValuesExclusive.htm">
+          <HelpTOCNode Title="GetStandardValuesExclusive Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetStandardValuesExclusive.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1bcf0b98-444e-4f74-b86a-02f88a0f0e0e" Title="GetStandardValuesSupported Method " Url="html/Overload-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetStandardValuesSupported.htm">
+          <HelpTOCNode Title="GetStandardValuesSupported Method " Url="html/M-CAS.Lib.RTLib.Win32API.OperatingSystem.WMIValueTypeConverter.GetStandardValuesSupported.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d191d94b-9f60-4b99-8daf-fccfe8b33d09" Title="TimeFunctionsWrapper Class" Url="html/T-CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.htm">
+      <HelpTOCNode Title="TimeFunctionsWrapper Members" Url="html/AllMembers.T-CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.htm" />
+      <HelpTOCNode Id="0ccc3b1e-9f11-41e5-8410-e87544635acd" Title="TimeFunctionsWrapper Methods" Url="html/Methods.T-CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.htm">
+        <HelpTOCNode Title="QueryPerformanceCounter Method " Url="html/M-CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.QueryPerformanceCounter.htm" />
+        <HelpTOCNode Title="QueryPerformanceFrequency Method " Url="html/M-CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.QueryPerformanceFrequency.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
