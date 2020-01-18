@@ -1,17 +1,9 @@
-﻿//_______________________________________________________________
-//  Title   :  Assembly info for: CAS.RealTime.Scripts.UnitTest
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate:  $
-//  $Rev:  $
-//  $LastChangedBy: $
-//  $URL:  $
-//  $Id:  $
+﻿//___________________________________________________________________________________
 //
-//  Copyright (c) 2000-2016 CAS LODZ POLAND
-//  +48 (42) 686 25 47
-//  techsupp@cas.eu
-//  www.cas.eu
-//_______________________________________________________________
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -19,9 +11,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CAS.RealTime.Scripts.UnitTest")]
 [assembly: AssemblyDescription("Scripts Prototyping Workspace for CAS.RealTime.Scripts.UnitTest")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CAS")]
+[assembly: AssemblyCompany("Mariusz Postol")]
 [assembly: AssemblyProduct("CAS CommServer Family")]
-[assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
+[assembly: AssemblyCopyright("Copyright (C) 2019, Mariusz Postol LODZ POLAND.")]
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
 [assembly: Guid("1978B4D2-ACDF-4164-9677-BBEC3B858A45")]

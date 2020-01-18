@@ -1,19 +1,11 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ output extension=".cs" #>
-//<summary>
-//  Title   : Assembly info for: <#=CASRealTimeName#>
-//  System  : Microsoft Visual C# .NET
-//  $LastChangedDate: $
-//  $Rev:  $
-//  $LastChangedBy:  $
-//  $URL:  $
-//  $Id:  $
+//___________________________________________________________________________________
 //
-//  <#=AssemblyCopyright#>
-//  <#=Phone#>
-//  <#=Email#>
-//  <#=Url#>
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -31,5 +23,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("<#= CASRealTimeVersion #>.*")]
 [assembly: AssemblyFileVersion("<#= CASRealTimeVersion #>")]
 
-<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+<#@ include file = "..\..\T4Definitions\CAS.OPC.t4" #>
 

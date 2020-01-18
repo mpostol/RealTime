@@ -1,17 +1,9 @@
-﻿//<summary>
-//  Title   : Assembly info for: CAS.RealTime
-//  System  : Microsoft Visual C# .NET
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (c) 2000-2016 CAS LODZ POLAND
-//  +48 (42) 686 25 47
-//  techsupp@cas.eu
-//  www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -19,9 +11,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CAS.RealTime.UnitTests")]
 [assembly: AssemblyDescription("CAS RealTime Library UnitTests")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CAS")]
+[assembly: AssemblyCompany("Mariusz Postol")]
 [assembly: AssemblyProduct("CAS Framework Core")]
-[assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
+[assembly: AssemblyCopyright("Copyright (C) 2019, Mariusz Postol LODZ POLAND.")]
 [assembly: AssemblyTrademark("CAS.RealTime-CAS Framework")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
