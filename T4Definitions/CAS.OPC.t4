@@ -18,7 +18,7 @@ string DefaultProductVersion = "1.00.00";
 string CASRealTimeName = "CAS.RealTime";
 string CASRealTimeTitle = "CAS.RealTime" + "-RealTime library";
 string CASRealTimeTrademark = "CAS.RealTime" + "-CAS Framework";
-string CASRealTimeVersion = "5.0.7";
+string CASRealTimeVersion = "6.0.0";
 string CASRealTimePreRelease = "";
 
 //____________________________________
