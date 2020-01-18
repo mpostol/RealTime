@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("<#=CASRealTimeTitle#>")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("<#=AssemblyCompany#>")]
-[assembly: AssemblyProduct("<#=CoreProductName#>")]
+[assembly: AssemblyProduct("<#=DefaultProductName#>")]
 [assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
 [assembly: AssemblyTrademark("<#=CASRealTimeTrademark#>")]
 [assembly: AssemblyCulture("")]

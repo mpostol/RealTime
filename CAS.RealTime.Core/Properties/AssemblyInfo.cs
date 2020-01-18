@@ -13,14 +13,14 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("CAS.RealTime-RealTime library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mariusz Postol")]
-[assembly: AssemblyProduct("CAS Framework Core")]
-[assembly: AssemblyCopyright("Copyright (C) 2019, Mariusz Postol LODZ POLAND.")]
+[assembly: AssemblyProduct("CAS CommServer Family")]
+[assembly: AssemblyCopyright("Copyright (C) 2020, Mariusz Postol LODZ POLAND.")]
 [assembly: AssemblyTrademark("CAS.RealTime-CAS Framework")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("7c0ea31e-34e9-42bb-8751-785b2f85b3cf")]
-[assembly: AssemblyVersion("5.0.6.*")]
-[assembly: AssemblyFileVersion("5.0.6")]
+[assembly: AssemblyVersion("5.0.7.*")]
+[assembly: AssemblyFileVersion("5.0.7")]
 [assembly: InternalsVisibleToAttribute("CAS.RealTime.UnitTests, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b3cff1bec656a6" +
                                                                        "e3784c75cacce8ee3bc695d0ce135d820c86465eb49b2353f0438d28ad9a458e5350c0c141393d" +
                                                                        "d9ad606bd9f4e0a8e1b0c49fa37835630b16798ece56df81c756f4c6bd37f07d68cc91ebfa7be7" +

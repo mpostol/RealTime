@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>CAS.RealTime</id>
-    <version>5.0.6</version>
+    <version>5.0.7</version>
     <title>CAS.RealTime-RealTime library</title>
     <authors>Mariusz Postol</authors>
     <owners>Mariusz Postol</owners>
@@ -19,7 +19,7 @@
     <releaseNotes>
       Contains previously released .dll for components decoupling and versioning control.
     </releaseNotes>
-    <copyright>Copyright (C) 2019, Mariusz Postol LODZ POLAND.</copyright>
+    <copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND.</copyright>
     <tags>CAS Software, RealTime, CAS Framework.</tags>
     <dependencies>
       <dependency id="CAS.CodeProtect" version="6.0.1" />

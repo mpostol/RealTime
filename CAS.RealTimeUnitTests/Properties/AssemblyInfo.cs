@@ -12,13 +12,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("CAS RealTime Library UnitTests")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mariusz Postol")]
-[assembly: AssemblyProduct("CAS Framework Core")]
-[assembly: AssemblyCopyright("Copyright (C) 2019, Mariusz Postol LODZ POLAND.")]
+[assembly: AssemblyProduct("CAS CommServer Family")]
+[assembly: AssemblyCopyright("Copyright (C) 2020, Mariusz Postol LODZ POLAND.")]
 [assembly: AssemblyTrademark("CAS.RealTime-CAS Framework")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("f27654b8-7f7e-4ee1-bcd0-cf345d9bd9a1")]
-[assembly: AssemblyVersion("5.0.6.*")]
-[assembly: AssemblyFileVersion("5.0.6")]
+[assembly: AssemblyVersion("5.0.7.*")]
+[assembly: AssemblyFileVersion("5.0.7")]
 
 
