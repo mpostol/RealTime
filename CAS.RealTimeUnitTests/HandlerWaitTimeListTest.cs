@@ -1,17 +1,10 @@
-﻿//<summary>
-//  Title   : FacadeHandlerWaitTimeList - class prepared for test on HandlerWaitTimeList 
-//  System  : Microsoft Visual C# .NET 2008
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 
 using CAS.RealTime.UnitTests.Instrumentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -26,7 +19,8 @@ namespace CAS.RealTime.UnitTests
   [TestClass]
   public class HandlerWaitTimeListTest
   {
-    #region intrumentation
+    
+    #region instrumentation
     /// <summary>
     /// This function is responsible for executing one test on the <see cref="HandlerWaitTimeList"/> (queue).
     /// </summary>
@@ -57,7 +51,7 @@ namespace CAS.RealTime.UnitTests
     #endregion    
     
     /// <summary>
-    /// Test with auto-rest enabled and operation length 10 ms
+    /// Test with auto-reset enabled and operation length 10 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestAutoreset_10()
@@ -65,15 +59,15 @@ namespace CAS.RealTime.UnitTests
       OneTest(2500, true, 10, 30, 1.5);
     }
     /// <summary>
-    /// Test with [autorest] enabled and operation length 250 ms
+    /// Test with [auto-reset] enabled and operation length 250 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestAutoreset_250()
     {
-      OneTest(2500, true, 250, 30, 4.5);
+      OneTest(2500, true, 250, 30, 5);
     }
     /// <summary>
-    /// Test with [autorest] enabled and operation length 275 ms
+    /// Test with auto-reset enabled and operation length 275 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestAutoreset_275()
@@ -81,7 +75,7 @@ namespace CAS.RealTime.UnitTests
       OneTest(2500, true, 275, 30, 3.3);
     }
     /// <summary>
-    /// Test with [autorest] enabled and operation length 300 ms
+    /// Test with auto-reset enabled and operation length 300 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestAutoreset_300()
@@ -89,7 +83,7 @@ namespace CAS.RealTime.UnitTests
       OneTest(2500, true, 300, 30, 20);
     }
     /// <summary>
-    /// Test with [autorest] disabled and operation length 10 ms
+    /// Test with auto-reset disabled and operation length 10 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestNoAutoreset_10()
@@ -97,7 +91,7 @@ namespace CAS.RealTime.UnitTests
       OneTest(2500, false, 10, 30, 1.4);
     }
     /// <summary>
-    /// Test with [autorest] disabled and operation length 250 ms
+    /// Test with auto-reset disabled and operation length 250 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestNoAutoreset_250()
@@ -105,7 +99,7 @@ namespace CAS.RealTime.UnitTests
       OneTest(2500, false, 250, 30, 6.5);
     }
     /// <summary>
-    /// Test with [autorest] disabled and operation length 275 ms
+    /// Test with auto-reset disabled and operation length 275 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestNoAutoreset_275()
@@ -113,7 +107,7 @@ namespace CAS.RealTime.UnitTests
       OneTest(2500, false, 275, 30, 3.5);
     }
     /// <summary>
-    /// Test with auto rest disabled and operation length 300 ms
+    /// Test with auto-reset disabled and operation length 300 ms
     /// </summary>
     [TestMethod]
     public void GeneralTestNoAutoreset_300()
