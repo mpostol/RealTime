@@ -1,42 +1,28 @@
-//<summary>
-//  Title   : Classes Responsible for provide current time in the net server
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20071002 created
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Management;
 using System;
-using System.Diagnostics;
 
 namespace CAS.Lib.RTLib.Utils
 {
 
   /// <summary>
-  /// Class that allows to receive current time (Local or UTC depend on settings)
+  /// Class that allows to use Local or UTC time depending on settings
   /// </summary>
   public class DateTimeProvider
   {
-    
+
     #region private
-    static private IDateTimeProvider m_provider;
-    internal interface IDateTimeProvider
+    private IDateTimeProvider m_provider;
+    private interface IDateTimeProvider
     {
       DateTime GetCurrentTime();
     }
-    class LocalTime: IDateTimeProvider
+    private class LocalTime : IDateTimeProvider
     {
       #region IDateTimeProvider Members
       DateTime IDateTimeProvider.GetCurrentTime()
@@ -45,7 +31,7 @@ namespace CAS.Lib.RTLib.Utils
       }
       #endregion
     }
-    class UTCTime: IDateTimeProvider
+    private class UTCTime : IDateTimeProvider
     {
       #region IDateTimeProvider Members
       DateTime IDateTimeProvider.GetCurrentTime()
@@ -55,45 +41,28 @@ namespace CAS.Lib.RTLib.Utils
       #endregion
     }
     #endregion
-    
-    #region creator
-    static DateTimeProvider()
+
+    #region constructor
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DateTimeProvider"/> class that allows to use Local or UTC time depending on settings.
+    /// </summary>
+    /// <param name="useLocalTime">if set to <c>true</c> use <see cref="DateTime.Now"/>, otherwise use <see cref="DateTime.UtcNow"/>.</param>
+    public DateTimeProvider(bool useLocalTime)
     {
-      try
-      {
-        if ( AppConfigManagement.UseLocalTime )
-        {
-          m_provider = new LocalTime();
-        }
-        else
-        {
-          m_provider = new UTCTime();
-        }
-      }
-      catch ( Exception ex )
-      {
+      if (useLocalTime)
+        m_provider = new LocalTime();
+      else
         m_provider = new UTCTime();
-        Debug.Assert( false, ex.ToString() );
-      }
     }
     #endregion
 
     #region public
     /// <summary>
-    /// Function that allows to receive current time (Local or UTC depend on settings)
+    /// Reads Local or UTC time depending on settings
     /// </summary>
-    /// <returns>DateTime</returns>
-    static public DateTime GetCurrentTime()
+    public DateTime GetCurrentTime()
     {
-      try
-      {
-        return m_provider.GetCurrentTime();
-      }
-      catch ( Exception ex )
-      {
-        Debug.Assert( false, ex.ToString() );
-        return DateTime.UtcNow;
-      }
+      return m_provider.GetCurrentTime();
     }
     #endregion
   }
