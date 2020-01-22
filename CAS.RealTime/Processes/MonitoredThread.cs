@@ -1,25 +1,9 @@
-//<summary>
-//  Title   : Implements Thread's monitored bt a watch dog. 
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    MZbrzezny - 01-06-2005
-//      Dodano nowe informacje do eventlog: stack trace i processname
-//    MPostol - 09-03-04
-//      Wprowadzenie funkcji wstrzymania zmiany czasu timeout - ResetWatchDog
-//    MPostol - 0211-2003: created
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 namespace CAS.Lib.RTLib.Processes
 {
@@ -50,6 +34,7 @@ namespace CAS.Lib.RTLib.Processes
         ( new ThreadStart( Handler ), "MonitoredThreadHndl", true, ThreadPriority.Highest );
     }
     #endregion
+
     #region PRIVATE
     private string Name;
     private int internalCounter;
@@ -81,6 +66,7 @@ namespace CAS.Lib.RTLib.Processes
       }
     }
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Resets the watch dog.

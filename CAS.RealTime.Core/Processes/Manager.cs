@@ -1,21 +1,9 @@
-//<summary>
-//  Title   : Management of concurent processes
-//  System  : Microsoft Visual C# .NET 
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20080625: mzbrzezny: ForceReboot method is added (another WMI function is called: Windows32Shutdown with ForceReboot Parameters)
-//    MPostol - 31-10-2003: 
-//    - reboot method was added
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System.Threading;
 
@@ -31,6 +19,7 @@ namespace CAS.Lib.RTLib.Processes
   /// </summary>
   public sealed class Manager
   {
+
     #region PRIVATE
     /// <summary>
     ///  Title   : Management of concurrent processes 
@@ -52,6 +41,7 @@ namespace CAS.Lib.RTLib.Processes
     private static uint procNum = 0;
     private static ErrorQueueManager errorQueue = new ErrorQueueManager();
     #endregion
+    
     #region PUBLIC
     /// <summary>
     /// Adds to error queue.
@@ -125,29 +115,7 @@ namespace CAS.Lib.RTLib.Processes
       procToStart.Start();
       return procToStart;
     }
-    /// <summary>
-    /// The Reboot of Win32_OperatingSystem WMI class method shuts down the computer system, then restarts it. 
-    /// On computers running Windows NT/Windows 2000, the calling process must have the SE_SHUTDOWN_NAME 
-    /// privilege.
-    /// </summary>
-    public static void Reboot()
-    {
-      System.Diagnostics.Debug.Assert(false, "Just before reboot");
-      Win32API.OperatingSystem myOS = new Win32API.OperatingSystem();
-      foreach (Win32API.OperatingSystem os in Win32API.OperatingSystem.GetInstances()) os.Reboot();
-    }
-    /// <summary>
-    /// The Forced Reboot of Win32_OperatingSystem WMI class method shuts down the computer system, then restarts it. 
-    /// On computers running Windows NT/Windows 2000, the calling process must have the SE_SHUTDOWN_NAME 
-    /// privilege.
-    /// </summary>
-    public static void ForceReboot()
-    {
-      System.Diagnostics.Debug.Assert( false, "Just before force to reboot" );
-      Win32API.OperatingSystem myOS = new Win32API.OperatingSystem();
-      foreach ( Win32API.OperatingSystem os in Win32API.OperatingSystem.GetInstances() )
-        os.ForceReboot();
-    }
     #endregion
+
   }
 }

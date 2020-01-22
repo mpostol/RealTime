@@ -1,20 +1,10 @@
-//<summary>
-//  Title   : Static TraceSource to be used by this assembly.
-//  System  : Microsoft Visual C# .NET 2005
-//  History :
-//    $LastChangedDate$
-//    $Rev$
-//    $LastChangedBy$
-//    $URL$
-//    $Id$
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Properties;
 using System;
 using System.Diagnostics;
 
@@ -56,7 +46,8 @@ namespace CAS.Lib.RTLib.Processes
     #endregion
 
     #region private
-    private static Lazy<TraceSource> m_TraceEvent = new Lazy<TraceSource>(() => new TraceSource(Settings.Default.TraceName));
+    private const string m_TraceName = "CAS.RealTime";
+    private static Lazy<TraceSource> m_TraceEvent = new Lazy<TraceSource>(() => new TraceSource(m_TraceName));
     #endregion
 
   }

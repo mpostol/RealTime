@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Processes\EventLogMonitor_.cs" />
+    <Compile Remove="Processes\ExceptionLoged.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CAS.RealTime.nuspec.nuspec" />
+    <None Remove="CAS.RealTime.nuspec.tt" />
+    <None Remove="Properties\AssemblyInfo.tt" />
+  </ItemGroup>
+
+</Project>
