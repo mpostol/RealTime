@@ -1,18 +1,28 @@
+//___________________________________________________________________________________
+//
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
+using CAS.Lib.RTLib.Processes;
 using System;
+using System.Collections;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
-using System.Collections;
 using System.Text;
+using System.Threading;
 
 namespace Utils
 {
-	/// <summary>
-	/// HTTPServer is an abstract class - that provides http server.
-	/// </summary>
-	public abstract class HTTPServer
-	{
+  /// <summary>
+  /// HTTPServer is an abstract class - that provides http server.
+  /// </summary>
+  public abstract class HTTPServer
+  {
     #region PRIVATE
+
     #region static
     /// <summary>
     /// This function send the Header Information to the client (Browser)
@@ -25,10 +35,10 @@ namespace Utils
     private static void SendHeader(string sHttpVersion, string sMIMEHeader, int iTotBytes, string sStatusCode, ref Socket mySocket)
     {
 
-      String sBuffer = "";
-			
+      string sBuffer = "";
+
       // if Mime type is not provided set default to text/html
-      if (sMIMEHeader.Length == 0 )
+      if (sMIMEHeader.Length == 0)
       {
         sMIMEHeader = "text/html";  // Default Mime Type is text/html
       }
@@ -38,12 +48,12 @@ namespace Utils
       sBuffer = sBuffer + "Content-Type: " + sMIMEHeader + "\r\n";
       sBuffer = sBuffer + "Accept-Ranges: bytes\r\n";
       sBuffer = sBuffer + "Content-Length: " + iTotBytes + "\r\n\r\n";
-			
-      Byte[] bSendData = Encoding.ASCII.GetBytes(sBuffer); 
 
-      SendToBrowser( bSendData, ref mySocket);
+      byte[] bSendData = Encoding.ASCII.GetBytes(sBuffer);
 
-      Logger("Total Bytes : " + iTotBytes.ToString(),false);
+      SendToBrowser(bSendData, ref mySocket);
+
+      Logger("Total Bytes : " + iTotBytes.ToString(), false);
 
     }
     /// <summary>
@@ -52,51 +62,42 @@ namespace Utils
     /// </summary>
     /// <param name="sData">The data to be sent to the browser(client)</param>
     /// <param name="mySocket">Socket reference</param>
-    private static  void SendToBrowser(String sData, ref Socket mySocket)
+    private static void SendToBrowser(string sData, ref Socket mySocket)
     {
-      SendToBrowser (Encoding.ASCII.GetBytes(sData), ref mySocket);
+      SendToBrowser(Encoding.ASCII.GetBytes(sData), ref mySocket);
     }
     /// <summary>
     /// Sends data to the browser (client)
     /// </summary>
     /// <param name="bSendData">Byte Array</param>
     /// <param name="mySocket">Socket reference</param>
-    private static  void SendToBrowser(Byte[] bSendData, ref Socket mySocket)
+    private static void SendToBrowser(byte[] bSendData, ref Socket mySocket)
     {
       int numBytes = 0;
-			
+
       try
       {
         if (mySocket.Connected)
         {
-          if (( numBytes = mySocket.Send(bSendData, bSendData.Length,0)) == -1)
-            Logger("Socket Error cannot Send Packet",false);
+          if ((numBytes = mySocket.Send(bSendData, bSendData.Length, 0)) == -1)
+            Logger("Socket Error cannot Send Packet", false);
           else
           {
-            #if DEBUG
-            Logger("No. of bytes send {0}" + numBytes.ToString(),false);
-            #endif
+#if DEBUG
+            Logger("No. of bytes send {0}" + numBytes.ToString(), false);
+#endif
           }
         }
         else
-          Logger("HTTP Connection Dropped....",false);
+          Logger("HTTP Connection Dropped....", false);
       }
-      catch (Exception  e)
+      catch (Exception e)
       {
-        Logger("Error Occurred : {0} "+ e.ToString(),true );
+        Logger("Error Occurred : {0} " + e.ToString(), true);
       }
     }
     #endregion
-    internal static void Logger(string logstring,bool stop)
-    {
-      //MZTD:wpis do logow potrzebny -DONE
-      //Console.WriteLine(logstring);
-      //if(stop) Console.ReadLine();
-			System.Diagnostics.EventLogEntryType logtype;
-			if(stop)logtype= System.Diagnostics.EventLogEntryType.Error;else logtype=System.Diagnostics.EventLogEntryType.Information;
-			new Processes.EventLogMonitor(logstring, logtype, 
-				(int)Processes.Error.RTLib_AppAdditionalInfos, 98).WriteEntry();
-    }
+
     private int listener_port;
     private Thread ListenerThread;
     private TcpListener myListener;
@@ -108,103 +109,116 @@ namespace Utils
     private void ListenerThreadBody()
     {
       int iStartPos = 0;
-      String sRequest;
-      String sDirName;
-      String sRequestedFile;
-      while(true)
+      string sRequest;
+      string sDirName;
+      string sRequestedFile;
+      while (true)
       {
         #region MAIN LOOP
         //Accept a new connection
-        Socket mySocket = myListener.AcceptSocket() ;
+        Socket mySocket = myListener.AcceptSocket();
 #if DEBUG
-        Logger("Socket Type " + 	mySocket.SocketType ,false); 
+        Logger("Socket Type " + mySocket.SocketType, false);
 #endif
-        if(mySocket.Connected)
+        if (mySocket.Connected)
         {
           #region if(mySocket.Connected)
 #if DEBUG
-          Logger("\nClient Connected!!\n==================\nCLient IP {0}\n"+mySocket.RemoteEndPoint.ToString(),false) ;
+          Logger("\nClient Connected!!\n==================\nCLient IP {0}\n" + mySocket.RemoteEndPoint.ToString(), false);
 #endif
           #region reading client request
           //make a byte array and receive data from the client 
-          Byte[] bReceive = new Byte[1024] ;
-          int i = mySocket.Receive(bReceive,bReceive.Length,0) ;
+          byte[] bReceive = new byte[1024];
+          int i = mySocket.Receive(bReceive, bReceive.Length, 0);
           //Convert Byte to String
           string sBuffer = Encoding.ASCII.GetString(bReceive);
           #endregion getting client request
           #region data analysis
           //At present we will only deal with GET type
-          if (sBuffer.Substring(0,3) != "GET" )
+          if (sBuffer.Substring(0, 3) != "GET")
           {
             Console.WriteLine("Only Get Method is supported..");
             mySocket.Close();
             continue;
           }
           // Look for HTTP request
-          iStartPos = sBuffer.IndexOf("HTTP",1);
+          iStartPos = sBuffer.IndexOf("HTTP", 1);
           // Get the HTTP text and version e.g. it will return "HTTP/1.1"
-          string sHttpVersion = sBuffer.Substring(iStartPos,8);
+          string sHttpVersion = sBuffer.Substring(iStartPos, 8);
           // Extract the Requested Type and Requested file/directory
-          sRequest = sBuffer.Substring(0,iStartPos - 1);
+          sRequest = sBuffer.Substring(0, iStartPos - 1);
           //Replace backslash with Forward Slash, if Any
-          sRequest.Replace("\\","/");
+          sRequest.Replace("\\", "/");
           //If file name is not supplied add forward slash to indicate 
           //that it is a directory and then we will look for the 
           //default file name..
-          if ((sRequest.IndexOf(".") <1) && (!sRequest.EndsWith("/")))
+          if ((sRequest.IndexOf(".") < 1) && (!sRequest.EndsWith("/")))
           {
-            sRequest = sRequest + "/"; 
+            sRequest = sRequest + "/";
           }
           //Extract the requested file name
           iStartPos = sRequest.LastIndexOf("/") + 1;
           sRequestedFile = sRequest.Substring(iStartPos);
           //Extract The directory Name
-          sDirName = sRequest.Substring(sRequest.IndexOf("/"), sRequest.LastIndexOf("/")-3);
+          sDirName = sRequest.Substring(sRequest.IndexOf("/"), sRequest.LastIndexOf("/") - 3);
           //extract parameters from file name
-          string []parameters=sRequestedFile.Split('?');
-          sRequestedFile=parameters[0];
-          Hashtable paramtable=null;
-          if(parameters.Length>1)
+          string[] parameters = sRequestedFile.Split('?');
+          sRequestedFile = parameters[0];
+          Hashtable paramtable = null;
+          if (parameters.Length > 1)
           {
-            string []parameters2=parameters[1].Split('&');
+            string[] parameters2 = parameters[1].Split('&');
             //build of parameters hash table
-            paramtable=new Hashtable();
-            foreach(string par in parameters2)
+            paramtable = new Hashtable();
+            foreach (string par in parameters2)
             {
-              if(par.Split('=').Length>1) paramtable.Add(par.Split('=')[0],par.Split('=')[1]);
-              else paramtable.Add(par.Split('=')[0],"");
+              if (par.Split('=').Length > 1) paramtable.Add(par.Split('=')[0], par.Split('=')[1]);
+              else paramtable.Add(par.Split('=')[0], "");
             }
           }
           #endregion  data analysis
-          string SendMessage=this.GetStringData(sDirName, sRequestedFile,paramtable);
-          SendHeader(sHttpVersion,  "", SendMessage.Length, " 200 OK", ref mySocket);
-          SendToBrowser ( SendMessage, ref mySocket);
-          mySocket.Close();						
+          string SendMessage = GetStringData(sDirName, sRequestedFile, paramtable);
+          SendHeader(sHttpVersion, "", SendMessage.Length, " 200 OK", ref mySocket);
+          SendToBrowser(SendMessage, ref mySocket);
+          mySocket.Close();
         }
         #endregion if(mySocket.Connected)
         #endregion MAIN LOOP
       }
     }
-    private void InitServer (int port)
+    private void InitServer(int port)
     {
-      listener_port=port;
+      listener_port = port;
       try
       {
         //start listing on the given port
-        myListener = new TcpListener(IPAddress.Any,listener_port) ;
+        myListener = new TcpListener(IPAddress.Any, listener_port);
         myListener.Start();
-        Logger("Web Server Running ("+IPAddress.Any.ToString()+")... ",false);
+        Logger("Web Server Running (" + IPAddress.Any.ToString() + ")... ", false);
 
       }
-      catch(Exception e)
+      catch (Exception e)
       {
-        Logger("An Exception Occurred while Listening :" +e.ToString(),true);
+        Logger("An Exception Occurred while Listening :" + e.ToString(), true);
       }
     }
-    #endregion PRIVATE
-    #region PUBLIC
+    #endregion private
+
+    #region internal
+    internal static void Logger(string logstring, bool stop)
+    {
+      TraceEventType logtype;
+      if (stop)
+        logtype = TraceEventType.Error;
+      else
+        logtype = TraceEventType.Information;
+      AssemblyTraceEvent.Trace(logtype, 110, nameof(HTTPServer), logstring);
+    }
+    #endregion
+
+    #region public
     /// <summary>
-    /// function that should be overriden to provide string with response for html data request
+    /// function that should be overridden to provide string with response for html data request
     /// </summary>
     /// <param name="directory">directory name</param>
     /// <param name="filename">filename that client requests</param>
@@ -214,16 +228,16 @@ namespace Utils
     /// <summary>
     /// Server Initiation
     /// </summary>
-    /// <param name="port">tcp port that should be used for listening</param>
+    /// <param name="port">TCP port that should be used for listening</param>
     public HTTPServer(int port)
     {
       InitServer(port);
     }
     /// <summary>
-    /// Server Initiation on standart port
+    /// Server Initiation on standard port
     /// </summary>
 		public HTTPServer()
-		{
+    {
       InitServer(80);
     }
     /// <summary>
@@ -232,7 +246,7 @@ namespace Utils
     public void Start()
     {
       //start the thread which calls the method 'ListenerThreadBody'
-      ListenerThread = Processes.Manager.StartProcess( new ThreadStart(ListenerThreadBody), "HTTPServer", true);
+      ListenerThread = Manager.StartProcess(new ThreadStart(ListenerThreadBody), "HTTPServer", true, ThreadPriority.Normal);
     }
     /// <summary>
     /// Stops the HTTP Server
@@ -242,5 +256,5 @@ namespace Utils
       ListenerThread.Abort();
     }
     #endregion PUBLIC
-	}
+  }
 }

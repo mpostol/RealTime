@@ -9,13 +9,30 @@
   <ItemGroup>
     <Compile Remove="Processes\EventLogMonitor_.cs" />
     <Compile Remove="Processes\ExceptionLoged.cs" />
+    <Compile Remove="Processes\Watchdog.cs" />
     <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="UTILS\CodeBuilder.cs" />
+    <Compile Remove="UTILS\CodeBuilderBase.cs" />
+    <Compile Remove="UTILS\CSharpStreamCompiller.cs" />
+    <Compile Remove="Win32API\Service.CS" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="CAS.RealTime.nuspec.nuspec" />
     <None Remove="CAS.RealTime.nuspec.tt" />
     <None Remove="Properties\AssemblyInfo.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Processes\Watchdog.cs" />
+    <None Include="UTILS\CodeBuilder.cs" />
+    <None Include="UTILS\CodeBuilderBase.cs" />
+    <None Include="UTILS\CSharpStreamCompiller.cs" />
+    <None Include="Win32API\Service.CS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CAS.RealTime.Core\RealTimeCore.csproj" />
   </ItemGroup>
 
 </Project>
