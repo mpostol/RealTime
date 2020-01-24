@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeCore", "CAS.RealTim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTime", "CAS.RealTime\RealTime.csproj", "{1F996BB4-0B43-4021-B575-82C176EFC524}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeUnitTests", "CAS.RealTimeUnitTests\RealTimeUnitTests.csproj", "{F713B930-2BFD-4184-BBA3-5DA3002166BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1F996BB4-0B43-4021-B575-82C176EFC524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F996BB4-0B43-4021-B575-82C176EFC524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F996BB4-0B43-4021-B575-82C176EFC524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F713B930-2BFD-4184-BBA3-5DA3002166BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F713B930-2BFD-4184-BBA3-5DA3002166BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F713B930-2BFD-4184-BBA3-5DA3002166BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F713B930-2BFD-4184-BBA3-5DA3002166BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

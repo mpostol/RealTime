@@ -50,5 +50,10 @@ namespace CAS.Lib.RTLib.Processes
     private static Lazy<TraceSource> m_TraceEvent = new Lazy<TraceSource>(() => new TraceSource(m_TraceName));
     #endregion
 
+    [Conditional("DEBUG")]
+    public static void GerTraceName (Action<string> traceName)
+    {
+      traceName(m_TraceName);
+    }
   }
 }
