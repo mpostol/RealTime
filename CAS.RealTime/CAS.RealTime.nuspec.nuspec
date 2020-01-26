@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>CAS.RealTime</id>
+    <id>UAOOI.ProcessObserver.RealTime</id>
     <version>6.0.0</version>
-    <title>CAS.RealTime-RealTime library</title>
+    <title>Object-Oriented Internet Process-Observer RealTime library</title>
     <authors>Mariusz Postol</authors>
     <owners>Mariusz Postol</owners>
     <projectUrl>https://github.com/mpostol/RealTime</projectUrl>
-    <licenseUrl>http://www.commsvr.com/DownloadCenter/ProductSoftware/LicenseAgreement.aspx</licenseUrl>
+    <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
     <description>
@@ -21,15 +21,8 @@
     </releaseNotes>
     <copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND.</copyright>
     <tags>CAS Software, RealTime, CAS Framework.</tags>
-    <dependencies>
-      <dependency id="CAS.CodeProtect" version="6.0.1" />
-    </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\CAS.RealTime.Core.dll" target="lib\net451\CAS.RealTime.Core.dll" />
-    <file src="bin\Release\CAS.RealTime.Core.xml" target="lib\net451\CAS.RealTime.Core.xml" />
-    <file src="bin\Release\CAS.RealTime.dll" target="lib\net451\CAS.RealTime.dll" />
-    <file src="bin\Release\CAS.RealTime.XML" target="lib\net451\CAS.RealTime.XML" />
   </files>
 </package>
 

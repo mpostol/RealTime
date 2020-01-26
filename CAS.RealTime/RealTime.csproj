@@ -1,15 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
-    <Description>The library contains Real-Time and system level programming support.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
-    <AssemblyVersion>6.0.0.0</AssemblyVersion>
-    <FileVersion>6.0.0.0</FileVersion>
+    <PackageId>UAOOI.RealTimeCore</PackageId>
+    <Description>CAS.RealTime-RealTime library</Description>
+    <Product>CAS CommServer Family</Product>
+    <AssemblyVersion>6.0.0</AssemblyVersion>
+    <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
+    <FileVersion>6.0.0</FileVersion>
     <Version>6.0.0</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>CAS.RealTime</PackageId>
+    <Company>Mariusz Postol</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -20,15 +21,10 @@
     <Compile Remove="Processes\EventLogMonitor_.cs" />
     <Compile Remove="Processes\ExceptionLoged.cs" />
     <Compile Remove="Processes\Watchdog.cs" />
-    <Compile Remove="Properties\AssemblyInfo.cs" />
     <Compile Remove="UTILS\CodeBuilder.cs" />
     <Compile Remove="UTILS\CodeBuilderBase.cs" />
     <Compile Remove="UTILS\CSharpStreamCompiller.cs" />
     <Compile Remove="Win32API\Service.CS" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Properties\AssemblyInfo.tt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,10 +49,22 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CAS.RealTime.nuspec.nuspec</LastGenOutput>
     </None>
+    <None Update="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\AssemblyInfo.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

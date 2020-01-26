@@ -10,7 +10,7 @@
 //  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
 //  +48 608 619 899
 //  mpostol@cas.eu
-//  www.cas.eu
+//  https://mpostol.github.io/RealTime
 //_______________________________________________________________
 
 using System.Reflection;
@@ -18,12 +18,12 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("<Define Assembly Title>")]
-[assembly: AssemblyDescription("CAS CommServer Family: <Define Assembly Title>")]
+[assembly: AssemblyDescription("DefaultProductName: <Define Assembly Title>")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mariusz Postol")]
-[assembly: AssemblyProduct("CAS CommServer Family")]
+[assembly: AssemblyProduct("DefaultProductName")]
 [assembly: AssemblyCopyright("Copyright (C) 2020, Mariusz Postol LODZ POLAND.")]
-[assembly: AssemblyTrademark("Process-Observer")]
+[assembly: AssemblyTrademark("Object-Oriented Internet Process-Observer")]
 [assembly: AssemblyCulture("")]
 [assembly: Guid("<GUID>")]
 [assembly: ComVisible(false)]

@@ -12,18 +12,10 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("<#=CASRealTimeName#>")]
-[assembly: AssemblyDescription("<#=CASRealTimeTitle#> Extension")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("<#=AssemblyCompany#>")]
-[assembly: AssemblyProduct("<#=DefaultProductName#>")]
-[assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
 [assembly: AssemblyTrademark("<#=CASRealTimeTrademark#>")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("E538D4FB-831F-4414-B9B3-774C63D852FB")]
-[assembly: AssemblyVersion("<#= CASRealTimeVersion #>.*")]
-[assembly: AssemblyFileVersion("<#= CASRealTimeVersion #>")]
 
 <#@ include file = "..\..\T4Definitions\CAS.OPC.t4" #>
 
