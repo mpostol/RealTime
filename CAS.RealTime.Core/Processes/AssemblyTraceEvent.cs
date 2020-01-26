@@ -18,10 +18,10 @@ namespace CAS.Lib.RTLib.Processes
 
     #region public static
     /// <summary>
-    /// Gets the assembly trace source of name defined by the <c>TraceName</c> defined in the the <see cref="Settings"/>.
+    /// Gets the assembly trace source of name defined by the <c>m_TraceName</c>.
     /// </summary>
     /// <value>The assembly trace source.</value>
-    public static TraceSource AssemblyTraceSource { get { return m_TraceEvent.Value; } }
+    public static TraceSource AssemblyTraceSource => m_TraceEvent.Value;
     /// <summary>
     /// regular trace message
     /// </summary>
@@ -50,10 +50,16 @@ namespace CAS.Lib.RTLib.Processes
     private static Lazy<TraceSource> m_TraceEvent = new Lazy<TraceSource>(() => new TraceSource(m_TraceName));
     #endregion
 
+    #region DEBUG
+    /// <summary>
+    /// Gets the name of the trace.
+    /// </summary>
+    /// <param name="traceName"><seealso cref="Action"/> used to get the trace name for debugging purpose.</param>
     [Conditional("DEBUG")]
-    public static void GerTraceName (Action<string> traceName)
+    public static void GetTraceName(Action<string> traceName)
     {
       traceName(m_TraceName);
     }
+    #endregion
   }
 }

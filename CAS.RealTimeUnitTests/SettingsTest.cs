@@ -23,8 +23,8 @@ namespace CAS.RealTime.UnitTests
     public void SettingsTestFixture()
     {
       string _traceName = string.Empty;
-      AssemblyTraceEvent.GerTraceName(x => _traceName = x);
-     Assert.AreEqual("CAS.RealTime", _traceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
+      AssemblyTraceEvent.GetTraceName(x => _traceName = x);
+      Assert.AreEqual("CAS.RealTime", _traceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
     }
   }
 }

@@ -15,16 +15,31 @@ namespace CAS.Lib.RTLib.Processes
   ///</summary>
   public enum EventLogEntryType
   {
-    Error = 1, //An error event. This indicates a significant problem the user should know about; usually a loss of functionality or data.
-    FailureAudit = 16, //A failure audit event. This indicates a security event that occurs when an audited access attempt fails; for example, a failed attempt to open a file.
-    Information = 4, //An information event. This indicates a significant, successful operation.
-    SuccessAudit = 8, //A success audit event. This indicates a security event that occurs when an audited access attempt is successful; for example, logging on successfully.
-    Warning = 2 //A warning event. This indicates a problem that is not immediately significant, but that may signify conditions that could cause future problems.
+    /// <summary>
+    /// An error event. This indicates a significant problem the user should know about; usually a loss of functionality or data.
+    /// </summary>
+    Error = 1,
+    /// <summary>
+    /// A failure audit event. This indicates a security event that occurs when an audited access attempt fails; for example, a failed attempt to open a file.
+    /// </summary>
+    FailureAudit = 16,
+    /// <summary>
+    /// An information event. This indicates a significant, successful operation.
+    /// </summary>
+    Information = 4, //
+    /// <summary>
+    /// A success audit event. This indicates a security event that occurs when an audited access attempt is successful; for example, logging on successfully.
+    /// </summary>
+    SuccessAudit = 8,
+    /// <summary>
+    /// A warning event. This indicates a problem that is not immediately significant, but that may signify conditions that could cause future problems.
+    /// </summary>
+    Warning = 2 //
   }
-
   /// <summary>
   /// Summary description for EventLogMonitor.
   /// </summary>
+  [System.Obsolete("Use trace to log instead.")]
   public class EventLogMonitor
   {
 
@@ -47,36 +62,10 @@ namespace CAS.Lib.RTLib.Processes
     private readonly int myEventID;
     private short myCategory;
     private string myMessage;
-
-    #region static
-    /// <summary>
-    /// this name appears in the tracing messages
-    /// </summary>
-    private const string m_traceName = "TracesFromEventLogMonitor";
-    private static TraceSource m_TraceSource;
-    //static constructor
-    static EventLogMonitor()
-    {
-      m_TraceSource = new TraceSource(m_traceName);
-    }
-    #endregion
+    private static TraceSource m_TraceSource = AssemblyTraceEvent.AssemblyTraceSource;
     #endregion
 
     #region PUBLIC
-    /// <summary>
-    /// Writes a trace event message to the trace listeners in the System.Diagnostics.TraceSource.Listeners collection 
-    /// using the specified event type and event identifier.
-    /// </summary>
-    /// <param name="pEventType">
-    /// One of the System.Diagnostics.TraceEventType values that specifies the event type of the trace data.
-    /// </param>
-    /// <param name="pId">A numeric identifier for the event.</param>
-    /// <param name="pMessage">The trace message to write.</param>
-    [Conditional("TRACE")]
-    public void TraceEvent(TraceEventType pEventType, int pId, string pMessage)
-    {
-      m_TraceSource.TraceEvent(pEventType, pId, m_traceName + ":" + pMessage);
-    }
     /// <summary>
     /// Writes to event log.
     /// </summary>
@@ -130,7 +119,7 @@ namespace CAS.Lib.RTLib.Processes
     /// </summary>
     public void WriteEntry()
     {
-      TraceEvent(ConvertToTraceEventType(myType), myEventID, string.Format("Category: {0}, {1}", myCategory, myMessage));
+      m_TraceSource.TraceEvent(ConvertToTraceEventType(myType), myEventID, string.Format("Category: {0}, {1}", myCategory, myMessage));
     }
     /// <summary>
     /// set the event message
