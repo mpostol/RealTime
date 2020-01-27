@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>RealTime</name>
+        <name>UAOOI.ProcessObserver.RealTime</name>
     </assembly>
     <members>
         <member name="T:CAS.Lib.RTLib.Processes.Condition">

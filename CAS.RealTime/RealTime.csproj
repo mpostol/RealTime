@@ -3,14 +3,16 @@
     <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
-    <PackageId>UAOOI.RealTimeCore</PackageId>
-    <Description>CAS.RealTime-RealTime library</Description>
-    <Product>CAS CommServer Family</Product>
+    <PackageId>UAOOI.ProcessObserver.RealTime</PackageId>
+    <Description>Object-Oriented Internet Process-Observer RealTime library</Description>
+    <Product>Object-Oriented Internet Process-Observer</Product>
     <AssemblyVersion>6.0.0</AssemblyVersion>
     <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
     <FileVersion>6.0.0</FileVersion>
     <Version>6.0.0</Version>
     <Company>Mariusz Postol</Company>
+    <AssemblyName>UAOOI.ProcessObserver.RealTime</AssemblyName>
+    <RootNamespace>UAOOI.ProcessObserver.RealTime</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">

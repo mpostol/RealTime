@@ -6,7 +6,7 @@
     <title>Object-Oriented Internet Process-Observer RealTime library</title>
     <authors>Mariusz Postol</authors>
     <owners>Mariusz Postol</owners>
-    <projectUrl>https://github.com/mpostol/RealTime</projectUrl>
+    <projectUrl>https://mpostol.github.io/RealTime</projectUrl>
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
@@ -20,7 +20,7 @@
       Contains previously released .dll for components decoupling and versioning control.
     </releaseNotes>
     <copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND.</copyright>
-    <tags>CAS Software, RealTime, CAS Framework.</tags>
+    <tags>OPCUA, M2M, IoT, OOI, RealTime</tags>
   </metadata>
   <files>
   </files>

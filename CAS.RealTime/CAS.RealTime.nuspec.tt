@@ -8,7 +8,7 @@
     <title><#=CASRealTimeTitle#></title>
     <authors><#=AssemblyCompany#></authors>
     <owners><#=Owner#></owners>
-    <projectUrl>https://github.com/mpostol/RealTime</projectUrl>
+    <projectUrl><#=Url#></projectUrl>
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
@@ -22,7 +22,7 @@
       Contains previously released .dll for components decoupling and versioning control.
     </releaseNotes>
     <copyright><#=AssemblyCopyright#></copyright>
-    <tags>CAS Software, RealTime, CAS Framework.</tags>
+    <tags>OPCUA, M2M, IoT, OOI, RealTime</tags>
   </metadata>
   <files>
   </files>

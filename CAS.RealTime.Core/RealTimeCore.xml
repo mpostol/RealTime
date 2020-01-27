@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>RealTimeCore</name>
+        <name>UAOOI.ProcessObserver.RealTimeCore</name>
     </assembly>
     <members>
         <member name="T:CAS.Lib.RTLib.ICanBeAccepted">
