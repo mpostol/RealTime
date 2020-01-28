@@ -1,21 +1,10 @@
-//<summary>
-//  Title   : NetworkConfig.UndoRedo
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    <Author> Tomek Siwecki - 26.12.2006 - Created <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
-      
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 using System;
 
 namespace CAS.Lib.RTLib.UndoRedo
@@ -24,23 +13,20 @@ namespace CAS.Lib.RTLib.UndoRedo
   /// <summary>
   /// Encapsulates the operation record associated with a operation event.
   /// </summary>
-  public class UndoRedoEventArgs: EventArgs
+  public class UndoRedoEventArgs : EventArgs
   {
-    #region Fields
+    #region private
     /// <summary>
     /// The transaction record.
     /// </summary>
-    private UndoRedoOperationBase record;
+    private readonly UndoRedoOperationBase record;
     #endregion
 
     #region Properties
     /// <summary>
     /// Gets the transaction record associated with the event.
     /// </summary>
-    public UndoRedoOperationBase Record
-    {
-      get { return record; }
-    }
+    public UndoRedoOperationBase Record => record;
     #endregion
 
     #region Constructor
@@ -48,10 +34,11 @@ namespace CAS.Lib.RTLib.UndoRedo
     /// Creates a new <see cref="UndoRedoEventArgs"/> object.
     /// </summary>
     /// <param name="record">The transaction record.</param>
-    public UndoRedoEventArgs( UndoRedoOperationBase record )
+    public UndoRedoEventArgs(UndoRedoOperationBase record)
     {
       this.record = record;
     }
     #endregion
+
   }
 }

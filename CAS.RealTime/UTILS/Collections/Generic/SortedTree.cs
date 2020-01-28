@@ -1,21 +1,9 @@
-﻿//<summary>
-//  Title   : Generic sorted tree (tree where nodes are sorted)
-//  System  : Microsoft Visual C# .NET 2008
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20080408 mzbrzezny: - TreeHasChanged event is added
-//                        - ConnectTheTreeToTheNode is fixed (SetParentTree fix)
-//    20080310 mzbrzezny: created
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Collections.Generic;
@@ -33,10 +21,7 @@ namespace CAS.Lib.RTLib.Utils.Collections.Generic
     private SortedTreeNodeList myRoots;
     private void RaiseTreeHasChangedEvent()
     {
-      if ( TreeHasChanged != null )
-      {
-        TreeHasChanged( this, EventArgs.Empty );
-      }
+      TreeHasChanged?.Invoke(this, EventArgs.Empty);
     }
     /// <summary>
     /// Exception that can be thrown by SortedTree

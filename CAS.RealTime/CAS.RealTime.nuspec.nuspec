@@ -17,7 +17,7 @@
       Real-Time Programming
     </summary>
     <releaseNotes>
-      Contains previously released .dll for components decoupling and versioning control.
+      Ported to netstandard2.0. Some not compatible functionality has been removed.
     </releaseNotes>
     <copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND.</copyright>
     <tags>OPCUA, M2M, IoT, OOI, RealTime</tags>

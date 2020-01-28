@@ -1,25 +1,15 @@
-//<summary>
-//  Title   : EnvelopePool
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 namespace CAS.Lib.RTLib.Processes
 {
-  using System;
+
   using System.Collections;
+
   /// <summary>
   /// The EnvelopePool class manages a pool of IEnvelope objects.
   /// Thread Safety:
@@ -31,8 +21,9 @@ namespace CAS.Lib.RTLib.Processes
     private Queue myQueue = new Queue();
     private int numOfEnvInPool = 0;
     private ulong numOfEnvCreated = 0;
-    private CreateEnvelope newEnvelope;
+    private readonly CreateEnvelope newEnvelope;
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Delegate used to create new envelope. New envelope is created each time 
@@ -86,5 +77,6 @@ namespace CAS.Lib.RTLib.Processes
       newEnvelope = userCreator;
     }
     #endregion
+
   }
 }

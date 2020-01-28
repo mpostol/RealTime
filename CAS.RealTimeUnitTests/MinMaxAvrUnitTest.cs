@@ -1,4 +1,10 @@
-﻿
+﻿//___________________________________________________________________________________
+//
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 using CAS.Lib.RTLib.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -15,7 +21,7 @@ namespace CAS.RealTime.UnitTests
       Assert.AreEqual(_testVar.Min, 0);
       Assert.AreEqual(_testVar.Avr, 0);
       bool _result = false;
-      _testVar.markNewVal += (x, z, y) => _result = (x == 10) && (y == 14) && (z == 19);
+      _testVar.MarkNewVal += (x, z, y) => _result = (x == 10) && (y == 14) && (z == 19);
       for (int i = 10; i <= 20; i++)
         _testVar.Add = i;
       Assert.IsTrue(_result, "MinMaxAvr doesn't work as expected");

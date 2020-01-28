@@ -30,8 +30,8 @@ namespace Utils
     /// <param name="sHttpVersion">HTTP Version</param>
     /// <param name="sMIMEHeader">Mime Type</param>
     /// <param name="iTotBytes">Total Bytes to be sent in the body</param>
+    /// <param name="sStatusCode">The s status code.</param>
     /// <param name="mySocket">Socket reference</param>
-    /// <returns></returns>
     private static void SendHeader(string sHttpVersion, string sMIMEHeader, int iTotBytes, string sStatusCode, ref Socket mySocket)
     {
 

@@ -304,7 +304,7 @@
         <member name="T:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1">
             <summary>
             Summary description for HandlerWaitTimeList.
-            This is is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
+            This is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
             </summary>
             <typeparam name="TElement">The type of the element.</typeparam>
         </member>
@@ -445,7 +445,7 @@
             
              </summary>
         </member>
-        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.inQueue">
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.InQueue">
             <summary>
             Gets a value indicating whether this object is in queue.
             </summary>
@@ -468,7 +468,7 @@
             </summary>
             <param name="currCycle">The curr cycle.</param>
         </member>
-        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.getCoupledTOD">
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.GetCoupledTOD">
             <summary>
             Gets the get coupled Time Out Desciptor (<see>TODescriptor</see>).
             </summary>
@@ -479,15 +479,15 @@
             Moves to beginning.
             </summary>
         </member>
-        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.decCouter(System.Int32)">
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.DecCouter(System.Int32)">
             <summary>
-            Decrements the couter.
+            Decrements the counter.
             
             if the counter is less than 0 it notify other tasks that it is ready to be removed
             </summary>
             <param name="value">The value.</param>
         </member>
-        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.isReadyToByRemoved">
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.IsReadyToByRemoved">
             <summary>
             Gets a value indicating whether this instance is ready to by removed.
             </summary>
@@ -782,21 +782,6 @@
         <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation">
             <summary>
             Undo or redo operation data used when changing fields.
-            </summary>
-        </member>
-        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.columnName">
-            <summary>
-            The column name.
-            </summary>
-        </member>
-        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.oldValue">
-            <summary>
-            The old value
-            </summary>
-        </member>
-        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.newValue">
-            <summary>
-            The new column value
             </summary>
         </member>
         <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.NewValue">
@@ -1737,7 +1722,7 @@
             Event handler invoked every time new values are available.
             </summary>
         </member>
-        <member name="E:CAS.Lib.RTLib.Utils.MinMaxAvr.markNewVal">
+        <member name="E:CAS.Lib.RTLib.Utils.MinMaxAvr.MarkNewVal">
             <summary>
             Occurs when new value is calculated.
             </summary>
@@ -2028,8 +2013,8 @@
             <param name="sHttpVersion">HTTP Version</param>
             <param name="sMIMEHeader">Mime Type</param>
             <param name="iTotBytes">Total Bytes to be sent in the body</param>
+            <param name="sStatusCode">The s status code.</param>
             <param name="mySocket">Socket reference</param>
-            <returns></returns>
         </member>
         <member name="M:Utils.HTTPServer.SendToBrowser(System.String,System.Net.Sockets.Socket@)">
             <summary>

@@ -11,7 +11,7 @@ namespace CAS.Lib.RTLib.Processes
 {
   /// <summary>
   /// Summary description for HandlerWaitTimeList.
-  /// This is is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
+  /// This is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
   /// </summary>
   /// <typeparam name="TElement">The type of the element.</typeparam>
   public abstract class HandlerWaitTimeList<TElement>: WaitTimeList<TElement> 
@@ -19,7 +19,7 @@ namespace CAS.Lib.RTLib.Processes
   {
     #region PRIVATE
     private readonly bool myAutoreset;
-    private string m_Source;
+    private readonly string m_Source;
     private bool m_busy = false;
     /// <summary>
     /// The method removes first ready item from the queue and schedules the work using <see cref="System.Threading.ThreadPool"/>.

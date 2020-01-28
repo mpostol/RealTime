@@ -1,85 +1,37 @@
-//<summary>
-//  Title   : NetworkConfig.UndoRedo
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    <Author> Tomek Siwecki - 26.12.2006 - Created <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Data;
 
 namespace CAS.Lib.RTLib.UndoRedo
 {
+
   /// <summary>
   /// Undo or redo operation data used when changing fields.
   /// </summary>
   public sealed class UndoRedoFieldOperation: UndoRedoOperationBase
   {
-    #region Fields
-    /// <summary>
-    /// The column name.
-    /// </summary>
-    private string columnName;
-
-    /// <summary>
-    /// The old value
-    /// </summary>
-    private object oldValue;
-
-    /// <summary>
-    /// The new column value
-    /// </summary>
-    private object newValue;
-    #endregion
 
     #region Properties
     /// <summary>
     /// Gets or sets the new field value.
     /// </summary>
-    public object NewValue
-    {
-      get
-      {
-        return newValue;
-      }
-      set
-      {
-        newValue = value;
-      }
-    }
+    public object NewValue { get; set; }
 
     /// <summary>
     /// Gets the old field value. 
     /// </summary>
-    public object OldValue
-    {
-      get
-      {
-        return oldValue;
-      }
-    }
+    public object OldValue { get; private set; }
 
     /// <summary>
     /// Gets the name of the column associated with this operation.  
     /// </summary>
-    public string ColumnName
-    {
-      get
-      {
-        return columnName;
-      }
-    }
+    public string ColumnName { get; private set; }
     #endregion
 
     #region Constructors
@@ -95,30 +47,16 @@ namespace CAS.Lib.RTLib.UndoRedo
     /// <exception cref="ArgumentNullException">If the data table, data row or column name is null</exception>
     public UndoRedoFieldOperation( int id, DataTable dt, DataRow row, string columnName, object oldValue, object newValue )
     {
-      if ( columnName == null )
-      {
-        throw new ArgumentNullException( "Column name cannot be null." );
-      }
-
-      if ( row == null )
-      {
-        throw new ArgumentNullException( "DataRow cannot be null." );
-      }
-
-      if ( dt == null )
-      {
-        throw new ArgumentNullException( "Data table cannot be null." );
-      }
-
       this.id = id;
-      this.table = dt;
-      this.row = row;
+      this.table = dt ?? throw new ArgumentNullException( "Data table cannot be null." );
+      this.row = row ?? throw new ArgumentNullException( "DataRow cannot be null." );
       this.operationType = UndoRedoOperationBaseType.ChangeField;
-      this.columnName = columnName;
-      this.oldValue = oldValue;
-      this.newValue = newValue;
+      this.ColumnName = columnName ?? throw new ArgumentNullException( "Column name cannot be null." );
+      this.OldValue = oldValue;
+      this.NewValue = newValue;
       Initialize();
     }
     #endregion
+
   }
 }

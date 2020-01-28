@@ -1,31 +1,9 @@
-//<summary>
-//  Title   : Manager of scheduled in time objects.
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    MPostol - 24-09-2003: created
-//    MPostol - 26-10-2003:
-//       statistics was added - overtimeCoefficient
-//    MZbrzezny - 2008-02-20:
-//    - statistics of queue length are added (QueueLength property)
-//    - possibility to terminate the queue (the main thread is added)
-//    - now each counter decrement operation my notify other threads
-//    - name of the thread is added
-//    - many new comments
-//    MZbrzezny - 2008-02-22: ToString implementation and some locks are added, 
-//      fixed bug from previous release refer to MyTickListThreadEnabled
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.Lib.RTLib.Utils;
 using System;
@@ -65,13 +43,13 @@ namespace CAS.Lib.RTLib.Processes
       private readonly TElement myTODescriptor;
       private readonly WaitTimeList<TElement> myQueue;
       private TimeSpan myCycle = TimeSpan.MaxValue;
-      private TimeSpan cycle
+      private TimeSpan Cycle
       {
         get { return myCycle; }
         set { myCycle = Timer.Max(value, minTimeSpan); }
       }
       private long mycounter;
-      private long counter
+      private long Counter
       {
         get
         {
@@ -92,7 +70,7 @@ namespace CAS.Lib.RTLib.Processes
       /// Gets a value indicating whether this object is in queue.
       /// </summary>
       /// <value><c>true</c> if in queue otherwise, <c>false</c>.</value>
-      private bool inQueue
+      private bool InQueue
       {
         get { return myInQueue; }
       }
@@ -101,7 +79,7 @@ namespace CAS.Lib.RTLib.Processes
       /// </summary>
       private void InsertInQueue()
       {
-        InsertInQueue(cycle);
+        InsertInQueue(Cycle);
       }
       /// <summary>
       /// Inserts the in queue using defined cycle.
@@ -118,8 +96,8 @@ namespace CAS.Lib.RTLib.Processes
         lock (this)
         {
           myQueue.queuelength++;
-          counter = Convert.ToInt64(currCycle.TotalMilliseconds);
-          if ((myQueue.myTOQueue == null) || (counter <= myQueue.myTOQueue.counter))
+          Counter = Convert.ToInt64(currCycle.TotalMilliseconds);
+          if ((myQueue.myTOQueue == null) || (Counter <= myQueue.myTOQueue.Counter))
           {
             prev = null;
             next = myQueue.myTOQueue;
@@ -127,12 +105,12 @@ namespace CAS.Lib.RTLib.Processes
           }
           else
           {
-            counter -= myQueue.myTOQueue.counter;
+            Counter -= myQueue.myTOQueue.Counter;
             prev = myQueue.myTOQueue;
             next = myQueue.myTOQueue.next;
-            while ((next != null) && (next.counter <= counter))
+            while ((next != null) && (next.Counter <= Counter))
             {
-              counter -= next.counter;
+              Counter -= next.Counter;
               prev = next;
               next = next.next;
             }//while
@@ -141,7 +119,7 @@ namespace CAS.Lib.RTLib.Processes
           if (next != null)
           {
             next.prev = this;
-            next.counter -= counter;
+            next.Counter -= Counter;
           }
           myInQueue = true;
         }
@@ -152,7 +130,7 @@ namespace CAS.Lib.RTLib.Processes
       /// Gets the get coupled Time Out Desciptor (<see>TODescriptor</see>).
       /// </summary>
       /// <value>The get coupled TOD.</value>
-      internal TElement getCoupledTOD
+      internal TElement GetCoupledTOD
       {
         get { return myTODescriptor; }
       }
@@ -166,15 +144,15 @@ namespace CAS.Lib.RTLib.Processes
         InsertInQueue(TimeSpan.Zero);
       }
       /// <summary>
-      /// Decrements the couter.
+      /// Decrements the counter.
       /// 
       /// if the counter is less than 0 it notify other tasks that it is ready to be removed
       /// </summary>
       /// <param name="value">The value.</param>
-      internal void decCouter(int value)
+      internal void DecCouter(int value)
       {
-        counter -= value;
-        if (counter <= 0)
+        Counter -= value;
+        if (Counter <= 0)
         {
           myQueue.myTimeExpiredSig.Notify();
           myQueue.RemoveItem();
@@ -186,9 +164,9 @@ namespace CAS.Lib.RTLib.Processes
       /// <value>
       /// 	<c>true</c> if this instance is ready to by removed; otherwise, <c>false</c>.
       /// </value>
-      internal bool isReadyToByRemoved
+      internal bool IsReadyToByRemoved
       {
-        get { return (counter <= 0); }
+        get { return (Counter <= 0); }
       }
       /// <summary>
       /// Removes this instance.
@@ -197,13 +175,13 @@ namespace CAS.Lib.RTLib.Processes
       {
         lock (this)
         {
-          if (!inQueue)
+          if (!InQueue)
             return;
           escQueue = false;
           if (next != null)
           {
             next.prev = prev;
-            next.counter += counter;
+            next.Counter += Counter;
           }
           if (prev == null)
             myQueue.myTOQueue = next;
@@ -224,10 +202,10 @@ namespace CAS.Lib.RTLib.Processes
       /// <returns></returns>
       internal ChainLink Priority(ref long overtimeSum, ref double maxPrior, ref ChainLink mostDelayed)
       {
-        overtimeSum += counter;
+        overtimeSum += Counter;
         if (overtimeSum > 0)
           return null;
-        double myPrior = overtimeSum / cycle.TotalMilliseconds;
+        double myPrior = overtimeSum / Cycle.TotalMilliseconds;
         if ((myPrior < maxPrior) || escQueue)
         {
           maxPrior = myPrior;
@@ -246,8 +224,8 @@ namespace CAS.Lib.RTLib.Processes
       {
         set
         {
-          cycle = value;
-          if (inQueue)
+          Cycle = value;
+          if (InQueue)
             ResetCounter();
         }
       }
@@ -270,7 +248,7 @@ namespace CAS.Lib.RTLib.Processes
         this.myQueue = myQueue;
         this.escQueue = myQueue.c_WaightedPriority;
         this.myTODescriptor = timeOutDescriptor;
-        cycle = myCycle;
+        Cycle = myCycle;
         //InsertInQueue();
       }//ChainLink
       public override string ToString()
@@ -278,7 +256,7 @@ namespace CAS.Lib.RTLib.Processes
         string nextelem = "null";
         if (next != null)
           nextelem = next.ToString();
-        string data = String.Format("(ChainLink: cycle:{0}, counter:{1},next: ", cycle, counter);
+        string data = String.Format("(ChainLink: cycle:{0}, counter:{1},next: ", Cycle, Counter);
         return data + nextelem.ToString() + ")";
       }
       #endregion
@@ -290,7 +268,7 @@ namespace CAS.Lib.RTLib.Processes
     ///  20 - is the reasonable value (in ms) that Windows schedule tasks
     /// </summary>
     private const ushort cycleMiliseconds = 20;
-    private static TimeSpan minTimeSpan = TimeSpan.FromMilliseconds(3 * cycleMiliseconds);
+    private readonly static TimeSpan minTimeSpan = TimeSpan.FromMilliseconds(3 * cycleMiliseconds);
     /// <summary>
     /// this is signal used to inform other tasks that item is ready to be removed
     /// </summary>
@@ -334,7 +312,7 @@ namespace CAS.Lib.RTLib.Processes
         //sometimes difference >1000 ??
         //System.Diagnostics.Debug.Assert( difference < 5 * cycleTicks );
         m_lastTime = currentTime;
-        myTOQueue.decCouter(difference);
+        myTOQueue.DecCouter(difference);
       }
       catch (Exception ex)
       {
@@ -362,7 +340,7 @@ namespace CAS.Lib.RTLib.Processes
       statPriority.Add = Convert.ToInt32(-maxPriorFound * 100);
       //statPriority.Add = - maxPriorFoundPtr.Counter;
       maxPriorFoundPtr.Remove();
-      return maxPriorFoundPtr.getCoupledTOD;
+      return maxPriorFoundPtr.GetCoupledTOD;
     } //RemoveMostDelayedItem;
     private TElement DoRemoveItem(bool autoreset)
     {
@@ -496,7 +474,7 @@ namespace CAS.Lib.RTLib.Processes
       {
         lock (this)
         {
-          return (myTOQueue != null) && (myTOQueue.isReadyToByRemoved);
+          return (myTOQueue != null) && (myTOQueue.IsReadyToByRemoved);
         }
       }
     }
@@ -530,9 +508,9 @@ namespace CAS.Lib.RTLib.Processes
     {
       lock (this)
       {
-        while ((myTOQueue == null) || (!myTOQueue.isReadyToByRemoved))
+        while ((myTOQueue == null) || (!myTOQueue.IsReadyToByRemoved))
           myTimeExpiredSig.Wait(this);
-        System.Diagnostics.Debug.Assert(myTOQueue.isReadyToByRemoved, "Signaled but in the queue there is no elements to be removed");
+        System.Diagnostics.Debug.Assert(myTOQueue.IsReadyToByRemoved, "Signaled but in the queue there is no elements to be removed");
         return DoRemoveItem(autoreset);
       }
     } //WaitRemoveItem;
@@ -574,7 +552,7 @@ namespace CAS.Lib.RTLib.Processes
     public WaitTimeList(string handlerThreadName, bool waightedPriority)
     {
       c_WaightedPriority = waightedPriority;
-      statPriority.markNewVal += new MinMaxAvr.newVal(NewOvertimeCoefficient);
+      statPriority.MarkNewVal += new MinMaxAvr.newVal(NewOvertimeCoefficient);
       MyHandlerThreadName = handlerThreadName;
       m_Timer = new System.Threading.Timer(new System.Threading.TimerCallback(TickListThread));
       EnableListManagerThread();

@@ -58,7 +58,7 @@ namespace CAS.Lib.RTLib.Processes
           return TraceEventType.Information;
       }
     }
-    private EventLogEntryType myType;
+    private readonly EventLogEntryType myType;
     private readonly int myEventID;
     private short myCategory;
     private string myMessage;
