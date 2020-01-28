@@ -8,6 +8,7 @@ string DefaultProductTrademark = "Object-Oriented Internet Process-Observer";
 string AssemblyCopyright = "Copyright (C) 2020, Mariusz Postol LODZ POLAND.";
 string AssemblyCompany = "Mariusz Postol";
 string Url = "https://mpostol.github.io/RealTime";
+string repositoryUrl = "https://github.com/mpostol/RealTime";
 string Email = "mpostol@cas.eu";
 string Phone = "+48 608 619 899";
 string Owner = "Mariusz Postol";
@@ -21,7 +22,7 @@ string CASRealTimeName = "UAOOI.ProcessObserver.RealTime";
 string CASRealTimeTitle = "Object-Oriented Internet Process-Observer RealTime library";
 string CASRealTimeTrademark = "Object-Oriented Internet Process-Observer";
 string CASRealTimeVersion = "6.0.0";
-string CASRealTimePreRelease = "";
+string CASRealTimePreRelease = "-Alpha";
 
 //Note: 
 //Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, 

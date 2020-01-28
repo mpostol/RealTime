@@ -13,6 +13,8 @@
     <Company>Mariusz Postol</Company>
     <AssemblyName>UAOOI.ProcessObserver.RealTime</AssemblyName>
     <RootNamespace>UAOOI.ProcessObserver.RealTime</RootNamespace>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/mpostol/RealTime</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -31,6 +33,11 @@
     <Compile Remove="UTILS\CodeBuilderBase.cs" />
     <Compile Remove="UTILS\CSharpStreamCompiller.cs" />
     <Compile Remove="Win32API\Service.CS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="cube.ico" />
+    <None Remove="Logo64.PNG" />
   </ItemGroup>
 
   <ItemGroup>
