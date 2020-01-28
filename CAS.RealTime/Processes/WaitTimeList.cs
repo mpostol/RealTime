@@ -339,7 +339,7 @@ namespace CAS.Lib.RTLib.Processes
       catch (Exception ex)
       {
         string msg = "An exception has been caught in the WaitTimeList: {0}";
-        CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLogError(String.Format(msg, ex.Message), 339);
+        EventLogMonitor.WriteToEventLogError(String.Format(msg, ex.Message), 339);
       }
       finally
       {

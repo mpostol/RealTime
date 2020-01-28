@@ -1850,8 +1850,166 @@
         </member>
         <member name="T:Utils.Conversions">
             <summary>
-            
+            Converter class
             </summary>
+            <remarks>use the <seealso cref="T:System.BitConverter"/> and <seealso cref="T:System.Convert"/> to provide conversion</remarks>
+        </member>
+        <member name="M:Utils.Conversions.UshortHighByte(System.UInt16)">
+            <summary>
+            Ushorts the high byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.UshortLowByte(System.UInt16)">
+            <summary>
+            Ushorts the low byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ShortHighByte(System.Int16)">
+            <summary>
+            Shorts the high byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ShortLowByte(System.Int16)">
+            <summary>
+            Shorts the low byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUshort(System.Byte[],System.UInt16@)">
+            <summary>
+            Converts to ushort.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUshort(System.Byte[],System.Int32,System.UInt16@)">
+            <summary>
+            Converts to ushort.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToShort(System.Byte[],System.Int16@)">
+            <summary>
+            Converts to short.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToShort(System.Byte[],System.Int32,System.Int16@)">
+            <summary>
+            Converts to short.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUint(System.Byte[],System.UInt32@)">
+            <summary>
+            Converts to uint.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUint(System.Byte[],System.Int32,System.UInt32@)">
+            <summary>
+            Converts to uint.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUintRevers(System.Byte[],System.Int32,System.UInt32@)">
+            <summary>
+            Converts to uintrevers.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.UintToArray(System.UInt32,System.Byte[])">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+        </member>
+        <member name="M:Utils.Conversions.UintToArray(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Utils.Conversions.UintToArrayRevers(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+            Converts to arrayrevers.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToInt(System.Byte[],System.Int32@)">
+            <summary>
+            Converts to int.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToInt(System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Converts to int.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.IntToArray(System.Int32,System.Byte[])">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+        </member>
+        <member name="M:Utils.Conversions.IntToArray(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Utils.Conversions.BytesToUshort(System.Byte,System.Byte)">
+            <summary>
+            Converts to ushort.
+            </summary>
+            <param name="HiByte">The hi byte.</param>
+            <param name="LoByte">The lo byte.</param>
+            <returns>System.UInt16.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToIntPtr(System.Byte[],System.IntPtr@)">
+            <summary>
+            Converts to intptr.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wsk">The WSK.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToIntPtr(System.Byte[],System.IntPtr@,System.Int32)">
+            <summary>
+            Converts to intptr.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wsk">The WSK.</param>
+            <param name="index">The index.</param>
         </member>
         <member name="T:Utils.Handle">
             <summary>
@@ -1929,6 +2087,12 @@
             <summary>
             Summary description for SpecialOperation.
             </summary>
+        </member>
+        <member name="M:Utils.SpecialOperation.IncRound(System.UInt32@)">
+            <summary>
+            Round increments <paramref name="counter"/>.
+            </summary>
+            <param name="counter">The counter.</param>
         </member>
     </members>
 </doc>
