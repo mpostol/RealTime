@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
+    <PackageId>UAOOI.ProcessObserver.RealTime</PackageId>
+    <Description>Object-Oriented Internet Process-Observer RealTime library</Description>
+    <Product>Object-Oriented Internet Process-Observer</Product>
+    <AssemblyVersion>6.0.0</AssemblyVersion>
+    <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
+    <FileVersion>6.0.0</FileVersion>
+    <Version>6.0.0</Version>
+    <Company>Mariusz Postol</Company>
+    <AssemblyName>UAOOI.ProcessObserver.RealTime</AssemblyName>
+    <RootNamespace>UAOOI.ProcessObserver.RealTime</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\VS.git\RealTime\CAS.RealTime\RealTime.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\VS.git\RealTime\CAS.RealTime\UAOOI.ProcessObserver.RealTime.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Processes\EventLogMonitor_.cs" />
+    <Compile Remove="Processes\ExceptionLoged.cs" />
+    <Compile Remove="Processes\Watchdog.cs" />
+    <Compile Remove="UTILS\CodeBuilder.cs" />
+    <Compile Remove="UTILS\CodeBuilderBase.cs" />
+    <Compile Remove="UTILS\CSharpStreamCompiller.cs" />
+    <Compile Remove="Win32API\Service.CS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Processes\Watchdog.cs" />
+    <None Include="UTILS\CodeBuilder.cs" />
+    <None Include="UTILS\CodeBuilderBase.cs" />
+    <None Include="UTILS\CSharpStreamCompiller.cs" />
+    <None Include="Win32API\Service.CS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CAS.RealTime.Core\RealTimeCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CAS.RealTime.nuspec.nuspec">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CAS.RealTime.nuspec.tt</DependentUpon>
+    </None>
+    <None Update="CAS.RealTime.nuspec.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CAS.RealTime.nuspec.nuspec</LastGenOutput>
+    </None>
+    <None Update="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\AssemblyInfo.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

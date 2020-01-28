@@ -1,21 +1,9 @@
-//<summary>
-//  Title   : Management of concurent processes
-//  System  : Microsoft Visual C# .NET 
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20080625: mzbrzezny: ForceReboot method is added (another WMI function is called: Windows32Shutdown with ForceReboot Parameters)
-//    MPostol - 31-10-2003: 
-//    - reboot method was added
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System.Threading;
 
@@ -31,20 +19,21 @@ namespace CAS.Lib.RTLib.Processes
   /// </summary>
   public sealed class Manager
   {
+
     #region PRIVATE
     /// <summary>
     ///  Title   : Management of concurrent processes 
     /// </summary>
     private class ErrorQueueManager
     {
-      private static object errorQueueHand = new object();
+      private static readonly object errorQueueHand = new object();
       internal uint numOfErrors = 0;
       public void Wait()
       {
-        lock(this)
+        lock (this)
         {
-          numOfErrors ++;
-          lock(errorQueueHand) Monitor.PulseAll(errorQueueHand);
+          numOfErrors++;
+          lock (errorQueueHand) Monitor.PulseAll(errorQueueHand);
           Monitor.Wait(this);
         }
       }
@@ -52,11 +41,12 @@ namespace CAS.Lib.RTLib.Processes
     private static uint procNum = 0;
     private static ErrorQueueManager errorQueue = new ErrorQueueManager();
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Adds to error queue.
     /// </summary>
-    public static void AddToErrorQueue() 
+    public static void AddToErrorQueue()
     {
       errorQueue.Wait();
     }
@@ -64,20 +54,14 @@ namespace CAS.Lib.RTLib.Processes
     /// Gets the number of errors.
     /// </summary>
     /// <value>The number of errors.</value>
-    public static uint NumOfErrors
-    {
-      get
-      {
-        return errorQueue.numOfErrors;
-      }
-    }
+    public static uint NumOfErrors => errorQueue.numOfErrors;
     /// <summary>
     /// Asserts if the condition is true.
     /// </summary>
     /// <param name="assertion">condition of assertion.</param>
     public static void Assert(bool assertion)
     {
-      if (! assertion) 
+      if (!assertion)
         errorQueue.Wait();
     }
     /// <summary>
@@ -86,8 +70,8 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="proces">The process.</param>
     /// <returns>thread that is started</returns>
     public static Thread StartProcess(ThreadStart proces)
-    { 
-      return StartProcess (proces, "process" + procNum.ToString());
+    {
+      return StartProcess(proces, "process" + procNum.ToString());
     }
     /// <summary>
     /// Starts the process.
@@ -97,7 +81,7 @@ namespace CAS.Lib.RTLib.Processes
     /// <returns>thread that is started</returns>
     public static Thread StartProcess(ThreadStart proces, string name)
     {
-      return  StartProcess (proces, name, true, ThreadPriority.Normal);
+      return StartProcess(proces, name, true, ThreadPriority.Normal);
     }
     /// <summary>
     /// Initializes a new instance of the Thread class and causes it to be scheduled for execution. 
@@ -114,40 +98,19 @@ namespace CAS.Lib.RTLib.Processes
     /// terminating. Once all foreground threads belonging to a process have terminated, the common language 
     /// runtime ends the process. Any remaining background threads are stopped and do not complete.
     /// </remarks>
-    public static Thread StartProcess
-      (ThreadStart proces, string name, bool isBackground, ThreadPriority priority)
-    { 
-      procNum ++;
-      Thread procToStart = new Thread(proces);
-      procToStart.Name = name;
-      procToStart.IsBackground = isBackground;
-      procToStart.Priority = priority;
+    public static Thread StartProcess(ThreadStart proces, string name, bool isBackground, ThreadPriority priority)
+    {
+      procNum++;
+      Thread procToStart = new Thread(proces)
+      {
+        Name = name,
+        IsBackground = isBackground,
+        Priority = priority
+      };
       procToStart.Start();
       return procToStart;
     }
-    /// <summary>
-    /// The Reboot of Win32_OperatingSystem WMI class method shuts down the computer system, then restarts it. 
-    /// On computers running Windows NT/Windows 2000, the calling process must have the SE_SHUTDOWN_NAME 
-    /// privilege.
-    /// </summary>
-    public static void Reboot()
-    {
-      System.Diagnostics.Debug.Assert(false, "Just before reboot");
-      Win32API.OperatingSystem myOS = new Win32API.OperatingSystem();
-      foreach (Win32API.OperatingSystem os in Win32API.OperatingSystem.GetInstances()) os.Reboot();
-    }
-    /// <summary>
-    /// The Forced Reboot of Win32_OperatingSystem WMI class method shuts down the computer system, then restarts it. 
-    /// On computers running Windows NT/Windows 2000, the calling process must have the SE_SHUTDOWN_NAME 
-    /// privilege.
-    /// </summary>
-    public static void ForceReboot()
-    {
-      System.Diagnostics.Debug.Assert( false, "Just before force to reboot" );
-      Win32API.OperatingSystem myOS = new Win32API.OperatingSystem();
-      foreach ( Win32API.OperatingSystem os in Win32API.OperatingSystem.GetInstances() )
-        os.ForceReboot();
-    }
     #endregion
+
   }
 }

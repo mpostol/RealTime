@@ -1,5 +1,11 @@
+//___________________________________________________________________________________
+//
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Properties;
+using CAS.Lib.RTLib.Processes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CAS.RealTime.UnitTests
@@ -16,7 +22,9 @@ namespace CAS.RealTime.UnitTests
     [TestMethod]
     public void SettingsTestFixture()
     {
-      Assert.AreEqual("CAS.RealTime", Settings.Default.TraceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
+      string _traceName = string.Empty;
+      AssemblyTraceEvent.GetTraceName(x => _traceName = x);
+      Assert.AreEqual("CAS.RealTime", _traceName, "Trace name must be well defined and cannot be changed - it is breaking feature");
     }
   }
 }

@@ -1,20 +1,9 @@
-//<summary>
-//  Title   : NetworkConfig.UndoRedo
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    <Author> Tomek Siwecki - 26.12.2006 - Created <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Data;
@@ -43,20 +32,9 @@ namespace CAS.Lib.RTLib.UndoRedo
       {
         throw new UndoRedoException( "You cannot use this constructor when changing field" );
       }
-
-      if ( row == null )
-      {
-        throw new ArgumentNullException( "DataRow cannot be null." );
-      }
-
-      if ( dt == null )
-      {
-        throw new ArgumentNullException( "DataRow cannot be null." );
-      }
-
       this.id = id;
-      this.table = dt;
-      this.row = row;
+      this.table = dt ?? throw new ArgumentNullException( "DataRow cannot be null." );
+      this.row = row ?? throw new ArgumentNullException( "DataRow cannot be null." );
       this.operationType = operationType;
       Initialize();
     }

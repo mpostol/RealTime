@@ -1,0 +1,15 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".targets" #>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId><#= CASRealTimeName #></PackageId>
+    <Description><#= CASRealTimeTitle #></Description>
+    <Product><#= CASRealTimeTrademark #></Product>
+    <AssemblyVersion><#= CASRealTimeVersion #></AssemblyVersion>
+    <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
+    <FileVersion><#= CASRealTimeVersion #></FileVersion>
+    <Version><#= CASRealTimeVersion #></Version>
+    <Company>Mariusz Postol</Company>
+  </PropertyGroup>
+</Project>
+<#@ include file = "CAS.OPC.t4" #>

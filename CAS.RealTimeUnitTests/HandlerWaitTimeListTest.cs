@@ -88,7 +88,7 @@ namespace CAS.RealTime.UnitTests
     [TestMethod]
     public void GeneralTestNoAutoreset_10()
     {
-      OneTest(2500, false, 10, 30, 1.4);
+      OneTest(2500, false, 10, 30, 1.5);
     }
     /// <summary>
     /// Test with auto-reset disabled and operation length 250 ms

@@ -1,0 +1,2083 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UAOOI.ProcessObserver.RealTime</name>
+    </assembly>
+    <members>
+        <member name="T:CAS.Lib.RTLib.Processes.Condition">
+            <summary>
+            The condition concept offers a way of the synchronization. Each condition is 
+            associated with an important event (condition); hence the appearance of a signal 
+            is meant as appearance of the associated event, which manifests in establishing 
+            the relevant condition. Generally, three kinds of operations on signals are 
+            defined, namely, wait - to suspend process until the associated signal will be 
+            sent, Notify - to awake one of the waiting processes, and IsAwaiting - to check 
+            if any process is waiting for the specified signal.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Condition.Notify">
+            <summary>
+            Notifies this instance.
+            use Notify - to awake one of the waiting processes
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Condition.NotifyAll">
+            <summary>
+            Notifies all.
+            use NotifyAll - to awake all of the waiting processes
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Condition.Wait(System.Object)">
+            <summary>
+            Wykonuje Wait
+            </summary>
+            <remarks>Może być wykonana tylko wewnatrz instrukcji lock </remarks>
+            <param name="callingMonitor">zwalnia wskazany monitor</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Condition.Wait(System.Object,System.Int32)">
+            <summary>
+            Waits the specified calling monitor.
+            Wykonuje Wait z uwzglednieniem timeout'u
+            </summary>
+            <remarks>Może być wykonana tylko wewnatrz instrukcji lock </remarks>
+            <param name="callingMonitor">The calling monitor.</param>
+            <param name="TimeOut">The time out.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Condition.Wait(System.Object,System.TimeSpan)">
+            <summary>
+            Releases the lock on a monitor and blocks the current thread until 
+            it receives Notification / Signal or a specified amount of time elapses.
+            </summary>
+            <param name="callingMonitor">The monitor which to releases the lock on.</param>
+            <param name="TimeOut">The number of milliseconds to wait before this method returns. </param>
+            <returns>true if the lock was reacquired before the specified time elapsed; otherwise, false. 
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Condition.IsAwaiting">
+            <summary>
+            Determines whether this instance is awaiting.
+            checks if any process is waiting for the specified signal
+            </summary>
+            <returns>
+            	<c>true</c> if this instance is awaiting; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Error">
+            <summary>
+            Enum that gives number for error in trace messages
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_NULL_protocol">
+            <summary>
+            error in ApplicationLayer Null protocol
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_MBUS_PRIVATE_MBUS_message">
+            <summary>
+            error in MBUS message
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_SBUS_PRIVATE_SBUS_message">
+            <summary>
+            error in SBUS message
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_SBUS_PRIVATE_SBUSbase_message">
+            <summary>
+            error in SBUS base message (common for RS and NET)
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_SBUS_PRIVATE_SBUSnet_message">
+            <summary>
+            error in SBUS net message
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommunicationLayer_UMessage">
+            <summary>
+            error in umessage
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.Processes_IEnvelope">
+            <summary>
+            error in envelope
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.BaseStation_DataQueue">
+            <summary>
+            error in DataQueue
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.BaseStation_BaseStation_Management">
+            <summary>
+            Error in BaseStattion Management
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.Vacat">
+            <summary>
+            Reserved for future use
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.RTLib_AppConfigManagement">
+            <summary>
+            Error in RTLib: Application configuration management
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_InterfaceNotImplementedException">
+             <summary>
+            Error in  RTLib: Application Layer ApplicationLayer_InterfaceNotImplementedException
+             </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.RTLib_AppAdditionalInfos">
+            <summary>
+            Error in RTLib: Application additional information 
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommClient_BaseStation_Initialization">
+            <summary>
+            Error in CommClient_BaseStation_Initialization
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommClient_OPC_Interface">
+            <summary>
+            Error in CommClient_OPC_Interface
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommServer_OPC_Interface">
+            <summary>
+            Error in CommServer_OPC_Interface
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.NetworkConfig_ApplicationProtocol">
+            <summary>
+            Error in NetworkConfig_ApplicationProtocol
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommServer_Configuration">
+            <summary>
+            Error in CommServer_Configuration
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommServer_EC2EC3_symulator">
+            <summary>
+            Error in CommServer_EC2EC3_symulator
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent">
+            <summary>
+            Error in CommServer_CommServerComponent
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_OPC_Interface">
+            <summary>
+            Error in DataPorter_OPC_Interface
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_ApplicationConfiguration">
+            <summary>
+            Error in DataPorter_ApplicationConfiguration
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_Transaction_OperationDBThread">
+            <summary>
+            Error in DataPorter_Transaction_OperationDBThread
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_OPCBufferedDataAccess">
+            <summary>
+             Error in DataPorter_OPCBufferedDataAccess
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_OPCRealtimeDataAccess">
+            <summary>
+            Error in DataPorter_OPCRealtimeDataAccess
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_OPCDataQueue">
+            <summary>
+            Error in DataPorter_OPCDataQueue
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_gui">
+            <summary>
+            Error in DataPorter_gui
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_BufferedAccessTransaction">
+            <summary>
+            Error in DataPorter_Servers
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.DataPorter_Servers">
+            <summary>
+            Error in DataPorter_Servers
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CAS_OpcSvr_Da_NETServer_Server">
+            <summary>
+            Error in CAS_OpcSvr_Da_NETServer_Server
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CAS_OpcSvr_Da_NETServer_DaServerBUSSniffer">
+            <summary>
+            Error in CAS_OpcSvr_Da_NETServer_DaServerBUSSniffer
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CAS_OpcSvr_Da_NETServer_Subscription">
+            <summary>
+            Error in CAS_OpcSvr_Da_NETServer_Subscription
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CAS_OpcSvr_Da_NETServer_Initialization">
+            <summary>
+            Error in CAS_OpcSvr_Da_NETServer_Initialization
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommunicationLayer">
+            <summary>
+            Error in CommunicationLayer
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommunicationLayer_Net_to_Serial">
+            <summary>
+            Error in CommunicationLayer_Net_to_Serial
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.ErrorCauseMask">
+            <summary>
+            mask for error cause
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.ErrorCauseMask.Processes_EventLogMonitor_WriteEntry">
+            <summary>
+            CommClient_BaseStation_Initialization
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.ErrorCauseMask.Processes_Assertion_Assert">
+            <summary>
+            Processes_Assertion_Assert
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.ErrorCauseMask.Processes_MonitoredThread">
+            <summary>
+            Processes_MonitoredThread
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.EventsSynchronization">
+            <summary>
+            It allows synchronizing and exchanging events between concurrent threads on the FIFO basis.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventsSynchronization.GetEvent(System.Object@,System.Int32,System.Object)">
+            <summary>
+            Deposits or gets new event. If there is any events to be get depositing thread enters wait state.
+            </summary>
+            <param name="lastEvent">The last event.</param>
+            <param name="TimeOut">The time out.</param>
+            <param name="callingMonitor">The calling monitor.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventsSynchronization.GetEvent(System.Object@,System.Int32)">
+            <summary>
+            Gets the event.
+            Deposits or gets new event. If there is any events to be get depositing thread enters wait state.
+            </summary>
+            <param name="lastEvent">The last event.</param>
+            <param name="TimeOut">The time out.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventsSynchronization.SetEvent(System.Object,System.Object)">
+            <summary>
+            Sets the event.
+            Adds this event to process list and informs that new event occurs
+            </summary>
+            <param name="newEvent">The new event.</param>
+            <param name="callingMonitor">The calling monitor.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventsSynchronization.SetEvent(System.Object)">
+            <summary>
+            Sets the event.
+            Adds this event to process list and informs that new event occurs
+            </summary>
+            <param name="newEvent">The new event.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1">
+            <summary>
+            Summary description for HandlerWaitTimeList.
+            This is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
+            </summary>
+            <typeparam name="TElement">The type of the element.</typeparam>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1.RemoveItem">
+            <summary>
+            The method removes first ready item from the queue and schedules the work using <see cref="T:System.Threading.ThreadPool"/>.
+            The method is called by the internal timer callback inside the lock of the instance of this class.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1.QueueHandler(System.Object)">
+            <summary>
+            The main thread that executes handlers.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1.Handler(`0)">
+            <summary>
+            If overridden in the derived class can be used 
+            to handle the work related to the <paramref name="myDsc"/>. 
+            Only one call is guaranteed at any instant of time. 
+            This method is executed by a separate thread.
+            </summary>
+            <param name="myDsc">descriptor handler</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1.#ctor(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Creates HandlerWaitTimeList
+            </summary>
+            <param name="autoreset">true if after removing reset is to be applied</param>
+            <param name="handlerThreadName">Name of the handler for debug purpose</param>
+            <param name="waightedPriority">if set to <c>true</c> weighted priority algorithm is enabled.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.HandlerWaitTimeList`1.#ctor(System.Boolean,System.String)">
+            <summary>
+            Creates HandlerWaitTimeList
+            </summary>
+            <param name="autoreset">true if after removing reset is to be applied</param>
+            <param name="handlerThreadName">Name of the handler for debug purpose</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.MonitoredThread">
+            <summary>
+             Implements the watch dog mechanism for Thread's. 
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.MonitoredThread.ResetWatchDog(System.Int16)">
+            <summary>
+            Resets the watch dog.
+            </summary>
+            <param name="category">The category.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.MonitoredThread.ResetWatchDog(System.Int16,System.UInt16)">
+            <summary>
+            Resets the watch dog.
+            </summary>
+            <param name="category">The category.</param>
+            <param name="timeout">The timeout.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.MonitoredThread.#ctor(System.UInt16,System.String,System.Int32,System.Threading.ThreadStart,System.String,System.Boolean,System.Threading.ThreadPriority)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.MonitoredThread"/> class.
+            </summary>
+            <param name="timeout">The timeout.</param>
+            <param name="message">The message.</param>
+            <param name="eventID">The event ID.</param>
+            <param name="process">The process.</param>
+            <param name="processName">Name of the process.</param>
+            <param name="isBackground">if set to <c>true</c> [is background].</param>
+            <param name="priority">The priority.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Port">
+            <summary>
+            Provides access to a queue of IEnvelope messages.
+            Thread Safety:
+            Instances members of this type are safe for multi-threaded operations. 
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Port.Count">
+            <summary>
+            Gets the number of elements contained in the Port queue.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Port.Open">
+            <summary>
+            Opens this instance.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Port.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Port.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Port.SendMsg(CAS.Lib.RTLib.Processes.IEnvelope@)">
+            <summary>
+            Sends the message to the 'port'. If there is a process waiting in 'port' it 
+            will be resumed from the 'port' queue. If there is no process, the message 
+            will be queued.
+            </summary>
+            <param name="mess">Message to be sent</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Port.WaitMsg(System.Object,CAS.Lib.RTLib.Processes.IEnvelope@,System.Int32)">
+            <summary>
+            Receive message from 'port'. If there is no message in the 'port', the calling 
+            thread will be blocked until it receives a message or a specified amount of 
+            time elapses.
+            </summary>
+            <param name="mess">UMessage removed from the beginning of the port Queue</param>
+            <param name="timeOut">The number of milliseconds to wait before this method returns. 0 means wait forever.
+            </param>
+            <param name="callingMonitor">TODO: add some descriptio</param>
+            <returns>
+            true if the message was received before the specified time elapsed; otherwise, false
+            </returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.WaitTimeList`1">
+            <summary>
+            List responsible for scheduling objects ( Manager of scheduled in time objects. ).
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink">
+             <summary>
+              one link from the chain (chain is managed in time queue)
+               
+             Dzieki tej klasie utrzemujemy liste zarzadzanych obiektow.
+             Kazdy z obiektow ma swoj element poprzedni i nastepny.
+             
+             jednym z wazniejszych elementow kazdego ogniwa jest counter ktory okresla czy i ile dany elment 
+             jest przeterminowany.
+             Elementy (obiekty) sa szeregowane na lisacie w nastepujacy sposob:
+             - pierwszy element ma ustawiony counter na wartosc opoznienia (jesli counter &gt;0 to znaczy ze 
+             element czeka na wykonanie, 
+             jesli counter &lt;0 tzn. ze element jet opozniony i powinien zostac wyjety z kolejki
+             - nastepny element ma counter ustawiony na wartosc wzgledna wobec poprzedniego, np. jesli dany 
+             element ma ustawiony counter na 10 tzn ze ma 109 ms zapasu w stosunku do opoznienia elementu poprzedniego.
+            
+             </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.InQueue">
+            <summary>
+            Gets a value indicating whether this object is in queue.
+            </summary>
+            <value><c>true</c> if in queue otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.InsertInQueue">
+            <summary>
+            Inserts the in queue using default settings (default cycle).
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.InsertInQueue(System.TimeSpan)">
+            <summary>
+            Inserts the in queue using defined cycle.
+            
+            Ta funkcja wstawia element na poczatek jesli kolejka jest pusta lub 
+            poszukuje wlasciwego misjca gdzie dany element powinien byc wstawiony .
+            
+            W zaleznosci od znalezienia miejsca odpowienio zmniejszany jest counter elementu,
+            by stanowil wartosc wzgledna wobec porzedniego oraz zmieniany jest counter nstepnego
+            </summary>
+            <param name="currCycle">The curr cycle.</param>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.GetCoupledTOD">
+            <summary>
+            Gets the get coupled Time Out Desciptor (<see>TODescriptor</see>).
+            </summary>
+            <value>The get coupled TOD.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.MoveToBeginning">
+            <summary>
+            Moves to beginning.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.DecCouter(System.Int32)">
+            <summary>
+            Decrements the counter.
+            
+            if the counter is less than 0 it notify other tasks that it is ready to be removed
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.IsReadyToByRemoved">
+            <summary>
+            Gets a value indicating whether this instance is ready to by removed.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is ready to by removed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.Remove">
+            <summary>
+            Removes this instance.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.Priority(System.Int64@,System.Double@,CAS.Lib.RTLib.Processes.WaitTimeList{`0}.ChainLink@)">
+            <summary>
+            Priorities the specified overtime sum.
+            </summary>
+            <param name="overtimeSum">The overtime sum.</param>
+            <param name="maxPrior">The max prior.</param>
+            <param name="mostDelayed">The most delayed object on the list .</param>
+            <returns></returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.SetCycle">
+            <summary>
+            Sets the set cycle [in ms] of the object .
+            </summary>
+            <value>The set cycle.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.ResetCounter">
+            <summary>
+            Resets the counter (removes the element from queue and insterts the element again).
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink.#ctor(CAS.Lib.RTLib.Processes.WaitTimeList{`0},`0,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.WaitTimeList`1.ChainLink"/> class.
+            </summary>
+            <param name="myQueue">My queue.</param>
+            <param name="timeOutDescriptor">The coupled time out descriptor.</param>
+            <param name="myCycle">My cycle - how often this object should be removed from the queue).</param>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.WaitTimeList`1.cycleMiliseconds">
+            <summary>
+            cycleTicks is value in ms that indicate how often TicklistThred checks the counters
+             of object from the list
+             20 - is the reasonable value (in ms) that Windows schedule tasks
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.WaitTimeList`1.myTimeExpiredSig">
+            <summary>
+            this is signal used to inform other tasks that item is ready to be removed
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.WaitTimeList`1.statPriority">
+            <summary>
+            statistics item to gather queue priorities statistics
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.WaitTimeList`1.clock">
+            <summary>
+            clock for this queue
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.WaitTimeList`1.MyHandlerThreadName">
+            <summary>
+            the name of this list
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.WaitTimeList`1.queuelength">
+            <summary>
+            length of this queue
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.#cctor">
+            <summary>
+            Initializes the static part of <see cref="T:CAS.Lib.RTLib.Processes.WaitTimeList`1"/> class - it starts the clock.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.TickListThread(System.Object)">
+            <summary>
+            Ticks the list thread - the main thread resposible for list management.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.RemoveMostDelayedItem">
+            <summary>
+            Removes the most delayed item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.RemoveItem(System.Boolean)">
+            <summary>
+            Removes the item.
+            </summary>
+            <param name="autoreset">if set to <c>true</c> do ResetCounter.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor">
+            <summary>
+             Title   : Time Out Descriptor - it is a kind of public wrapper on a ChainLink class
+             but it is restricted to selected functionality.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor.Cycle">
+            <summary>
+            Sets the new item cycle value and executes ResetCounter() if the item is in queue.
+            </summary>
+            <value>The cycle.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor.ResetCounter">
+            <summary>
+            Removes this item from queue, resets the couter and inserts it again to the queue.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor.ClearCounter">
+            <summary>
+            Moves this item to the beginning of the queue.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor.Remove">
+            <summary>
+            Removes this item from the queue.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor.#ctor(CAS.Lib.RTLib.Processes.WaitTimeList{`0},System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.WaitTimeList`1.TODescriptor"/> class.
+            After creation the object is not added to the queue.
+            </summary>
+            <param name="queue">The queue.</param>
+            <param name="cycle">The cycle.</param>
+            <exception cref="T:System.ArgumentNullException">queue is a null reference.</exception>
+            <remarks>After creation the object is not added to the queue.</remarks>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.RemoveItem">
+            <summary>
+            While overridden the method can be used to remove first ready item from the queue. 
+            The method is called by the internal timer callback inside the lock of the instance of this class.
+            Typically it is used to schedule a work related to removed Item using the <see cref="T:System.Threading.ThreadPool"/>.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.QueueLength">
+            <summary>
+            Gets the length of the queue.
+            </summary>
+            <value>The length of the queue.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.NewOvertimeCoefficient(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Event handler invoked every time new values are available.
+            </summary>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <param name="average">The average.</param>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.WaitTimeList`1.IsReadyToRemoved">
+            <summary>
+            Gets a value indicating whether item from the queue is ready to be removed.
+            </summary>
+            <value>
+            	<c>true</c> if  instance is ready to removed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.RemoveItem(`0@)">
+            <summary>
+            Removes the item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns>Returns true if item removed, otherwise false and item is null</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.WaitRemoveItem(System.Boolean)">
+            <summary>
+            Waits and remove an item.
+            </summary>
+            <param name="autoreset">if set to <c>true</c> autoreset the item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.EnableListManagerThread">
+            <summary>
+            Enables the list manager thread.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.DisableListManagerThread">
+            <summary>
+            Disables the list manager thread.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.WaitTimeList`1"/> class.
+            </summary>
+            <param name="handlerThreadName">Name of the handler thread.</param>
+            <param name="waightedPriority">if set to <c>true</c> wighted priority algorithm is enabled.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.WaitTimeList`1"/> class.
+            </summary>
+            <param name="handlerThreadName">Name of the handler thread.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.Dispose">
+            <summary> Implement IDisposable. Do not make this method virtual. A derived class should not be able to override this method.
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.WaitTimeList`1.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:CAS.Lib.RTLib.Processes.WaitTimeList`1"/> class. 
+            Use C# destructor syntax for finalization code. This destructor will run only if the Dispose method does not get called. 
+            It gives your base class the opportunity to finalize. Do not provide destructors in types derived from this class.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.ExceptionTraceFormat">
+            <summary>
+              Looks up a localized string similar to Exception has beet catch: {0}  at {1} with call stack {2}.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.InsideWatchdogMessageFormat">
+            <summary>
+              Looks up a localized string similar to There are {0} processes inside Watchdog..
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.MaxDelayMessageFormat">
+            <summary>
+              Looks up a localized string similar to New maximum delay = {0} mS reached at {1} while calling {2}.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.RestartMessageFormat">
+            <summary>
+              Looks up a localized string similar to I had to reboot the system at: {0} while calling {1}.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Properties.Resources.WatchdogStopwatchIsNotZeroMessageFormat">
+            <summary>
+              Looks up a localized string similar to Stopwatch expected value should be 0, but the value is {0} ms..
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs">
+            <summary>
+            Encapsulates the operation record associated with a operation event.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.record">
+            <summary>
+            The transaction record.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.Record">
+            <summary>
+            Gets the transaction record associated with the event.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs.#ctor(CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase)">
+            <summary>
+            Creates a new <see cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs"/> object.
+            </summary>
+            <param name="record">The transaction record.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoException">
+            <summary>
+            Exception class for exceptions occurring in the UndoRedo module.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoException"/> object.
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation">
+            <summary>
+            Undo or redo operation data used when changing fields.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.NewValue">
+            <summary>
+            Gets or sets the new field value.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.OldValue">
+            <summary>
+            Gets the old field value. 
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.ColumnName">
+            <summary>
+            Gets the name of the column associated with this operation.  
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation.#ctor(System.Int32,System.Data.DataTable,System.Data.DataRow,System.String,System.Object,System.Object)">
+            <summary>
+            Creates a new <see cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoFieldOperation"/> object.
+            </summary>
+            <param name="id">The transaction number.  This can be any integer value.</param>
+            <param name="dt">The data table.</param>
+            <param name="row">The row being added/deleted.</param>
+            <param name="columnName">The column name of the field being changed.</param>
+            <param name="oldValue">The old field's value.</param>
+            <param name="newValue">The new field's value.</param>
+            <exception cref="T:System.ArgumentNullException">If the data table, data row or column name is null</exception>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager">
+            <summary>
+            Manages row and field changes for a specific DataTable.
+            </summary>
+            <remarks>Based on http://www.codeproject.com/cs/database/dtt1.asp</remarks>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.m_operations">
+            <summary>
+            The log of operations.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.m_sourceDataSet">
+            <summary>
+            The dataset on which we are tracking operations.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.m_doLogging">
+            <summary>
+            Enables (the default) or disables logging.  Logging is disabled
+            during Revert and Apply.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.m_trasaction">
+            <summary>
+            Begins or ends the transaction. By default transactions are disabled
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.m_lastAcceptedChangeIndex">
+            <summary>
+            The last operation record index on which table operations were accepted.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.m_uncomittedRows">
+            <summary>
+            The list of uncommitted rows
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.waitingForChangedEventList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.curentTransactionID">
+            <summary>
+            Current transaction identifier if its null the transaction is disabled
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.ApplyTransaction(System.Collections.Generic.List{CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase})">
+            <summary>
+            Applies all given transactions
+            </summary>
+            <param name="ops">Operation list</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Hook">
+            <summary>
+            Wire up all the events foreach data table in source dataset used by the operation logger.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Unhook">
+            <summary>
+            Unhook our event handlers from the source dataset.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RestoreRowFields(CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation,System.Data.DataRow)">
+            <summary>
+            Restores all row fields saved in the transaction record's field-value collection.
+            </summary>
+            <param name="record"></param>
+            <param name="row"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.SaveRowFields(CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation,System.Data.DataRow)">
+            <summary>
+            Saves all row fields to the transaction record's field-value collection.
+            </summary>
+            <param name="record"></param>
+            <param name="row"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnTableCleared(System.Object,System.Data.DataTableClearEventArgs)">
+            <summary>
+            We do not support undoing a Clear action.  This simply clears the internal collections and state.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnTableNewRow(System.Object,System.Data.DataTableNewRowEventArgs)">
+            <summary>
+            Log the new row and add it to the uncommitted row collection.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnRowChanged(System.Object,System.Data.DataRowChangeEventArgs)">
+            <summary>
+            Handler for when the row is actually added to the DataTable's row collection.
+            The row is now committed, so it is removed from the uncommitted map.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <exception cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoException">If row that doesn't exist in the uncommitted row collection</exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnColumnChanging(System.Object,System.Data.DataColumnChangeEventArgs)">
+            <summary>
+            Handler for when a field changes.  This records only the current (old) field value.
+            The OnColumnChanged handler records the new value, giving the application a chance
+            to change the proposed value.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnColumnChanged(System.Object,System.Data.DataColumnChangeEventArgs)">
+            <summary>
+            Handler for when the field value actually changes.  The application has now
+            had a chance to set the proposed value, so we can record it as the new value.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnRowDeleting(System.Object,System.Data.DataRowChangeEventArgs)">
+            <summary>
+            The row deleting event fires when the row has being removed fro the collection.
+            We can't use the row deleted event to record the row field values because the row
+            has been then marked as deleted and accessing the fields throws an exception.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnRedoUndoOperationAdding(CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs)">
+            <summary>
+            Fires the RedoUndoOperationAdding event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OnRedoUndoOperationAdded(CAS.Lib.RTLib.UndoRedo.UndoRedoEventArgs)">
+            <summary>
+            Fires the RedoUndoOperationAdded event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.SourceDataSet">
+            <summary>
+            Gets or sets the source dataset.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">If data set is null</exception>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Log">
+            <summary>
+            Gets the operation log for the associated dataset.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.ClearLog">
+            <summary>
+            Clears log data
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.SuspendLogging">
+            <summary>
+            Suspends logging.  Used during Revert and Apply to prevent logging of already
+            logged operations.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.ResumeLogging">
+            <summary>
+            Resumes logging.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.BeginTransaction">
+            <summary>
+            Begins the transaction.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.EndTransaction">
+            <summary>
+            Ends current transaction.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.AcceptChanges">
+            <summary>
+            Accepts the changes.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RejectChanges">
+            <summary>
+            Rejects the changes.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.CollectUncommittedRows">
+            <summary>
+            Collects the uncommitted rows.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Revert(System.Int32)">
+            <summary>
+            Reverts the operation or transaction occurring at the specified index.
+            </summary>
+            <param name="idx">The operation index to roll back.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If identifier is negative or greater than the number of operations</exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RevertTransaction(System.Collections.Generic.List{CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase})">
+            <summary>
+            Reverts all given operations
+            </summary>
+            <param name="ops"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Apply(System.Int32)">
+            <summary>
+            Applies the operation or transaction occurring at the specified index.
+            </summary>
+            <param name="idx">The operation index to apply.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If identifier is negative or greater than the number of operations</exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.Delete(System.Int32)">
+            <summary>
+            Deletes the specified idx operation from the rever log.
+            </summary>
+            <param name="idx">The idx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.#ctor">
+            <summary>
+            Creates a new <see cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager"/> object.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.OperationDlgt">
+            <summary>
+            Delegate used with the RedoUndoOperationAdding and RedoUndoOperationAdded events.
+            </summary>
+            <param name="sender">The instance of this class.</param>
+            <param name="e">The UndoRedoEventArgs instance.</param>
+        </member>
+        <member name="E:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RedoUndoOperationAdding">
+            <summary>
+            Triggered before the operation is added to the log.
+            </summary>
+        </member>
+        <member name="E:CAS.Lib.RTLib.UndoRedo.UndoRedoMenager.RedoUndoOperationAdded">
+            <summary>
+            Triggered after the operation is added to the log.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase">
+            <summary>
+            Base class for UndoRedoOperation data object
+            </summary>
+            <remarks>
+            Responsibility:
+            - base class for UndoRedoRowOperation and UndoRedoFieldOperation objects
+            - provides access to undo and redo data comon for all operation types
+            - 
+            </remarks>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.table">
+            <summary>
+            The table on which we are tracking operations.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.row">
+            <summary>
+            The row in data table on which we are tracking operations.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.id">
+            <summary>
+            The operation's identifier.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.operationType">
+            <summary>
+            The operation type.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.columnValues">
+            <summary>
+            The collection of column values
+            </summary>
+            <remarks>Its use only when row is deleted</remarks>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.transactionId">
+            <summary>
+            Transaction identifier
+            </summary>
+            <remarks>If this operation occurs not in the transaction it is null</remarks>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.ID">
+            <summary>
+            Gets the operation's identifier.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.Table">
+            <summary>
+            Gets the data table
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.Row">
+            <summary>
+            Gets or sets the data row
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.OperationType">
+            <summary>
+            Gets the operation type.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.WasDeleted">
+            <summary>
+            Get the state of the field-value buffer, which indicates that a the collection of field-values
+            has been populated, thus the row has been deleted at some point.  True if the collection is
+            populated, false if the collection is empty.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.TransactionId">
+            <summary>
+            Gets or sets the transaction identifier.
+            </summary>
+            <remarks>If its not a transaction this identifier is null</remarks>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBase.Initialize">
+            <summary>
+            Common initialization called by constructors.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBaseType">
+            <summary>
+            Operation types
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBaseType.NewRow">
+            <summary>
+            Adding new row
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBaseType.DeleteRow">
+            <summary>
+            Deleting a row
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBaseType.ChangeField">
+            <summary>
+            Changing fields
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation">
+            <summary>
+            Undo or redo operation data used when adding or deleting rows
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.#ctor(System.Int32,System.Data.DataTable,System.Data.DataRow,CAS.Lib.RTLib.UndoRedo.UndoRedoOperationBaseType)">
+            <summary>
+            Creates a new <see cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation"/> object.
+            </summary>
+            <param name="id">The associated operation number. Can be any integer value.</param>
+            <param name="dt">The data table.</param>
+            <param name="row">The row being added/deleted.</param>
+            <param name="operationType">The operation type.</param>
+            <exception cref="T:CAS.Lib.RTLib.UndoRedo.UndoRedoException">If the transaction is ChangeField</exception>
+            <exception cref="T:System.ArgumentNullException">If the data table or data row is null</exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.AddColumnNameValuePair(System.String,System.Object)">
+            <summary>
+            Adds the value associated with a field to the internal field-value collection.
+            </summary>
+            <param name="columnName">The column name.</param>
+            <param name="val">The associated value.</param>
+            <exception cref="T:System.ArgumentNullException">If the column name is null</exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.UndoRedo.UndoRedoRowOperation.GetValue(System.String)">
+            <summary>
+            Gets the value from the field-value collection for the specified field. 
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">If the column name is null</exception>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1">
+            <summary>
+            Generic sorted tree (tree where nodes are sorted)
+            </summary>
+            <remarks>This tree allows to keep only one reference to the instance of the object on the tree</remarks>
+            <typeparam name="T">the type that is stored on the tree</typeparam>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeException">
+            <summary>
+            Exception that can be thrown by SortedTree
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList">
+            <summary>
+            Sorted List of nodes from Sorted Tree
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList"/> class.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.#ctor(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeSortedList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.Add(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeSortedList)">
+            <summary>
+            Adds the specified list.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.GetFirstNodeFromThisCollection">
+            <summary>
+            Gets the first node from this collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.System#ICloneable#Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList">
+            <summary>
+             List of nodes from Sorted Tree
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList"/> class.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.#ctor(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeSortedList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.#ctor(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.Add(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeSortedList)">
+            <summary>
+            Adds the specified list.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.Add(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeList)">
+            <summary>
+            Adds the specified list.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.GetFirstNodeFromThisCollection">
+            <summary>
+            Gets the first node from this collection.
+            </summary>
+            <returns>first sorted tree node of the collection</returns>
+        </member>
+        <member name="E:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.TreeHasChanged">
+            <summary>
+            Occurs when tree has changed.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.GetNode(`0)">
+            <summary>
+            Gets the node.
+            </summary>
+            <param name="Value">The value.</param>
+            <returns>node if found and null otherwise</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.GetNodesFromLevel(System.Int32)">
+            <summary>
+            Gets the nodes from level.
+            </summary>
+            <param name="level">The level.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.AddNode(`0)">
+            <summary>
+            Adds the node.
+            </summary>
+            <param name="NodeValue">The node value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.AddNode(`0,System.Int32,`0,System.Int32)">
+            <summary>
+            Adds the node.
+            </summary>
+            <param name="ParentNodeValue">The parent node value. If this value is null this element is added as root element</param>
+            <param name="NodeNumber">The node number.</param>
+            <param name="NewValue">The new value.</param>
+            <param name="ParentConnectorNumber">The parent connector number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots(`0,`0)">
+            <summary>
+            Removes the connection betweeen parent and child and move element to roots.
+            </summary>
+            <param name="ParentValue">The parent value.</param>
+            <param name="ChildValue">The child value.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.RemoveValue(`0,System.Boolean)">
+            <summary>
+            Removes the value.
+            </summary>
+            <param name="ValueToBeRemoved">The value to be removed.</param>
+            <param name="Shallow">if set to <c>true</c> [shallow] removal is done (all childs are moved to root if they are not connected to any others elements).</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.GetSubtreeFromNode(`0)">
+            <summary>
+            Gets the subtree from node.
+            </summary>
+            <param name="StartValue">The start value.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.MarkAllUnvisited">
+            <summary>
+            Marks all nodes as unvisited.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.GetRoots">
+            <summary>
+            Gets the roots.
+            </summary>
+            <returns>Clonned list of roots</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.GetNextUnvisited">
+            <summary>
+            Gets the next unvisited node.
+            </summary>
+            <returns>next unvisited node</returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.Height">
+            <summary>
+            Gets the height of the tree.
+            </summary>
+            <value>The height.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.GetHeightOfTheNode(`0)">
+            <summary>
+            Gets the height of the node.
+            </summary>
+            <param name="Node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1"/> class.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#Collections#Generic#IEnumerator{T}#Current">
+            <summary>
+            Gets the element in the collection at the current position of the enumerator.
+            </summary>
+            <value></value>
+            <returns>The element in the collection at the current position of the enumerator.</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#IDisposable#Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#Collections#IEnumerator#Current">
+            <summary>
+            Gets the element in the collection at the current position of the enumerator.
+            </summary>
+            <value></value>
+            <returns>The element in the collection at the current position of the enumerator.</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#Collections#IEnumerator#MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns>
+            true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created. </exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#Collections#IEnumerator#Reset">
+            <summary>
+            Sets the enumerator to its initial position, which is before the first element in the collection.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created. </exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.System#ICloneable#Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.TestTreeIfCanBeConnected(`0,System.Int32,CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0},System.Int32)">
+            <summary>
+            Tests the tree if can be connected.
+            </summary>
+            <param name="NodeToWhichWeConnectsTheTreeValue">The node to which we connects the tree value.</param>
+            <param name="NodeToWhichWeConnectsTheTreeConnectorNumer">The node to which we connects the tree connector numer.</param>
+            <param name="TreeToBeConnected">The tree to be connected.</param>
+            <param name="TreeToBeConnectedConnectorNumer">The tree to be connected connector numer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.TestNodeIfCanBeConnected(`0,System.Int32,`0,System.Int32)">
+            <summary>
+            Tests the tree if can be connected.
+            </summary>
+            <param name="NodeToWhichWeConnectsTheValue">The node to which we connects the value.</param>
+            <param name="NodeToWhichWeConnectsConnectorNumer">The node to which we connects connector numer.</param>
+            <param name="NodeToBeConnectedValue">The node to be connected value.</param>
+            <param name="NodeToBeConnectedValueConnectorNumber">The node to be connected value connector number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.ConnectTheTreeToTheNode(`0,System.Int32,CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0},System.Int32)">
+            <summary>
+            Connects the tree to the node.
+            </summary>
+            <param name="NodeToWhichWeConnectsTheTreeValue">The node to which we connects the tree value.</param>
+            <param name="NodeToWhichWeConnectsTheTreeConnectorNumer">The node to which we connects the tree connector numer.</param>
+            <param name="TreeToBeConnected">The tree to be connected.</param>
+            <param name="TreeToBeConnectedConnectorNumer">The tree to be connected connector numer.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.ConnectTheNodeToOtherNode(`0,System.Int32,`0,System.Int32)">
+            <summary>
+            Connects the node to other node.
+            </summary>
+            <param name="NodeToWhichWeConnectsTheTreeValue">The node to which we connects the tree value.</param>
+            <param name="NodeToWhichWeConnectsConnectorNumer">The node to which we connects connector numer.</param>
+            <param name="NodeToBeConnectedValue">The node to be connected value.</param>
+            <param name="NodeToBeConnectedConnectorNumber">The node to be connected connector number.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.MoveNodeToRoots(`0)">
+            <summary>
+            Moves the node to roots.
+            </summary>
+            <param name="NodeToBeMovedToRootsValue">The node to be moved to roots value.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode">
+            <summary>
+            The node that is stored on the tree
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.Visited">
+            <summary>
+            Gets a value indicating whether this <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode"/> is visited.
+            </summary>
+            <value><c>true</c> if visited; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.Height">
+            <summary>
+            gets the height of this instance.
+            </summary>
+            <returns>the height</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.ContainsNodeNumber(System.Int32)">
+            <summary>
+            Determines whether the node contains the specified node(connector) number.
+            </summary>
+            <param name="NodeNumber">The node number.</param>
+            <returns>
+            	<c>true</c> if contains the specified node number otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.#ctor(`0,CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0},CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNode,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode"/> class.
+            </summary>
+            <param name="ParentElementValue">The parent element value.</param>
+            <param name="ParentTree">The parent tree.</param>
+            <param name="ParentNode">The parent node.</param>
+            <param name="ParentConnectorNumber">The parent connector number.</param>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.Value">
+            <summary>
+            Gets the value stored in this node.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetParentConnectorNumber(`0)">
+            <summary>
+            Gets the parent connector number for the selected node.
+            </summary>
+            <param name="ParentNodeValue">The parent node value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.ParentNodes">
+            <summary>
+            Gets the parent node.
+            </summary>
+            <value>The parent node.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetParentNodeByParentNodeNumber(System.Int32)">
+            <summary>
+            Gets the parent node by parent node number.
+            </summary>
+            <param name="ParentNodeNumber">The parent node number.</param>
+            <returns>sorted tree node from parent list</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetFirstParentNode">
+            <summary>
+            Gets the first parent node.
+            </summary>
+            <returns>first sorted tree node from parent list</returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.ParentNodesCount">
+            <summary>
+            Gets the parent nodes count.
+            </summary>
+            <value>The parent nodes count.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.AddNode(System.Int32,`0,System.Int32)">
+            <summary>
+            Adds the node.
+            </summary>
+            <param name="NodeNumber">The node number.</param>
+            <param name="NewValue">The new value.</param>
+            <param name="ParentConnectorNumber">The parent connector number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.AddNode(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNode,System.Int32,System.Int32)">
+            <summary>
+            Adds the node.
+            </summary>
+            <param name="NodeToBeAdded">The node to be added.</param>
+            <param name="MyConnectorNumber">My connector number.</param>
+            <param name="ParentConnectorNumber">The parent connector number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetNode(`0)">
+            <summary>
+            Gets the node.
+            </summary>
+            <param name="Value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetNodesFromLevel(System.Int32)">
+            <summary>
+            Gets the nodes from level.
+            </summary>
+            <param name="level">The level.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetChildNodes">
+            <summary>
+            Gets the child nodes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with the current <see cref="T:System.Object"/>.</param>
+            <returns>
+            true if the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>; otherwise, false.
+            </returns>
+            <exception cref="T:System.NullReferenceException">The <paramref name="obj"/> parameter is null.</exception>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.MarkAllUnvisited">
+            <summary>
+            Marks all nodes as unvisited.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetConnectorNumberOfSpecifiedNode(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNode)">
+            <summary>
+            Gets the connector number of specified node.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.AddThisNodeToAnotherTree(CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree{`0}@)">
+            <summary>
+            Adds the this node to another tree.
+            </summary>
+            <param name="tree">The tree.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.GetNextUnvisited">
+            <summary>
+            Gets the next unvisited.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.Collections.Generic.SortedTree`1.SortedTreeNode.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.IntPtrComparable">
+            <summary>
+            Summary description for IntPtrComarable.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.Collections.QuickSort">
+            <summary>
+            A simple version of the Quicksort.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.DateTimeProvider">
+            <summary>
+            Class that allows to use Local or UTC time depending on settings
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.DateTimeProvider.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.DateTimeProvider"/> class that allows to use Local or UTC time depending on settings.
+            </summary>
+            <param name="useLocalTime">if set to <c>true</c> use <see cref="P:System.DateTime.Now"/>, otherwise use <see cref="P:System.DateTime.UtcNow"/>.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.DateTimeProvider.GetCurrentTime">
+            <summary>
+            Reads Local or UTC time depending on settings
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper`1">
+            <summary>
+            Generic Enum TypeConverter Helper
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper`1.GetValueFromString(System.String)">
+            <summary>
+            Gets the value from string.
+            </summary>
+            <param name="Name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper`1.GetNameFromValue(System.Object)">
+            <summary>
+            Gets the name from value.
+            </summary>
+            <param name="Value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper`1.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets a value indicating whether this object supports a standard set of values that can be picked from a list. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </param>
+            <returns>Always returns <b>true</b> - means show a combobox </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper`1.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets a value indicating whether the list of standard values returned from the GetStandardValues method is an exclusive list. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </param>
+            <returns>Always returns <b>true</b> - means it limits to list</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.GenericEnumTypeConverterHelper`1.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets a collection of standard values for the data type this validator is designed for. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </param>
+            <returns>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/>  that holds a standard set of valid values </returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.MinMaxAvr">
+            <summary>
+            Minimum, maximum and average values are counted.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.MinMaxAvr.newVal">
+            <summary>
+            Event handler invoked every time new values are available.
+            </summary>
+        </member>
+        <member name="E:CAS.Lib.RTLib.Utils.MinMaxAvr.MarkNewVal">
+            <summary>
+            Occurs when new value is calculated.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.MinMaxAvr.Max">
+            <summary>
+            Gets the maximum value
+            </summary>
+            <value>The max.</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.MinMaxAvr.Min">
+            <summary>
+            Gets the minimum value
+            </summary>
+            <value>The min.</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.MinMaxAvr.Avr">
+            <summary>
+            Gets the average value
+            </summary>
+            <value>The average value.</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Utils.MinMaxAvr.Add">
+            <summary>
+            adds value to be counted as min, max, average
+            </summary>
+            <value>Value to be added </value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.MinMaxAvr.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.MinMaxAvr.#ctor(System.UInt16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.MinMaxAvr"/> class.
+            </summary>
+            <param name="elements">The number of elements that must be collected to count new Min,Max,Avg values </param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.UniqueNameGenerator">
+            <summary>
+            Class that is responsible for generating unique names
+            this list contains the list of names, no name can be the same. 
+            This class can generate unique names based on the template.
+            Client can add names to the list and class engine is responsible that no names are the same
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Utils.UniqueNameGenerator.UniqueNameGeneratorException">
+            <summary>
+            the exception thrown by UniqueNameGenerator
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Utils.UniqueNameGenerator"/> class.
+            </summary>
+            <param name="Prefix">The prefix.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.CheckIfNameExists(System.String)">
+            <summary>
+            Checks if name exists.
+            </summary>
+            <param name="Name">The name.</param>
+            <returns>true if name exists in generator</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.CheckIfNameExistsAndReturnSuggestedName(System.String)">
+            <summary>
+            Checks the name and if name exists it returns suggested name.
+            </summary>
+            <param name="Name">The name.</param>
+            <returns>the suggested name</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.AddName(System.String,System.Boolean)">
+            <summary>
+            Adds the name.
+            </summary>
+            <param name="NewName">The new name.</param>
+            <param name="ThrowExceptionIfNameExistOnTheListOfPreviousNames">if set to <c>true</c> [throw exception if name exist on the list of previous names].</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.AddName(System.String)">
+            <summary>
+            Adds the name.
+            </summary>
+            <param name="NewName">The new name.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.RemoveName(System.String)">
+            <summary>
+            Removes the name.
+            </summary>
+            <param name="NameToBeRemoved">The name to be removed.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Utils.UniqueNameGenerator.GenerateNewName">
+            <summary>
+            Generates the new name.
+            </summary>
+            <returns>new name</returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Win32API.Application">
+            <summary>
+            Class that provides common information about Application - path, etc...
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Win32API.Application.Path">
+            <summary>
+            gives simple access to application path 
+            </summary>
+        </member>
+        <member name="T:Utils.Conversions">
+            <summary>
+            Converter class
+            </summary>
+            <remarks>use the <seealso cref="T:System.BitConverter"/> and <seealso cref="T:System.Convert"/> to provide conversion</remarks>
+        </member>
+        <member name="M:Utils.Conversions.UshortHighByte(System.UInt16)">
+            <summary>
+            Ushorts the high byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.UshortLowByte(System.UInt16)">
+            <summary>
+            Ushorts the low byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ShortHighByte(System.Int16)">
+            <summary>
+            Shorts the high byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ShortLowByte(System.Int16)">
+            <summary>
+            Shorts the low byte.
+            </summary>
+            <param name="wej">The wej.</param>
+            <returns>System.Byte.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUshort(System.Byte[],System.UInt16@)">
+            <summary>
+            Converts to ushort.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUshort(System.Byte[],System.Int32,System.UInt16@)">
+            <summary>
+            Converts to ushort.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToShort(System.Byte[],System.Int16@)">
+            <summary>
+            Converts to short.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToShort(System.Byte[],System.Int32,System.Int16@)">
+            <summary>
+            Converts to short.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUint(System.Byte[],System.UInt32@)">
+            <summary>
+            Converts to uint.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUint(System.Byte[],System.Int32,System.UInt32@)">
+            <summary>
+            Converts to uint.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToUintRevers(System.Byte[],System.Int32,System.UInt32@)">
+            <summary>
+            Converts to uintrevers.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.UintToArray(System.UInt32,System.Byte[])">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+        </member>
+        <member name="M:Utils.Conversions.UintToArray(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Utils.Conversions.UintToArrayRevers(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+            Converts to arrayrevers.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToInt(System.Byte[],System.Int32@)">
+            <summary>
+            Converts to int.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToInt(System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Converts to int.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+            <param name="wej">The wej.</param>
+        </member>
+        <member name="M:Utils.Conversions.IntToArray(System.Int32,System.Byte[])">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+        </member>
+        <member name="M:Utils.Conversions.IntToArray(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Converts to array.
+            </summary>
+            <param name="wej">The wej.</param>
+            <param name="tab">The tab.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Utils.Conversions.BytesToUshort(System.Byte,System.Byte)">
+            <summary>
+            Converts to ushort.
+            </summary>
+            <param name="HiByte">The hi byte.</param>
+            <param name="LoByte">The lo byte.</param>
+            <returns>System.UInt16.</returns>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToIntPtr(System.Byte[],System.IntPtr@)">
+            <summary>
+            Converts to intptr.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wsk">The WSK.</param>
+        </member>
+        <member name="M:Utils.Conversions.ArrayToIntPtr(System.Byte[],System.IntPtr@,System.Int32)">
+            <summary>
+            Converts to intptr.
+            </summary>
+            <param name="tab">The tab.</param>
+            <param name="wsk">The WSK.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="T:Utils.Handle">
+            <summary>
+            Summary description for IntPtrComarable.
+            </summary>
+        </member>
+        <member name="T:Utils.HTTPServer">
+            <summary>
+            HTTPServer is an abstract class - that provides http server.
+            </summary>
+        </member>
+        <member name="M:Utils.HTTPServer.SendHeader(System.String,System.String,System.Int32,System.String,System.Net.Sockets.Socket@)">
+            <summary>
+            This function send the Header Information to the client (Browser)
+            </summary>
+            <param name="sHttpVersion">HTTP Version</param>
+            <param name="sMIMEHeader">Mime Type</param>
+            <param name="iTotBytes">Total Bytes to be sent in the body</param>
+            <param name="sStatusCode">The s status code.</param>
+            <param name="mySocket">Socket reference</param>
+        </member>
+        <member name="M:Utils.HTTPServer.SendToBrowser(System.String,System.Net.Sockets.Socket@)">
+            <summary>
+            Overloaded Function, takes string, convert to bytes and calls 
+            overloaded sendToBrowserFunction.
+            </summary>
+            <param name="sData">The data to be sent to the browser(client)</param>
+            <param name="mySocket">Socket reference</param>
+        </member>
+        <member name="M:Utils.HTTPServer.SendToBrowser(System.Byte[],System.Net.Sockets.Socket@)">
+            <summary>
+            Sends data to the browser (client)
+            </summary>
+            <param name="bSendData">Byte Array</param>
+            <param name="mySocket">Socket reference</param>
+        </member>
+        <member name="M:Utils.HTTPServer.ListenerThreadBody">
+            <summary>
+            This method Accepts new connection and
+            First it receives the welcome massage from the client,
+            Then it sends the Current date time to the Client.
+            </summary>
+        </member>
+        <member name="M:Utils.HTTPServer.GetStringData(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            function that should be overridden to provide string with response for html data request
+            </summary>
+            <param name="directory">directory name</param>
+            <param name="filename">filename that client requests</param>
+            <param name="parameters">parameters that client send with GET request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.HTTPServer.#ctor(System.Int32)">
+            <summary>
+            Server Initiation
+            </summary>
+            <param name="port">TCP port that should be used for listening</param>
+        </member>
+        <member name="M:Utils.HTTPServer.#ctor">
+            <summary>
+            Server Initiation on standard port
+            </summary>
+        </member>
+        <member name="M:Utils.HTTPServer.Start">
+            <summary>
+            Starts the HTTP Server
+            </summary>
+        </member>
+        <member name="M:Utils.HTTPServer.Stop">
+            <summary>
+            Stops the HTTP Server
+            </summary>
+        </member>
+        <member name="T:Utils.SpecialOperation">
+            <summary>
+            Summary description for SpecialOperation.
+            </summary>
+        </member>
+        <member name="M:Utils.SpecialOperation.IncRound(System.UInt32@)">
+            <summary>
+            Round increments <paramref name="counter"/>.
+            </summary>
+            <param name="counter">The counter.</param>
+        </member>
+    </members>
+</doc>

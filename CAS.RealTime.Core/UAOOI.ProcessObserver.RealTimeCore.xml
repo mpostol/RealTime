@@ -1,0 +1,820 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UAOOI.ProcessObserver.RealTimeCore</name>
+    </assembly>
+    <members>
+        <member name="T:CAS.Lib.RTLib.ICanBeAccepted">
+            <summary>
+            This interface is used by internal component to inform 
+            parent window that it is possible to enable accept button.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.ICanBeAccepted.CanBeAccepted(System.Boolean)">
+            <summary>
+            It sets the information if accept button in the parent dialog window can be accepted
+            </summary>
+            <param name="pOKState">true if it could be accepted</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.ItemAccessRights">
+             <summary>
+             Item Access Rights enum
+             similar to: 
+             EX01-OPCFoundation_NETApi\Source\NET API\Da\Opc.Da.PropertyID.cs
+               public enum accessRights : int
+            {
+              readable     = 0x01,
+              writable     = 0x02,
+              readWritable = 0x03
+            }
+             </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.ItemAccessRights.ReadWrite">
+            <summary>
+            Read and Write
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.ItemAccessRights.ReadOnly">
+            <summary>
+            Read Only
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.ItemAccessRights.WriteOnly">
+            <summary>
+            Write Only
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Management.IProtocolParent">
+            <summary>
+            Statistical information about the communication performance
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxCRCErrorCounter">
+            <summary>
+            Incrementing number of CRC errors.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxFragmentedCounter">
+            <summary>
+            Incrementing number of incomplete frames.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxFrameCounter">
+            <summary>
+            Incrementing number of complete received frames.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxInvalid">
+            <summary>
+            Incrementing number of invalid frames.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxNAKCounter">
+            <summary>
+            Incrementing number of received NAK (negative acknowledge).
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxNoResponseCounter">
+            <summary>
+            Incrementing number of timeouts.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStRxSynchError">
+            <summary>
+            Incrementing number of synchronization errors.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStTxACKCounter">
+            <summary>
+            Incrementing number of successfully wrote operations.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStTxDATACounter">
+            <summary>
+            Incrementing number of sent bytes.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStTxFrameCounter">
+            <summary>
+            Incrementing number of successfully sent frames.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.IncStTxNAKCounter">
+            <summary>
+            Incrementing number of received NAK (negative acknowledge).
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.RxDataBlock(System.Boolean)">
+            <summary>
+            Incrementing number of received data blocks.
+            </summary>
+            <param name="succ">true - if received frame is good, false otherwise </param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.TxDataBlock(System.Boolean)">
+            <summary>
+            Incrementing number of transmuted data blocks.
+            </summary>
+            <param name="succ">true - if frame is transmitted successfully, false otherwise </param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.TimeMaxResponseDelayAdd(System.Int64)">
+            <summary>
+            Establishing the maximal time of response.
+            </summary>
+            <param name="val">value of last measurement</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Management.IProtocolParent.TimeCharGapAdd(System.Int64)">
+            <summary>
+            Establishing the maximal time between characters in response.
+            </summary>
+            <param name="val">value of last measurement</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.AssemblyTraceEvent">
+            <summary>
+            Static instance of <see cref="T:System.Diagnostics.TraceSource"/> 
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.AssemblyTraceEvent.AssemblyTraceSource">
+            <summary>
+            Gets the assembly trace source of name defined by the <c>m_TraceName</c>.
+            </summary>
+            <value>The assembly trace source.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.AssemblyTraceEvent.Trace(System.Diagnostics.TraceEventType,System.Int32,System.String,System.String)">
+            <summary>
+            regular trace message
+            </summary>
+            <param name="type">type of message, e.g. Verbose, Error, etc.. please see <see cref="T:System.Diagnostics.TraceEventType"/></param>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.AssemblyTraceEvent.TraceVerbose(System.Int32,System.String,System.String)">
+            <summary>
+            Traces <see cref="F:System.Diagnostics.TraceEventType.Verbose"/> type message  
+            </summary>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.AssemblyTraceEvent.GetTraceName(System.Action{System.String})">
+            <summary>
+            Gets the name of the trace.
+            </summary>
+            <param name="traceName"><seealso cref="T:System.Action"/> used to get the trace name for debugging purpose.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Assertion">
+            <summary>
+             Implementation of Assertion concept
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Assertion.ThrowAssertion(System.Boolean,System.Int16,System.String)">
+            <summary>
+            Throws the assertion.
+            </summary>
+            <param name="assertion">the result of condition of assertion</param>
+            <param name="category">The category.</param>
+            <param name="newMessage">The  message.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Assertion.ThrowAssertion(System.Boolean,System.Int16,System.Boolean)">
+            <summary>
+            Throws the assertion.
+            </summary>
+            <param name="assertion">the result of condition of assertion</param>
+            <param name="category">The category.</param>
+            <param name="logEvent">if set to <c>true</c> event is logged to event log</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Assertion.Assert(System.Boolean,System.Int16)">
+            <summary>
+            Asserts the specified assertion.
+            </summary>
+            <param name="assertion">the condition</param>
+            <param name="category">The category.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Assertion.Assert(System.Boolean,System.Int16,System.String)">
+            <summary>
+            Asserts the specified assertion.
+            </summary>
+            <param name="assertion">the condition</param>
+            <param name="category">The category.</param>
+            <param name="CustomMeassage">The message.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Assertion.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.Assertion"/> class.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Assertion.#ctor(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.Assertion"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="eventID">The event ID.</param>
+            <param name="rebootRequired">if set to <c>true</c> system reboot is required.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.EnvelopePool">
+            <summary>
+            The EnvelopePool class manages a pool of IEnvelope objects.
+            Thread Safety:
+            Instances members of this type are safe for multi-threaded operations. 
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.EnvelopePool.CreateEnvelope">
+            <summary>
+            Delegate used to create new envelope. New envelope is created each time 
+            GetEmptyEnvelope is called while the pool is empty.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EnvelopePool.GetEmptyEnvelope">
+            <summary>
+            It gets an empty envelope from the common pool, or if empty creates ones.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EnvelopePool.ReturnEmptyEnvelope(CAS.Lib.RTLib.Processes.IEnvelope@)">
+            <summary>
+            Returns an empty envelope to the common pool.
+            </summary>
+            <param name="mess">Envelope to return</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EnvelopePool.#ctor(CAS.Lib.RTLib.Processes.EnvelopePool.CreateEnvelope)">
+            <summary>
+            Creates instance of EnvelopePool
+            </summary>
+            <param name="userCreator">Is used to create new <see cref="T:CAS.Lib.RTLib.Processes.IEnvelope"/>each time
+            GetEmptyEnvelope is called while the pool is empty.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Error">
+            <summary>
+            Define error numbers
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_SBUS_PRIVATE_SBUSbase_message">
+            <summary>
+            ApplicationLayer_SBUS_PRIVATE_SBUSbase_message
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave">
+            <summary>
+            ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.Error.CommServer_EC2EC3_symulator">
+            <summary>
+            CommServer_EC2EC3_symulator
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.EventLogEntryType">
+            <summary>
+             Specifies the event type of an event log entry.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.EventLogEntryType.Error">
+            <summary>
+            An error event. This indicates a significant problem the user should know about; usually a loss of functionality or data.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.EventLogEntryType.FailureAudit">
+            <summary>
+            A failure audit event. This indicates a security event that occurs when an audited access attempt fails; for example, a failed attempt to open a file.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.EventLogEntryType.Information">
+            <summary>
+            An information event. This indicates a significant, successful operation.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.EventLogEntryType.SuccessAudit">
+            <summary>
+            A success audit event. This indicates a security event that occurs when an audited access attempt is successful; for example, logging on successfully.
+            </summary>
+        </member>
+        <member name="F:CAS.Lib.RTLib.Processes.EventLogEntryType.Warning">
+            <summary>
+            A warning event. This indicates a problem that is not immediately significant, but that may signify conditions that could cause future problems.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.EventLogMonitor">
+            <summary>
+            Summary description for EventLogMonitor.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog(System.String,CAS.Lib.RTLib.Processes.EventLogEntryType,System.Int32)">
+            <summary>
+            Writes to event log.
+            </summary>
+            <param name="Message">The message.</param>
+            <param name="level">The level.</param>
+            <param name="eventID">The event ID.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog(System.String,CAS.Lib.RTLib.Processes.EventLogEntryType,System.Int32,System.Int16)">
+            <summary>
+            Writes to event log.
+            </summary>
+            <param name="Message">The message.</param>
+            <param name="level">The level.</param>
+            <param name="eventID">The event ID.</param>
+            <param name="category">The category.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLog(System.String,CAS.Lib.RTLib.Processes.EventLogEntryType)">
+            <summary>
+            Writes to event log.
+            </summary>
+            <param name="Message">The message.</param>
+            <param name="level">The level.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLogInfo(System.String,System.Int32)">
+            <summary>
+            Writes to event log info.
+            </summary>
+            <param name="Message">The message.</param>
+            <param name="eventID">The event ID.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLogError(System.String,System.Int32)">
+            <summary>
+            Writes to event log error.
+            </summary>
+            <param name="Message">The message.</param>
+            <param name="eventID">The event ID.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.WriteEntry">
+            <summary>
+            Writes an information type entry, with the given message text, to the event log.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.EventLogMonitor.SetMessage">
+            <summary>
+            set the event message
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.EventLogMonitor.GetMessage">
+            <summary>
+            return previously set event message
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.EventLogMonitor.SetCategory">
+            <summary>
+            Sets the set category.
+            </summary>
+            <value>The set category.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventLogMonitor.#ctor(System.String,CAS.Lib.RTLib.Processes.EventLogEntryType,System.Int32,System.Int16)">
+            <summary>
+             Creates an event log with the application-defined event identifier, and application-defined category 
+             to the event log, using the "CASCommServer" registered event source. The category can be used by the 
+             event viewer to filter events in the log.
+            </summary>
+            <param name="type">One of the EventLogEntryType values.</param>
+            <param name="eventID">The application-specific identifier for the event.</param>
+            <param name="category">The application-specific subcategory associated with the message.</param>
+            <param name="message">message to be stored</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut">
+            <summary>
+            Represents a thread synchronization event.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.State">
+            <summary>
+            Returns state of the EventWaitHandleTimeOut
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.Reset">
+            <summary>
+            Sets the state of the event to nonsignaled, causing threads to block.
+            </summary>
+            <returns>true if the operation succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.Set">
+            <summary>
+            Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.WaitOne(System.Int32)">
+            <summary>
+             Blocks the current thread until the current EventWaitHandleTimeOut receives a signal. 
+            </summary>
+            <param name="millisecondsTimeout">The number of milliseconds to wait for the signal. </param>
+            <returns>true if the current instance receives a signal; otherwise, false.</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.EventWaitHandleTimeOut"/> class.
+            </summary>
+            <param name="state">if set to <c>false</c> the state of the event is nonsignaled, causing threads to block..</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.IDBuffer">
+            <summary>
+            Data bufer to be used by unmanaged platform calls.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.IDBuffer.uMessagePtr">
+            <summary>
+            returns pointer tu message in umanaged memory
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.IDBuffer.userBuffLength">
+            <summary>
+            capacity of the data buffer
+            </summary>
+            <returns>length in bytes</returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.IDBuffer.userDataLength">
+            <summary>
+            user data length
+            </summary>
+            <returns>length in bytes</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.IDBuffer.CopyToBuffor(System.IntPtr,System.UInt32)">
+            <summary>
+             Copies data from unmanaged memory pointer to IDBuffer starting 
+             at offset 0 and assigns userDataLength.
+            </summary>
+            <param name="source">The memory pointer to copy from.</param>
+            <param name="length">The number of bytes to copy.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.IDBuffer.CopyFromBuffor(System.IntPtr)">
+            <summary>
+             Copies data from IDBuffer to unmanaged memory pointer starting 
+             at offset 0.
+            </summary>
+            <param name="destination">The memory pointer to copy to.</param>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.IEnvelope">
+            <summary>
+            Interface for envelope management 
+            (envelope is a kind of packet that is transmitted in the communication or application layer, 
+            it is base unit for message exchange mechanism).
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.IEnvelope.ReturnEmptyEnvelope">
+            <summary>
+            Used by a user to return an empty envelope to the common pool. It also resets the message content.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.IEnvelope.InPool">
+            <summary>
+            Checks if the buffer is in the pool or otherwise is alone and used by a user. 
+            Used to the state by the governing pool.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Manager">
+            <summary>
+            Manager is a module that provides structural operations designed to create, 
+            synchronize and communicate of concurrent processes, as well as all operations 
+            needed to manage programs behavior in various situations. 
+            All multiprogramming mechanisms exported from the module have been designed under 
+            the assumption that for purpose of the process-to-process communication the 
+            well-known monitor concept is used.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Manager.ErrorQueueManager">
+            <summary>
+             Title   : Management of concurrent processes 
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Manager.AddToErrorQueue">
+            <summary>
+            Adds to error queue.
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Manager.NumOfErrors">
+            <summary>
+            Gets the number of errors.
+            </summary>
+            <value>The number of errors.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Manager.Assert(System.Boolean)">
+            <summary>
+            Asserts if the condition is true.
+            </summary>
+            <param name="assertion">condition of assertion.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Manager.StartProcess(System.Threading.ThreadStart)">
+            <summary>
+            Starts the process.
+            </summary>
+            <param name="proces">The process.</param>
+            <returns>thread that is started</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Manager.StartProcess(System.Threading.ThreadStart,System.String)">
+            <summary>
+            Starts the process.
+            </summary>
+            <param name="proces">The process.</param>
+            <param name="name">The name.</param>
+            <returns>thread that is started</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Manager.StartProcess(System.Threading.ThreadStart,System.String,System.Boolean,System.Threading.ThreadPriority)">
+            <summary>
+            Initializes a new instance of the Thread class and causes it to be scheduled for execution. 
+            </summary>
+            <param name="proces">A ThreadStart delegate that represents the methods to be invoked when this thread 
+            begins executing. 
+            </param>
+            <param name="name">A string containing the name of the thread, or a null reference if no name was set.</param>
+            <param name="isBackground">A value indicating whether or not a thread is a background thread. </param>
+            <param name="priority">A value indicating the scheduling priority of a thread.</param>
+            <returns></returns>
+            <remarks>A thread is either a background thread or a foreground thread. Background threads 
+            are identical to foreground threads, except that background threads do not prevent a process from 
+            terminating. Once all foreground threads belonging to a process have terminated, the common language 
+            runtime ends the process. Any remaining background threads are stopped and do not complete.
+            </remarks>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.RunMethodAsynchronously">
+            <summary>
+            Class that allows running method asynchronously
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.RunMethodAsynchronously.AsyncOperation">
+            <summary>
+            Delegate for method that will be called asynchronously
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.RunMethodAsynchronously.MyAsyncCallback(System.IAsyncResult)">
+            <summary>
+            This method is called after asynchronous call
+            </summary>
+            <param name="ar">The ar.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.RunMethodAsynchronously.#ctor(CAS.Lib.RTLib.Processes.RunMethodAsynchronously.AsyncOperation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.RunMethodAsynchronously"/> class.
+            </summary>
+            <param name="asyncoper">Delegate to method that will be called asynchronously</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.RunMethodAsynchronously.RunAsync(System.Object[])">
+            <summary>
+            Runs the method asynchronously. Return immediately.
+            </summary>
+            <param name="parameters">parameters for the method (delegate)  </param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.RunMethodAsynchronously.RunAsync">
+            <summary>
+            Runs the asynchronously method without any additional parameters
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Stopwatch">
+            <summary>
+             Title   : Stopwatch mechanism implementation 
+            </summary>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.currDelay">
+            <summary>
+            Gets the curr delay.Reads the elapsed ticks from stopwatch
+            </summary>
+            <remarks>On a multiprocessor computer, it does not matter which processor the thread runs on. 
+            However, because of bugs in the BIOS or the Hardware Abstraction Layer (HAL), you can get 
+            different timing results on different processors. To specify processor affinity for a thread, 
+            use the ProcessThread.ProcessorAffinity method.</remarks>
+            <value>The curr delay.</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.SWFrequency">
+            <summary>
+            Gets the frequency of the timer as the number of ticks per second. This field is read-only.
+            </summary>
+            <remarks>The timer frequency indicates the timer precision and resolution. For example, a timer frequency of 2 million ticks per second equals a timer resolution of 500 nanoseconds per tick. In other words, because one second equals 1 billion nanoseconds, a timer frequency of 2 million ticks per second is equivalent to 2 million ticks per 1 billion nanoseconds, which can be further simplified to 1 tick per 500 nanoseconds.
+            The Frequency value depends on the resolution of the underlying timing mechanism. If the installed hardware and operating system support a high-resolution performance counter, then the Frequency value reflects the frequency of that counter. Otherwise, the Frequency value is based on the system timer frequency.
+            Because the Stopwatch frequency depends on the installed hardware and operating system, the Frequency value remains constant while the system is running.
+            </remarks>
+            <value>The SW frequency.</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.Stop">
+            <summary>
+            stops the stopwatch.
+            </summary>
+            <value>time measured by stopwatch</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.Start">
+            <summary>
+            starts the stopwatch
+            </summary>
+            <value>time measured by stopwatch</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.Read">
+            <summary>
+            Reads the timer
+            </summary>
+            <value>time measured by stopwatch</value>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.Reset">
+            <summary>
+            Returns the value and resets the Stopwatch.
+            </summary>
+            <value>the period of time</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Stopwatch.StartReset">
+            <summary>
+            Reset and start the stopwatch.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_s(System.UInt64)">
+            <summary>
+            Converts the to s.
+            </summary>
+            <param name="val">value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_ms(System.UInt64)">
+            <summary>
+            Converts the to ms.
+            </summary>
+            <param name="val">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_us(System.UInt64)">
+            <summary>
+            Converts the to us (micro seconds).
+            </summary>
+            <param name="val">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Stopwatch.IsRunning">
+            <summary>
+            Gets a value indicating whether this instance is running.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is running; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Stopwatch.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.Stopwatch"/> class.
+            </summary>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.Timer">
+            <summary>
+            Implementation of time relationship utilities.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.Wait(System.UInt32,System.Object)">
+            <summary>
+            Process enters monitor and waits
+            </summary>
+            <param name="miliseconds">Number of ticks to wait</param>
+            <param name="monitor">Class wich is a monitor protecting resurces</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.WaitTimeout(System.TimeSpan,System.Diagnostics.Stopwatch)">
+            <summary>
+            Waits the timeout.
+            </summary>
+            <param name="timeout">timeout to wait <see cref="T:System.TimeSpan"/></param>
+            <param name="stopwatch">Stopwatch ( <see cref="T:System.Diagnostics.Stopwatch"/>)that is used for time measurement.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.WaitTimeout(System.TimeSpan,System.Diagnostics.Stopwatch,System.Object)">
+            <summary>
+            Process enters monitor and waits the timeout.
+            </summary>
+            <param name="timeout">timeout to wait <see cref="T:System.TimeSpan"/></param>
+            <param name="stopwatch">Stopwatch ( <see cref="T:System.Diagnostics.Stopwatch"/>)that is used for time messaurement.</param>
+            <param name="monitor">The monitor. Class witch is a monitor protecting recurses</param>
+        </member>
+        <member name="P:CAS.Lib.RTLib.Processes.Timer.TInOneSecond">
+            <summary>
+            Gets the number of miliseconds (old name ticks) in one second.
+            </summary>
+            <value>the number of miliseconds (old name ticks) in one second.</value>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.Max(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Returns the larger of two <see cref="T:System.TimeSpan"/>time spans.
+            </summary>
+            <param name="val1">The first of two <see cref="T:System.TimeSpan"/>time spans to compare.</param>
+            <param name="val2">The second of two <see cref="T:System.TimeSpan"/>time spans to compare.</param>
+            <returns>The larger <see cref="T:System.TimeSpan"/></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.Min(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Returns the smaller of two <see cref="T:System.TimeSpan"/>time spans to compare.
+            </summary>
+            <param name="val1">The first of two <see cref="T:System.TimeSpan"/>time spans to compare.</param>
+            <param name="val2">The second of two <see cref="T:System.TimeSpan"/>time spans to compare.</param>
+            <returns>The smaller <see cref="T:System.TimeSpan"/></returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.FromUSeconds(System.Double)">
+            <summary>
+            Returns a <see cref="T:System.TimeSpan"/> that represents a specified number of microseconds.
+            </summary>
+            <param name="microseconds">A number of microseconds.</param>
+            <returns>A <see cref="T:System.TimeSpan"/> that represents microseconds.</returns>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.Timer.ToUSeconds(System.TimeSpan)">
+            <summary> Returns a <see cref="T:System.UInt32"/> of the time <see cref="T:System.TimeSpan"/> structure expressed in whole
+            microseconds.
+            </summary>
+            <param name="time">A <see cref="T:System.TimeSpan"/> object represenmting the time.</param>
+            <returns>The total number of microseconds represented by the time.</returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Processes.TraceEvent">
+            <summary>
+            Class responsible for tracing.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CAS.Lib.RTLib.Processes.TraceEvent"/> class.
+            </summary>
+            <param name="sourceName">The source name.</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.Finalize">
+            <summary>
+            Releases unmanaged resources and performs other cleanup operations before the
+            <see cref="T:CAS.Lib.RTLib.Processes.TraceEvent"/> is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.TraceEventClose">
+             <summary>
+            Close the local <see cref="T:System.Diagnostics.TraceSource"/>
+             </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.Trace(System.Diagnostics.TraceEventType,System.Int32,System.String,System.String)">
+            <summary>
+            regular trace message
+            </summary>
+            <param name="type">type of message, e.g. Verbose, Error, etc.. please see <see cref="T:System.Diagnostics.TraceEventType"/></param>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.TraceVerbose(System.Int32,System.String,System.String)">
+            <summary>
+            verbose trace message
+            </summary>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.TraceInformation(System.Int32,System.String,System.String)">
+            <summary>
+            information trace message
+            </summary>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.TraceWarning(System.Int32,System.String,System.String)">
+            <summary>
+            warning trace message
+            </summary>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.TraceError(System.Int32,System.String,System.String)">
+            <summary>
+            error trace message
+            </summary>
+            <param name="id">user identifier for the message</param>
+            <param name="source">source of message</param>
+            <param name="message">message that we want to trace</param>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Processes.TraceEvent.GetMessageWithExceptionNameFromExceptionIncludingInnerException(System.Exception)">
+            <summary>
+            Gets the message with exception name from exception including inner exception.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>the whole message</returns>
+        </member>
+        <member name="T:CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper">
+            <summary>
+            Win32 API Time Functions Wrapper.
+            </summary>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.QueryPerformanceCounter(System.Int64@)">
+            <summary>
+            The QueryPerformanceCounter function retrieves the current value of the high-resolution 
+            performance counter.
+            </summary>
+            <param name="lpPerformanceCount">
+            [out] Pointer to a variable that receives the current performance-counter value, in counts.
+            </param>
+            <returns>
+            If the function succeeds, the return value is nonzero. If the function fails, the return value 
+            is zero. To get extended error information, call GetLastError.
+            </returns>
+            <remarks>
+            On a multiprocessor machine, it should not matter which processor is called. However, you can get 
+            different results on different processors due to bugs in the BIOS or the HAL. To specify processor affinity for a thread, 
+            use the SetThreadAffinityMask function.
+            </remarks>
+        </member>
+        <member name="M:CAS.Lib.RTLib.Win32API.TimeFunctionsWrapper.QueryPerformanceFrequency(System.Int64@)">
+            <summary>
+            The QueryPerformanceFrequency function retrieves the frequency of the high-resolution performance counter, 
+            if one exists. The frequency cannot change while the system is running.
+            </summary>
+            <param name="lpFrequency"> [out] Pointer to a variable that receives the current performance-counter 
+            frequency, in counts per second. If the installed hardware does not support a high-resolution performance 
+            counter, this parameter can be zero.
+            </param>
+            <returns>
+            If the installed hardware supports a high-resolution performance counter, the return value is 
+            nonzero. If the function fails, the return value is zero. To get extended error information, call 
+            GetLastError. For example, if the installed hardware does not support a high-resolution performance 
+            counter, the function fails.
+            </returns>
+            <remarks>
+            Note  The frequency of the high-resolution performance counter is not the processor speed.
+            </remarks>>
+        </member>
+    </members>
+</doc>

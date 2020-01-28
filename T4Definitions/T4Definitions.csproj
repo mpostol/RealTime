@@ -55,10 +55,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CAS.OPC.AssemblyInfo.cs</LastGenOutput>
     </None>
-    <None Include="SharePoint.nuspec">
+    <None Include="ProjectMetadata.targets">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharePoint.tt</DependentUpon>
+      <DependentUpon>ProjectMetadata.tt</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -80,10 +80,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OPC.t4" />
-    <Content Include="SharePoint.tt">
+    <Content Include="ProjectMetadata.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SharePoint.nuspec</LastGenOutput>
+      <LastGenOutput>ProjectMetadata.targets</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

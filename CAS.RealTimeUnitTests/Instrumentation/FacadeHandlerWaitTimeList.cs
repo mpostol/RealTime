@@ -1,21 +1,9 @@
-//<summary>
-//  Title   : FacadeHandlerWaitTimeList - class prepared for test on Handler Wait Time List 
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    2008 - mpostol - created
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.Lib.RTLib.Processes;
 using CAS.Lib.RTLib.Utils;
@@ -35,7 +23,7 @@ namespace CAS.RealTime.UnitTests.Instrumentation
     private readonly TimeSpan m_OperationSpan_in_ms = TimeSpan.Zero;
     private readonly TimeSpan m_cycle = TimeSpan.Zero;
     private int m_Counter = 0;
-    private string m_Name = "";
+    private readonly string m_Name = "";
     private const string c_NameTemplate = "FacadeHandlerWaitTimeList({0}, {1}, {2})";
     /// <summary>
     /// this function checks the results of the test (consistency of the list)
@@ -84,7 +72,7 @@ namespace CAS.RealTime.UnitTests.Instrumentation
     /// <param name="min">The min.</param>
     /// <param name="max">The max.</param>
     /// <param name="avr">The avr.</param>
-    private void minmaxavg_error_markNewVal(long min, long max, long avr)
+    private void MinmaxavgErrorMarkNewVal(long min, long max, long avr)
     {
       Console.WriteLine(m_Name + "Error (Min/Avg/Max) ({0}/{1}/{2}) [%*100], Number of executions = {3:000}", min, avr, max, m_Counter);
     }
@@ -103,9 +91,9 @@ namespace CAS.RealTime.UnitTests.Instrumentation
         m_cycle = cycle;
         Console.WriteLine("WaitTimeList: cycle {0}, number of items: {1}", m_cycle, c_NumberOfItems);
         m_Counter = 0;
-        this.m_OperationSpan.markNewVal += new MinMaxAvr.newVal(New_minmaxavg_oper_time_coeficients);
-        this.m_CycleTime.markNewVal += new MinMaxAvr.newVal(New_minmaxavg_scan_rate_coeficients);
-        this.m_Error.markNewVal += new MinMaxAvr.newVal(minmaxavg_error_markNewVal);
+        this.m_OperationSpan.MarkNewVal += new MinMaxAvr.newVal(New_minmaxavg_oper_time_coeficients);
+        this.m_CycleTime.MarkNewVal += new MinMaxAvr.newVal(New_minmaxavg_scan_rate_coeficients);
+        this.m_Error.MarkNewVal += new MinMaxAvr.newVal(MinmaxavgErrorMarkNewVal);
         this.m_OperationSpan_in_ms = new TimeSpan(0, 0, 0, 0, operationSpan);
         for (int i = 0; i < c_NumberOfItems; i++)
           (new FacadeTODescriptor(autoReset, this, m_cycle, m_OperationSpan_in_ms)).ResetCounter();
@@ -126,14 +114,14 @@ namespace CAS.RealTime.UnitTests.Instrumentation
   internal class FacadeTODescriptor : WaitTimeList<FacadeTODescriptor>.TODescriptor
   {
     private readonly TimeSpan m_OperationDuration;
-    private bool m_AutoReset;
+    private readonly bool m_AutoReset;
     private TimeSpan m_CycleSpan;
     private TimeSpan m_ExpectedTime;
     private TimeSpan m_CurrentTime;
     private System.Diagnostics.Stopwatch m_RunTimeStopwatch = new System.Diagnostics.Stopwatch();
     private System.Diagnostics.Stopwatch m_OperationSpanStopwatch = new System.Diagnostics.Stopwatch();
     private System.Diagnostics.Stopwatch m_CycleTimeStopwatch = new System.Diagnostics.Stopwatch();
-    private WaitTimeList<FacadeTODescriptor> m_parent;
+    private readonly WaitTimeList<FacadeTODescriptor> m_parent;
     /// <summary>
     /// Does the test - this is main function that is executed as the handler.
     /// </summary>

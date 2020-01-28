@@ -1,38 +1,27 @@
-//<summary>
-//  Title   : Implementation of Assertion concept
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20080904: mzbrzezny: new: assertion with message
-//    20080625: mzbrzezny: Assert uses now ForceReboot instead of Reboot
-//    MPostol 01-11-2003: created.
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 
 using System;
 using System.Diagnostics;
 
-namespace CAS.Lib.RTLib.Processes 
+namespace CAS.Lib.RTLib.Processes
 {
   /// <summary>
   ///  Implementation of Assertion concept
   /// </summary>
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable"), Obsolete("Use System.Diagnostics.Debug.Assert")]
-  public class Assertion: Exception 
+  public class Assertion : Exception
   {
     #region private
-    private bool myRebootRequired;
     private EventLogMonitor myEventLog;
     private short category;
     #endregion
+
     #region public
     /// <summary>
     /// Throws the assertion.
@@ -42,7 +31,7 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="newMessage">The  message.</param>
     public void ThrowAssertion(bool assertion, short category, string newMessage)
     {
-      if ( !assertion ) 
+      if (!assertion)
       {
         myEventLog.SetCategory = category;
         this.category = category;
@@ -56,15 +45,15 @@ namespace CAS.Lib.RTLib.Processes
     /// </summary>
     /// <param name="assertion">the result of condition of assertion</param>
     /// <param name="category">The category.</param>
-    /// <param name="logEvent">if set to <c>true</c> evend is logged to eventlog</param>
+    /// <param name="logEvent">if set to <c>true</c> event is logged to event log</param>
     public void ThrowAssertion(bool assertion, short category, bool logEvent)
     {
-      if ( !assertion ) 
+      if (!assertion)
       {
         myEventLog.SetCategory = category;
         this.category = category;
         if (logEvent) myEventLog.WriteEntry();
-        throw this;   
+        throw this;
       }
     }
     /// <summary>
@@ -72,10 +61,10 @@ namespace CAS.Lib.RTLib.Processes
     /// </summary>
     /// <param name="assertion">the condition</param>
     /// <param name="category">The category.</param>
-    [Obsolete( "This is a deprecated method. Use public void Assert(bool assertion, short category, string CustomMeassage)  instead." )]
-    public void Assert( bool assertion, short category )
+    [Obsolete("This is a deprecated method. Use public void Assert(bool assertion, short category, string CustomMeassage)  instead.")]
+    public void Assert(bool assertion, short category)
     {
-      Assert( assertion, category,"" );
+      Assert(assertion, category, "");
     }
     /// <summary>
     /// Asserts the specified assertion.
@@ -83,45 +72,37 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="assertion">the condition</param>
     /// <param name="category">The category.</param>
     /// <param name="CustomMeassage">The message.</param>
-    public void Assert(bool assertion, short category, string CustomMeassage) 
+    public void Assert(bool assertion, short category, string CustomMeassage)
     {
-      if ( !assertion ) 
+      if (!assertion)
       {
-        System.Diagnostics.StackTrace a=new System.Diagnostics.StackTrace(true);
-        new Processes.EventLogMonitor
-          (
-          "Assert: " + CustomMeassage + " ;StackTrace log:" + a.ToString(), 
-          System.Diagnostics.EventLogEntryType.Information, 0, 0
-          ).WriteEntry();
-        myEventLog.SetCategory = category;
-        myEventLog.WriteEntry();
-        if (myRebootRequired) 
-          Manager.ForceReboot();
-        else  Manager.AddToErrorQueue();
+        StackTrace _a = new System.Diagnostics.StackTrace(true);
+        Processes.AssemblyTraceEvent.Trace(TraceEventType.Error, 81, nameof(Assertion), "Assert: " + CustomMeassage + " ; StackTrace log:" + _a.ToString());
+        Manager.AddToErrorQueue();
       }
     }
     /// <summary>
     /// Initializes a new instance of the <see cref="Assertion"/> class.
     /// </summary>
-    public Assertion() :this 
+    public Assertion() : this
       (
-      "Processes.Assertion error - the malicious thread was suspended and added to error queue", 
+      "Processes.Assertion error - the malicious thread was suspended and added to error queue",
       0, false
-      ){}
+      )
+    { }
     /// <summary>
     /// Initializes a new instance of the <see cref="Assertion"/> class.
     /// </summary>
     /// <param name="message">The message.</param>
     /// <param name="eventID">The event ID.</param>
     /// <param name="rebootRequired">if set to <c>true</c> system reboot is required.</param>
-    public Assertion(string message, int eventID, bool rebootRequired): 
-      base(message) 
+    public Assertion(string message, int eventID, bool rebootRequired) :
+      base(message)
     {
-      myRebootRequired = rebootRequired;
       EventLogEntryType severity;
       if (rebootRequired) severity = EventLogEntryType.Error;
       else severity = EventLogEntryType.Warning;
-      myEventLog = new EventLogMonitor("Assertion error:"+message, severity, 1000 + eventID, 0);
+      myEventLog = new EventLogMonitor("Assertion error:" + message, severity, 1000 + eventID, 0);
     }
     #endregion
   }

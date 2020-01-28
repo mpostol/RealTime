@@ -1,28 +1,17 @@
-//<summary>
-//  Title   : Handling engine for WaitTimeList
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    Mariusz Postó³ - 28-09-2003: created
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47 
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
-using System.Diagnostics;
 
 namespace CAS.Lib.RTLib.Processes
 {
   /// <summary>
   /// Summary description for HandlerWaitTimeList.
-  /// This is is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
+  /// This is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
   /// </summary>
   /// <typeparam name="TElement">The type of the element.</typeparam>
   public abstract class HandlerWaitTimeList<TElement>: WaitTimeList<TElement> 
@@ -30,7 +19,7 @@ namespace CAS.Lib.RTLib.Processes
   {
     #region PRIVATE
     private readonly bool myAutoreset;
-    private string m_Source;
+    private readonly string m_Source;
     private bool m_busy = false;
     /// <summary>
     /// The method removes first ready item from the queue and schedules the work using <see cref="System.Threading.ThreadPool"/>.
@@ -57,12 +46,13 @@ namespace CAS.Lib.RTLib.Processes
       }
       catch ( Exception ex )
       {
-        string message = String.Format( CAS.Lib.RTLib.Properties.Resources.ExceptionTraceFormat, ex.Message, ex.Source, ex.StackTrace );
-        CAS.Lib.RTLib.Processes.EventLogMonitor.WriteToEventLogError( message, 42 );
+        string message = String.Format(Properties.Resources.ExceptionTraceFormat, ex.Message, ex.Source, ex.StackTrace );
+        EventLogMonitor.WriteToEventLogError( message, 42 );
       }
       finally { m_busy = false; }
     }
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// If overridden in the derived class can be used 
@@ -93,5 +83,6 @@ namespace CAS.Lib.RTLib.Processes
       : this( autoreset, handlerThreadName, true )
     { }
     #endregion
+
   }
 }

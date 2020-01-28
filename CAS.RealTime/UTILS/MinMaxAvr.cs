@@ -1,21 +1,9 @@
-//<summary>
-//  Title   : Minimum, maximum and average values are counted
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    Maciej Zbrzezny - 12-04-2006
-//      dopisano do klas Serializable
-//    MPostol - 24-10-03:created
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 
@@ -28,45 +16,37 @@ namespace CAS.Lib.RTLib.Utils
   public class MinMaxAvr
   {
     #region PRIVATE
-    private ushort myNumOfElemets;
+    private readonly ushort myNumOfElemets;
     private ushort elementIdx;
     private long max = long.MinValue, currmax = 0;
     private long min = long.MaxValue, currmin = 0;
     private long sum = 0, curravr = 0;
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Event handler invoked every time new values are available.
     /// </summary>
-    public delegate void newVal( long min, long max, long avr );
+    public delegate void newVal(long min, long max, long avr);
     /// <summary>
     /// Occurs when new value is calculated.
     /// </summary>
-    public event newVal markNewVal = null;
+    public event newVal MarkNewVal = null;
     /// <summary>
     /// Gets the maximum value
     /// </summary>
     /// <value>The max.</value>
-    public long Max
-    {
-      get { return currmax; }
-    }
+    public long Max => currmax;
     /// <summary>
     /// Gets the minimum value
     /// </summary>
     /// <value>The min.</value>
-    public long Min
-    {
-      get { return currmin; }
-    }
+    public long Min => currmin;
     /// <summary>
     /// Gets the average value
     /// </summary>
     /// <value>The average value.</value>
-    public long Avr
-    {
-      get { return curravr; }
-    }
+    public long Avr => curravr;
     /// <summary>
     /// adds value to be counted as min, max, average
     /// </summary>
@@ -76,10 +56,10 @@ namespace CAS.Lib.RTLib.Utils
       set
       {
         elementIdx++;
-        max = System.Math.Max( value, max );
-        min = System.Math.Min( value, min );
+        max = System.Math.Max(value, max);
+        min = System.Math.Min(value, min);
         sum += value;
-        if ( elementIdx >= myNumOfElemets )
+        if (elementIdx >= myNumOfElemets)
         {
           currmax = max;
           currmin = min;
@@ -88,8 +68,7 @@ namespace CAS.Lib.RTLib.Utils
           max = long.MinValue;
           min = long.MaxValue;
           sum = 0;
-          if ( markNewVal != null )
-            markNewVal( currmin, currmax, curravr );
+          MarkNewVal?.Invoke(currmin, currmax, curravr);
         }
       }
     }
@@ -107,10 +86,11 @@ namespace CAS.Lib.RTLib.Utils
     /// Initializes a new instance of the <see cref="MinMaxAvr"/> class.
     /// </summary>
     /// <param name="elements">The number of elements that must be collected to count new Min,Max,Avg values </param>
-    public MinMaxAvr( ushort elements )
+    public MinMaxAvr(ushort elements)
     {
       myNumOfElemets = elements;
     }
     #endregion
+
   }
 }

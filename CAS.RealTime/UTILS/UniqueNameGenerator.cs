@@ -30,7 +30,7 @@ namespace CAS.Lib.RTLib.Utils
   public class UniqueNameGenerator
   {
     private List<string> mList = new List<string>();
-    private string prefix;
+    private readonly string prefix;
     int counter = 0;
     /// <summary>
     /// the exception thrown by UniqueNameGenerator

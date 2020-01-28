@@ -1,18 +1,9 @@
-//<summary>
-//  Title   : Watchdog implementation
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  20080627: mzbrzezny: Watchdog uses force reboot now
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using CAS.Lib.RTLib.Properties;
 using System;
@@ -33,6 +24,7 @@ namespace CAS.Lib.RTLib.Processes
   [AttributeUsage(AttributeTargets.Class)]
   public class WatchdogAttribute : Attribute, IContextAttribute
   {
+
     #region private
     private string m_ObjectName;
     private readonly TimeSpan m_deadline;
@@ -48,7 +40,6 @@ namespace CAS.Lib.RTLib.Processes
       return id;
     }
     #endregion
-
     #region ContextAttribute
     /// <summary>
     /// Returns a Boolean value indicating whether the context parameter meets the context attribute's requirements.
@@ -98,6 +89,7 @@ namespace CAS.Lib.RTLib.Processes
       m_deadline = new TimeSpan(0, 0, deadlineInS);
     }
     #endregion
+
   }
   /// <summary>
   /// Implementation of the interface for a message sink.

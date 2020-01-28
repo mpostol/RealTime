@@ -1,39 +1,27 @@
 <#+
-//Common
+//Template
+string DefaultProductName ="DefaultProductName";
+string DefaultProductVersion = "1.00.00";
+string DefaultProductTrademark = "Object-Oriented Internet Process-Observer";
+
+//Solution common
 string AssemblyCopyright = "Copyright (C) 2020, Mariusz Postol LODZ POLAND.";
 string AssemblyCompany = "Mariusz Postol";
-string Url = "www.cas.eu";
+string Url = "https://mpostol.github.io/RealTime";
 string Email = "mpostol@cas.eu";
 string Phone = "+48 608 619 899";
 string Owner = "Mariusz Postol";
 string Authors = "Mariusz Postol";
 string IconURLTag = "https://github.com/mpostol/OPC-UA-OOI/blob/master/CommonResources/Media/Logo64.PNG?raw=true";
 
-//Default product description
-string DefaultProductName = "CAS CommServer Family";
-string DefaultProductTrademark = "Process-Observer";
-string DefaultProductVersion = "1.00.00";
+
 
 //CAS.RealTime
-string CASRealTimeName = "CAS.RealTime";
-string CASRealTimeTitle = "CAS.RealTime" + "-RealTime library";
-string CASRealTimeTrademark = "CAS.RealTime" + "-CAS Framework";
+string CASRealTimeName = "UAOOI.ProcessObserver.RealTime";
+string CASRealTimeTitle = "Object-Oriented Internet Process-Observer RealTime library";
+string CASRealTimeTrademark = "Object-Oriented Internet Process-Observer";
 string CASRealTimeVersion = "6.0.0";
 string CASRealTimePreRelease = "";
-
-//____________________________________
-//New Namespaces organization
-//CAS.CommServer
-//CAS.CommServer.DA
-//CAS.CommServer.DA.Viewer
-//CAS.CommServer.DA.Configuration - common server and client configuration access library
-//CAS.CommServer.OPCClassic.SDK
-//CAS.CommServer.UA
-//CAS.CommServer.UA.ModelDesigner
-//CAS.CommServer.UA.SDKServerConfiguration
-//CAS.CommServer.UA.Server
-//CAS.CommServer.UA.Viewer
-//CAS.CommServer.UA.XML
 
 //Note: 
 //Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, 

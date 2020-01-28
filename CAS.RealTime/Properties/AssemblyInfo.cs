@@ -10,17 +10,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CAS.RealTime")]
-[assembly: AssemblyDescription("CAS.RealTime-RealTime library Extension")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mariusz Postol")]
-[assembly: AssemblyProduct("CAS CommServer Family")]
-[assembly: AssemblyCopyright("Copyright (C) 2020, Mariusz Postol LODZ POLAND.")]
-[assembly: AssemblyTrademark("CAS.RealTime-CAS Framework")]
+[assembly: AssemblyTrademark("Object-Oriented Internet Process-Observer")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("E538D4FB-831F-4414-B9B3-774C63D852FB")]
-[assembly: AssemblyVersion("6.0.0.*")]
-[assembly: AssemblyFileVersion("6.0.0")]
 
 

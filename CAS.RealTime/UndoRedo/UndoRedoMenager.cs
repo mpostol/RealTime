@@ -1,20 +1,9 @@
-//<summary>
-//  Title   : NetworkConfig.UndoRedo
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    <Author> Tomek Siwecki - 26.12.2006 - Created <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Collections.Generic;
@@ -233,8 +222,10 @@ namespace CAS.Lib.RTLib.UndoRedo
         OnRedoUndoOperationAdding( new UndoRedoEventArgs( record ) );
         m_operations.Add( record );
         OnRedoUndoOperationAdded( new UndoRedoEventArgs( record ) );
-        List<int> rowIndices = new List<int>();
-        rowIndices.Add( idx );
+        List<int> rowIndices = new List<int>
+        {
+          idx
+        };
         m_uncomittedRows.Add( e.Row, rowIndices );
       }
     }
@@ -252,9 +243,7 @@ namespace CAS.Lib.RTLib.UndoRedo
         if ( e.Action == DataRowAction.Add )
         {
           if ( !m_uncomittedRows.ContainsKey( e.Row ) )
-          {
             throw new UndoRedoException( "Attempting to commit a row that doesn't exist in the uncommitted row collection." );
-          }
           m_uncomittedRows.Remove( e.Row );
         }
       }
@@ -332,10 +321,7 @@ namespace CAS.Lib.RTLib.UndoRedo
     /// <param name="e"></param>
     private void OnRedoUndoOperationAdding( UndoRedoEventArgs e )
     {
-      if ( RedoUndoOperationAdding != null )
-      {
-        RedoUndoOperationAdding( this, e );
-      }
+      RedoUndoOperationAdding?.Invoke(this, e);
     }
     /// <summary>
     /// Fires the RedoUndoOperationAdded event.
@@ -343,10 +329,7 @@ namespace CAS.Lib.RTLib.UndoRedo
     /// <param name="e"></param>
     private void OnRedoUndoOperationAdded( UndoRedoEventArgs e )
     {
-      if ( RedoUndoOperationAdded != null )
-      {
-        RedoUndoOperationAdded( this, e );
-      }
+      RedoUndoOperationAdded?.Invoke(this, e);
     }
     #endregion
     #endregion
@@ -363,15 +346,11 @@ namespace CAS.Lib.RTLib.UndoRedo
       }
       set
       {
-        if ( value == null )
-        {
-          throw new ArgumentNullException( "The source dataset cannot be null." );
-        }
         if ( m_sourceDataSet != null )
         {
           Unhook();
         }
-        m_sourceDataSet = value;
+        m_sourceDataSet = value ?? throw new ArgumentNullException( "The source dataset cannot be null." );
         Hook();
       }
     }

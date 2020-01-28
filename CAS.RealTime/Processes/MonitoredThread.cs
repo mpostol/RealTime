@@ -1,30 +1,14 @@
-//<summary>
-//  Title   : Implements Thread's monitored bt a watch dog. 
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    MZbrzezny - 01-06-2005
-//      Dodano nowe informacje do eventlog: stack trace i processname
-//    MPostol - 09-03-04
-//      Wprowadzenie funkcji wstrzymania zmiany czasu timeout - ResetWatchDog
-//    MPostol - 0211-2003: created
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 namespace CAS.Lib.RTLib.Processes
 {
   using System;
-  using System.Diagnostics;
+  using System.Collections;
   using System.Threading;
 
   /// <summary>
@@ -32,65 +16,59 @@ namespace CAS.Lib.RTLib.Processes
   /// </summary>
   public class MonitoredThread
   {
+    
     #region PRIVATE STATIC
-    private static System.Collections.ArrayList threadsList = new System.Collections.ArrayList();
+    private static ArrayList threadsList = new ArrayList();
     private static void Handler()
     {
-      while ( true )
+      while (true)
       {
-        Thread.Sleep( TimeSpan.FromSeconds( 1 ) );
-        lock ( threadsList )
-          foreach ( MonitoredThread thr in threadsList )
-            thr.decCounter();
+        Thread.Sleep(TimeSpan.FromSeconds(1));
+        lock (threadsList)
+          foreach (MonitoredThread _monitoredthred in threadsList)
+            _monitoredthred.DecCounter();
       }
     }
     static MonitoredThread()
     {
-      CAS.Lib.RTLib.Processes.Manager.StartProcess
-        ( new ThreadStart( Handler ), "MonitoredThreadHndl", true, ThreadPriority.Highest );
+      Manager.StartProcess(new ThreadStart(Handler), "MonitoredThreadHndl", true, ThreadPriority.Highest);
     }
     #endregion
+
     #region PRIVATE
-    private string Name;
-    private int internalCounter;
-    private bool on;
-    private CAS.Lib.RTLib.Processes.EventLogMonitor myEventLog;
-    private ushort myTimeOut;
-    private void decCounter()
+    private Thread m_Thread = null;
+    private readonly string Name;
+    private int m_InternalCounter;
+    private ushort m_TimeOut;
+    private EventLogMonitor myEventLog;
+    private void DecCounter()
     {
-      lock ( this )
+      lock (this)
       {
-        if ( !on )
+        if (m_InternalCounter <+0 )
           return;
-        internalCounter--;
-        if ( internalCounter == 0 )
+        m_InternalCounter--;
+        if (m_InternalCounter == 0)
         {
-          System.Diagnostics.StackTrace a = new System.Diagnostics.StackTrace();
-          myEventLog.SetMessage = myEventLog.GetMessage + " process:" + Name +
-#if DEBUG
- "; stacktrace:" + a.ToString() +
-#endif
- "";
+          string _exceptionMessage = myEventLog.GetMessage + " process:" + Name;
+          myEventLog.SetMessage = _exceptionMessage;
           myEventLog.WriteEntry();
-          System.Diagnostics.Debug.Assert
-            ( false, "I am about to reboot the system, but reboot is now switched off because of debug mode", "Processes.MonitoredThread" );
-#if !DEBUG
-          CAS.Lib.RTLib.Processes.Manager.Reboot();
-#endif
+          m_Thread.Abort();
         }
       }
     }
     #endregion
+
     #region PUBLIC
     /// <summary>
     /// Resets the watch dog.
     /// </summary>
     /// <param name="category">The category.</param>
-    public void ResetWatchDog( short category )
+    public void ResetWatchDog(short category)
     {
-      lock ( this )
+      lock (this)
       {
-        internalCounter = myTimeOut;
+        m_InternalCounter = m_TimeOut;
         myEventLog.SetCategory = category;
       }
     }
@@ -99,13 +77,12 @@ namespace CAS.Lib.RTLib.Processes
     /// </summary>
     /// <param name="category">The category.</param>
     /// <param name="timeout">The timeout.</param>
-    public void ResetWatchDog( short category, ushort timeout )
+    public void ResetWatchDog(short category, ushort timeout)
     {
-      lock ( this )
+      lock (this)
       {
-        on = ( timeout > 0 );
-        myTimeOut = timeout;
-        internalCounter = timeout;
+        m_TimeOut = timeout;
+        m_InternalCounter = timeout;
         myEventLog.SetCategory = category;
       }
     }
@@ -119,19 +96,16 @@ namespace CAS.Lib.RTLib.Processes
     /// <param name="processName">Name of the process.</param>
     /// <param name="isBackground">if set to <c>true</c> [is background].</param>
     /// <param name="priority">The priority.</param>
-    public MonitoredThread
-      (
-      ushort timeout, string message, int eventID,
-      ThreadStart process, string processName, bool isBackground, ThreadPriority priority
-      )
+    public MonitoredThread(ushort timeout, string message, int eventID, ThreadStart process, string processName, bool isBackground, ThreadPriority priority)
     {
-      myEventLog = new CAS.Lib.RTLib.Processes.EventLogMonitor( "Time out error: " + message, EventLogEntryType.Error, 2000 + eventID, 0 );
-      ResetWatchDog( short.MaxValue, timeout );
+      myEventLog = new EventLogMonitor("Time out error: " + message, EventLogEntryType.Error, 2000 + eventID, 0);
+      ResetWatchDog(short.MaxValue, timeout);
       Name = processName;
-      lock ( threadsList )
-        threadsList.Add( this );
-      CAS.Lib.RTLib.Processes.Manager.StartProcess( process, processName, isBackground, priority );
+      lock (threadsList)
+        threadsList.Add(this);
+      m_Thread = Manager.StartProcess(process, processName, isBackground, priority);
     }
     #endregion
+
   }
 }
