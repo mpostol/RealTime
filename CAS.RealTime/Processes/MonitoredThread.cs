@@ -9,7 +9,6 @@ namespace CAS.Lib.RTLib.Processes
 {
   using System;
   using System.Collections;
-  using System.Diagnostics;
   using System.Threading;
 
   /// <summary>
@@ -26,8 +25,8 @@ namespace CAS.Lib.RTLib.Processes
       {
         Thread.Sleep(TimeSpan.FromSeconds(1));
         lock (threadsList)
-          foreach (MonitoredThread thr in threadsList)
-            thr.decCounter();
+          foreach (MonitoredThread _monitoredthred in threadsList)
+            _monitoredthred.DecCounter();
       }
     }
     static MonitoredThread()
@@ -37,24 +36,24 @@ namespace CAS.Lib.RTLib.Processes
     #endregion
 
     #region PRIVATE
+    private Thread m_Thread = null;
     private readonly string Name;
-    private int internalCounter;
-    private bool on;
+    private int m_InternalCounter;
+    private ushort m_TimeOut;
     private EventLogMonitor myEventLog;
-    private ushort myTimeOut;
-    private void decCounter()
+    private void DecCounter()
     {
       lock (this)
       {
-        if (!on)
+        if (m_InternalCounter <+0 )
           return;
-        internalCounter--;
-        if (internalCounter == 0)
+        m_InternalCounter--;
+        if (m_InternalCounter == 0)
         {
           string _exceptionMessage = myEventLog.GetMessage + " process:" + Name;
           myEventLog.SetMessage = _exceptionMessage;
           myEventLog.WriteEntry();
-          throw new ApplicationException(_exceptionMessage);
+          m_Thread.Abort();
         }
       }
     }
@@ -69,7 +68,7 @@ namespace CAS.Lib.RTLib.Processes
     {
       lock (this)
       {
-        internalCounter = myTimeOut;
+        m_InternalCounter = m_TimeOut;
         myEventLog.SetCategory = category;
       }
     }
@@ -82,9 +81,8 @@ namespace CAS.Lib.RTLib.Processes
     {
       lock (this)
       {
-        on = (timeout > 0);
-        myTimeOut = timeout;
-        internalCounter = timeout;
+        m_TimeOut = timeout;
+        m_InternalCounter = timeout;
         myEventLog.SetCategory = category;
       }
     }
@@ -105,7 +103,7 @@ namespace CAS.Lib.RTLib.Processes
       Name = processName;
       lock (threadsList)
         threadsList.Add(this);
-      Manager.StartProcess(process, processName, isBackground, priority);
+      m_Thread = Manager.StartProcess(process, processName, isBackground, priority);
     }
     #endregion
 
