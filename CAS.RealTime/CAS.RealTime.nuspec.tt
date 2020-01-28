@@ -25,6 +25,12 @@
     <tags>OPCUA, M2M, IoT, OOI, RealTime</tags>
   </metadata>
   <files>
+    <file src=".\bin\Release\net451\UAOOI.ProcessObserver.RealTime.dll" target="lib\net451\UAOOI.ProcessObserver.RealTime.dll" />
+    <file src=".\bin\Release\net451\UAOOI.ProcessObserver.RealTimeCore.dll" target="lib\net451\UAOOI.ProcessObserver.RealTimeCore.dll" />
+    <file src=".\bin\Release\netstandard2.0\UAOOI.ProcessObserver.RealTime.dll" target="lib\netstandard2.0\UAOOI.ProcessObserver.RealTime.dll" />
+    <file src=".\bin\Release\netstandard2.0\UAOOI.ProcessObserver.RealTime.xml" target="lib\netstandard2.0\UAOOI.ProcessObserver.RealTime.xml" />
+    <file src=".\bin\Release\netstandard2.0\UAOOI.ProcessObserver.RealTimeCore.dll" target="lib\netstandard2.0\UAOOI.ProcessObserver.RealTimeCore.dll" />
+    <file src=".\bin\Release\netstandard2.0\UAOOI.ProcessObserver.RealTimeCore.xml" target="lib\netstandard2.0\UAOOI.ProcessObserver.RealTimeCore.xml" />
   </files>
 </package>
 

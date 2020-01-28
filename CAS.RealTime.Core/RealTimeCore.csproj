@@ -20,6 +20,10 @@
     <DocumentationFile>C:\VS.git\RealTime\CAS.RealTime.Core\RealTimeCore.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\VS.git\RealTime\CAS.RealTime.Core\UAOOI.ProcessObserver.RealTimeCore.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Win32API\**" />
     <EmbeddedResource Remove="Win32API\**" />
