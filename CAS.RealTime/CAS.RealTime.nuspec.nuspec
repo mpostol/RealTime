@@ -8,6 +8,7 @@
     <owners>Mariusz Postol</owners>
     <projectUrl>https://mpostol.github.io/RealTime</projectUrl>
     <license type="expression">MIT</license>
+    <iconUrl>https://github.com/mpostol/OPC-UA-OOI/blob/master/CommonResources/Media/Logo64.PNG?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
     <description>

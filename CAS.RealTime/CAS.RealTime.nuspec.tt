@@ -10,6 +10,7 @@
     <owners><#=Owner#></owners>
     <projectUrl><#=Url#></projectUrl>
     <license type="expression">MIT</license>
+    <iconUrl><#= IconURLTag #></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
     <description>
