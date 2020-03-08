@@ -122,10 +122,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CAS.RealTime.Core\RealTimeCore.csproj">
-      <Project>{527b72e3-3967-47a1-a454-e1f67357cba7}</Project>
-      <Name>RealTimeCore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CAS.RealTime\RealTime.csproj">
       <Project>{1f996bb4-0b43-4021-b575-82c176efc524}</Project>
       <Name>RealTime</Name>

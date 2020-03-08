@@ -49,10 +49,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CAS.RealTime.Core\RealTimeCore.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="CAS.RealTime.nuspec.nuspec">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
