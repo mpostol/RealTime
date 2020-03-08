@@ -21,8 +21,8 @@ string IconURLTag = "https://github.com/mpostol/OPC-UA-OOI/blob/master/CommonRes
 string CASRealTimeName = "UAOOI.ProcessObserver.RealTime";
 string CASRealTimeTitle = "Object-Oriented Internet Process-Observer RealTime library";
 string CASRealTimeTrademark = "Object-Oriented Internet Process-Observer";
-string CASRealTimeVersion = "6.0.1";
-string CASRealTimePreRelease = "-Bravo";
+string CASRealTimeVersion = "6.0.2";
+string CASRealTimePreRelease = "-Charlie";
 
 //Note: 
 //Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, 
