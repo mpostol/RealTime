@@ -1,30 +1,21 @@
-//<summary>
-//  Title   : Define error numbers.
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    MZbrzezny - 06-08-2004: created
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 
 namespace CAS.Lib.RTLib.Processes
 {
-  //
-  //EventID = Error + ErrorCause*1000
-  //
+
   /// <summary>
   /// Enum that gives number for error in trace messages
   /// </summary>
+  /// <remarks>
+  /// EventID = Error + ErrorCause*1000
+  /// </remarks>
   [Obsolete("Trace related error must be defined in context of application")]
   public enum Error: int
   {
@@ -54,6 +45,10 @@ namespace CAS.Lib.RTLib.Processes
     CommunicationLayer_UMessage = 300, //RTLib
     /// <summary>
     /// error in envelope
+    /// </summary>
+    ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave = 560, //RTLib
+    /// <summary>
+    /// The processes i envelope
     /// </summary>
     Processes_IEnvelope = 600, //RTLib
     /// <summary>
@@ -162,7 +157,6 @@ namespace CAS.Lib.RTLib.Processes
     /// Error in CAS_OpcSvr_Da_NETServer_Subscription
     /// </summary>
     CAS_OpcSvr_Da_NETServer_Subscription = 50100,
-    //devicesymulator'
     /// <summary>
     /// Error in CAS_OpcSvr_Da_NETServer_Initialization
     /// </summary>

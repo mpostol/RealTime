@@ -30,7 +30,7 @@ namespace CAS.Lib.RTLib.Processes
   /// Define error numbers
   /// </summary>
   [Obsolete(@"It conflicts with the C:\MPVS\CASTrunk\PR36-CAS_MAIN_CORE_PCKG\RTLib\Processes\ErrorsEnum.cs")]
-  public enum Error: int
+  public enum ErrorCore: int
   {
     //ApplicationLayer_NULL_protocol = 100, //RTLib
     //ApplicationLayer_MBUS_PRIVATE_MBUS_message = 200, //RTLib

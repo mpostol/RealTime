@@ -40,11 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="CAS.RealTime.csproj.GhostDoc.xml" />
     <None Remove="Properties\Settings.settings" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Win32API\TimeFunctionsWrapper.cs" />
+    <None Remove="RealTimeCore.xml" />
+    <None Remove="UAOOI.ProcessObserver.RealTimeCore.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,6 +72,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Win32API\" />
   </ItemGroup>
 
 </Project>
