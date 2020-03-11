@@ -23,7 +23,7 @@ using Microsoft.CSharp;
 using System.Collections.Specialized;
 using System.Reflection;
 
-namespace CAS.Lib.RTLib.Utils
+namespace UAOOI.ProcessObserver.RealTime.Utils
 {
   /// <summary>
   /// Base class for oder code builder classes

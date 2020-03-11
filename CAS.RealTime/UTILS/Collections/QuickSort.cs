@@ -16,7 +16,7 @@
       
 using System;
 
-namespace CAS.Lib.RTLib.Utils.Collections
+namespace UAOOI.ProcessObserver.RealTime.Utils.Collections
 {
   /// <summary>
   /// A simple version of the Quicksort.

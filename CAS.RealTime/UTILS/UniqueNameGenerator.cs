@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CAS.Lib.RTLib.Utils
+namespace UAOOI.ProcessObserver.RealTime.Utils
 {
   /// <summary>
   /// Class that is responsible for generating unique names

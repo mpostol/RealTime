@@ -15,7 +15,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.Win32API
+namespace UAOOI.ProcessObserver.RealTime.Win32API
 {
   /// <summary>
   /// Class that provides common information about Application - path, etc...

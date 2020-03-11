@@ -7,7 +7,7 @@
 
 using System.Threading;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Manager is a module that provides structural operations designed to create, 

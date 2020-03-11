@@ -19,7 +19,7 @@
 //  mailto:techsupp@cas.com.pl
 //  http:\\www.cas.eu
 //</summary>
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// It allows synchronizing and exchanging events between concurrent threads on the FIFO basis.

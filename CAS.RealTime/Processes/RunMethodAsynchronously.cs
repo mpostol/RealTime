@@ -19,7 +19,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Class that allows running method asynchronously

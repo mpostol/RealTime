@@ -16,7 +16,7 @@
 //  mailto:techsupp@cas.com.pl
 //  http://www.cas.eu
 //</summary>
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Interface for envelope management 

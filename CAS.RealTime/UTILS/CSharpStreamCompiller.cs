@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace CAS.Lib.RTLib.Utils
+namespace UAOOI.ProcessObserver.RealTime.Utils
 {
   /// <summary>
   /// Compliler that perform compilation of any cs class from stream or string

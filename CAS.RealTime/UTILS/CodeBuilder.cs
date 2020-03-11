@@ -23,7 +23,7 @@ using System.Reflection;
 using System.Text;
 using Microsoft.CSharp;
 
-namespace CAS.Lib.RTLib.Utils
+namespace UAOOI.ProcessObserver.RealTime.Utils
 {
   /// <summary>
   /// Code Builder using Code Dom

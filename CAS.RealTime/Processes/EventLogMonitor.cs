@@ -7,7 +7,7 @@
 
 using System.Diagnostics;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
 
   ///<summary>

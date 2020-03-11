@@ -13,7 +13,7 @@
 //  http://www.cas.eu
 //</summary>
 
-using CAS.Lib.RTLib.Processes;
+using UAOOI.ProcessObserver.RealTime.Processes;
 using System;
 using System.Threading;
 

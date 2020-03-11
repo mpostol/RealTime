@@ -7,7 +7,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.Management
+namespace UAOOI.ProcessObserver.RealTime.Management
 {
   /// <summary>
   /// Statistical information about the communication performance

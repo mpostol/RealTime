@@ -18,9 +18,9 @@
 using System;
 using System.Collections;
 using System.Threading;
-using CAS.Lib.RTLib.Processes;
+using UAOOI.ProcessObserver.RealTime.Processes;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Provides access to a queue of IEnvelope messages.

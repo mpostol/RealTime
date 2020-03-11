@@ -13,7 +13,7 @@
 //  http://www.cas.eu
 //</summary>
 
-using CAS.Lib.RTLib.Processes;
+using UAOOI.ProcessObserver.RealTime.Processes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 

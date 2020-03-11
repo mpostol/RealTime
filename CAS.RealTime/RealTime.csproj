@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-    <DocumentationFile>C:\VS.git\RealTime\CAS.RealTime\RealTime.xml</DocumentationFile>
+    <DocumentationFile>C:\VS.git\UAOOI\RealTime\CAS.RealTime\UAOOI.ProcessObserver.RealTime.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">

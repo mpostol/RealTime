@@ -17,7 +17,7 @@
 //  http:\\www.cas.eu
 //</summary>
 using System;
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Data bufer to be used by unmanaged platform calls.

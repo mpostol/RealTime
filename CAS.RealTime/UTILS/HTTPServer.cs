@@ -5,7 +5,7 @@
 //  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
 //___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Processes;
+using UAOOI.ProcessObserver.RealTime.Processes;
 using System;
 using System.Collections;
 using System.Diagnostics;

@@ -11,7 +11,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Text;
 
-namespace CAS.Lib.RTLib.UndoRedo
+namespace UAOOI.ProcessObserver.RealTime.UndoRedo
 {
   /// <summary>
   /// Manages row and field changes for a specific DataTable.

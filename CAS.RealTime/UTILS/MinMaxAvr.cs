@@ -7,7 +7,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.Utils
+namespace UAOOI.ProcessObserver.RealTime.Utils
 {
   /// <summary>
   /// Minimum, maximum and average values are counted.

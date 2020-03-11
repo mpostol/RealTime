@@ -7,7 +7,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.UndoRedo
+namespace UAOOI.ProcessObserver.RealTime.UndoRedo
 {
 
   /// <summary>

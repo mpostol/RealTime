@@ -21,7 +21,7 @@
 //  http://www.cas.eu
 //</summary>
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   ///  Title   : Stopwatch mechanism implementation 
