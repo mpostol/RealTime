@@ -5,11 +5,11 @@
 //  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
 //___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Utils;
+using UAOOI.ProcessObserver.RealTime.Utils;
 using System;
 using System.Threading;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// List responsible for scheduling objects ( Manager of scheduled in time objects. ).

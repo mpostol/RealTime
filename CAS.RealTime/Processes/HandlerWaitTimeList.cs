@@ -7,7 +7,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Summary description for HandlerWaitTimeList.

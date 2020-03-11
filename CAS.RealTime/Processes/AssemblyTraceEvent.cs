@@ -8,7 +8,7 @@
 using System;
 using System.Diagnostics;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Static instance of <see cref="TraceSource"/> 

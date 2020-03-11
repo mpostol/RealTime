@@ -19,7 +19,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Class responsible for tracing.

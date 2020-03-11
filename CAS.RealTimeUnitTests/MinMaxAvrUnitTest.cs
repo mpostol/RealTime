@@ -5,7 +5,7 @@
 //  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
 //___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Utils;
+using UAOOI.ProcessObserver.RealTime.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CAS.RealTime.UnitTests

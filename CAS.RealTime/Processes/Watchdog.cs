@@ -5,7 +5,7 @@
 //  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
 //___________________________________________________________________________________
 
-using CAS.Lib.RTLib.Properties;
+using UAOOI.ProcessObserver.RealTime.Properties;
 using System;
 using System.Diagnostics;
 using System.Runtime.Remoting.Activation;
@@ -15,7 +15,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Watchdog implementation - To apply deadline the class method call add this attribute 
@@ -219,7 +219,7 @@ namespace CAS.Lib.RTLib.Processes
           //NUnit.Framework.Assert.Fail
           //( "I am about to reboot the system, but reboot is now switched off because of debug mode", "Processes.MonitoredThread" );
 #else
-          CAS.Lib.RTLib.Processes.Manager.ForceReboot();
+          UAOOI.ProcessObserver.RealTime.Processes.Manager.ForceReboot();
 #endif
         }
       }

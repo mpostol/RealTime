@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 
-namespace CAS.Lib.RTLib.UndoRedo
+namespace UAOOI.ProcessObserver.RealTime.UndoRedo
 {
   /// <summary>
   /// Base class for UndoRedoOperation data object

@@ -20,7 +20,7 @@
 //</summary>
 using System;
 using System.Threading;
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
   /// Represents a thread synchronization event.

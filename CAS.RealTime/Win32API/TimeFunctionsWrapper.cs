@@ -1,27 +1,16 @@
-//<summary>
-//  Title   : TimeFunctionsWrapper
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
-
-
-namespace CAS.Lib.RTLib.Win32API
+namespace UAOOI.ProcessObserver.RealTime.Win32API
 {
+
   using System;
   using System.Runtime.InteropServices;
+
   /// <summary>
   /// Win32 API Time Functions Wrapper.
   /// </summary>
@@ -45,7 +34,7 @@ namespace CAS.Lib.RTLib.Win32API
     /// </remarks>
     [DllImport("kernel32")]
     [Obsolete]
-    public static extern bool QueryPerformanceCounter(ref Int64 lpPerformanceCount);
+    public static extern bool QueryPerformanceCounter(ref long lpPerformanceCount);
     /// <summary>
     /// The QueryPerformanceFrequency function retrieves the frequency of the high-resolution performance counter, 
     /// if one exists. The frequency cannot change while the system is running.
@@ -65,6 +54,7 @@ namespace CAS.Lib.RTLib.Win32API
     /// </remarks>>
     [DllImport("kernel32")]
     [Obsolete]
-    public static extern bool QueryPerformanceFrequency(ref Int64 lpFrequency);
+    public static extern bool QueryPerformanceFrequency(ref long lpFrequency);
+
   }
 }

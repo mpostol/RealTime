@@ -16,7 +16,7 @@
 //</summary>
 
 
-namespace CAS.Lib.RTLib
+namespace UAOOI.ProcessObserver.RealTime
 {
   /// <summary>
   /// Item Access Rights enum

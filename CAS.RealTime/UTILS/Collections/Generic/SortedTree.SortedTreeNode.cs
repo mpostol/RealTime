@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CAS.Lib.RTLib.Utils.Collections.Generic
+namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
 {
   public partial class SortedTree<T>: IEnumerator<T>, IEnumerable<T>, ICloneable
   {

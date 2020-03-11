@@ -15,7 +15,7 @@
 //  http://www.cas.eu
 //</summary>
 
-using CAS.Lib.RTLib.Utils;
+using UAOOI.ProcessObserver.RealTime.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

@@ -18,7 +18,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.UndoRedo
+namespace UAOOI.ProcessObserver.RealTime.UndoRedo
 {
   /// <summary>
   /// Exception class for exceptions occurring in the UndoRedo module.

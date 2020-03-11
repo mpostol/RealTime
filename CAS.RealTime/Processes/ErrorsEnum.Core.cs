@@ -21,7 +21,7 @@
 
 using System;
 
-namespace CAS.Lib.RTLib.Processes
+namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   //
   //EventID = Error + ErrorCause*1000

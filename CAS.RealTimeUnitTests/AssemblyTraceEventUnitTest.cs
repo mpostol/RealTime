@@ -1,4 +1,4 @@
-﻿using CAS.Lib.RTLib.Processes;
+﻿using UAOOI.ProcessObserver.RealTime.Processes;
 using CAS.RealTime.UnitTests.Instrumentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;

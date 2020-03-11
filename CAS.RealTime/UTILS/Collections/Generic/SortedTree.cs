@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CAS.Lib.RTLib.Utils.Collections.Generic
+namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
 {
   /// <summary>
   /// Generic sorted tree (tree where nodes are sorted)

@@ -16,7 +16,7 @@
 //  http:\\www.cas.eu
 //</summary>
 
-namespace CAS.Lib.RTLib.UndoRedo
+namespace UAOOI.ProcessObserver.RealTime.UndoRedo
 {
   /// <summary>
   /// Operation types
