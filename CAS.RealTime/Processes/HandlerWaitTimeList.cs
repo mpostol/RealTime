@@ -11,7 +11,7 @@ namespace CAS.Lib.RTLib.Processes
 {
   /// <summary>
   /// Summary description for HandlerWaitTimeList.
-  /// This is able to execute handler functions that belongs to objects that oare removed form Wait Time List  
+  /// This is able to execute handler functions that belongs to objects that ware removed form Wait Time List
   /// </summary>
   /// <typeparam name="TElement">The type of the element.</typeparam>
   public abstract class HandlerWaitTimeList<TElement>: WaitTimeList<TElement> 
