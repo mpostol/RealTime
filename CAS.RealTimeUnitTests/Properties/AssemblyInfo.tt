@@ -23,5 +23,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("<#= CASRealTimeVersion #>.*")]
 [assembly: AssemblyFileVersion("<#= CASRealTimeVersion #>")]
 
-<#@ include file = "..\..\T4Definitions\CAS.OPC.t4" #>
+<#@ include file = "..\..\T4Definitions\SolutionMetadataTemplate.t4" #>
 

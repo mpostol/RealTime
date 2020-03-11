@@ -35,4 +35,4 @@
   </files>
 </package>
 
-<#@ include file = "..\T4Definitions\CAS.OPC.t4" #>
+<#@ include file = "..\T4Definitions\SolutionMetadataTemplate.t4" #>

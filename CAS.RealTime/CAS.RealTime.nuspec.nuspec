@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>UAOOI.ProcessObserver.RealTime</id>
-    <version>6.0.2-Charlie</version>
+    <version>6.1.0-Delta</version>
     <title>Object-Oriented Internet Process-Observer RealTime library</title>
     <authors>Mariusz Postol</authors>
     <owners>Mariusz Postol</owners>

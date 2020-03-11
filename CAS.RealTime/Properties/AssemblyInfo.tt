@@ -17,5 +17,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: Guid("E538D4FB-831F-4414-B9B3-774C63D852FB")]
 
-<#@ include file = "..\..\T4Definitions\CAS.OPC.t4" #>
+<#@ include file = "..\..\T4Definitions\SolutionMetadataTemplate.t4" #>
 

@@ -12,4 +12,4 @@
     <Company>Mariusz Postol</Company>
   </PropertyGroup>
 </Project>
-<#@ include file = "CAS.OPC.t4" #>
+<#@ include file = "SolutionMetadataTemplate.t4" #>
