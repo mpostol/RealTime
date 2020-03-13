@@ -2,7 +2,6 @@
 //Template
 string DefaultProductName ="DefaultProductName";
 
-
 //Solution common
 string AssemblyCopyright = "Copyright (C) 2020, Mariusz Postol LODZ POLAND.";
 string AssemblyCompany = "Mariusz Postol";
@@ -17,8 +16,8 @@ string Authors = "Mariusz Postol";
 string CASRealTimeName = "UAOOI.ProcessObserver.RealTime";
 string CASRealTimeTitle = "Object-Oriented Internet Process-Observer RealTime library";
 string CASRealTimeTrademark = "Object-Oriented Internet Process-Observer";
-string CASRealTimeVersion = "6.1.0";
-string CASRealTimePreRelease = "-Delta";
+string CASRealTimeVersion = "6.2.0";
+string CASRealTimePreRelease = "-Echo";
 
 //Note: 
 //Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, 
