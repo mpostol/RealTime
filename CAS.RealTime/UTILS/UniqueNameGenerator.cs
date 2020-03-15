@@ -1,20 +1,9 @@
-﻿//<summary>
-//  Title   : Class that is responsible for generating unique names
-//  System  : Microsoft Visual C# .NET 2008
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+﻿//___________________________________________________________________________________
 //
-//  20080704 mzbrzezny: new function that checks the name and if name exists it returns suggested name.
-//  200805:  mzbrzezny:  created
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Collections.Generic;

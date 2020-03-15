@@ -41,11 +41,13 @@
     <Compile Remove="UTILS\CodeBuilder.cs" />
     <Compile Remove="UTILS\CodeBuilderBase.cs" />
     <Compile Remove="UTILS\CSharpStreamCompiller.cs" />
+    <Compile Remove="UTILS\SpecialOperation.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="cube.ico" />
     <None Remove="Logo64.PNG" />
+    <None Remove="UTILS\Collections\Generic\SortedTree.cd" />
   </ItemGroup>
 
   <ItemGroup>

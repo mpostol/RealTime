@@ -2115,7 +2115,7 @@
             <summary>
             Gets the roots.
             </summary>
-            <returns>Clonned list of roots</returns>
+            <returns>Cloned list of roots</returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.GetNextUnvisited">
             <summary>
@@ -2829,17 +2829,6 @@
             <summary>
             Stops the HTTP Server
             </summary>
-        </member>
-        <member name="T:Utils.SpecialOperation">
-            <summary>
-            Summary description for SpecialOperation.
-            </summary>
-        </member>
-        <member name="M:Utils.SpecialOperation.IncRound(System.UInt32@)">
-            <summary>
-            Round increments <paramref name="counter"/>.
-            </summary>
-            <param name="counter">The counter.</param>
         </member>
     </members>
 </doc>

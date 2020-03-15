@@ -1,22 +1,9 @@
-﻿//<summary>
-//  Title   : Generic sorted tree (tree where nodes are sorted)
-//  System  : Microsoft Visual C# .NET 2008
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20080408 mzbrzezny: - TreeHasChanged event is added
-//                        - ConnectTheTreeToTheNode is fixed (SetParentTree fix)
-//    20080325 mzbrzezny: created
-//    <date> - <author>: <description>
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Collections.Generic;
@@ -24,19 +11,17 @@ using System.Text;
 
 namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
 {
-  public partial class SortedTree<T>: IEnumerator<T>, IEnumerable<T>, ICloneable
+  public partial class SortedTree<T> : IEnumerator<T>, IEnumerable<T>, ICloneable
   {
     /// <summary>
     /// The node that is stored on the tree
     /// </summary>
     public class SortedTreeNode
     {
+
       #region private fields
       private SortedTree<T> MyParentTree = null;
-      private T mVal;
-      private bool mVisited = false;
       private SortedTreeNodeSortedList mChildNodes = new SortedTreeNodeSortedList();
-      private SortedTreeNodeSortedList mParentNodes = new SortedTreeNodeSortedList();
       // <remarks>
       // Gets the parent connector number.
       // (kazdy element umieszczony na drzewie ma swoje connectory - tj punkty przylaczenia:
@@ -68,24 +53,19 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       // 
       // </remarks>
       #endregion
+
       /// <summary>
       /// Gets a value indicating whether this <see cref="SortedTree&lt;T&gt;.SortedTreeNode"/> is visited.
       /// </summary>
       /// <value><c>true</c> if visited; otherwise, <c>false</c>.</value>
-      internal bool Visited
+      internal bool Visited { get; private set; } = false;
+      internal SortedTreeNode(T val)
       {
-        get
-        {
-          return mVisited;
-        }
-      }
-      internal SortedTreeNode( T val )
-      {
-        mVal = val;
+        Value = val;
       }
       internal T GetValue()
       {
-        return mVal;
+        return Value;
       }
       /// <summary>
       /// gets the height of this instance.
@@ -97,12 +77,12 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         {
           int height = 1;
           int maxchildheight = 0;
-          foreach ( KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes )
+          foreach (KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes)
           {
             int current_height = 0;
-            if ( KVPNode.Value != null )
+            if (KVPNode.Value != null)
               current_height = KVPNode.Value.Height;
-            if ( current_height > maxchildheight )
+            if (current_height > maxchildheight)
               maxchildheight = current_height;
           }
           height += maxchildheight;
@@ -116,9 +96,9 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// <returns>
       /// 	<c>true</c> if contains the specified node number otherwise, <c>false</c>.
       /// </returns>
-      internal bool ContainsNodeNumber( int NodeNumber )
+      internal bool ContainsNodeNumber(int NodeNumber)
       {
-        return mChildNodes.ContainsKey( NodeNumber );
+        return mChildNodes.ContainsKey(NodeNumber);
       }
       /// <summary>
       /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNode"/> class.
@@ -127,61 +107,45 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// <param name="ParentTree">The parent tree.</param>
       /// <param name="ParentNode">The parent node.</param>
       /// <param name="ParentConnectorNumber">The parent connector number.</param>
-      internal SortedTreeNode( T ParentElementValue, SortedTree<T> ParentTree, SortedTreeNode ParentNode, int ParentConnectorNumber )
+      internal SortedTreeNode(T ParentElementValue, SortedTree<T> ParentTree, SortedTreeNode ParentNode, int ParentConnectorNumber)
       {
         MyParentTree = ParentTree;
-        mVal = ParentElementValue;
-        if ( ParentNode != null )
-          this.mParentNodes.Add( ParentConnectorNumber, ParentNode );
+        Value = ParentElementValue;
+        if (ParentNode != null)
+          ParentNodes.Add(ParentConnectorNumber, ParentNode);
       }
       /// <summary>
       /// Gets the value stored in this node.
       /// </summary>
       /// <value>The value.</value>
-      public T Value
-      {
-        get
-        {
-          return mVal;
-        }
-      }
+      public T Value { get; private set; }
       /// <summary>
       /// Gets the parent connector number for the selected node.
       /// </summary>
       /// <param name="ParentNodeValue">The parent node value.</param>
       /// <returns></returns>
-      public int GetParentConnectorNumber( T ParentNodeValue )
+      public int GetParentConnectorNumber(T ParentNodeValue)
       {
-        foreach(int i in mParentNodes.Keys)
-        {
-          if (mParentNodes[ i ].Value.Equals( ParentNodeValue ) )
+        foreach (int i in ParentNodes.Keys)
+          if (ParentNodes[i].Value.Equals(ParentNodeValue))
             return i;
-        }
         return -1;
       }
       /// <summary>
       /// Gets the parent node.
       /// </summary>
       /// <value>The parent node.</value>
-      internal SortedTreeNodeSortedList ParentNodes
-      {
-        get
-        {
-          return mParentNodes;
-        }
-      }
+      internal SortedTreeNodeSortedList ParentNodes { get; } = new SortedTreeNodeSortedList();
       /// <summary>
       /// Gets the parent node by parent node number.
       /// </summary>
       /// <param name="ParentNodeNumber">The parent node number.</param>
       /// <returns>sorted tree node from parent list</returns>
-      public SortedTreeNode GetParentNodeByParentNodeNumber( int ParentNodeNumber )
+      public SortedTreeNode GetParentNodeByParentNodeNumber(int ParentNodeNumber)
       {
-        foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in mParentNodes )
-        {
-          if ( kvpnode.Key == ParentNodeNumber )
+        foreach (KeyValuePair<int, SortedTreeNode> kvpnode in ParentNodes)
+          if (kvpnode.Key == ParentNodeNumber)
             return kvpnode.Value;
-        }
         return null;
       }
       /// <summary>
@@ -190,39 +154,33 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// <returns>first sorted tree node from parent list</returns>
       public SortedTreeNode GetFirstParentNode()
       {
-        return mParentNodes.GetFirstNodeFromThisCollection();
+        return ParentNodes.GetFirstNodeFromThisCollection();
       }
       /// <summary>
       /// Gets the parent nodes count.
       /// </summary>
       /// <value>The parent nodes count.</value>
-      public int ParentNodesCount
+      public int ParentNodesCount => ParentNodes.Count;
+      internal void AddConnectionToParent(SortedTreeNode ParentNode, int ParentConnectorNumber)
       {
-        get
+        if (ParentNodes.ContainsKey(ParentConnectorNumber))
         {
-          return mParentNodes.Count;
-        }
-      }
-      internal void AddConnectionToParent( SortedTreeNode ParentNode, int ParentConnectorNumber )
-      {
-        if ( mParentNodes.ContainsKey( ParentConnectorNumber ) )
-        {
-          if ( !ParentNode.Value.Equals( mParentNodes[ ParentConnectorNumber ].Value ) )
-            throw new SortedTreeNodeException( "This node already has such parent connector" );
+          if (!ParentNode.Value.Equals(ParentNodes[ParentConnectorNumber].Value))
+            throw new SortedTreeNodeException("This node already has such parent connector");
           return;
         }
-        mParentNodes.Add( ParentConnectorNumber, ParentNode );
+        ParentNodes.Add(ParentConnectorNumber, ParentNode);
       }
-      internal SortedTreeNode AddNode( int NodeNumber, SortedTreeNode NewNode, int ParentConnectorNumber )
+      internal SortedTreeNode AddNode(int NodeNumber, SortedTreeNode NewNode, int ParentConnectorNumber)
       {
-        if ( this.ContainsNodeNumber( NodeNumber ) )
+        if (ContainsNodeNumber(NodeNumber))
         {
-          if ( this.mChildNodes[ NodeNumber ].Value.Equals( NewNode.Value ) )
+          if (mChildNodes[NodeNumber].Value.Equals(NewNode.Value))
             return NewNode;
-          throw new SortedTreeNodeException( "Parent node contains this key already" );
+          throw new SortedTreeNodeException("Parent node contains this key already");
         }
-        mChildNodes.Add( NodeNumber, NewNode );
-        NewNode.AddConnectionToParent( this, ParentConnectorNumber );
+        mChildNodes.Add(NodeNumber, NewNode);
+        NewNode.AddConnectionToParent(this, ParentConnectorNumber);
         return NewNode;
       }
       /// <summary>
@@ -232,9 +190,9 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// <param name="NewValue">The new value.</param>
       /// <param name="ParentConnectorNumber">The parent connector number.</param>
       /// <returns></returns>
-      internal  SortedTreeNode AddNode( int NodeNumber, T NewValue, int ParentConnectorNumber )
+      internal SortedTreeNode AddNode(int NodeNumber, T NewValue, int ParentConnectorNumber)
       {
-        return AddNode( NodeNumber, new SortedTreeNode( NewValue, MyParentTree, this, ParentConnectorNumber ), ParentConnectorNumber );
+        return AddNode(NodeNumber, new SortedTreeNode(NewValue, MyParentTree, this, ParentConnectorNumber), ParentConnectorNumber);
       }
       /// <summary>
       /// Adds the node.
@@ -243,12 +201,12 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// <param name="MyConnectorNumber">My connector number.</param>
       /// <param name="ParentConnectorNumber">The parent connector number.</param>
       /// <returns></returns>
-      internal SortedTreeNode AddNode( SortedTreeNode NodeToBeAdded, int MyConnectorNumber, int ParentConnectorNumber )
+      internal SortedTreeNode AddNode(SortedTreeNode NodeToBeAdded, int MyConnectorNumber, int ParentConnectorNumber)
       {
-        if ( mChildNodes.ContainsKey( MyConnectorNumber ) )
-          throw new SortedTreeNodeException( "This node has such connector number already" );
-        this.mChildNodes.Add( MyConnectorNumber, NodeToBeAdded );
-        NodeToBeAdded.AddConnectionToParent( this, ParentConnectorNumber );
+        if (mChildNodes.ContainsKey(MyConnectorNumber))
+          throw new SortedTreeNodeException("This node has such connector number already");
+        mChildNodes.Add(MyConnectorNumber, NodeToBeAdded);
+        NodeToBeAdded.AddConnectionToParent(this, ParentConnectorNumber);
         return NodeToBeAdded;
       }
       /// <summary>
@@ -256,71 +214,64 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// </summary>
       /// <param name="Value">The value.</param>
       /// <returns></returns>
-      public SortedTreeNode GetNode( T Value )
+      public SortedTreeNode GetNode(T Value)
       {
         SortedTreeNode nodetobereturned = null;
-        foreach ( KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes )
+        foreach (KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes)
         {
-          if ( KVPNode.Value.Value.Equals( Value ) )
+          if (KVPNode.Value.Value.Equals(Value))
             nodetobereturned = KVPNode.Value;
           else
-          {
-            nodetobereturned = KVPNode.Value.GetNode( Value );
-          }
-          if ( nodetobereturned != null )
+            nodetobereturned = KVPNode.Value.GetNode(Value);
+          if (nodetobereturned != null)
             return nodetobereturned;
         }
         return null;
       }
-
       /// <summary>
       /// Gets the nodes from level.
       /// </summary>
       /// <param name="level">The level.</param>
       /// <returns></returns>
-      public SortedTreeNodeList GetNodesFromLevel( int level )
+      public SortedTreeNodeList GetNodesFromLevel(int level)
       {
         SortedTreeNodeList nodestobereturned = new SortedTreeNodeList();
-        if ( !this.mVisited && level > 0 )
+        if (!Visited && level > 0)
         {
-          this.mVisited = true;
-          if ( this.Height == level )
-            nodestobereturned.Add( this );
+          Visited = true;
+          if (Height == level)
+            nodestobereturned.Add(this);
           else
           {
             //zakladamy ze pewien element nie moze miec siebie samego jako dziecka
-            foreach ( KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes )
-            {
-              nodestobereturned.Add( KVPNode.Value.GetNodesFromLevel( level ) );
-            }
+            foreach (KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes)
+              nodestobereturned.Add(KVPNode.Value.GetNodesFromLevel(level));
           }
         }
         return nodestobereturned;
       }
-      internal void RemoveNodeFromChildNodes( T nodeValue )
+      internal void RemoveNodeFromChildNodes(T nodeValue)
       {
         int keytoberemoved = -1;
-        foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes )
-          if ( kvpnode.Value.Value.Equals( nodeValue ) )
+        foreach (KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes)
+          if (kvpnode.Value.Value.Equals(nodeValue))
           {
             keytoberemoved = kvpnode.Key;
             break;
           }
-        mChildNodes.Remove( keytoberemoved );
+        mChildNodes.Remove(keytoberemoved);
       }
-
       internal void RemoveFromParentNodes(T nodeValue)
       {
         int keytoberemoved = -1;
-        foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in mParentNodes )
-          if ( kvpnode.Value.Value.Equals( nodeValue ) )
+        foreach (KeyValuePair<int, SortedTreeNode> kvpnode in ParentNodes)
+          if (kvpnode.Value.Value.Equals(nodeValue))
           {
             keytoberemoved = kvpnode.Key;
             break;
           }
-        mParentNodes.Remove( keytoberemoved );
+        ParentNodes.Remove(keytoberemoved);
       }
-
       /// <summary>
       /// Gets the child nodes.
       /// </summary>
@@ -337,10 +288,10 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// true if the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>; otherwise, false.
       /// </returns>
       /// <exception cref="T:System.NullReferenceException">The <paramref name="obj"/> parameter is null.</exception>
-      public override bool Equals( object obj )
+      public override bool Equals(object obj)
       {
         SortedTreeNode nodeval = (SortedTreeNode)obj;
-        bool tobereturned = mVal.Equals( nodeval.Value );
+        bool tobereturned = Value.Equals(nodeval.Value);
         return tobereturned;
       }
       /// <summary>
@@ -351,57 +302,48 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// </returns>
       public override int GetHashCode()
       {
-        return mVal.GetHashCode();
+        return Value.GetHashCode();
       }
-
       /// <summary>
       /// Marks all nodes as unvisited.
       /// </summary>
       public void MarkAllUnvisited()
       {
-        mVisited = false;
-        foreach ( KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes )
-        {
+        Visited = false;
+        foreach (KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes)
           KVPNode.Value.MarkAllUnvisited();
-        }
       }
       /// <summary>
       /// Gets the connector number of specified node.
       /// </summary>
       /// <param name="node">The node.</param>
       /// <returns></returns>
-      internal int GetConnectorNumberOfSpecifiedNode( SortedTreeNode node )
+      internal int GetConnectorNumberOfSpecifiedNode(SortedTreeNode node)
       {
         int idx = -1;
-        foreach ( KeyValuePair<int, SortedTreeNode> kvp in mChildNodes )
-        {
-          if ( kvp.Value.Value.Equals( node.Value ) )
-          {
+        foreach (KeyValuePair<int, SortedTreeNode> kvp in mChildNodes)
+          if (kvp.Value.Value.Equals(node.Value))
             idx = kvp.Key;
-          }
-        }
-        if ( idx < 0 )
-          throw new SortedTreeNodeException( "this node does not contain such child node" );
+        if (idx < 0)
+          throw new SortedTreeNodeException("this node does not contain such child node");
         return idx;
       }
       /// <summary>
       /// Adds the this node to another tree.
       /// </summary>
       /// <param name="tree">The tree.</param>
-      public void AddThisNodeToAnotherTree( ref SortedTree<T> tree )
+      public void AddThisNodeToAnotherTree(ref SortedTree<T> tree)
       {
-        if ( mParentNodes.Count == 0 )
-        {
-          tree.AddNode( Value );
-        }
+        if (ParentNodes.Count == 0)
+          tree.AddNode(Value);
         else
         {
-          foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in mParentNodes )
+          foreach (KeyValuePair<int, SortedTreeNode> kvpnode in ParentNodes)
           {
-            int ParentConnector = kvpnode.Value.GetConnectorNumberOfSpecifiedNode( this );
+            int ParentConnector = kvpnode.Value.GetConnectorNumberOfSpecifiedNode(this);
             //zanim dodamy nowy element musimy sprawdzic czy juz jest dodany jego parent
-            if(tree.GetNode(kvpnode.Value.Value)!=null)
-              tree.AddNode( kvpnode.Value.Value, ParentConnector, Value, kvpnode.Key );
+            if (tree.GetNode(kvpnode.Value.Value) != null)
+              tree.AddNode(kvpnode.Value.Value, ParentConnector, Value, kvpnode.Key);
           }
         }
       }
@@ -412,15 +354,15 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       public SortedTreeNode GetNextUnvisited()
       {
         SortedTreeNode result = null;
-        if ( mVisited )
+        if (Visited)
           return null;
-        foreach ( KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes )
+        foreach (KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes)
         {
           result = KVPNode.Value.GetNextUnvisited();
-          if ( result != null )
+          if (result != null)
             return result;
         }
-        mVisited = true;
+        Visited = true;
         return this;
       }
       /// <summary>
@@ -432,52 +374,41 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       public override string ToString()
       {
         StringBuilder result = new StringBuilder();
-        result.Append( "(" );
-        result.Append( Value.ToString() );
-        result.Append( "(Height:" + this.Height.ToString() + ")" );
+        result.Append("(");
+        result.Append(Value.ToString());
+        result.Append("(Height:" + Height.ToString() + ")");
         // result.Append("(ParentConnector:"+this.GetConnectorNumberOfSpecifiedNode(.ToString()+")");
-        result.Append( "[" );
-        foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes )
+        result.Append("[");
+        foreach (KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes)
         {
-          result.Append( kvpnode.Key );
-          result.Append( ":" );
-          result.Append( kvpnode.Value );
-
+          result.Append(kvpnode.Key);
+          result.Append(":");
+          result.Append(kvpnode.Value);
         }
-        result.Append( "]" );
-
-
+        result.Append("]");
         return result.ToString();
       }
-
       internal void ClearParent()
       {
-        this.mParentNodes.Clear();
+        ParentNodes.Clear();
       }
-
       internal void ParentCleanup()
       {
-        SortedTreeNodeSortedList myparentclonnedlist = (SortedTreeNodeSortedList)( (ICloneable)mParentNodes ).Clone();
-        foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in myparentclonnedlist )
+        SortedTreeNodeSortedList myparentclonnedlist = (SortedTreeNodeSortedList)((ICloneable)ParentNodes).Clone();
+        foreach (KeyValuePair<int, SortedTreeNode> kvpnode in myparentclonnedlist)
         {
-          if ( MyParentTree.GetNode( kvpnode.Value.Value ) == null )
-          {
+          if (MyParentTree.GetNode(kvpnode.Value.Value) == null)
             //oznacza to ze dany node ma na swojej liscie tego parenta a drzewo juz nie ma, nalezy wiec go usunac:
-            this.mParentNodes.Remove( kvpnode.Key );
-          }
+            ParentNodes.Remove(kvpnode.Key);
         }
-        foreach ( KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes )
-        {
+        foreach (KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes)
           kvpnode.Value.ParentCleanup();
-        }
       }
-      internal void SetParentTree( SortedTree<T> tree )
+      internal void SetParentTree(SortedTree<T> tree)
       {
-        foreach ( KeyValuePair<int, SortedTreeNode> kvp_childnode in mChildNodes )
-        {
-          kvp_childnode.Value.SetParentTree( tree );
-        }
-        this.MyParentTree = tree;
+        foreach (KeyValuePair<int, SortedTreeNode> kvp_childnode in mChildNodes)
+          kvp_childnode.Value.SetParentTree(tree);
+        MyParentTree = tree;
       }
     }
 
