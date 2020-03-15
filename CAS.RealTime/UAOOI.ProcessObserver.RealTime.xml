@@ -4,18 +4,6 @@
         <name>UAOOI.ProcessObserver.RealTime</name>
     </assembly>
     <members>
-        <member name="T:UAOOI.ProcessObserver.RealTime.ICanBeAccepted">
-            <summary>
-            This interface is used by internal component to inform 
-            parent window that it is possible to enable accept button.
-            </summary>
-        </member>
-        <member name="M:UAOOI.ProcessObserver.RealTime.ICanBeAccepted.CanBeAccepted(System.Boolean)">
-            <summary>
-            It sets the information if accept button in the parent dialog window can be accepted
-            </summary>
-            <param name="pOKState">true if it could be accepted</param>
-        </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.ItemAccessRights">
              <summary>
              Item Access Rights enum

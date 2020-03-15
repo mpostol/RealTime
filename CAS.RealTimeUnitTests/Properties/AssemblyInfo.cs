@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("CAS RealTime Library UnitTests")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mariusz Postol")]
-[assembly: AssemblyProduct("DefaultProductName")]
+[assembly: AssemblyProduct("Object-Oriented Internet Process-Observer")]
 [assembly: AssemblyCopyright("Copyright (C) 2020, Mariusz Postol LODZ POLAND.")]
 [assembly: AssemblyTrademark("Object-Oriented Internet Process-Observer")]
 [assembly: AssemblyCulture("")]
