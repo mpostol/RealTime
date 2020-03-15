@@ -3,10 +3,10 @@
     <PackageId>UAOOI.ProcessObserver.RealTime</PackageId>
     <Description>Object-Oriented Internet Process-Observer RealTime library</Description>
     <Product>Object-Oriented Internet Process-Observer</Product>
-    <AssemblyVersion>6.2.0</AssemblyVersion>
+    <AssemblyVersion>6.3.0</AssemblyVersion>
     <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
-    <FileVersion>6.2.0</FileVersion>
-    <Version>6.2.0</Version>
+    <FileVersion>6.3.0</FileVersion>
+    <Version>6.3.0</Version>
     <Company>Mariusz Postol</Company>
   </PropertyGroup>
 </Project>

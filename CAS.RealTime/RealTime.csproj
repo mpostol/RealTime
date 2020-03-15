@@ -6,10 +6,10 @@
     <PackageId>UAOOI.ProcessObserver.RealTime</PackageId>
     <Description>Object-Oriented Internet Process-Observer RealTime library</Description>
     <Product>Object-Oriented Internet Process-Observer</Product>
-    <AssemblyVersion>6.2.0</AssemblyVersion>
+    <AssemblyVersion>6.3.0</AssemblyVersion>
     <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
-    <FileVersion>6.2.0</FileVersion>
-    <Version>6.2.0</Version>
+    <FileVersion>6.3.0</FileVersion>
+    <Version>6.3.0</Version>
     <Company>Mariusz Postol</Company>
     <AssemblyName>UAOOI.ProcessObserver.RealTime</AssemblyName>
     <RootNamespace>UAOOI.ProcessObserver.RealTime</RootNamespace>
@@ -26,13 +26,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Scripts\**" />
+    <Compile Remove="Win32API\**" />
+    <EmbeddedResource Remove="Scripts\**" />
+    <EmbeddedResource Remove="Win32API\**" />
+    <None Remove="Scripts\**" />
+    <None Remove="Win32API\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Processes\EventLogMonitor_.cs" />
     <Compile Remove="Processes\ExceptionLoged.cs" />
     <Compile Remove="Processes\Watchdog.cs" />
     <Compile Remove="UTILS\CodeBuilder.cs" />
     <Compile Remove="UTILS\CodeBuilderBase.cs" />
     <Compile Remove="UTILS\CSharpStreamCompiller.cs" />
-    <Compile Remove="Win32API\Service.CS" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,11 +49,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Processes\Watchdog.cs" />
     <None Include="UTILS\CodeBuilder.cs" />
     <None Include="UTILS\CodeBuilderBase.cs" />
     <None Include="UTILS\CSharpStreamCompiller.cs" />
-    <None Include="Win32API\Service.CS" />
   </ItemGroup>
 
   <ItemGroup>

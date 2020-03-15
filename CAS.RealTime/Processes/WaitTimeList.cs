@@ -5,9 +5,9 @@
 //  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
 //___________________________________________________________________________________
 
-using UAOOI.ProcessObserver.RealTime.Utils;
 using System;
 using System.Threading;
+using UAOOI.ProcessObserver.RealTime.Utils;
 
 namespace UAOOI.ProcessObserver.RealTime.Processes
 {
@@ -17,6 +17,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   public class WaitTimeList<TElement> : IDisposable
     where TElement : WaitTimeList<TElement>.TODescriptor
   {
+
     #region PRIVATE
     private readonly bool c_WaightedPriority = true;
     private readonly System.Threading.Timer m_Timer;
@@ -45,16 +46,13 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       private TimeSpan myCycle = TimeSpan.MaxValue;
       private TimeSpan Cycle
       {
-        get { return myCycle; }
-        set { myCycle = Timer.Max(value, minTimeSpan); }
+        get => myCycle;
+        set => myCycle = Timer.Max(value, minTimeSpan);
       }
       private long mycounter;
       private long Counter
       {
-        get
-        {
-          return mycounter;
-        }
+        get => mycounter;
         set
         {
           mycounter = value;
@@ -70,10 +68,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       /// Gets a value indicating whether this object is in queue.
       /// </summary>
       /// <value><c>true</c> if in queue otherwise, <c>false</c>.</value>
-      private bool InQueue
-      {
-        get { return myInQueue; }
-      }
+      private bool InQueue => myInQueue;
       /// <summary>
       /// Inserts the in queue using default settings (default cycle).
       /// </summary>
@@ -130,10 +125,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       /// Gets the get coupled Time Out Desciptor (<see>TODescriptor</see>).
       /// </summary>
       /// <value>The get coupled TOD.</value>
-      internal TElement GetCoupledTOD
-      {
-        get { return myTODescriptor; }
-      }
+      internal TElement GetCoupledTOD => myTODescriptor;
       /// <summary>
       /// Moves to beginning.
       /// </summary>
@@ -164,10 +156,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       /// <value>
       /// 	<c>true</c> if this instance is ready to by removed; otherwise, <c>false</c>.
       /// </value>
-      internal bool IsReadyToByRemoved
-      {
-        get { return (Counter <= 0); }
-      }
+      internal bool IsReadyToByRemoved => (Counter <= 0);
       /// <summary>
       /// Removes this instance.
       /// </summary>
@@ -246,8 +235,8 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       internal ChainLink(WaitTimeList<TElement> myQueue, TElement timeOutDescriptor, TimeSpan myCycle)
       {
         this.myQueue = myQueue;
-        this.escQueue = myQueue.c_WaightedPriority;
-        this.myTODescriptor = timeOutDescriptor;
+        escQueue = myQueue.c_WaightedPriority;
+        myTODescriptor = timeOutDescriptor;
         Cycle = myCycle;
         //InsertInQueue();
       }//ChainLink
@@ -256,7 +245,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         string nextelem = "null";
         if (next != null)
           nextelem = next.ToString();
-        string data = String.Format("(ChainLink: cycle:{0}, counter:{1},next: ", Cycle, Counter);
+        string data = string.Format("(ChainLink: cycle:{0}, counter:{1},next: ", Cycle, Counter);
         return data + nextelem.ToString() + ")";
       }
       #endregion
@@ -268,7 +257,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     ///  20 - is the reasonable value (in ms) that Windows schedule tasks
     /// </summary>
     private const ushort cycleMiliseconds = 20;
-    private readonly static TimeSpan minTimeSpan = TimeSpan.FromMilliseconds(3 * cycleMiliseconds);
+    private static readonly TimeSpan minTimeSpan = TimeSpan.FromMilliseconds(3 * cycleMiliseconds);
     /// <summary>
     /// this is signal used to inform other tasks that item is ready to be removed
     /// </summary>
@@ -317,7 +306,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       catch (Exception ex)
       {
         string msg = "An exception has been caught in the WaitTimeList: {0}";
-        EventLogMonitor.WriteToEventLogError(String.Format(msg, ex.Message), 339);
+        EventLogMonitor.WriteToEventLogError(string.Format(msg, ex.Message), 339);
       }
       finally
       {
@@ -355,7 +344,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// </summary>
     /// <param name="autoreset">if set to <c>true</c> do ResetCounter.</param>
     /// <returns></returns>
-    internal protected TElement RemoveItem(bool autoreset)
+    protected internal TElement RemoveItem(bool autoreset)
     {
       lock (this)
       {
@@ -365,6 +354,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       }
     }
     #endregion
+
     #region PUBLIC
     /// <summary>
     ///  Title   : Time Out Descriptor - it is a kind of public wrapper on a ChainLink class
@@ -427,7 +417,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       /// <remarks>After creation the object is not added to the queue.</remarks>
       public TODescriptor(WaitTimeList<TElement> queue, TimeSpan cycle)
       {
-        this.myQueue = queue;
+        myQueue = queue;
         if (queue == null)
           throw new ArgumentNullException("queue in TODescriptor cannot be null");
         if (cycle.TotalMilliseconds == 0)
@@ -442,18 +432,12 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// The method is called by the internal timer callback inside the lock of the instance of this class.
     /// Typically it is used to schedule a work related to removed Item using the <see cref="System.Threading.ThreadPool"/>.
     /// </summary>
-    internal protected virtual void RemoveItem() { return; }
+    protected internal virtual void RemoveItem() { return; }
     /// <summary>
     /// Gets the length of the queue.
     /// </summary>
     /// <value>The length of the queue.</value>
-    public int QueueLength
-    {
-      get
-      {
-        return queuelength;
-      }
-    }
+    public int QueueLength => queuelength;
     /// <summary>
     /// Event handler invoked every time new values are available.
     /// </summary>
@@ -543,6 +527,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       return base.ToString() + MyHandlerThreadName + "MyTickListThreadEnabled: " + myTOQueueStringRepresentation;
     }
     #endregion
+
     #region constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="WaitTimeList&lt;TElement&gt;"/> class.
@@ -563,6 +548,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <param name="handlerThreadName">Name of the handler thread.</param>
     public WaitTimeList(string handlerThreadName) : this(handlerThreadName, true) { }
     #endregion
+
     #region IDisposable
     private bool disposed = false;
     // 
@@ -585,7 +571,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     private void Dispose(bool disposing)
     {
       // Check to see if Dispose has already been called. 
-      if (!this.disposed)
+      if (!disposed)
       {
         // If disposing equals true, dispose all managed and unmanaged resources. 
         if (disposing)
@@ -608,5 +594,6 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       Dispose(false);
     }
     #endregion
+
   }
 }
