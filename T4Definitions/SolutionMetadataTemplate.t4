@@ -13,8 +13,8 @@ string Authors = "Mariusz Postol";
 string CASRealTimeName = "UAOOI.ProcessObserver.RealTime";
 string CASRealTimeTitle = "Object-Oriented Internet Process-Observer RealTime library";
 string CASRealTimeTrademark = "Object-Oriented Internet Process-Observer";
-string CASRealTimeVersion = "6.4.0";
-string CASRealTimePreRelease = "-Golf";
+string CASRealTimeVersion = "6.5.0";
+string CASRealTimePreRelease = "-Hotel";
 
 //Note: 
 //Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, 
