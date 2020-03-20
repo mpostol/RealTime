@@ -56,8 +56,8 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
       set
       {
         elementIdx++;
-        max = System.Math.Max(value, max);
-        min = System.Math.Min(value, min);
+        max = Math.Max(value, max);
+        min = Math.Min(value, min);
         sum += value;
         if (elementIdx >= myNumOfElemets)
         {

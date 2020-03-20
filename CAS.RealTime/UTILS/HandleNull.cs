@@ -6,17 +6,12 @@ namespace Utils
   /// </summary>
   public class Handle : IComparable
   {
-    private uint val;
     int IComparable.CompareTo( object valToComapare)
     {
-      if (val.Equals(((Handle)valToComapare).val)) return 0;
-      if (val > ((Handle)valToComapare).val) return 1;
+      if (Value.Equals(((Handle)valToComapare).Value)) return 0;
+      if (Value > ((Handle)valToComapare).Value) return 1;
       else return -1;
     }
-    internal uint Value
-    {
-      set{ val = value;}
-      get{return val;}
-    }
+    internal uint Value { set; get; }
   }
 }

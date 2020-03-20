@@ -1,20 +1,9 @@
-﻿//<summary>
-//  Title   : Item Access Rights Enum
-//  System  : Microsoft Visual C# .NET
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    20081006: mzbrzezny: created
+﻿//___________________________________________________________________________________
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
-
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 namespace UAOOI.ProcessObserver.RealTime
 {
@@ -22,12 +11,16 @@ namespace UAOOI.ProcessObserver.RealTime
   /// Item Access Rights enum
   /// similar to: 
   /// EX01-OPCFoundation_NETApi\Source\NET API\Da\Opc.Da.PropertyID.cs
-  ///   public enum accessRights : int
-  ///{
-  ///  readable     = 0x01,
-  ///  writable     = 0x02,
-  ///  readWritable = 0x03
-  ///}
+  ///   
+  /// <code>
+  /// public enum accessRights : int
+  /// {
+  ///    readable     = 0x01,
+  ///    writable     = 0x02,
+  ///    readWritable = 0x03
+  /// }
+  /// </code>
+  ///  
   /// </summary>
   public enum ItemAccessRights: sbyte
   {
