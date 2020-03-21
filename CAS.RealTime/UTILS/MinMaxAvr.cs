@@ -16,37 +16,45 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
   public class MinMaxAvr
   {
     #region PRIVATE
+
     private readonly ushort myNumOfElemets;
     private ushort elementIdx;
-    private long max = long.MinValue, currmax = 0;
-    private long min = long.MaxValue, currmin = 0;
-    private long sum = 0, curravr = 0;
-    #endregion
+    private long max = long.MinValue;
+    private long min = long.MaxValue;
+    private long sum = 0;
+
+    #endregion PRIVATE
 
     #region PUBLIC
+
     /// <summary>
     /// Event handler invoked every time new values are available.
     /// </summary>
     public delegate void newVal(long min, long max, long avr);
+
     /// <summary>
     /// Occurs when new value is calculated.
     /// </summary>
     public event newVal MarkNewVal = null;
+
     /// <summary>
     /// Gets the maximum value
     /// </summary>
     /// <value>The max.</value>
-    public long Max => currmax;
+    public long Max { get; private set; } = 0;
+
     /// <summary>
     /// Gets the minimum value
     /// </summary>
     /// <value>The min.</value>
-    public long Min => currmin;
+    public long Min { get; private set; } = 0;
+
     /// <summary>
     /// Gets the average value
     /// </summary>
     /// <value>The average value.</value>
-    public long Avr => curravr;
+    public long Avr { get; private set; } = 0;
+
     /// <summary>
     /// adds value to be counted as min, max, average
     /// </summary>
@@ -61,17 +69,18 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
         sum += value;
         if (elementIdx >= myNumOfElemets)
         {
-          currmax = max;
-          currmin = min;
-          curravr = sum / elementIdx;
+          Max = max;
+          Min = min;
+          Avr = sum / elementIdx;
           elementIdx = 0;
           max = long.MinValue;
           min = long.MaxValue;
           sum = 0;
-          MarkNewVal?.Invoke(currmin, currmax, curravr);
+          MarkNewVal?.Invoke(Min, Max, Avr);
         }
       }
     }
+
     /// <summary>
     /// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
     /// </summary>
@@ -80,8 +89,9 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
     /// </returns>
     public override string ToString()
     {
-      return currmin.ToString() + "\\" + curravr.ToString() + "\\" + currmax.ToString() + "(Mn\\Av\\Mx)";
+      return Min.ToString() + "\\" + Avr.ToString() + "\\" + Max.ToString() + "(Mn\\Av\\Mx)";
     }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MinMaxAvr"/> class.
     /// </summary>
@@ -90,7 +100,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
     {
       myNumOfElemets = elements;
     }
-    #endregion
 
+    #endregion PUBLIC
   }
 }

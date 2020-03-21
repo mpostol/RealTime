@@ -6,6 +6,7 @@
 //___________________________________________________________________________________
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,12 +19,13 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
   /// <typeparam name="T">the type that is stored on the tree</typeparam>
   public partial class SortedTree<T> : IEnumerator<T>, IEnumerable<T>, ICloneable
   {
+    private SortedTreeNodeList m_Roots;
 
-    private SortedTreeNodeList myRoots;
     private void RaiseTreeHasChangedEvent()
     {
       TreeHasChanged?.Invoke(this, EventArgs.Empty);
     }
+
     /// <summary>
     /// Exception that can be thrown by SortedTree
     /// </summary>
@@ -36,19 +38,21 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       /// <param name="message">The message.</param>
       public SortedTreeNodeException(string message) : base(message) { }
     }
+
     /// <summary>
     /// Sorted List of nodes from Sorted Tree
     /// </summary>
     public class SortedTreeNodeSortedList : SortedList<int, SortedTreeNode>, ICloneable
     {
       /// <summary>
-      /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNodeSortedList"/> class.
+      /// Initializes a new instance of the <see cref="SortedTree{SortedTreeNodeSortedList}"/> class.
       /// </summary>
       public SortedTreeNodeSortedList()
         : base()
       { }
+
       /// <summary>
-      /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNodeSortedList"/> class.
+      /// Initializes a new instance of the <see cref="SortedTree{SortedTreeNodeSortedList}"/> class.
       /// </summary>
       /// <param name="list">The list.</param>
       public SortedTreeNodeSortedList(SortedTreeNodeSortedList list)
@@ -57,6 +61,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (KeyValuePair<int, SortedTreeNode> kvp in list)
           Add(kvp.Key, kvp.Value);
       }
+
       /// <summary>
       /// Adds the specified list.
       /// </summary>
@@ -66,6 +71,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (KeyValuePair<int, SortedTreeNode> kvp in list)
           Add(kvp.Key, kvp.Value);
       }
+
       /// <summary>
       /// Gets the first node from this collection.
       /// </summary>
@@ -74,7 +80,6 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       {
         if (Count == 0)
           return null;
-        //szukamy najmniejszego z kluczy
         int key = Keys[0];
         foreach (int key2 in Keys)
           if (key2 < key)
@@ -95,22 +100,23 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         return new SortedTreeNodeSortedList(this);
       }
 
-      #endregion
-
+      #endregion ICloneable Members
     }
+
     /// <summary>
     ///  List of nodes from Sorted Tree
     /// </summary>
     public class SortedTreeNodeList : List<SortedTreeNode>, ICloneable
     {
       /// <summary>
-      /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNodeList"/> class.
+      /// Initializes a new instance of the <see cref="SortedTree{SortedTreeNodeList}"/> class.
       /// </summary>
       public SortedTreeNodeList()
         : base()
       { }
+
       /// <summary>
-      /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNodeList"/> class.
+      /// Initializes a new instance of the <see cref="SortedTree{SortedTreeNodeList}"/> class.
       /// </summary>
       /// <param name="list">The list.</param>
       public SortedTreeNodeList(SortedTreeNodeSortedList list)
@@ -119,8 +125,9 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (KeyValuePair<int, SortedTreeNode> kvp in list)
           Add(kvp.Value);
       }
+
       /// <summary>
-      /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNodeList"/> class.
+      /// Initializes a new instance of the <see cref="SortedTree{SortedTreeNodeList}"/> class.
       /// </summary>
       /// <param name="list">The list.</param>
       public SortedTreeNodeList(SortedTreeNodeList list)
@@ -129,6 +136,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (SortedTreeNode node in list)
           Add(node);
       }
+
       /// <summary>
       /// Adds the specified list.
       /// </summary>
@@ -138,6 +146,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (KeyValuePair<int, SortedTreeNode> kvp in list)
           Add(kvp.Value);
       }
+
       /// <summary>
       /// Adds the specified list.
       /// </summary>
@@ -147,6 +156,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (SortedTreeNode node in list)
           Add(node);
       }
+
       /// <summary>
       /// Gets the first node from this collection.
       /// </summary>
@@ -165,13 +175,14 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         return new SortedTreeNodeList(this);
       }
 
-      #endregion
-
+      #endregion ICloneable Members
     }
+
     /// <summary>
     /// Occurs when tree has changed.
     /// </summary>
     public event EventHandler TreeHasChanged;
+
     /// <summary>
     /// Gets the node.
     /// </summary>
@@ -180,7 +191,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     public SortedTreeNode GetNode(T Value)
     {
       SortedTreeNode nodetobereturned = null;
-      foreach (SortedTreeNode Node in myRoots)
+      foreach (SortedTreeNode Node in m_Roots)
       {
         if (Node.Value.Equals(Value))
           nodetobereturned = Node;
@@ -191,6 +202,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       }
       return null;
     }
+
     /// <summary>
     /// Gets the nodes from level.
     /// </summary>
@@ -200,10 +212,11 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     {
       MarkAllUnvisited();
       SortedTreeNodeList nodestobereturned = new SortedTreeNodeList();
-      foreach (SortedTreeNode node in myRoots)
+      foreach (SortedTreeNode node in m_Roots)
         nodestobereturned.Add(node.GetNodesFromLevel(level));
       return nodestobereturned;
     }
+
     /// <summary>
     /// Adds the node.
     /// </summary>
@@ -213,11 +226,12 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     {
       if (GetNode(NodeValue) != null)
         throw new SortedTreeNodeException("this tree already contains this value");
-      SortedTree<T>.SortedTreeNode newnode = new SortedTree<T>.SortedTreeNode(NodeValue, this, null, 0);
-      myRoots.Add(newnode);
+      SortedTreeNode newnode = new SortedTreeNode(NodeValue, this, null, 0);
+      m_Roots.Add(newnode);
       RaiseTreeHasChangedEvent();
       return newnode;
     }
+
     /// <summary>
     /// Adds the node.
     /// </summary>
@@ -233,8 +247,6 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       SortedTreeNode ParentNode = GetNode(ParentNodeValue);
       if (ParentNode == null)
         throw new SortedTreeNodeException("Cannot find parent node");
-      // tutaj potrzebne sa dwie funkcje get node - jedna ktora zwraca konkretne value - druga ktora zwraca nodevalue 
-      //(t.j. sprawdza czy dany element jest juz na drzewie  i jesli jest to nie kreuje nowego node value
       SortedTreeNode currentnode = GetNode(NewValue);
       RaiseTreeHasChangedEvent();
       if (currentnode == null)
@@ -242,8 +254,9 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       else
         return ParentNode.AddNode(NodeNumber, currentnode, ParentConnectorNumber);
     }
+
     /// <summary>
-    /// Removes the connection betweeen parent and child and move element to roots.
+    /// Removes the connection between parent and child and move element to roots.
     /// </summary>
     /// <param name="ParentValue">The parent value.</param>
     /// <param name="ChildValue">The child value.</param>
@@ -253,7 +266,6 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       if (ParentNode == null)
         throw new SortedTreeNodeException("Cannot find such parent value:" + ParentValue.ToString());
       SortedTreeNode ChildNode = null;
-      // wybieramy teraz ten node ktory ma wlasciwy childvalue
       foreach (KeyValuePair<int, SortedTreeNode> kvpchildnode in ParentNode.GetChildNodes())
       {
         if (kvpchildnode.Value.Value.Equals(ChildValue))
@@ -269,17 +281,18 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       SortedTreeNode Node = GetNode(ChildValue);
       if (Node == null)
       {
-        //tego elementu nie ma juz w drzewie - trzeba z niego srobic root'a 
-        myRoots.Add(ChildNode);
+        //this entity is no longer in the tree - you need to convert it to the root entity
+        m_Roots.Add(ChildNode);
         ChildNode.ClearParent();
       }
       ParentCleanup();
     }
+
     /// <summary>
     /// Removes the value.
     /// </summary>
     /// <param name="ValueToBeRemoved">The value to be removed.</param>
-    /// <param name="Shallow">if set to <c>true</c> [shallow] removal is done (all childs are moved to root if they are not connected to any others elements).</param>
+    /// <param name="Shallow">if set to <c>true</c> [shallow] removal is done (all children are moved to root if they are not connected to any others elements).</param>
     public void RemoveValue(T ValueToBeRemoved, bool Shallow)
     {
       SortedTreeNode NodeToBeRemoved = GetNode(ValueToBeRemoved);
@@ -288,7 +301,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         throw new SortedTreeNodeException("the value cannot be found on the tree");
       if (Shallow)
       {
-        //poniewaz nie dozwolone jest zmienianie kolekcji i robienie foreach na niej wiec:
+        //because it is not allowed to change the collection and make foreach on it:
         SortedTreeNodeSortedList childnodes = NodeToBeRemoved.GetChildNodes();
         node = childnodes.GetFirstNodeFromThisCollection();
         while ((node = childnodes.GetFirstNodeFromThisCollection()) != null)
@@ -297,7 +310,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           childnodes = NodeToBeRemoved.GetChildNodes();
         }
       }
-      //removal of conection above node that is removed
+      //removal of connection above node that is removed
       SortedTreeNodeSortedList parentnodes = NodeToBeRemoved.ParentNodes;
       node = parentnodes.GetFirstNodeFromThisCollection();
       while ((node = parentnodes.GetFirstNodeFromThisCollection()) != null)
@@ -310,29 +323,33 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       RemoveSortedNodeFromRoots(NodeToBeRemoved);
       ParentCleanup();
     }
+
     private void RemoveSortedNodeFromRoots(SortedTreeNode nodetoberemoved)
     {
-      for (int idx = 0; idx < myRoots.Count; idx++)
-        if (myRoots[idx].Value.Equals(nodetoberemoved.Value))
+      for (int idx = 0; idx < m_Roots.Count; idx++)
+        if (m_Roots[idx].Value.Equals(nodetoberemoved.Value))
         {
-          myRoots.RemoveAt(idx);
+          m_Roots.RemoveAt(idx);
           break;
         }
       ParentCleanup();
     }
+
     private void ParentCleanup()
     {
-      // poniewaz niektore funcje moga doprowadzic ze dla pewnego elementu usuniety zostanie root, ale jego parenty nie zostana uzuniete z jego listy wiec trzeba uporzadkowac listy parentow)
-      foreach (SortedTreeNode node in myRoots)
+      // because some functions may lead to the root being removed for some element, but its parents will not be removed from its list so you have to sort the parent list
+      foreach (SortedTreeNode node in m_Roots)
         node.ParentCleanup();
       RaiseTreeHasChangedEvent();
     }
+
     private void SetParentTree(SortedTree<T> tree)
     {
-      foreach (SortedTreeNode node in myRoots)
+      foreach (SortedTreeNode node in m_Roots)
         node.SetParentTree(tree);
       RaiseTreeHasChangedEvent();
     }
+
     /// <summary>
     /// Gets the subtree from node.
     /// </summary>
@@ -344,7 +361,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       // no we have to remove other roots
       int idx = 0;
       SortedTreeNodeList nodelist = TreeToBeReturned.GetRoots();
-      while (nodelist.Count > 1) //ma zostac jeden element
+      while (nodelist.Count > 1)
       {
         if (!nodelist[idx].Value.Equals(StartValue))
           TreeToBeReturned.RemoveValue(nodelist[idx].Value, false);
@@ -354,22 +371,25 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       }
       return TreeToBeReturned;
     }
+
     /// <summary>
     /// Marks all nodes as unvisited.
     /// </summary>
     public void MarkAllUnvisited()
     {
-      foreach (SortedTreeNode node in myRoots)
+      foreach (SortedTreeNode node in m_Roots)
         node.MarkAllUnvisited();
     }
+
     /// <summary>
     /// Gets the roots.
     /// </summary>
     /// <returns>Cloned list of roots</returns>
     public SortedTreeNodeList GetRoots()
     {
-      return (SortedTreeNodeList)((ICloneable)myRoots).Clone();
+      return (SortedTreeNodeList)((ICloneable)m_Roots).Clone();
     }
+
     /// <summary>
     /// Gets the next unvisited node.
     /// </summary>
@@ -377,13 +397,14 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     public SortedTreeNode GetNextUnvisited()
     {
       SortedTreeNode result = null;
-      foreach (SortedTreeNode node in myRoots)
+      foreach (SortedTreeNode node in m_Roots)
       {
         result = node.GetNextUnvisited();
         if (result != null) return result;
       }
       return result;
     }
+
     /// <summary>
     /// Gets the height of the tree.
     /// </summary>
@@ -393,7 +414,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       get
       {
         int maxheight = 0;
-        foreach (SortedTreeNode node in myRoots)
+        foreach (SortedTreeNode node in m_Roots)
         {
           int currentheight = node.Height;
           if (currentheight > maxheight)
@@ -402,6 +423,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         return maxheight;
       }
     }
+
     /// <summary>
     /// Gets the height of the node.
     /// </summary>
@@ -411,6 +433,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     {
       return GetNode(Node).Height;
     }
+
     /// <summary>
     /// Gets the count.
     /// </summary>
@@ -425,6 +448,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         return count;
       }
     }
+
     /// <summary>
     /// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
     /// </summary>
@@ -435,17 +459,18 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     {
       StringBuilder result = new StringBuilder(base.ToString() + " elements:");
       result.Append("{");
-      foreach (SortedTreeNode node in myRoots)
+      foreach (SortedTreeNode node in m_Roots)
         result.Append(node);
       result.Append("}");
       return result.ToString();
     }
+
     /// <summary>
-    /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;"/> class.
+    /// Initializes a new instance of the <see cref="SortedTree{T}"/> class.
     /// </summary>
     public SortedTree()
     {
-      myRoots = new SortedTreeNodeList();
+      m_Roots = new SortedTreeNodeList();
     }
 
     #region IEnumerable Members
@@ -456,12 +481,12 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     /// <returns>
     /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
     /// </returns>
-    System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+    IEnumerator IEnumerable.GetEnumerator()
     {
       return ((IEnumerable<T>)this).GetEnumerator();
     }
 
-    #endregion
+    #endregion IEnumerable Members
 
     #region IEnumerable<T> Members
 
@@ -476,9 +501,10 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       return (IEnumerator<T>)((ICloneable)this).Clone();
     }
 
-    #endregion
+    #endregion IEnumerable<T> Members
 
     #region IEnumerator<T> Members
+
     private SortedTreeNode IEnumeratorCurrentNode = null;
 
     /// <summary>
@@ -491,31 +517,31 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       get
       {
         if (IEnumeratorCurrentNode == null)
-          IEnumeratorCurrentNode = myRoots[0];
+          IEnumeratorCurrentNode = m_Roots[0];
         return IEnumeratorCurrentNode.Value;
       }
     }
-    #endregion
+
+    #endregion IEnumerator<T> Members
 
     #region IDisposable Members
 
     /// <summary>
     /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
     /// </summary>
-    void IDisposable.Dispose()
-    {
+    void IDisposable.Dispose() { }
 
-    }
-
-    #endregion
+    #endregion IDisposable Members
 
     #region IEnumerator Members
+
     /// <summary>
     /// Gets the element in the collection at the current position of the enumerator.
     /// </summary>
     /// <value></value>
     /// <returns>The element in the collection at the current position of the enumerator.</returns>
-    object System.Collections.IEnumerator.Current => ((IEnumerator<T>)this).Current;
+    object IEnumerator.Current => ((IEnumerator<T>)this).Current;
+
     /// <summary>
     /// Advances the enumerator to the next element of the collection.
     /// </summary>
@@ -533,16 +559,18 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       }
       return false;
     }
+
     /// <summary>
     /// Sets the enumerator to its initial position, which is before the first element in the collection.
     /// </summary>
     /// <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created. </exception>
-    void System.Collections.IEnumerator.Reset()
+    void IEnumerator.Reset()
     {
       IEnumeratorCurrentNode = null;
       MarkAllUnvisited();
     }
-    #endregion
+
+    #endregion IEnumerator Members
 
     #region ICloneable Members
 
@@ -560,7 +588,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       SortedTreeNodeList nextlevelelementlist = null; // lista elementow z nastepnej warstwy
 
       // kopiujemy najpierw roots elements
-      currentelementlist = new SortedTree<T>.SortedTreeNodeList(myRoots);
+      currentelementlist = new SortedTree<T>.SortedTreeNodeList(m_Roots);
       //a teraz w petli
       while (currentelementlist.Count > 0)
       {
@@ -573,10 +601,9 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         currentelementlist = new SortedTree<T>.SortedTreeNodeList(nextlevelelementlist);
       }
       return newtree;
-
     }
 
-    #endregion
+    #endregion ICloneable Members
 
     /// <summary>
     /// Tests the tree if can be connected.
@@ -600,6 +627,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           return false;
       return true;
     }
+
     /// <summary>
     /// Tests the tree if can be connected.
     /// </summary>
@@ -626,6 +654,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         return false;
       return true;
     }
+
     /// <summary>
     /// Connects the tree to the node.
     /// </summary>
@@ -648,6 +677,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       NodeToWhichWeConnectsTheTree.AddNode(clonnedtree.GetRoots()[0], NodeToWhichWeConnectsTheTreeConnectorNumer, TreeToBeConnectedConnectorNumer);
       ParentCleanup();
     }
+
     /// <summary>
     /// Connects the node to other node.
     /// </summary>
@@ -668,10 +698,11 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       SortedTreeNode NodeToBeConnected = GetNode(NodeToBeConnectedValue);
       if (NodeToBeConnected == null)
         throw new SortedTreeNodeException("Cannot find parent node");
-      myRoots.Remove(NodeToBeConnected);
+      m_Roots.Remove(NodeToBeConnected);
       NodeToWhichWeConnectsTheTree.AddNode(NodeToBeConnected, NodeToWhichWeConnectsConnectorNumer, NodeToBeConnectedConnectorNumber);
       ParentCleanup();
     }
+
     /// <summary>
     /// Moves the node to roots.
     /// </summary>
@@ -685,6 +716,5 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots(NodeToBeMovedToRoots.ParentNodes.GetFirstNodeFromThisCollection().Value, NodeToBeMovedToRootsValue);
       ParentCleanup();
     }
-
   }
 }

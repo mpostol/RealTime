@@ -1,24 +1,12 @@
-//<summary>
-//  Title   : Synchronous exchange of events between concurrent processes.
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    MPostol 16-02-2006
-//      Zmienile atrybut GetEventInt na private
-//    MPostol - 24-08-2004
-//      Created
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
+using System.Threading;
+
 namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
@@ -26,21 +14,28 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   /// </summary>
   public class EventsSynchronization
   {
-    #region PRIVATE
-    private object currEvent;
-    private Condition markNewEvent  = new Condition();
-    private Condition markBuffEmpty = new Condition();
-    private bool GetEventInt( out object lastEvent, int TimeOut )
+    #region private
+
+    private object m_CurrEvent;
+    private Condition m_MarkNewEvent = new Condition();
+    private Condition m_MarkBuffEmpty = new Condition();
+
+    private bool GetEventInt(out object lastEvent, int TimeOut)
     {
       lastEvent = null;
-      if ((currEvent == null) && ( ! markNewEvent.Wait(this, TimeOut))) return false;
-      lastEvent = currEvent;
-      currEvent = null;
-      markBuffEmpty.Notify();
+      if ((m_CurrEvent == null) && (!m_MarkNewEvent.Wait(this, TimeOut))) return false;
+      lastEvent = m_CurrEvent;
+      m_CurrEvent = null;
+      m_MarkBuffEmpty.Notify();
       return true;
     }
-    #endregion
-    #region PUBLIC
+
+    #endregion private
+
+
+
+    #region public
+
     /// <summary>
     /// Deposits or gets new event. If there is any events to be get depositing thread enters wait state.
     /// </summary>
@@ -50,15 +45,16 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <returns></returns>
     public bool GetEvent(out object lastEvent, int TimeOut, object callingMonitor)
     {
-      bool res;
-      lock(this)
+      bool _res;
+      lock (this)
       {
-        System.Threading.Monitor.Exit(callingMonitor);
-        res = GetEventInt(out lastEvent, TimeOut);
+        Monitor.Exit(callingMonitor);
+        _res = GetEventInt(out lastEvent, TimeOut);
       }
-      System.Threading.Monitor.Enter(callingMonitor);
-      return res;
+      Monitor.Enter(callingMonitor);
+      return _res;
     }
+
     /// <summary>
     /// Gets the event.
     /// Deposits or gets new event. If there is any events to be get depositing thread enters wait state.
@@ -68,11 +64,12 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <returns></returns>
     public bool GetEvent(out object lastEvent, int TimeOut)
     {
-      lock(this)
+      lock (this)
       {
         return GetEventInt(out lastEvent, TimeOut);
       }
     }
+
     /// <summary>
     /// Sets the event.
     /// Adds this event to process list and informs that new event occurs
@@ -81,15 +78,16 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <param name="callingMonitor">The calling monitor.</param>
     public void SetEvent(object newEvent, object callingMonitor)
     {
-      lock(this)
+      lock (this)
       {
-        System.Threading.Monitor.Exit(callingMonitor);
-        if (currEvent != null) markBuffEmpty.Wait(this);
-        currEvent = newEvent;
-        markNewEvent.Notify();
+        Monitor.Exit(callingMonitor);
+        if (m_CurrEvent != null) m_MarkBuffEmpty.Wait(this);
+        m_CurrEvent = newEvent;
+        m_MarkNewEvent.Notify();
       }
-      System.Threading.Monitor.Enter(callingMonitor);
+      Monitor.Enter(callingMonitor);
     }
+
     /// <summary>
     /// Sets the event.
     /// Adds this event to process list and informs that new event occurs
@@ -97,13 +95,14 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <param name="newEvent">The new event.</param>
     public void SetEvent(object newEvent)
     {
-      lock(this)
+      lock (this)
       {
-        if (currEvent != null) markBuffEmpty.Wait(this);
-        currEvent = newEvent;
-        markNewEvent.Notify();
+        if (m_CurrEvent != null) m_MarkBuffEmpty.Wait(this);
+        m_CurrEvent = newEvent;
+        m_MarkNewEvent.Notify();
       }
     }
-    #endregion
+
+    #endregion public
   }
 }

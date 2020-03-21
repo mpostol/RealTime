@@ -17,58 +17,44 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   public class WaitTimeList<TElement> : IDisposable
     where TElement : WaitTimeList<TElement>.TODescriptor
   {
+    #region private
 
-    #region PRIVATE
-    private readonly bool c_WaightedPriority = true;
-    private readonly System.Threading.Timer m_Timer;
-    private TimeSpan m_lastTime = clock.Elapsed;
-    /// <summary>
-    ///  one link from the chain (chain is managed in time queue)
-    ///   
-    /// Dzieki tej klasie utrzemujemy liste zarzadzanych obiektow.
-    /// Kazdy z obiektow ma swoj element poprzedni i nastepny.
-    /// 
-    /// jednym z wazniejszych elementow kazdego ogniwa jest counter ktory okresla czy i ile dany elment 
-    /// jest przeterminowany.
-    /// Elementy (obiekty) sa szeregowane na lisacie w nastepujacy sposob:
-    /// - pierwszy element ma ustawiony counter na wartosc opoznienia (jesli counter &gt;0 to znaczy ze 
-    /// element czeka na wykonanie, 
-    /// jesli counter &lt;0 tzn. ze element jet opozniony i powinien zostac wyjety z kolejki
-    /// - nastepny element ma counter ustawiony na wartosc wzgledna wobec poprzedniego, np. jesli dany 
-    /// element ma ustawiony counter na 10 tzn ze ma 109 ms zapasu w stosunku do opoznienia elementu poprzedniego.
-    ///
-    /// </summary>
     private class ChainLink
     {
-      #region PRIVATE
-      private readonly TElement myTODescriptor;
-      private readonly WaitTimeList<TElement> myQueue;
-      private TimeSpan myCycle = TimeSpan.MaxValue;
+      #region private
+
+      private readonly WaitTimeList<TElement> m_Queue;
+      private TimeSpan m_Cycle = TimeSpan.MaxValue;
+
       private TimeSpan Cycle
       {
-        get => myCycle;
-        set => myCycle = Timer.Max(value, minTimeSpan);
+        get => m_Cycle;
+        set => m_Cycle = Timer.Max(value, minTimeSpan);
       }
-      private long mycounter;
+
+      private long m_counter;
+
       private long Counter
       {
-        get => mycounter;
+        get => m_counter;
         set
         {
-          mycounter = value;
-          if (mycounter <= 0)
-            myQueue.myTimeExpiredSig.Notify();
+          m_counter = value;
+          if (m_counter <= 0)
+            m_Queue.m_TimeExpiredSig.Notify();
         }
       }
-      private bool escQueue;
-      private ChainLink next = null;
-      private ChainLink prev = null;
-      private bool myInQueue = false;
+
+      private bool m_EscQueue;
+      private ChainLink m_Next = null;
+      private ChainLink m_Previous = null;
+
       /// <summary>
       /// Gets a value indicating whether this object is in queue.
       /// </summary>
       /// <value><c>true</c> if in queue otherwise, <c>false</c>.</value>
-      private bool InQueue => myInQueue;
+      private bool InQueue { get; set; } = false;
+
       /// <summary>
       /// Inserts the in queue using default settings (default cycle).
       /// </summary>
@@ -76,69 +62,67 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       {
         InsertInQueue(Cycle);
       }
+
       /// <summary>
       /// Inserts the in queue using defined cycle.
-      /// 
-      /// Ta funkcja wstawia element na poczatek jesli kolejka jest pusta lub 
-      /// poszukuje wlasciwego misjca gdzie dany element powinien byc wstawiony .
-      /// 
-      /// W zaleznosci od znalezienia miejsca odpowienio zmniejszany jest counter elementu,
-      /// by stanowil wartosc wzgledna wobec porzedniego oraz zmieniany jest counter nstepnego
       /// </summary>
       /// <param name="currCycle">The curr cycle.</param>
       private void InsertInQueue(TimeSpan currCycle)
       {
         lock (this)
         {
-          myQueue.queuelength++;
+          m_Queue.QueueLength++;
           Counter = Convert.ToInt64(currCycle.TotalMilliseconds);
-          if ((myQueue.myTOQueue == null) || (Counter <= myQueue.myTOQueue.Counter))
+          if ((m_Queue.m_TOQueue == null) || (Counter <= m_Queue.m_TOQueue.Counter))
           {
-            prev = null;
-            next = myQueue.myTOQueue;
-            myQueue.myTOQueue = this;
+            m_Previous = null;
+            m_Next = m_Queue.m_TOQueue;
+            m_Queue.m_TOQueue = this;
           }
           else
           {
-            Counter -= myQueue.myTOQueue.Counter;
-            prev = myQueue.myTOQueue;
-            next = myQueue.myTOQueue.next;
-            while ((next != null) && (next.Counter <= Counter))
+            Counter -= m_Queue.m_TOQueue.Counter;
+            m_Previous = m_Queue.m_TOQueue;
+            m_Next = m_Queue.m_TOQueue.m_Next;
+            while ((m_Next != null) && (m_Next.Counter <= Counter))
             {
-              Counter -= next.Counter;
-              prev = next;
-              next = next.next;
+              Counter -= m_Next.Counter;
+              m_Previous = m_Next;
+              m_Next = m_Next.m_Next;
             }//while
-            prev.next = this;
+            m_Previous.m_Next = this;
           } // if ((myQueue.myTOQueue == null) || (counter <= myQueue.myTOQueue.counter))
-          if (next != null)
+          if (m_Next != null)
           {
-            next.prev = this;
-            next.Counter -= Counter;
+            m_Next.m_Previous = this;
+            m_Next.Counter -= Counter;
           }
-          myInQueue = true;
+          InQueue = true;
         }
       } // InsertInQueue;
-      #endregion
-      #region PUBLIC
+
+      #endregion private
+
+      #region public
+
       /// <summary>
-      /// Gets the get coupled Time Out Desciptor (<see>TODescriptor</see>).
+      /// Gets the get coupled Time Out Descriptor (<see>TODescriptor</see>).
       /// </summary>
-      /// <value>The get coupled TOD.</value>
-      internal TElement GetCoupledTOD => myTODescriptor;
+      /// <value>The get coupled Time Out Descriptor (TOD).</value>
+      internal TElement GetCoupledTOD { get; private set; }
+
       /// <summary>
       /// Moves to beginning.
       /// </summary>
       internal void MoveToBeginning()
       {
         Remove();
-        escQueue = true;
+        m_EscQueue = true;
         InsertInQueue(TimeSpan.Zero);
       }
+
       /// <summary>
-      /// Decrements the counter.
-      /// 
-      /// if the counter is less than 0 it notify other tasks that it is ready to be removed
+      /// Decrements the counter. If the counter is less than 0 it notify other tasks that it is ready to be removed.
       /// </summary>
       /// <param name="value">The value.</param>
       internal void DecCouter(int value)
@@ -146,10 +130,11 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         Counter -= value;
         if (Counter <= 0)
         {
-          myQueue.myTimeExpiredSig.Notify();
-          myQueue.RemoveItem();
+          m_Queue.m_TimeExpiredSig.Notify();
+          m_Queue.RemoveItem();
         }
       }
+
       /// <summary>
       /// Gets a value indicating whether this instance is ready to by removed.
       /// </summary>
@@ -157,6 +142,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       /// 	<c>true</c> if this instance is ready to by removed; otherwise, <c>false</c>.
       /// </value>
       internal bool IsReadyToByRemoved => (Counter <= 0);
+
       /// <summary>
       /// Removes this instance.
       /// </summary>
@@ -166,45 +152,47 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         {
           if (!InQueue)
             return;
-          escQueue = false;
-          if (next != null)
+          m_EscQueue = false;
+          if (m_Next != null)
           {
-            next.prev = prev;
-            next.Counter += Counter;
+            m_Next.m_Previous = m_Previous;
+            m_Next.Counter += Counter;
           }
-          if (prev == null)
-            myQueue.myTOQueue = next;
+          if (m_Previous == null)
+            m_Queue.m_TOQueue = m_Next;
           else
-            prev.next = next;
-          prev = null;
-          next = null;
-          myInQueue = false;
-          myQueue.queuelength--;
+            m_Previous.m_Next = m_Next;
+          m_Previous = null;
+          m_Next = null;
+          InQueue = false;
+          m_Queue.QueueLength--;
         }
       }//Remove
+
       /// <summary>
       /// Priorities the specified overtime sum.
       /// </summary>
       /// <param name="overtimeSum">The overtime sum.</param>
       /// <param name="maxPrior">The max prior.</param>
-      /// <param name="mostDelayed">The most delayed object on the list .</param>
+      /// <param name="mostDelayed">The most delayed object on the list.</param>
       /// <returns></returns>
       internal ChainLink Priority(ref long overtimeSum, ref double maxPrior, ref ChainLink mostDelayed)
       {
         overtimeSum += Counter;
         if (overtimeSum > 0)
           return null;
-        double myPrior = overtimeSum / Cycle.TotalMilliseconds;
-        if ((myPrior < maxPrior) || escQueue)
+        double _priority = overtimeSum / Cycle.TotalMilliseconds;
+        if ((_priority < maxPrior) || m_EscQueue)
         {
-          maxPrior = myPrior;
+          maxPrior = _priority;
           mostDelayed = this;
         }
-        if ((next != null) && !escQueue)
-          return next;
+        if ((m_Next != null) && !m_EscQueue)
+          return m_Next;
         else
           return null;
-      }//Priority 
+      }//Priority
+
       /// <summary>
       /// Sets the set cycle [in ms] of the object .
       /// </summary>
@@ -218,6 +206,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
             ResetCounter();
         }
       }
+
       /// <summary>
       /// Resets the counter (removes the element from queue and insterts the element again).
       /// </summary>
@@ -226,6 +215,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         Remove();
         InsertInQueue();
       }
+
       /// <summary>
       /// Initializes a new instance of the <see cref="WaitTimeList&lt;TElement&gt;.ChainLink"/> class.
       /// </summary>
@@ -234,50 +224,57 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       /// <param name="myCycle">My cycle - how often this object should be removed from the queue).</param>
       internal ChainLink(WaitTimeList<TElement> myQueue, TElement timeOutDescriptor, TimeSpan myCycle)
       {
-        this.myQueue = myQueue;
-        escQueue = myQueue.c_WaightedPriority;
-        myTODescriptor = timeOutDescriptor;
+        m_Queue = myQueue;
+        m_EscQueue = myQueue.c_WaightedPriority;
+        GetCoupledTOD = timeOutDescriptor;
         Cycle = myCycle;
         //InsertInQueue();
       }//ChainLink
+
       public override string ToString()
       {
         string nextelem = "null";
-        if (next != null)
-          nextelem = next.ToString();
+        if (m_Next != null)
+          nextelem = m_Next.ToString();
         string data = string.Format("(ChainLink: cycle:{0}, counter:{1},next: ", Cycle, Counter);
         return data + nextelem.ToString() + ")";
       }
-      #endregion
+
+      #endregion public
     } //ChainLink
-    private ChainLink myTOQueue = null;
+
+    private readonly bool c_WaightedPriority = true;
+    private readonly System.Threading.Timer m_Timer;
+    private TimeSpan m_lastTime = clock.Elapsed;
+    private ChainLink m_TOQueue = null;
+
     /// <summary>
-    /// cycleTicks is value in ms that indicate how often TicklistThred checks the counters
-    ///  of object from the list
-    ///  20 - is the reasonable value (in ms) that Windows schedule tasks
+    /// cycleTicks is value in ms that indicate how often TicklistThred checks the counters of object from the list 20 - is the reasonable value (in ms) that Windows schedule tasks
     /// </summary>
-    private const ushort cycleMiliseconds = 20;
-    private static readonly TimeSpan minTimeSpan = TimeSpan.FromMilliseconds(3 * cycleMiliseconds);
+    private const ushort m_CycleMiliseconds = 20;
+
+    private static readonly TimeSpan minTimeSpan = TimeSpan.FromMilliseconds(3 * m_CycleMiliseconds);
+
     /// <summary>
     /// this is signal used to inform other tasks that item is ready to be removed
     /// </summary>
-    private Condition myTimeExpiredSig = new Condition();
+    private Condition m_TimeExpiredSig = new Condition();
+
     /// <summary>
     /// statistics item to gather queue priorities statistics
     /// </summary>
-    private MinMaxAvr statPriority = new MinMaxAvr(20);
+    private MinMaxAvr m_StatPriority = new MinMaxAvr(20);
+
     /// <summary>
     /// clock for this queue
     /// </summary>
     private static System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
+
     /// <summary>
     /// the name of this list
     /// </summary>
     private readonly string MyHandlerThreadName;
-    /// <summary>
-    /// length of this queue
-    /// </summary>
-    private int queuelength = 0;
+
     /// <summary>
     /// Initializes the static part of <see cref="WaitTimeList&lt;TElement&gt;"/> class - it starts the clock.
     /// </summary>
@@ -285,23 +282,24 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       clock.Start();
     }
+
     /// <summary>
-    /// Ticks the list thread - the main thread resposible for list management.
+    /// Ticks the list thread - the main thread responsible for list management.
     /// </summary>
     private void TickListThread(object parameters)
     {
       if (!Monitor.TryEnter(this)) // instead of lock (this)
-        return; // we are exiting, because the lock is already acquired (this is not the problem because it wiil be soon launched again by the Timer)
+        return; // we are exiting, because the lock is already acquired (this is not the problem because it wail be soon launched again by the Timer)
       try
       {
-        if (myTOQueue == null)
+        if (m_TOQueue == null)
           return;
         TimeSpan currentTime = clock.Elapsed;
         int difference = Convert.ToInt32(((TimeSpan)(currentTime - m_lastTime)).TotalMilliseconds);
         //sometimes difference >1000 ??
         //System.Diagnostics.Debug.Assert( difference < 5 * cycleTicks );
         m_lastTime = currentTime;
-        myTOQueue.DecCouter(difference);
+        m_TOQueue.DecCouter(difference);
       }
       catch (Exception ex)
       {
@@ -313,24 +311,26 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         Monitor.Exit(this);
       }
     }
+
     /// <summary>
     /// Removes the most delayed item.
     /// </summary>
     /// <returns></returns>
     private TElement RemoveMostDelayedItem()
     {
-      ChainLink curr = myTOQueue;
+      ChainLink curr = m_TOQueue;
       ChainLink maxPriorFoundPtr = null;
       long overtime = 0;
       double maxPriorFound = double.MaxValue;
       do
         curr = curr.Priority(ref overtime, ref maxPriorFound, ref maxPriorFoundPtr);
       while (curr != null);
-      statPriority.Add = Convert.ToInt32(-maxPriorFound * 100);
+      m_StatPriority.Add = Convert.ToInt32(-maxPriorFound * 100);
       //statPriority.Add = - maxPriorFoundPtr.Counter;
       maxPriorFoundPtr.Remove();
       return maxPriorFoundPtr.GetCoupledTOD;
     } //RemoveMostDelayedItem;
+
     private TElement DoRemoveItem(bool autoreset)
     {
       TElement res = RemoveMostDelayedItem();
@@ -339,6 +339,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         res.ResetCounter();
       return res;
     }
+
     /// <summary>
     /// Removes the item.
     /// </summary>
@@ -353,20 +354,26 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         return DoRemoveItem(autoreset);
       }
     }
-    #endregion
 
-    #region PUBLIC
+    #endregion private
+
+    #region public
+
     /// <summary>
     ///  Title   : Time Out Descriptor - it is a kind of public wrapper on a ChainLink class
     ///  but it is restricted to selected functionality.
     /// </summary>
     public class TODescriptor
     {
-      #region PRIVATE
+      #region private
+
       private readonly ChainLink myChainLink;
       private readonly WaitTimeList<TElement> myQueue;
-      #endregion
-      #region PUBLIC
+
+      #endregion private
+
+      #region public
+
       /// <summary>
       /// Sets the new item cycle value and executes ResetCounter() if the item is in queue.
       /// </summary>
@@ -381,14 +388,16 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
           }
         }
       }
+
       /// <summary>
-      /// Removes this item from queue, resets the couter and inserts it again to the queue.
+      /// Removes this item from queue, resets the counter and inserts it again to the queue.
       /// </summary>
       public virtual void ResetCounter()
       {
         lock (myQueue)
         { myChainLink.ResetCounter(); }
       }
+
       /// <summary>
       /// Moves this item to the beginning of the queue.
       /// </summary>
@@ -399,6 +408,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
           myChainLink.MoveToBeginning();
         }
       }
+
       /// <summary>
       /// Removes this item from the queue.
       /// </summary>
@@ -407,8 +417,9 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         lock (myQueue)
           myChainLink.Remove();
       }
+
       /// <summary>
-      /// Initializes a new instance of the <see cref="WaitTimeList&lt;TElement&gt;.TODescriptor"/> class.
+      /// Initializes a new instance of the <see cref="WaitTimeList{TElement}"/> class.
       /// After creation the object is not added to the queue.
       /// </summary>
       /// <param name="queue">The queue.</param>
@@ -425,19 +436,23 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         lock (myQueue)
           myChainLink = new ChainLink(myQueue, (TElement)this, cycle);
       }
-      #endregion
+
+      #endregion public
     } //TODescriptor
+
     /// <summary>
-    /// While overridden the method can be used to remove first ready item from the queue. 
+    /// While overridden the method can be used to remove first ready item from the queue.
     /// The method is called by the internal timer callback inside the lock of the instance of this class.
     /// Typically it is used to schedule a work related to removed Item using the <see cref="System.Threading.ThreadPool"/>.
     /// </summary>
     protected internal virtual void RemoveItem() { return; }
+
     /// <summary>
     /// Gets the length of the queue.
     /// </summary>
     /// <value>The length of the queue.</value>
-    public int QueueLength => queuelength;
+    public int QueueLength { get; private set; } = 0;
+
     /// <summary>
     /// Event handler invoked every time new values are available.
     /// </summary>
@@ -446,11 +461,12 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <param name="average">The average.</param>
     public virtual void NewOvertimeCoefficient(long min, long max, long average)
     { }
+
     /// <summary>
     /// Gets a value indicating whether item from the queue is ready to be removed.
     /// </summary>
     /// <value>
-    /// 	<c>true</c> if  instance is ready to removed; otherwise, <c>false</c>.
+    /// 	<c>true</c> if  instance is ready to be removed; otherwise, <c>false</c>.
     /// </value>
     public bool IsReadyToRemoved
     {
@@ -458,15 +474,16 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       {
         lock (this)
         {
-          return (myTOQueue != null) && (myTOQueue.IsReadyToByRemoved);
+          return (m_TOQueue != null) && (m_TOQueue.IsReadyToByRemoved);
         }
       }
     }
+
     /// <summary>
     /// Removes the item.
     /// </summary>
     /// <param name="item">The item.</param>
-    /// <returns>Returns true if item removed, otherwise false and item is null</returns>
+    /// <returns>Returns <c>true</c> if item is removed, otherwise <c>false</c> and item is null</returns>
     public bool RemoveItem(out TElement item)
     {
       lock (this)
@@ -483,29 +500,32 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         }
       }
     } //RemoveItem;
+
     /// <summary>
     /// Waits and remove an item.
     /// </summary>
-    /// <param name="autoreset">if set to <c>true</c> autoreset the item.</param>
+    /// <param name="autoreset">if set to <c>true</c> auto-reset the item.</param>
     /// <returns></returns>
     public TElement WaitRemoveItem(bool autoreset)
     {
       lock (this)
       {
-        while ((myTOQueue == null) || (!myTOQueue.IsReadyToByRemoved))
-          myTimeExpiredSig.Wait(this);
-        System.Diagnostics.Debug.Assert(myTOQueue.IsReadyToByRemoved, "Signaled but in the queue there is no elements to be removed");
+        while ((m_TOQueue == null) || (!m_TOQueue.IsReadyToByRemoved))
+          m_TimeExpiredSig.Wait(this);
+        System.Diagnostics.Debug.Assert(m_TOQueue.IsReadyToByRemoved, "Signaled but in the queue there is no elements to be removed");
         return DoRemoveItem(autoreset);
       }
     } //WaitRemoveItem;
+
     /// <summary>
     /// Enables the list manager thread.
     /// </summary>
     public void EnableListManagerThread()
     {
       m_lastTime = clock.Elapsed;
-      m_Timer.Change(cycleMiliseconds, cycleMiliseconds);
+      m_Timer.Change(m_CycleMiliseconds, m_CycleMiliseconds);
     }
+
     /// <summary>
     /// Disables the list manager thread.
     /// </summary>
@@ -513,6 +533,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       m_Timer.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
     }
+
     /// <summary>
     /// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
     /// </summary>
@@ -521,14 +542,18 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// </returns>
     public override string ToString()
     {
-      string myTOQueueStringRepresentation = "";
+      string _TOQueueStringRepresentation = "";
       lock (this)
-      { myTOQueueStringRepresentation = myTOQueue.ToString(); }
-      return base.ToString() + MyHandlerThreadName + "MyTickListThreadEnabled: " + myTOQueueStringRepresentation;
+      {
+        _TOQueueStringRepresentation = m_TOQueue.ToString();
+      }
+      return base.ToString() + MyHandlerThreadName + "MyTickListThreadEnabled: " + _TOQueueStringRepresentation;
     }
-    #endregion
+
+    #endregion public
 
     #region constructor
+
     /// <summary>
     /// Initializes a new instance of the <see cref="WaitTimeList&lt;TElement&gt;"/> class.
     /// </summary>
@@ -537,63 +562,70 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     public WaitTimeList(string handlerThreadName, bool waightedPriority)
     {
       c_WaightedPriority = waightedPriority;
-      statPriority.MarkNewVal += new MinMaxAvr.newVal(NewOvertimeCoefficient);
+      m_StatPriority.MarkNewVal += new MinMaxAvr.newVal(NewOvertimeCoefficient);
       MyHandlerThreadName = handlerThreadName;
       m_Timer = new System.Threading.Timer(new System.Threading.TimerCallback(TickListThread));
       EnableListManagerThread();
     }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="WaitTimeList&lt;TElement&gt;"/> class.
     /// </summary>
     /// <param name="handlerThreadName">Name of the handler thread.</param>
     public WaitTimeList(string handlerThreadName) : this(handlerThreadName, true) { }
-    #endregion
+
+    #endregion constructor
 
     #region IDisposable
+
     private bool disposed = false;
-    // 
+
+    //
     /// <summary> Implement IDisposable. Do not make this method virtual. A derived class should not be able to override this method.
     /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
     /// </summary>
     public void Dispose()
     {
       Dispose(true);
-      // This object will be cleaned up by the Dispose method. 
-      // Therefore, you should call GC.SupressFinalize to take this object off the finalization queue and prevent finalization code for this object 
+      // This object will be cleaned up by the Dispose method.
+      // Therefore, you should call GC.SupressFinalize to take this object off the finalization queue and prevent finalization code for this object
       // from executing a second time.
       GC.SuppressFinalize(this);
     }
-    // Dispose(bool disposing) executes in two distinct scenarios. 
-    // If disposing equals true, the method has been called directly or indirectly by a user's code. Managed and unmanaged resources 
-    // can be disposed. 
-    // If disposing equals false, the method has been called by the runtime from inside the finalizer and you should not reference 
-    // other objects. Only unmanaged resources can be disposed. 
+
+    /// <summary>
+    /// Releases unmanaged and - optionally - managed resources.
+    /// </summary>
+    /// <remarks>
+    /// <c>Dispose(bool disposing)</c> executes in two distinct scenarios.
+    // If disposing equals <c>true</c>, the method has been called directly or indirectly by a user's code. Managed and unmanaged resources can be disposed.
+    // If disposing equals <c>false</c>, the method has been called by the runtime from inside the finalizer and you should not reference other objects. Only unmanaged resources can be disposed.
+    /// </remarks>
+    /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     private void Dispose(bool disposing)
     {
-      // Check to see if Dispose has already been called. 
+      // Check to see if Dispose has already been called.
       if (!disposed)
       {
-        // If disposing equals true, dispose all managed and unmanaged resources. 
+        // If disposing equals true, dispose all managed and unmanaged resources.
         if (disposing)
           m_Timer.Dispose();
         // Note disposing has been done.
         disposed = true;
-
       }
     }
+
     /// <summary>
-    /// Finalizes an instance of the <see cref="WaitTimeList{TElement}"/> class. 
-    /// Use C# destructor syntax for finalization code. This destructor will run only if the Dispose method does not get called. 
-    /// It gives your base class the opportunity to finalize. Do not provide destructors in types derived from this class.
+    /// Finalizes an instance of the <see cref="WaitTimeList{TElement}"/> class.
+    /// Use C# destructor syntax for finalization code. This destructor will run only if the Dispose method does not get called.
+    /// It gives your base class the opportunity to finalize. Do not provide destructor in types derived from this class.
     /// </summary>
     ~WaitTimeList()
     {
-      // Do not re-create Dispose clean-up code here. 
-      // Calling Dispose(false) is optimal in terms of 
-      // readability and maintainability.
+      // Do not re-create Dispose clean-up code here. Calling Dispose(false) is optimal in terms of readability and maintainability.
       Dispose(false);
     }
-    #endregion
 
+    #endregion IDisposable
   }
 }

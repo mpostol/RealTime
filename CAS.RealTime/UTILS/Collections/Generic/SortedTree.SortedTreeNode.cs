@@ -18,16 +18,16 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
     /// </summary>
     public class SortedTreeNode
     {
-
       #region private fields
+
       private SortedTree<T> MyParentTree = null;
       private SortedTreeNodeSortedList mChildNodes = new SortedTreeNodeSortedList();
       // <remarks>
       // Gets the parent connector number.
       // (kazdy element umieszczony na drzewie ma swoje connectory - tj punkty przylaczenia:
-      // punkty przylaczenia sa numerowane jako integery, parent connector jest punktem przylaczenia dziecka 
+      // punkty przylaczenia sa numerowane jako integery, parent connector jest punktem przylaczenia dziecka
       // (przez jaki jest on podlaczony do rodzica)
-      // 
+      //
       // <![CDATA[
       // -----------
       // | parent  |
@@ -45,28 +45,32 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       //  | node   |
       //  |        |
       //  ----------
-      // 
-      // 
+      //
+      //
       // ]]>
-      // 
-      // 
-      // 
+      //
+      //
+      //
       // </remarks>
-      #endregion
+
+      #endregion private fields
 
       /// <summary>
       /// Gets a value indicating whether this <see cref="SortedTree&lt;T&gt;.SortedTreeNode"/> is visited.
       /// </summary>
       /// <value><c>true</c> if visited; otherwise, <c>false</c>.</value>
       internal bool Visited { get; private set; } = false;
+
       internal SortedTreeNode(T val)
       {
         Value = val;
       }
+
       internal T GetValue()
       {
         return Value;
       }
+
       /// <summary>
       /// gets the height of this instance.
       /// </summary>
@@ -89,6 +93,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           return height;
         }
       }
+
       /// <summary>
       /// Determines whether the node contains the specified node(connector) number.
       /// </summary>
@@ -100,6 +105,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       {
         return mChildNodes.ContainsKey(NodeNumber);
       }
+
       /// <summary>
       /// Initializes a new instance of the <see cref="SortedTree&lt;T&gt;.SortedTreeNode"/> class.
       /// </summary>
@@ -114,11 +120,13 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         if (ParentNode != null)
           ParentNodes.Add(ParentConnectorNumber, ParentNode);
       }
+
       /// <summary>
       /// Gets the value stored in this node.
       /// </summary>
       /// <value>The value.</value>
       public T Value { get; private set; }
+
       /// <summary>
       /// Gets the parent connector number for the selected node.
       /// </summary>
@@ -131,11 +139,13 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
             return i;
         return -1;
       }
+
       /// <summary>
       /// Gets the parent node.
       /// </summary>
       /// <value>The parent node.</value>
       internal SortedTreeNodeSortedList ParentNodes { get; } = new SortedTreeNodeSortedList();
+
       /// <summary>
       /// Gets the parent node by parent node number.
       /// </summary>
@@ -148,6 +158,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
             return kvpnode.Value;
         return null;
       }
+
       /// <summary>
       /// Gets the first parent node.
       /// </summary>
@@ -156,11 +167,13 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       {
         return ParentNodes.GetFirstNodeFromThisCollection();
       }
+
       /// <summary>
       /// Gets the parent nodes count.
       /// </summary>
       /// <value>The parent nodes count.</value>
       public int ParentNodesCount => ParentNodes.Count;
+
       internal void AddConnectionToParent(SortedTreeNode ParentNode, int ParentConnectorNumber)
       {
         if (ParentNodes.ContainsKey(ParentConnectorNumber))
@@ -171,6 +184,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         }
         ParentNodes.Add(ParentConnectorNumber, ParentNode);
       }
+
       internal SortedTreeNode AddNode(int NodeNumber, SortedTreeNode NewNode, int ParentConnectorNumber)
       {
         if (ContainsNodeNumber(NodeNumber))
@@ -183,6 +197,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         NewNode.AddConnectionToParent(this, ParentConnectorNumber);
         return NewNode;
       }
+
       /// <summary>
       /// Adds the node.
       /// </summary>
@@ -194,6 +209,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       {
         return AddNode(NodeNumber, new SortedTreeNode(NewValue, MyParentTree, this, ParentConnectorNumber), ParentConnectorNumber);
       }
+
       /// <summary>
       /// Adds the node.
       /// </summary>
@@ -209,6 +225,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         NodeToBeAdded.AddConnectionToParent(this, ParentConnectorNumber);
         return NodeToBeAdded;
       }
+
       /// <summary>
       /// Gets the node.
       /// </summary>
@@ -228,6 +245,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         }
         return null;
       }
+
       /// <summary>
       /// Gets the nodes from level.
       /// </summary>
@@ -250,6 +268,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         }
         return nodestobereturned;
       }
+
       internal void RemoveNodeFromChildNodes(T nodeValue)
       {
         int keytoberemoved = -1;
@@ -261,6 +280,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           }
         mChildNodes.Remove(keytoberemoved);
       }
+
       internal void RemoveFromParentNodes(T nodeValue)
       {
         int keytoberemoved = -1;
@@ -272,6 +292,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           }
         ParentNodes.Remove(keytoberemoved);
       }
+
       /// <summary>
       /// Gets the child nodes.
       /// </summary>
@@ -280,6 +301,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       {
         return mChildNodes;
       }
+
       /// <summary>
       /// Determines whether the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>.
       /// </summary>
@@ -294,6 +316,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         bool tobereturned = Value.Equals(nodeval.Value);
         return tobereturned;
       }
+
       /// <summary>
       /// Serves as a hash function for a particular type.
       /// </summary>
@@ -304,6 +327,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
       {
         return Value.GetHashCode();
       }
+
       /// <summary>
       /// Marks all nodes as unvisited.
       /// </summary>
@@ -313,6 +337,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (KeyValuePair<int, SortedTreeNode> KVPNode in mChildNodes)
           KVPNode.Value.MarkAllUnvisited();
       }
+
       /// <summary>
       /// Gets the connector number of specified node.
       /// </summary>
@@ -328,6 +353,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           throw new SortedTreeNodeException("this node does not contain such child node");
         return idx;
       }
+
       /// <summary>
       /// Adds the this node to another tree.
       /// </summary>
@@ -347,6 +373,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
           }
         }
       }
+
       /// <summary>
       /// Gets the next unvisited.
       /// </summary>
@@ -365,6 +392,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         Visited = true;
         return this;
       }
+
       /// <summary>
       /// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
       /// </summary>
@@ -388,10 +416,12 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         result.Append("]");
         return result.ToString();
       }
+
       internal void ClearParent()
       {
         ParentNodes.Clear();
       }
+
       internal void ParentCleanup()
       {
         SortedTreeNodeSortedList myparentclonnedlist = (SortedTreeNodeSortedList)((ICloneable)ParentNodes).Clone();
@@ -404,6 +434,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         foreach (KeyValuePair<int, SortedTreeNode> kvpnode in mChildNodes)
           kvpnode.Value.ParentCleanup();
       }
+
       internal void SetParentTree(SortedTree<T> tree)
       {
         foreach (KeyValuePair<int, SortedTreeNode> kvp_childnode in mChildNodes)
@@ -411,6 +442,5 @@ namespace UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic
         MyParentTree = tree;
       }
     }
-
   }
 }

@@ -1,25 +1,12 @@
-//<summary>
-//  Title   : Represents a thread synchronization event.
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    Mpostol: 07-03-2007:
-//      WaitOne - poprawilem - zwraca aktualny stan zmiennej stanu.
-//    MPostol: 16-02-2007: created
-//    <Author> - <date>:
-//      <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
-using System;
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
+
 using System.Threading;
+
 namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
@@ -27,52 +14,57 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   /// </summary>
   public class EventWaitHandleTimeOut
   {
-    #region private
-    private bool m_state;
-    #endregion private
     #region public
+
     /// <summary>
     /// Returns state of the EventWaitHandleTimeOut
     /// </summary>
-    public bool State { get { return m_state; } }
+    public bool State { get; private set; }
+
     /// <summary>
-    /// Sets the state of the event to nonsignaled, causing threads to block.
+    /// Sets the state of the event to not signaled, causing threads to block.
     /// </summary>
-    /// <returns>true if the operation succeeds; otherwise, false.</returns>
-    public void Reset() { m_state = false; }
+    /// <returns><c>true</c> if the operation succeeds; otherwise, false.</returns>
+    public void Reset() { State = false; }
+
     /// <summary>
     /// Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
     /// </summary>
     public void Set()
     {
-      lock ( this )
+      lock (this)
       {
-        m_state = true;
-        Monitor.PulseAll( this );
+        State = true;
+        Monitor.PulseAll(this);
       }
     }
+
     /// <summary>
-    ///  Blocks the current thread until the current EventWaitHandleTimeOut receives a signal. 
+    ///  Blocks the current thread until the current EventWaitHandleTimeOut receives a signal.
     /// </summary>
     /// <param name="millisecondsTimeout">The number of milliseconds to wait for the signal. </param>
     /// <returns>true if the current instance receives a signal; otherwise, false.</returns>
-    public virtual bool WaitOne( int millisecondsTimeout )
+    public virtual bool WaitOne(int millisecondsTimeout)
     {
-      lock ( this )
-        if ( ( !m_state ) && ( !Monitor.Wait( this, millisecondsTimeout ) ) )
-          return m_state;
+      lock (this)
+        if ((!State) && (!Monitor.Wait(this, millisecondsTimeout)))
+          return State;
       return true;
     }
+
     #endregion public
-    #region creators
+
+    #region constructor
+
     /// <summary>
     /// Initializes a new instance of the <see cref="EventWaitHandleTimeOut"/> class.
     /// </summary>
-    /// <param name="state">if set to <c>false</c> the state of the event is nonsignaled, causing threads to block..</param>
-    public EventWaitHandleTimeOut( bool state )
+    /// <param name="state">if set to <c>false</c> the state of the event is non-signaled, causing threads to block..</param>
+    public EventWaitHandleTimeOut(bool state)
     {
-      m_state = state;
+      State = state;
     }
-    #endregion
+
+    #endregion constructor
   }
 }

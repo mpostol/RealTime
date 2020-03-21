@@ -9,40 +9,46 @@ using System;
 
 namespace UAOOI.ProcessObserver.RealTime.Utils
 {
-
   /// <summary>
   /// Class that allows to use Local or UTC time depending on settings
   /// </summary>
   public class DateTimeProvider
   {
-
     #region private
+
     private IDateTimeProvider m_provider;
+
     private interface IDateTimeProvider
     {
       DateTime GetCurrentTime();
     }
+
     private class LocalTime : IDateTimeProvider
     {
-      #region IDateTimeProvider Members
+
       DateTime IDateTimeProvider.GetCurrentTime()
       {
         return DateTime.Now;
       }
-      #endregion
+
     }
+
     private class UTCTime : IDateTimeProvider
     {
       #region IDateTimeProvider Members
+
       DateTime IDateTimeProvider.GetCurrentTime()
       {
         return DateTime.UtcNow;
       }
-      #endregion
+
+      #endregion IDateTimeProvider Members
     }
-    #endregion
+
+    #endregion private
 
     #region constructor
+
     /// <summary>
     /// Initializes a new instance of the <see cref="DateTimeProvider"/> class that allows to use Local or UTC time depending on settings.
     /// </summary>
@@ -54,9 +60,11 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
       else
         m_provider = new UTCTime();
     }
-    #endregion
+
+    #endregion constructor
 
     #region public
+
     /// <summary>
     /// Reads Local or UTC time depending on settings
     /// </summary>
@@ -64,6 +72,7 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
     {
       return m_provider.GetCurrentTime();
     }
-    #endregion
+
+    #endregion public
   }
 }

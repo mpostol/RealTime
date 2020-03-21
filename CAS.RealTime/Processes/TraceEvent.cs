@@ -1,18 +1,9 @@
-//_______________________________________________________________
-//  Title   : TraceEvent 
-//  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+//___________________________________________________________________________________
 //
-//  Copyright (C) 2016, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//_______________________________________________________________
-
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 using System.Diagnostics;
@@ -27,7 +18,9 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   public class TraceEvent
   {
     #region private
+
     private TraceSource m_traceSource;
+
     private void PrivateTrace(TraceEventType type, int id, string message)
     {
       try
@@ -37,9 +30,11 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       }
       catch (IOException) { }
     }
-    #endregion
+
+    #endregion private
 
     #region constructor
+
     /// <summary>
     /// Initializes a new instance of the <see cref="TraceEvent"/> class.
     /// </summary>
@@ -48,6 +43,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       m_traceSource = new TraceSource(sourceName);
     }
+
     /// <summary>
     /// Releases unmanaged resources and performs other cleanup operations before the
     /// <see cref="TraceEvent"/> is reclaimed by garbage collection.
@@ -56,9 +52,11 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       TraceEventClose();
     }
-    #endregion
+
+    #endregion constructor
 
     #region public
+
     /// <summary>
     ///Close the local <see cref="TraceSource"/>
     /// </summary>
@@ -71,6 +69,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       }
       catch (ObjectDisposedException) { }
     }
+
     /// <summary>
     /// regular trace message
     /// </summary>
@@ -82,6 +81,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       PrivateTrace(type, id, source + ": " + message);
     }
+
     /// <summary>
     /// verbose trace message
     /// </summary>
@@ -92,6 +92,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       Trace(TraceEventType.Verbose, id, source, message);
     }
+
     /// <summary>
     /// information trace message
     /// </summary>
@@ -102,6 +103,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       Trace(TraceEventType.Information, id, source, message);
     }
+
     /// <summary>
     /// warning trace message
     /// </summary>
@@ -112,6 +114,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       Trace(TraceEventType.Warning, id, source, message);
     }
+
     /// <summary>
     /// error trace message
     /// </summary>
@@ -122,6 +125,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       Trace(TraceEventType.Error, id, source, message);
     }
+
     /// <summary>
     /// Gets the message with exception name from exception including inner exception.
     /// </summary>
@@ -129,21 +133,21 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// <returns>the whole message</returns>
     public static string GetMessageWithExceptionNameFromExceptionIncludingInnerException(Exception ex)
     {
-      StringBuilder sb = new StringBuilder(ex.GetType().ToString());
-      sb.Append(":");
-      sb.Append(ex.Message);
+      StringBuilder _stringBUilder = new StringBuilder(ex.GetType().ToString());
+      _stringBUilder.Append(":");
+      _stringBUilder.Append(ex.Message);
       Exception InnerEx = ex.InnerException;
       while (InnerEx != null)
       {
-        sb.Append("; ");
-        sb.Append(InnerEx.GetType().ToString());
-        sb.Append(":");
-        sb.Append(InnerEx.Message);
+        _stringBUilder.Append("; ");
+        _stringBUilder.Append(InnerEx.GetType().ToString());
+        _stringBUilder.Append(":");
+        _stringBUilder.Append(InnerEx.Message);
         InnerEx = InnerEx.InnerException;
       }
-      return sb.ToString();
+      return _stringBUilder.ToString();
     }
-    #endregion
 
+    #endregion public
   }
 }

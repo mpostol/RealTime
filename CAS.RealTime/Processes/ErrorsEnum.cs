@@ -16,7 +16,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   /// <remarks>
   /// EventID = Error + ErrorCause*1000
   /// </remarks>
-  [Obsolete("Trace related error must be defined in context of application")]
+  [Obsolete("Trace related error must be defined in context of an application - use semantic tracing")]
   public enum Error: int
   {
     /// <summary>
@@ -40,7 +40,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// </summary>
     ApplicationLayer_SBUS_PRIVATE_SBUSnet_message = 270, //SBUS_PLUGIN
     /// <summary>
-    /// error in umessage
+    /// error in message
     /// </summary>
     CommunicationLayer_UMessage = 300, //RTLib
     /// <summary>

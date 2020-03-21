@@ -12,13 +12,14 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   using System.Threading;
 
   /// <summary>
-  ///  Implements the watch dog mechanism for Thread's. 
+  ///  Implements the watch dog mechanism for Thread's.
   /// </summary>
   public class MonitoredThread
   {
-    
-    #region PRIVATE STATIC
+    #region private static
+
     private static ArrayList threadsList = new ArrayList();
+
     private static void Handler()
     {
       while (true)
@@ -29,23 +30,27 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
             _monitoredthred.DecCounter();
       }
     }
+
     static MonitoredThread()
     {
       Manager.StartProcess(new ThreadStart(Handler), "MonitoredThreadHndl", true, ThreadPriority.Highest);
     }
-    #endregion
+
+    #endregion private static
 
     #region PRIVATE
+
     private Thread m_Thread = null;
     private readonly string Name;
     private int m_InternalCounter;
     private ushort m_TimeOut;
     private EventLogMonitor myEventLog;
+
     private void DecCounter()
     {
       lock (this)
       {
-        if (m_InternalCounter <+0 )
+        if (m_InternalCounter < +0)
           return;
         m_InternalCounter--;
         if (m_InternalCounter == 0)
@@ -57,9 +62,11 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         }
       }
     }
-    #endregion
+
+    #endregion PRIVATE
 
     #region PUBLIC
+
     /// <summary>
     /// Resets the watch dog.
     /// </summary>
@@ -72,6 +79,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         myEventLog.SetCategory = category;
       }
     }
+
     /// <summary>
     /// Resets the watch dog.
     /// </summary>
@@ -86,6 +94,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         myEventLog.SetCategory = category;
       }
     }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MonitoredThread"/> class.
     /// </summary>
@@ -105,7 +114,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
         threadsList.Add(this);
       m_Thread = Manager.StartProcess(process, processName, isBackground, priority);
     }
-    #endregion
 
+    #endregion PUBLIC
   }
 }

@@ -6,15 +6,18 @@
     <members>
         <member name="T:UAOOI.ProcessObserver.RealTime.ItemAccessRights">
              <summary>
-             Item Access Rights enum
-             similar to: 
+             Item Access Rights enum similar to:
              EX01-OPCFoundation_NETApi\Source\NET API\Da\Opc.Da.PropertyID.cs
-               public enum accessRights : int
-            {
-              readable     = 0x01,
-              writable     = 0x02,
-              readWritable = 0x03
-            }
+            
+             <code>
+             public enum accessRights : int
+             {
+                readable     = 0x01,
+                writable     = 0x02,
+                readWritable = 0x03
+             }
+             </code>
+            
              </summary>
         </member>
         <member name="F:UAOOI.ProcessObserver.RealTime.ItemAccessRights.ReadWrite">
@@ -118,7 +121,7 @@
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent">
             <summary>
-            Static instance of <see cref="T:System.Diagnostics.TraceSource"/> 
+            Static instance of <see cref="T:System.Diagnostics.TraceSource"/>
             </summary>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.AssemblyTraceSource">
@@ -138,7 +141,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.TraceVerbose(System.Int32,System.String,System.String)">
             <summary>
-            Traces <see cref="F:System.Diagnostics.TraceEventType.Verbose"/> type message  
+            Traces <see cref="F:System.Diagnostics.TraceEventType.Verbose"/> type message
             </summary>
             <param name="id">user identifier for the message</param>
             <param name="source">source of message</param>
@@ -201,12 +204,12 @@
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.Condition">
             <summary>
-            The condition concept offers a way of the synchronization. Each condition is 
-            associated with an important event (condition); hence the appearance of a signal 
-            is meant as appearance of the associated event, which manifests in establishing 
-            the relevant condition. Generally, three kinds of operations on signals are 
-            defined, namely, wait - to suspend process until the associated signal will be 
-            sent, Notify - to awake one of the waiting processes, and IsAwaiting - to check 
+            The condition concept offers a way of the synchronization. Each condition is
+            associated with an important event (condition); hence the appearance of a signal
+            is meant as appearance of the associated event, which manifests in establishing
+            the relevant condition. Generally, three kinds of operations on signals are
+            defined, namely, wait - to suspend process until the associated signal will be
+            sent, Notify - to awake one of the waiting processes, and IsAwaiting - to check
             if any process is waiting for the specified signal.
             </summary>
         </member>
@@ -224,35 +227,31 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait(System.Object)">
             <summary>
-            Wykonuje Wait
+            Wait until a condition is fulfilled
             </summary>
-            <remarks>Może być wykonana tylko wewnatrz instrukcji lock </remarks>
-            <param name="callingMonitor">zwalnia wskazany monitor</param>
+            <param name="callingMonitor">The calling monitor.</param>
+            <remarks>It shall be executed only inside the lock instruction</remarks>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait(System.Object,System.Int32)">
             <summary>
-            Waits the specified calling monitor.
-            Wykonuje Wait z uwzglednieniem timeout'u
+            Waits the specified calling monitor until a timeout expires.
             </summary>
-            <remarks>Może być wykonana tylko wewnatrz instrukcji lock </remarks>
             <param name="callingMonitor">The calling monitor.</param>
             <param name="TimeOut">The time out.</param>
-            <returns></returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait(System.Object,System.TimeSpan)">
             <summary>
-            Releases the lock on a monitor and blocks the current thread until 
+            Releases the lock on a monitor and blocks the current thread until
             it receives Notification / Signal or a specified amount of time elapses.
             </summary>
             <param name="callingMonitor">The monitor which to releases the lock on.</param>
             <param name="TimeOut">The number of milliseconds to wait before this method returns. </param>
-            <returns>true if the lock was reacquired before the specified time elapsed; otherwise, false. 
+            <returns>true if the lock was reacquired before the specified time elapsed; otherwise, false.
             </returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Condition.IsAwaiting">
             <summary>
-            Determines whether this instance is awaiting.
-            checks if any process is waiting for the specified signal
+            Determines whether this instance is awaiting. checks if any process is waiting for the specified signal
             </summary>
             <returns>
             	<c>true</c> if this instance is awaiting; otherwise, <c>false</c>.
@@ -262,12 +261,12 @@
             <summary>
             The EnvelopePool class manages a pool of IEnvelope objects.
             Thread Safety:
-            Instances members of this type are safe for multi-threaded operations. 
+            Instances members of this type are safe for multi-threaded operations.
             </summary>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.CreateEnvelope">
             <summary>
-            Delegate used to create new envelope. New envelope is created each time 
+            Delegate used to create new envelope. New envelope is created each time
             GetEmptyEnvelope is called while the pool is empty.
             </summary>
         </member>
@@ -293,6 +292,9 @@
             <summary>
             Define error numbers
             </summary>
+            <remarks>
+            EventID = Error + ErrorCause*1000
+            </remarks>
         </member>
         <member name="F:UAOOI.ProcessObserver.RealTime.Processes.ErrorCore.ApplicationLayer_SBUS_PRIVATE_SBUSbase_message">
             <summary>
@@ -344,7 +346,7 @@
         </member>
         <member name="F:UAOOI.ProcessObserver.RealTime.Processes.Error.CommunicationLayer_UMessage">
             <summary>
-            error in umessage
+            error in message
             </summary>
         </member>
         <member name="F:UAOOI.ProcessObserver.RealTime.Processes.Error.ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave">
@@ -613,8 +615,8 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.#ctor(System.String,UAOOI.ProcessObserver.RealTime.Processes.EventLogEntryType,System.Int32,System.Int16)">
             <summary>
-             Creates an event log with the application-defined event identifier, and application-defined category 
-             to the event log, using the "CASCommServer" registered event source. The category can be used by the 
+             Creates an event log with the application-defined event identifier, and application-defined category
+             to the event log, using the "CASCommServer" registered event source. The category can be used by the
              event viewer to filter events in the log.
             </summary>
             <param name="type">One of the EventLogEntryType values.</param>
@@ -672,9 +674,9 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.Reset">
             <summary>
-            Sets the state of the event to nonsignaled, causing threads to block.
+            Sets the state of the event to not signaled, causing threads to block.
             </summary>
-            <returns>true if the operation succeeds; otherwise, false.</returns>
+            <returns><c>true</c> if the operation succeeds; otherwise, false.</returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.Set">
             <summary>
@@ -683,7 +685,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.WaitOne(System.Int32)">
             <summary>
-             Blocks the current thread until the current EventWaitHandleTimeOut receives a signal. 
+             Blocks the current thread until the current EventWaitHandleTimeOut receives a signal.
             </summary>
             <param name="millisecondsTimeout">The number of milliseconds to wait for the signal. </param>
             <returns>true if the current instance receives a signal; otherwise, false.</returns>
@@ -692,11 +694,10 @@
             <summary>
             Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut"/> class.
             </summary>
-            <param name="state">if set to <c>false</c> the state of the event is nonsignaled, causing threads to block..</param>
+            <param name="state">if set to <c>false</c> the state of the event is non-signaled, causing threads to block..</param>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList`1">
             <summary>
-            Summary description for HandlerWaitTimeList.
             This is able to execute handler functions that belongs to objects that ware removed form Wait Time List
             </summary>
             <typeparam name="TElement">The type of the element.</typeparam>
@@ -714,9 +715,9 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList`1.Handler(`0)">
             <summary>
-            If overridden in the derived class can be used 
-            to handle the work related to the <paramref name="myDsc"/>. 
-            Only one call is guaranteed at any instant of time. 
+            If overridden in the derived class can be used
+            to handle the work related to the <paramref name="myDsc"/>.
+            Only one call is guaranteed at any instant of time.
             This method is executed by a separate thread.
             </summary>
             <param name="myDsc">descriptor handler</param>
@@ -738,12 +739,12 @@
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.IDBuffer">
             <summary>
-            Data bufer to be used by unmanaged platform calls.
+            Data buffer to be used by unmanaged platform calls.
             </summary>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.uMessagePtr">
             <summary>
-            returns pointer tu message in umanaged memory
+            returns pointer to message in unmanaged memory
             </summary>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.userBuffLength">
@@ -760,7 +761,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.CopyToBuffor(System.IntPtr,System.UInt32)">
             <summary>
-             Copies data from unmanaged memory pointer to IDBuffer starting 
+             Copies data from unmanaged memory pointer to IDBuffer starting
              at offset 0 and assigns userDataLength.
             </summary>
             <param name="source">The memory pointer to copy from.</param>
@@ -768,16 +769,15 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.CopyFromBuffor(System.IntPtr)">
             <summary>
-             Copies data from IDBuffer to unmanaged memory pointer starting 
+             Copies data from IDBuffer to unmanaged memory pointer starting
              at offset 0.
             </summary>
             <param name="destination">The memory pointer to copy to.</param>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.IEnvelope">
             <summary>
-            Interface for envelope management 
-            (envelope is a kind of packet that is transmitted in the communication or application layer, 
-            it is base unit for message exchange mechanism).
+            Interface for envelope management - the envelope is a kind of packet that is transmitted in the communication or application layer,
+            it is base unit for message exchange mechanism.
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.ReturnEmptyEnvelope">
@@ -787,23 +787,23 @@
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.InPool">
             <summary>
-            Checks if the buffer is in the pool or otherwise is alone and used by a user. 
+            Checks if the <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.IEnvelope"/> is in the pool or otherwise is alone and used by a user.
             Used to the state by the governing pool.
             </summary>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.Manager">
             <summary>
-            Manager is a module that provides structural operations designed to create, 
-            synchronize and communicate of concurrent processes, as well as all operations 
-            needed to manage programs behavior in various situations. 
-            All multiprogramming mechanisms exported from the module have been designed under 
-            the assumption that for purpose of the process-to-process communication the 
+            Manager is a module that provides structural operations designed to create,
+            synchronize and communicate of concurrent processes, as well as all operations
+            needed to manage programs behavior in various situations.
+            All multiprogramming mechanisms exported from the module have been designed under
+            the assumption that for purpose of the process-to-process communication the
             well-known monitor concept is used.
             </summary>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.Manager.ErrorQueueManager">
             <summary>
-             Title   : Management of concurrent processes 
+             Title   : Management of concurrent processes
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Manager.AddToErrorQueue">
@@ -840,24 +840,24 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Manager.StartProcess(System.Threading.ThreadStart,System.String,System.Boolean,System.Threading.ThreadPriority)">
             <summary>
-            Initializes a new instance of the Thread class and causes it to be scheduled for execution. 
+            Initializes a new instance of the Thread class and causes it to be scheduled for execution.
             </summary>
-            <param name="proces">A ThreadStart delegate that represents the methods to be invoked when this thread 
-            begins executing. 
+            <param name="proces">A ThreadStart delegate that represents the methods to be invoked when this thread
+            begins executing.
             </param>
             <param name="name">A string containing the name of the thread, or a null reference if no name was set.</param>
             <param name="isBackground">A value indicating whether or not a thread is a background thread. </param>
             <param name="priority">A value indicating the scheduling priority of a thread.</param>
-            <returns></returns>
-            <remarks>A thread is either a background thread or a foreground thread. Background threads 
-            are identical to foreground threads, except that background threads do not prevent a process from 
-            terminating. Once all foreground threads belonging to a process have terminated, the common language 
+            <returns>An instance of the <see cref="T:System.Threading.Thread"/> type.</returns>
+            <remarks>A thread is either a background thread or a foreground thread. Background threads
+            are identical to foreground threads, except that background threads do not prevent a process from
+            terminating. Once all foreground threads belonging to a process have terminated, the common language
             runtime ends the process. Any remaining background threads are stopped and do not complete.
             </remarks>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread">
             <summary>
-             Implements the watch dog mechanism for Thread's. 
+             Implements the watch dog mechanism for Thread's.
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.ResetWatchDog(System.Int16)">
@@ -888,8 +888,7 @@
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.Port">
             <summary>
             Provides access to a queue of IEnvelope messages.
-            Thread Safety:
-            Instances members of this type are safe for multi-threaded operations. 
+            Thread Safety: Instances members of this type are safe for multi-threaded operations.
             </summary>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.Port.Count">
@@ -914,22 +913,21 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Port.SendMsg(UAOOI.ProcessObserver.RealTime.Processes.IEnvelope@)">
             <summary>
-            Sends the message to the 'port'. If there is a process waiting in 'port' it 
-            will be resumed from the 'port' queue. If there is no process, the message 
-            will be queued.
+            Sends the message to the 'port'. If there is a process waiting in 'port' it
+            will be resumed from the 'port' queue. If there is no process, the message will be queued.
             </summary>
             <param name="mess">Message to be sent</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Port.WaitMsg(System.Object,UAOOI.ProcessObserver.RealTime.Processes.IEnvelope@,System.Int32)">
             <summary>
-            Receive message from 'port'. If there is no message in the 'port', the calling 
-            thread will be blocked until it receives a message or a specified amount of 
+            Receive message from 'port'. If there is no message in the 'port', the calling
+            thread will be blocked until it receives a message or a specified amount of
             time elapses.
             </summary>
             <param name="mess">UMessage removed from the beginning of the port Queue</param>
             <param name="timeOut">The number of milliseconds to wait before this method returns. 0 means wait forever.
             </param>
-            <param name="callingMonitor">TODO: add some descriptio</param>
+            <param name="callingMonitor">TODO: add some description</param>
             <returns>
             true if the message was received before the specified time elapsed; otherwise, false
             </returns>
@@ -939,16 +937,16 @@
             Class that allows running method asynchronously
             </summary>
         </member>
-        <member name="T:UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.AsyncOperation">
-            <summary>
-            Delegate for method that will be called asynchronously
-            </summary>
-        </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.MyAsyncCallback(System.IAsyncResult)">
             <summary>
             This method is called after asynchronous call
             </summary>
-            <param name="ar">The ar.</param>
+            <param name="asyncResult">The result captured as the <see cref="T:System.IAsyncResult"/> instance.</param>
+        </member>
+        <member name="T:UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.AsyncOperation">
+            <summary>
+            Delegate for method that will be called asynchronously
+            </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.#ctor(UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.AsyncOperation)">
             <summary>
@@ -969,16 +967,16 @@
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.Stopwatch">
             <summary>
-             Title   : Stopwatch mechanism implementation 
+             Title   : Stopwatch mechanism implementation
             </summary>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.currDelay">
             <summary>
             Gets the curr delay.Reads the elapsed ticks from stopwatch
             </summary>
-            <remarks>On a multiprocessor computer, it does not matter which processor the thread runs on. 
-            However, because of bugs in the BIOS or the Hardware Abstraction Layer (HAL), you can get 
-            different timing results on different processors. To specify processor affinity for a thread, 
+            <remarks>On a multiprocessor computer, it does not matter which processor the thread runs on.
+            However, because of bugs in the BIOS or the Hardware Abstraction Layer (HAL), you can get
+            different timing results on different processors. To specify processor affinity for a thread,
             use the ProcessThread.ProcessorAffinity method.</remarks>
             <value>The curr delay.</value>
         </member>
@@ -1065,7 +1063,7 @@
             Process enters monitor and waits
             </summary>
             <param name="miliseconds">Number of ticks to wait</param>
-            <param name="monitor">Class wich is a monitor protecting resurces</param>
+            <param name="monitor">Class which is a monitor protecting resources</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Timer.WaitTimeout(System.TimeSpan,System.Diagnostics.Stopwatch)">
             <summary>
@@ -1084,9 +1082,9 @@
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.Timer.TInOneSecond">
             <summary>
-            Gets the number of miliseconds (old name ticks) in one second.
+            Gets the number of milliseconds (old name ticks) in one second.
             </summary>
-            <value>the number of miliseconds (old name ticks) in one second.</value>
+            <value>the number of milliseconds (old name ticks) in one second.</value>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.Timer.Max(System.TimeSpan,System.TimeSpan)">
             <summary>
@@ -1115,7 +1113,7 @@
             <summary> Returns a <see cref="T:System.UInt32"/> of the time <see cref="T:System.TimeSpan"/> structure expressed in whole
             microseconds.
             </summary>
-            <param name="time">A <see cref="T:System.TimeSpan"/> object represenmting the time.</param>
+            <param name="time">A <see cref="T:System.TimeSpan"/> object representing the time.</param>
             <returns>The total number of microseconds represented by the time.</returns>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Processes.TraceEvent">
@@ -1193,24 +1191,6 @@
             List responsible for scheduling objects ( Manager of scheduled in time objects. ).
             </summary>
         </member>
-        <member name="T:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink">
-             <summary>
-              one link from the chain (chain is managed in time queue)
-               
-             Dzieki tej klasie utrzemujemy liste zarzadzanych obiektow.
-             Kazdy z obiektow ma swoj element poprzedni i nastepny.
-             
-             jednym z wazniejszych elementow kazdego ogniwa jest counter ktory okresla czy i ile dany elment 
-             jest przeterminowany.
-             Elementy (obiekty) sa szeregowane na lisacie w nastepujacy sposob:
-             - pierwszy element ma ustawiony counter na wartosc opoznienia (jesli counter &gt;0 to znaczy ze 
-             element czeka na wykonanie, 
-             jesli counter &lt;0 tzn. ze element jet opozniony i powinien zostac wyjety z kolejki
-             - nastepny element ma counter ustawiony na wartosc wzgledna wobec poprzedniego, np. jesli dany 
-             element ma ustawiony counter na 10 tzn ze ma 109 ms zapasu w stosunku do opoznienia elementu poprzedniego.
-            
-             </summary>
-        </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink.InQueue">
             <summary>
             Gets a value indicating whether this object is in queue.
@@ -1225,20 +1205,14 @@
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink.InsertInQueue(System.TimeSpan)">
             <summary>
             Inserts the in queue using defined cycle.
-            
-            Ta funkcja wstawia element na poczatek jesli kolejka jest pusta lub 
-            poszukuje wlasciwego misjca gdzie dany element powinien byc wstawiony .
-            
-            W zaleznosci od znalezienia miejsca odpowienio zmniejszany jest counter elementu,
-            by stanowil wartosc wzgledna wobec porzedniego oraz zmieniany jest counter nstepnego
             </summary>
             <param name="currCycle">The curr cycle.</param>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink.GetCoupledTOD">
             <summary>
-            Gets the get coupled Time Out Desciptor (<see>TODescriptor</see>).
+            Gets the get coupled Time Out Descriptor (<see>TODescriptor</see>).
             </summary>
-            <value>The get coupled TOD.</value>
+            <value>The get coupled Time Out Descriptor (TOD).</value>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink.MoveToBeginning">
             <summary>
@@ -1247,9 +1221,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink.DecCouter(System.Int32)">
             <summary>
-            Decrements the counter.
-            
-            if the counter is less than 0 it notify other tasks that it is ready to be removed
+            Decrements the counter. If the counter is less than 0 it notify other tasks that it is ready to be removed.
             </summary>
             <param name="value">The value.</param>
         </member>
@@ -1272,7 +1244,7 @@
             </summary>
             <param name="overtimeSum">The overtime sum.</param>
             <param name="maxPrior">The max prior.</param>
-            <param name="mostDelayed">The most delayed object on the list .</param>
+            <param name="mostDelayed">The most delayed object on the list.</param>
             <returns></returns>
         </member>
         <member name="P:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.ChainLink.SetCycle">
@@ -1294,19 +1266,17 @@
             <param name="timeOutDescriptor">The coupled time out descriptor.</param>
             <param name="myCycle">My cycle - how often this object should be removed from the queue).</param>
         </member>
-        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.cycleMiliseconds">
+        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.m_CycleMiliseconds">
             <summary>
-            cycleTicks is value in ms that indicate how often TicklistThred checks the counters
-             of object from the list
-             20 - is the reasonable value (in ms) that Windows schedule tasks
+            cycleTicks is value in ms that indicate how often TicklistThred checks the counters of object from the list 20 - is the reasonable value (in ms) that Windows schedule tasks
             </summary>
         </member>
-        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.myTimeExpiredSig">
+        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.m_TimeExpiredSig">
             <summary>
             this is signal used to inform other tasks that item is ready to be removed
             </summary>
         </member>
-        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.statPriority">
+        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.m_StatPriority">
             <summary>
             statistics item to gather queue priorities statistics
             </summary>
@@ -1321,11 +1291,6 @@
             the name of this list
             </summary>
         </member>
-        <member name="F:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.queuelength">
-            <summary>
-            length of this queue
-            </summary>
-        </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.#cctor">
             <summary>
             Initializes the static part of <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1"/> class - it starts the clock.
@@ -1333,7 +1298,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.TickListThread(System.Object)">
             <summary>
-            Ticks the list thread - the main thread resposible for list management.
+            Ticks the list thread - the main thread responsible for list management.
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.RemoveMostDelayedItem">
@@ -1363,7 +1328,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.TODescriptor.ResetCounter">
             <summary>
-            Removes this item from queue, resets the couter and inserts it again to the queue.
+            Removes this item from queue, resets the counter and inserts it again to the queue.
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.TODescriptor.ClearCounter">
@@ -1378,7 +1343,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.TODescriptor.#ctor(UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList{`0},System.TimeSpan)">
             <summary>
-            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.TODescriptor"/> class.
+            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1"/> class.
             After creation the object is not added to the queue.
             </summary>
             <param name="queue">The queue.</param>
@@ -1388,7 +1353,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.RemoveItem">
             <summary>
-            While overridden the method can be used to remove first ready item from the queue. 
+            While overridden the method can be used to remove first ready item from the queue.
             The method is called by the internal timer callback inside the lock of the instance of this class.
             Typically it is used to schedule a work related to removed Item using the <see cref="T:System.Threading.ThreadPool"/>.
             </summary>
@@ -1412,7 +1377,7 @@
             Gets a value indicating whether item from the queue is ready to be removed.
             </summary>
             <value>
-            	<c>true</c> if  instance is ready to removed; otherwise, <c>false</c>.
+            	<c>true</c> if  instance is ready to be removed; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.RemoveItem(`0@)">
@@ -1420,13 +1385,13 @@
             Removes the item.
             </summary>
             <param name="item">The item.</param>
-            <returns>Returns true if item removed, otherwise false and item is null</returns>
+            <returns>Returns <c>true</c> if item is removed, otherwise <c>false</c> and item is null</returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.WaitRemoveItem(System.Boolean)">
             <summary>
             Waits and remove an item.
             </summary>
-            <param name="autoreset">if set to <c>true</c> autoreset the item.</param>
+            <param name="autoreset">if set to <c>true</c> auto-reset the item.</param>
             <returns></returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.EnableListManagerThread">
@@ -1465,11 +1430,12 @@
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.Dispose(System.Boolean)" -->
         <member name="M:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1.Finalize">
             <summary>
-            Finalizes an instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1"/> class. 
-            Use C# destructor syntax for finalization code. This destructor will run only if the Dispose method does not get called. 
-            It gives your base class the opportunity to finalize. Do not provide destructors in types derived from this class.
+            Finalizes an instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList`1"/> class.
+            Use C# destructor syntax for finalization code. This destructor will run only if the Dispose method does not get called.
+            It gives your base class the opportunity to finalize. Do not provide destructor in types derived from this class.
             </summary>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Properties.Resources">
@@ -1538,12 +1504,12 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList"/> class.
+            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1"/> class.
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList.#ctor(UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeSortedList)">
             <summary>
-            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeSortedList"/> class.
+            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1"/> class.
             </summary>
             <param name="list">The list.</param>
         </member>
@@ -1574,18 +1540,18 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList"/> class.
+            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1"/> class.
             </summary>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.#ctor(UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeSortedList)">
             <summary>
-            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList"/> class.
+            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1"/> class.
             </summary>
             <param name="list">The list.</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList.#ctor(UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree{`0}.SortedTreeNodeList)">
             <summary>
-            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.SortedTreeNodeList"/> class.
+            Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1"/> class.
             </summary>
             <param name="list">The list.</param>
         </member>
@@ -1645,7 +1611,7 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots(`0,`0)">
             <summary>
-            Removes the connection betweeen parent and child and move element to roots.
+            Removes the connection between parent and child and move element to roots.
             </summary>
             <param name="ParentValue">The parent value.</param>
             <param name="ChildValue">The child value.</param>
@@ -1655,7 +1621,7 @@
             Removes the value.
             </summary>
             <param name="ValueToBeRemoved">The value to be removed.</param>
-            <param name="Shallow">if set to <c>true</c> [shallow] removal is done (all childs are moved to root if they are not connected to any others elements).</param>
+            <param name="Shallow">if set to <c>true</c> [shallow] removal is done (all children are moved to root if they are not connected to any others elements).</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree`1.GetSubtreeFromNode(`0)">
             <summary>
@@ -1982,7 +1948,7 @@
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Utils.Collections.QuickSort">
             <summary>
-            A simple version of the Quicksort.
+            A simple version of the QuickSort.
             </summary>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Utils.DateTimeProvider">
@@ -2022,21 +1988,21 @@
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper`1.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
             <summary>
-            Gets a value indicating whether this object supports a standard set of values that can be picked from a list. 
+            Gets a value indicating whether this object supports a standard set of values that can be picked from a list.
             </summary>
             <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </param>
-            <returns>Always returns <b>true</b> - means show a combobox </returns>
+            <returns>Always returns <b>true</b> - means show a combo box </returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper`1.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
             <summary>
-            Gets a value indicating whether the list of standard values returned from the GetStandardValues method is an exclusive list. 
+            Gets a value indicating whether the list of standard values returned from the GetStandardValues method is an exclusive list.
             </summary>
             <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </param>
             <returns>Always returns <b>true</b> - means it limits to list</returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper`1.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
             <summary>
-            Gets a collection of standard values for the data type this validator is designed for. 
+            Gets a collection of standard values for the data type this validator is designed for.
             </summary>
             <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </param>
             <returns>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/>  that holds a standard set of valid values </returns>
@@ -2096,10 +2062,8 @@
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator">
             <summary>
-            Class that is responsible for generating unique names
-            this list contains the list of names, no name can be the same. 
-            This class can generate unique names based on the template.
-            Client can add names to the list and class engine is responsible that no names are the same
+            Class that is responsible for generating unique names this list contains the list of names, no name can be the same.
+            This class can generate unique names based on the template. Client can add names to the list and class engine is responsible that no names are the same
             </summary>
         </member>
         <member name="T:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.UniqueNameGeneratorException">
@@ -2111,281 +2075,46 @@
             <summary>
             Initializes a new instance of the <see cref="T:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator"/> class.
             </summary>
-            <param name="Prefix">The prefix.</param>
+            <param name="prefix">The prefix.</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.CheckIfNameExists(System.String)">
             <summary>
             Checks if name exists.
             </summary>
-            <param name="Name">The name.</param>
+            <param name="name">The name.</param>
             <returns>true if name exists in generator</returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.CheckIfNameExistsAndReturnSuggestedName(System.String)">
             <summary>
             Checks the name and if name exists it returns suggested name.
             </summary>
-            <param name="Name">The name.</param>
+            <param name="name">The name.</param>
             <returns>the suggested name</returns>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.AddName(System.String,System.Boolean)">
             <summary>
-            Adds the name.
+            Adds a name to the collection of unique names.
             </summary>
-            <param name="NewName">The new name.</param>
-            <param name="ThrowExceptionIfNameExistOnTheListOfPreviousNames">if set to <c>true</c> [throw exception if name exist on the list of previous names].</param>
+            <param name="newName">The new name.</param>
+            <param name="throwExceptionIfNameExistOnTheListOfPreviousNames">if set to <c>true</c> the method throws exception if name exist on the list of previous names.</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.AddName(System.String)">
             <summary>
             Adds the name.
             </summary>
-            <param name="NewName">The new name.</param>
+            <param name="newName">The new name.</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.RemoveName(System.String)">
             <summary>
             Removes the name.
             </summary>
-            <param name="NameToBeRemoved">The name to be removed.</param>
+            <param name="nameToBeRemoved">The name to be removed.</param>
         </member>
         <member name="M:UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.GenerateNewName">
             <summary>
             Generates the new name.
             </summary>
             <returns>new name</returns>
-        </member>
-        <member name="T:Utils.Conversions">
-            <summary>
-            Converter class
-            </summary>
-            <remarks>use the <seealso cref="T:System.BitConverter"/> and <seealso cref="T:System.Convert"/> to provide conversion</remarks>
-        </member>
-        <member name="M:Utils.Conversions.UshortHighByte(System.UInt16)">
-            <summary>
-            Ushorts the high byte.
-            </summary>
-            <param name="wej">The wej.</param>
-            <returns>System.Byte.</returns>
-        </member>
-        <member name="M:Utils.Conversions.UshortLowByte(System.UInt16)">
-            <summary>
-            Ushorts the low byte.
-            </summary>
-            <param name="wej">The wej.</param>
-            <returns>System.Byte.</returns>
-        </member>
-        <member name="M:Utils.Conversions.ShortHighByte(System.Int16)">
-            <summary>
-            Shorts the high byte.
-            </summary>
-            <param name="wej">The wej.</param>
-            <returns>System.Byte.</returns>
-        </member>
-        <member name="M:Utils.Conversions.ShortLowByte(System.Int16)">
-            <summary>
-            Shorts the low byte.
-            </summary>
-            <param name="wej">The wej.</param>
-            <returns>System.Byte.</returns>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToUshort(System.Byte[],System.UInt16@)">
-            <summary>
-            Converts to ushort.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToUshort(System.Byte[],System.Int32,System.UInt16@)">
-            <summary>
-            Converts to ushort.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToShort(System.Byte[],System.Int16@)">
-            <summary>
-            Converts to short.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToShort(System.Byte[],System.Int32,System.Int16@)">
-            <summary>
-            Converts to short.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToUint(System.Byte[],System.UInt32@)">
-            <summary>
-            Converts to uint.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToUint(System.Byte[],System.Int32,System.UInt32@)">
-            <summary>
-            Converts to uint.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToUintRevers(System.Byte[],System.Int32,System.UInt32@)">
-            <summary>
-            Converts to uintrevers.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.UintToArray(System.UInt32,System.Byte[])">
-            <summary>
-            Converts to array.
-            </summary>
-            <param name="wej">The wej.</param>
-            <param name="tab">The tab.</param>
-        </member>
-        <member name="M:Utils.Conversions.UintToArray(System.UInt32,System.Byte[],System.Int32)">
-            <summary>
-            Converts to array.
-            </summary>
-            <param name="wej">The wej.</param>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-        </member>
-        <member name="M:Utils.Conversions.UintToArrayRevers(System.UInt32,System.Byte[],System.Int32)">
-            <summary>
-            Converts to arrayrevers.
-            </summary>
-            <param name="wej">The wej.</param>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToInt(System.Byte[],System.Int32@)">
-            <summary>
-            Converts to int.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToInt(System.Byte[],System.Int32,System.Int32@)">
-            <summary>
-            Converts to int.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-            <param name="wej">The wej.</param>
-        </member>
-        <member name="M:Utils.Conversions.IntToArray(System.Int32,System.Byte[])">
-            <summary>
-            Converts to array.
-            </summary>
-            <param name="wej">The wej.</param>
-            <param name="tab">The tab.</param>
-        </member>
-        <member name="M:Utils.Conversions.IntToArray(System.Int32,System.Byte[],System.Int32)">
-            <summary>
-            Converts to array.
-            </summary>
-            <param name="wej">The wej.</param>
-            <param name="tab">The tab.</param>
-            <param name="index">The index.</param>
-        </member>
-        <member name="M:Utils.Conversions.BytesToUshort(System.Byte,System.Byte)">
-            <summary>
-            Converts to ushort.
-            </summary>
-            <param name="HiByte">The hi byte.</param>
-            <param name="LoByte">The lo byte.</param>
-            <returns>System.UInt16.</returns>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToIntPtr(System.Byte[],System.IntPtr@)">
-            <summary>
-            Converts to intptr.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="wsk">The WSK.</param>
-        </member>
-        <member name="M:Utils.Conversions.ArrayToIntPtr(System.Byte[],System.IntPtr@,System.Int32)">
-            <summary>
-            Converts to intptr.
-            </summary>
-            <param name="tab">The tab.</param>
-            <param name="wsk">The WSK.</param>
-            <param name="index">The index.</param>
-        </member>
-        <member name="T:Utils.Handle">
-            <summary>
-            Summary description for IntPtrComarable.
-            </summary>
-        </member>
-        <member name="T:Utils.HTTPServer">
-            <summary>
-            HTTPServer is an abstract class - that provides http server.
-            </summary>
-        </member>
-        <member name="M:Utils.HTTPServer.SendHeader(System.String,System.String,System.Int32,System.String,System.Net.Sockets.Socket@)">
-            <summary>
-            This function send the Header Information to the client (Browser)
-            </summary>
-            <param name="sHttpVersion">HTTP Version</param>
-            <param name="sMIMEHeader">Mime Type</param>
-            <param name="iTotBytes">Total Bytes to be sent in the body</param>
-            <param name="sStatusCode">The s status code.</param>
-            <param name="mySocket">Socket reference</param>
-        </member>
-        <member name="M:Utils.HTTPServer.SendToBrowser(System.String,System.Net.Sockets.Socket@)">
-            <summary>
-            Overloaded Function, takes string, convert to bytes and calls 
-            overloaded sendToBrowserFunction.
-            </summary>
-            <param name="sData">The data to be sent to the browser(client)</param>
-            <param name="mySocket">Socket reference</param>
-        </member>
-        <member name="M:Utils.HTTPServer.SendToBrowser(System.Byte[],System.Net.Sockets.Socket@)">
-            <summary>
-            Sends data to the browser (client)
-            </summary>
-            <param name="bSendData">Byte Array</param>
-            <param name="mySocket">Socket reference</param>
-        </member>
-        <member name="M:Utils.HTTPServer.ListenerThreadBody">
-            <summary>
-            This method Accepts new connection and
-            First it receives the welcome massage from the client,
-            Then it sends the Current date time to the Client.
-            </summary>
-        </member>
-        <member name="M:Utils.HTTPServer.GetStringData(System.String,System.String,System.Collections.Hashtable)">
-            <summary>
-            function that should be overridden to provide string with response for html data request
-            </summary>
-            <param name="directory">directory name</param>
-            <param name="filename">filename that client requests</param>
-            <param name="parameters">parameters that client send with GET request</param>
-            <returns></returns>
-        </member>
-        <member name="M:Utils.HTTPServer.#ctor(System.Int32)">
-            <summary>
-            Server Initiation
-            </summary>
-            <param name="port">TCP port that should be used for listening</param>
-        </member>
-        <member name="M:Utils.HTTPServer.#ctor">
-            <summary>
-            Server Initiation on standard port
-            </summary>
-        </member>
-        <member name="M:Utils.HTTPServer.Start">
-            <summary>
-            Starts the HTTP Server
-            </summary>
-        </member>
-        <member name="M:Utils.HTTPServer.Stop">
-            <summary>
-            Stops the HTTP Server
-            </summary>
         </member>
     </members>
 </doc>

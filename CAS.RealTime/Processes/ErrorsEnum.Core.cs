@@ -1,36 +1,22 @@
-//<summary>
-//  Title   : Define error numbers.
-//  System  : Microsoft Visual C# .NET 2005
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
-//  History :
-//    MZBRZEZNY - 2007-02-12:
-//    Zmieniono niektore wartosci bledow (UWAGA: kody bledow nie moga byc wieksze niz 65535!!)
-//    MZbrzezny - 06-08-2004: created
-//    <Author> - <date>:
-//    <description>
+//___________________________________________________________________________________
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  Copyright (C) 2020, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
+//___________________________________________________________________________________
 
 using System;
 
 namespace UAOOI.ProcessObserver.RealTime.Processes
 {
-  //
-  //EventID = Error + ErrorCause*1000
-  //
   /// <summary>
   /// Define error numbers
   /// </summary>
-  [Obsolete(@"It conflicts with the C:\MPVS\CASTrunk\PR36-CAS_MAIN_CORE_PCKG\RTLib\Processes\ErrorsEnum.cs")]
-  public enum ErrorCore: int
+  /// <remarks>
+  /// EventID = Error + ErrorCause*1000
+  /// </remarks>
+  [Obsolete(@"It conflicts with the UAOOI.ProcessObserver.RealTime.Processes.Error")]
+  public enum ErrorCore : int
   {
     //ApplicationLayer_NULL_protocol = 100, //RTLib
     //ApplicationLayer_MBUS_PRIVATE_MBUS_message = 200, //RTLib
@@ -39,6 +25,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// ApplicationLayer_SBUS_PRIVATE_SBUSbase_message
     /// </summary>
     ApplicationLayer_SBUS_PRIVATE_SBUSbase_message = 260, //SBUS_PLUGIN
+
     //ApplicationLayer_SBUS_PRIVATE_SBUSnet_message = 270, //SBUS_PLUGIN
     //CommunicationLayer_UMessage = 300, //RTLib
     //BaseStation_Segment = 400, //Commserver
@@ -48,6 +35,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave
     /// </summary>
     ApplicationLayer_SBUS_SBUS_ApplicationLayerSlave = 560, //RTLib
+
     //ApplicationLayer_SBUS_SBUS_ApplicationLayerCommon = 570, //RTLib
     //Processes_IEnvelope = 600, //RTLib
     //BaseStation_DataQueue = 700, //Commserver
@@ -69,6 +57,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     /// CommServer_EC2EC3_symulator
     /// </summary>
     CommServer_EC2EC3_symulator = 30200,
+
     //CommServer_CommServerComponent = 30300,
     ////opc_da_netserver
     //CAS_OpcSvr_Da_NETServer_Server = 50000,
@@ -80,10 +69,5 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     //CommunicationLayer = 60000,
     //CommunicationLayer_Net_to_Serial = 60100
   }
-  //public enum ErrorCauseMask: int
-  //{
-  //  Processes_EventLogMonitor_WriteEntry = 0000,
-  //  Processes_Assertion_Assert = 1000,
-  //  Processes_MonitoredThread = 2000,
-  //}
+
 }

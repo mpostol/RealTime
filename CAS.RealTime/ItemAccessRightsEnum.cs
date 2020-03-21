@@ -8,10 +8,9 @@
 namespace UAOOI.ProcessObserver.RealTime
 {
   /// <summary>
-  /// Item Access Rights enum
-  /// similar to: 
+  /// Item Access Rights enum similar to:
   /// EX01-OPCFoundation_NETApi\Source\NET API\Da\Opc.Da.PropertyID.cs
-  ///   
+  ///
   /// <code>
   /// public enum accessRights : int
   /// {
@@ -20,18 +19,20 @@ namespace UAOOI.ProcessObserver.RealTime
   ///    readWritable = 0x03
   /// }
   /// </code>
-  ///  
+  ///
   /// </summary>
-  public enum ItemAccessRights: sbyte
+  public enum ItemAccessRights : sbyte
   {
     /// <summary>
     /// Read and Write
     /// </summary>
     ReadWrite = 0,
+
     /// <summary>
     /// Read Only
     /// </summary>
     ReadOnly = 1,
+
     /// <summary>
     /// Write Only
     /// </summary>

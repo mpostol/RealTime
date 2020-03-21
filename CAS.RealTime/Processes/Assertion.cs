@@ -5,7 +5,6 @@
 //  To be in touch join the community at GITTER: https://gitter.im/mpostol/OPC-UA-OOI
 //___________________________________________________________________________________
 
-
 using System;
 using System.Diagnostics;
 
@@ -18,11 +17,14 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
   public class Assertion : Exception
   {
     #region private
-    private EventLogMonitor myEventLog;
-    private short category;
-    #endregion
+
+    private EventLogMonitor m_EventLog;
+    private short m_Category;
+
+    #endregion private
 
     #region public
+
     /// <summary>
     /// Throws the assertion.
     /// </summary>
@@ -33,13 +35,14 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       if (!assertion)
       {
-        myEventLog.SetCategory = category;
-        this.category = category;
-        myEventLog.SetMessage = newMessage;
-        myEventLog.WriteEntry();
+        m_EventLog.SetCategory = category;
+        this.m_Category = category;
+        m_EventLog.SetMessage = newMessage;
+        m_EventLog.WriteEntry();
         throw this;
       }
     }
+
     /// <summary>
     /// Throws the assertion.
     /// </summary>
@@ -50,12 +53,13 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       if (!assertion)
       {
-        myEventLog.SetCategory = category;
-        this.category = category;
-        if (logEvent) myEventLog.WriteEntry();
+        m_EventLog.SetCategory = category;
+        this.m_Category = category;
+        if (logEvent) m_EventLog.WriteEntry();
         throw this;
       }
     }
+
     /// <summary>
     /// Asserts the specified assertion.
     /// </summary>
@@ -66,6 +70,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       Assert(assertion, category, "");
     }
+
     /// <summary>
     /// Asserts the specified assertion.
     /// </summary>
@@ -77,33 +82,30 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
       if (!assertion)
       {
         StackTrace _a = new System.Diagnostics.StackTrace(true);
-        Processes.AssemblyTraceEvent.Trace(TraceEventType.Error, 81, nameof(Assertion), "Assert: " + CustomMeassage + " ; StackTrace log:" + _a.ToString());
+        AssemblyTraceEvent.Trace(TraceEventType.Error, 81, nameof(Assertion), "Assert: " + CustomMeassage + " ; StackTrace log:" + _a.ToString());
         Manager.AddToErrorQueue();
       }
     }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Assertion"/> class.
     /// </summary>
-    public Assertion() : this
-      (
-      "Processes.Assertion error - the malicious thread was suspended and added to error queue",
-      0, false
-      )
-    { }
+    public Assertion() : this("Processes.Assertion error - the malicious thread was suspended and added to error queue", 0, false) { }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Assertion"/> class.
     /// </summary>
     /// <param name="message">The message.</param>
     /// <param name="eventID">The event ID.</param>
     /// <param name="rebootRequired">if set to <c>true</c> system reboot is required.</param>
-    public Assertion(string message, int eventID, bool rebootRequired) :
-      base(message)
+    public Assertion(string message, int eventID, bool rebootRequired) : base(message)
     {
       EventLogEntryType severity;
       if (rebootRequired) severity = EventLogEntryType.Error;
       else severity = EventLogEntryType.Warning;
-      myEventLog = new EventLogMonitor("Assertion error:" + message, severity, 1000 + eventID, 0);
+      m_EventLog = new EventLogMonitor("Assertion error:" + message, severity, 1000 + eventID, 0);
     }
-    #endregion
+
+    #endregion public
   }
 }

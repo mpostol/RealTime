@@ -11,17 +11,18 @@ using System.Diagnostics;
 namespace UAOOI.ProcessObserver.RealTime.Processes
 {
   /// <summary>
-  /// Static instance of <see cref="TraceSource"/> 
+  /// Static instance of <see cref="TraceSource"/>
   /// </summary>
   public static class AssemblyTraceEvent
   {
-
     #region public static
+
     /// <summary>
     /// Gets the assembly trace source of name defined by the <c>m_TraceName</c>.
     /// </summary>
     /// <value>The assembly trace source.</value>
     public static TraceSource AssemblyTraceSource => m_TraceEvent.Value;
+
     /// <summary>
     /// regular trace message
     /// </summary>
@@ -33,8 +34,9 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       m_TraceEvent.Value.TraceEvent(type, id, source, message);
     }
+
     /// <summary>
-    /// Traces <see cref="TraceEventType.Verbose"/> type message  
+    /// Traces <see cref="TraceEventType.Verbose"/> type message
     /// </summary>
     /// <param name="id">user identifier for the message</param>
     /// <param name="source">source of message</param>
@@ -43,14 +45,18 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       m_TraceEvent.Value.TraceEvent(TraceEventType.Verbose, id, source, message);
     }
-    #endregion
+
+    #endregion public static
 
     #region private
+
     private const string m_TraceName = "CAS.RealTime";
     private static Lazy<TraceSource> m_TraceEvent = new Lazy<TraceSource>(() => new TraceSource(m_TraceName));
-    #endregion
+
+    #endregion private
 
     #region DEBUG
+
     /// <summary>
     /// Gets the name of the trace.
     /// </summary>
@@ -60,6 +66,7 @@ namespace UAOOI.ProcessObserver.RealTime.Processes
     {
       traceName(m_TraceName);
     }
-    #endregion
+
+    #endregion DEBUG
   }
 }

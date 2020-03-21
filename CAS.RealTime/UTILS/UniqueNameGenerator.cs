@@ -11,16 +11,21 @@ using System.Collections.Generic;
 namespace UAOOI.ProcessObserver.RealTime.Utils
 {
   /// <summary>
-  /// Class that is responsible for generating unique names
-  /// this list contains the list of names, no name can be the same. 
-  /// This class can generate unique names based on the template.
-  /// Client can add names to the list and class engine is responsible that no names are the same
+  /// Class that is responsible for generating unique names this list contains the list of names, no name can be the same.
+  /// This class can generate unique names based on the template. Client can add names to the list and class engine is responsible that no names are the same
   /// </summary>
   public class UniqueNameGenerator
   {
-    private List<string> mList = new List<string>();
-    private readonly string prefix;
-    int counter = 0;
+    #region private
+
+    private List<string> m_MList = new List<string>();
+    private readonly string m_Prefix;
+    private int m_Counter = 0;
+
+    #endregion private
+
+    #region public API
+
     /// <summary>
     /// the exception thrown by UniqueNameGenerator
     /// </summary>
@@ -31,92 +36,101 @@ namespace UAOOI.ProcessObserver.RealTime.Utils
         : base(message)
       { }
     }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="UniqueNameGenerator"/> class.
     /// </summary>
-    /// <param name="Prefix">The prefix.</param>
-    public UniqueNameGenerator(string Prefix)
+    /// <param name="prefix">The prefix.</param>
+    public UniqueNameGenerator(string prefix)
     {
-      prefix = Prefix;
+      m_Prefix = prefix;
     }
+
     /// <summary>
     /// Checks if name exists.
     /// </summary>
-    /// <param name="Name">The name.</param>
+    /// <param name="name">The name.</param>
     /// <returns>true if name exists in generator</returns>
-    public bool CheckIfNameExists(string Name)
+    public bool CheckIfNameExists(string name)
     {
-      return mList.Contains(Name);
+      return m_MList.Contains(name);
     }
+
     /// <summary>
     /// Checks the name and if name exists it returns suggested name.
     /// </summary>
-    /// <param name="Name">The name.</param>
+    /// <param name="name">The name.</param>
     /// <returns>the suggested name</returns>
-    public string CheckIfNameExistsAndReturnSuggestedName(string Name)
+    public string CheckIfNameExistsAndReturnSuggestedName(string name)
     {
       int counter = 0;
-      if (!mList.Contains(Name))
-        return Name;
+      if (!m_MList.Contains(name))
+        return name;
       else
       {
         string newname = "";
-        do { newname = Name + "_" + (++counter).ToString(); }
-        while (mList.Contains(newname));
+        do { newname = name + "_" + (++counter).ToString(); }
+        while (m_MList.Contains(newname));
         return newname;
       }
     }
+
     /// <summary>
-    /// Adds the name.
+    /// Adds a name to the collection of unique names.
     /// </summary>
-    /// <param name="NewName">The new name.</param>
-    /// <param name="ThrowExceptionIfNameExistOnTheListOfPreviousNames">if set to <c>true</c> [throw exception if name exist on the list of previous names].</param>
-    public void AddName(string NewName, bool ThrowExceptionIfNameExistOnTheListOfPreviousNames)
+    /// <param name="newName">The new name.</param>
+    /// <param name="throwExceptionIfNameExistOnTheListOfPreviousNames">if set to <c>true</c> the method throws exception if name exist on the list of previous names.</param>
+    public void AddName(string newName, bool throwExceptionIfNameExistOnTheListOfPreviousNames)
     {
       lock (this)
       {
-        if (mList.Contains(NewName))
+        if (m_MList.Contains(newName))
         {
-          if (ThrowExceptionIfNameExistOnTheListOfPreviousNames)
+          if (throwExceptionIfNameExistOnTheListOfPreviousNames)
             throw new UniqueNameGeneratorException("This generator already contains such name");
           else
             return;
         }
-        mList.Add(NewName);
+        m_MList.Add(newName);
       }
     }
+
     /// <summary>
     /// Adds the name.
     /// </summary>
-    /// <param name="NewName">The new name.</param>
-    public void AddName(string NewName)
+    /// <param name="newName">The new name.</param>
+    public void AddName(string newName)
     {
-      AddName(NewName, true);
+      AddName(newName, true);
     }
+
     /// <summary>
     /// Removes the name.
     /// </summary>
-    /// <param name="NameToBeRemoved">The name to be removed.</param>
-    public void RemoveName(string NameToBeRemoved)
+    /// <param name="nameToBeRemoved">The name to be removed.</param>
+    public void RemoveName(string nameToBeRemoved)
     {
-      mList.Remove(NameToBeRemoved);
+      m_MList.Remove(nameToBeRemoved);
     }
+
     /// <summary>
     /// Generates the new name.
     /// </summary>
     /// <returns>new name</returns>
     public string GenerateNewName()
     {
-      string nametobereturned;
+      string _nameToBeReturned;
       lock (this)
       {
         do
         {
-          nametobereturned = String.Format(prefix + "{0}", counter++);
-        } while (mList.Contains(nametobereturned));
-        mList.Add(nametobereturned);
+          _nameToBeReturned = string.Format(m_Prefix + "{0}", m_Counter++);
+        } while (m_MList.Contains(_nameToBeReturned));
+        m_MList.Add(_nameToBeReturned);
       }
-      return nametobereturned;
+      return _nameToBeReturned;
     }
+
+    #endregion public API
   }
 }
