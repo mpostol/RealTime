@@ -6,10 +6,10 @@
     <PackageId>UAOOI.ProcessObserver.RealTime</PackageId>
     <Description>Object-Oriented Internet Process-Observer RealTime library</Description>
     <Product>Object-Oriented Internet Process-Observer</Product>
-    <AssemblyVersion>6.5.0</AssemblyVersion>
+    <AssemblyVersion>6.6.0</AssemblyVersion>
     <Copyright>Copyright (C) 2020, Mariusz Postol LODZ POLAND</Copyright>
-    <FileVersion>6.5.0</FileVersion>
-    <Version>6.5.0</Version>
+    <FileVersion>6.6.0</FileVersion>
+    <Version>6.6.0</Version>
     <Company>Mariusz Postol</Company>
     <AssemblyName>UAOOI.ProcessObserver.RealTime</AssemblyName>
     <RootNamespace>UAOOI.ProcessObserver.RealTime</RootNamespace>
@@ -18,21 +18,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-    <DocumentationFile>C:\VS.git\UAOOI\RealTime\CAS.RealTime\UAOOI.ProcessObserver.RealTime.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-    <DocumentationFile>C:\VS.git\RealTime\CAS.RealTime\UAOOI.ProcessObserver.RealTime.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Scripts\**" />
-    <Compile Remove="Win32API\**" />
-    <EmbeddedResource Remove="Scripts\**" />
-    <EmbeddedResource Remove="Win32API\**" />
-    <None Remove="Scripts\**" />
-    <None Remove="Win32API\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Processes\EventLogMonitor_.cs" />
@@ -45,12 +36,6 @@
     <Compile Remove="UTILS\HandleNull.cs" />
     <Compile Remove="UTILS\HTTPServer.cs" />
     <Compile Remove="UTILS\SpecialOperation.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="cube.ico" />
-    <None Remove="Logo64.PNG" />
-    <None Remove="UTILS\Collections\Generic\SortedTree.cd" />
   </ItemGroup>
 
   <ItemGroup>

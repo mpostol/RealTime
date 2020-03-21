@@ -9,12 +9,11 @@ string Phone = "+48 608 619 899";
 string Owner = "Mariusz Postol";
 string Authors = "Mariusz Postol";
 
-//RealTime
 string CASRealTimeName = "UAOOI.ProcessObserver.RealTime";
 string CASRealTimeTitle = "Object-Oriented Internet Process-Observer RealTime library";
 string CASRealTimeTrademark = "Object-Oriented Internet Process-Observer";
-string CASRealTimeVersion = "6.5.0";
-string CASRealTimePreRelease = "-Hotel";
+string CASRealTimeVersion = "6.6.0";
+string CASRealTimePreRelease = "";
 
 //Note: 
 //Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, 
