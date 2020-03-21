@@ -1,0 +1,1424 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"[]>
+<html>
+  <head><link rel="shortcut icon" href="../favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="save" content="history" />
+    <title>Assert Method </title>
+    <link rel="stylesheet" type="text/css" href="../styles/lightweight.css" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" />
+    <link rel="stylesheet" type="text/css" href="../styles/lw-code.css" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" />
+    <script type="text/javascript" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" src="../scripts/languageSelector.js"> </script>
+    <meta name="container" content="UAOOI.ProcessObserver.RealTime.Processes" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" />
+    <meta name="file" content="Overload-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" />
+    <meta name="guid" content="Overload-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" />
+    <xml xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+      <MSHelp:Attr Name="AssetID" Value="Overload:UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert" />
+      <MSHelp:TOCTitle Title="Assert Method " />
+      <MSHelp:RLTitle Title="Assertion.Assert Method  (UAOOI.ProcessObserver.RealTime.Processes)" />
+      <MSHelp:Keyword Index="A" Term="Overload:UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert" />
+      <MSHelp:Keyword Index="A" Term="frlrfUAOOIProcessObserverRealTimeProcessesAssertionClassAssertTopic" />
+      <MSHelp:Keyword Index="K" Term="Assert method" />
+      <MSHelp:Keyword Index="K" Term="Assertion.Assert method" />
+      <MSHelp:Keyword Index="F" Term="UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="AssemblyVersion" Value="" />
+    </xml>
+  <link rel="stylesheet" href="../TOC.css"><script type="text/javascript" src="../TOC.js"></script></head>
+  <body onload="javascript: Initialize('.aspx');" onresize="javascript: ResizeTree();">
+            <div id="TOCDiv" class="TOCDiv" style="width: 310px; float: left; position: relative; ">
+
+            <div id="divSearchOpts" class="SearchOpts" style="height: 95px; display: none;">
+                <div class="SearchOptsInner">
+                    <img class="TOCLink" onclick="javascript: ShowHideSearch(false);" src="../Close.png" height="24" width="24" alt="Hide Search" title="Hide Search" style="float: right;" />
+                    <span class="Title">Keyword(s) to search:</span>
+                </div>
+                <div class="SearchOptsInner">
+                    <input id="txtSearchText" type="text" style="width: 95.5%;" onkeypress="javascript: return OnSearchTextKeyPress(event);" />
+                </div>
+                <div class="SearchOptsInner">
+                    <input id="chkSortByTitle" type="checkbox" />&nbsp;Sort results by title
+                    <input type="button" value="Search" onclick="javascript: return PerformSearch();" style="float: right;" />
+                </div>
+            </div>
+
+            <div id="divIndexOpts" class="IndexOpts" style="height: 28px; display: none;">
+                <img class="TOCLink" onclick="javascript: ShowHideIndex(false);"
+                     src="../Close.png" height="24" width="24" alt="Hide Keyword Index" title="Hide Keyword Index" style="float: right;" />
+                <span class="Title">Keyword Index</span>
+            </div>
+
+            <div id="divNavOpts" class="NavOpts" style="height: 28px;">
+                <!--<img class="TOCLink" onclick="javascript: SyncTOC();" src="../SyncTOC.png"
+                     height="24" width="24" alt="Sync to TOC" title="Sync to TOC" />-->
+                <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(true);"
+                     src="../ExpandAll.png" height="24" width="24" alt="Expand all" title="Expand all" />
+                <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(false);"
+                     src="../CollapseAll.png" height="24" width="24" alt="Collapse all" title="Collapse all" />
+                <!--<img class="TOCLink" onclick="javascript: alert('Please make sure to use either Index.aspx or Index.php to enable the Keyword Index feature.');"
+                     src="../Index.png" height="24" width="24" alt="Keyword Index" title="Keyword Index" />-->
+                <img class="TOCLink" onclick="javascript: ShowHideSearch(true);"
+                     src="../Search.png" height="24" width="24" alt="Search" title="Search" />
+                <img class="TOCLink" onclick="javascript: ShowDirectLink();"
+                     src="../Link.png" height="24" width="24" alt="Get direct link to the displayed topic" title="Get direct link to the displayed topic" />
+                <a href="#" onclick="javascript: window.history.go(-1); return false;">
+                    <img class="TOCLink" style="float: right;"
+                         src="../Back.png" height="24" width="24" alt="Previous page" title="Previous page" />
+                </a>
+            </div>
+
+            <div class="Tree" id="divSearchResults" style="display: none;"
+                 onselectstart="javascript: return false;">
+            </div>
+
+            <div class="Tree" id="divIndexResults" style="display: none;"
+                 onselectstart="javascript: return false;">
+            </div>
+
+            <div class="Tree" id="divTree" onselectstart="javascript: return false;">
+              <div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="N-UAOOI.ProcessObserver.RealTime.htm" target="_self">UAOOI.ProcessObserver.RealTime Namespace</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.ItemAccessRights.htm" target="_self">ItemAccessRights Enumeration</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="N-UAOOI.ProcessObserver.RealTime.Management.htm" target="_self">UAOOI.ProcessObserver.RealTime.Management Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.htm" target="_self">IProtocolParent Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.htm" target="_self">IProtocolParent Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.htm" target="_self">IProtocolParent Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxCRCErrorCounter.htm" target="_self">IncStRxCRCErrorCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxFragmentedCounter.htm" target="_self">IncStRxFragmentedCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxFrameCounter.htm" target="_self">IncStRxFrameCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxInvalid.htm" target="_self">IncStRxInvalid Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxNAKCounter.htm" target="_self">IncStRxNAKCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxNoResponseCounter.htm" target="_self">IncStRxNoResponseCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStRxSynchError.htm" target="_self">IncStRxSynchError Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStTxACKCounter.htm" target="_self">IncStTxACKCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStTxDATACounter.htm" target="_self">IncStTxDATACounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStTxFrameCounter.htm" target="_self">IncStTxFrameCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.IncStTxNAKCounter.htm" target="_self">IncStTxNAKCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.RxDataBlock.htm" target="_self">RxDataBlock Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.TimeCharGapAdd.htm" target="_self">TimeCharGapAdd Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.TimeMaxResponseDelayAdd.htm" target="_self">TimeMaxResponseDelayAdd Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Management.IProtocolParent.TxDataBlock.htm" target="_self">TxDataBlock Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="N-UAOOI.ProcessObserver.RealTime.Processes.htm" target="_self">UAOOI.ProcessObserver.RealTime.Processes Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.htm" target="_self">AssemblyTraceEvent Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.htm" target="_self">AssemblyTraceEvent Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.htm" target="_self">AssemblyTraceEvent Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.GetTraceName.htm" target="_self">GetTraceName Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.Trace.htm" target="_self">Trace Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.TraceVerbose.htm" target="_self">TraceVerbose Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.htm" target="_self">AssemblyTraceEvent Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.AssemblyTraceEvent.AssemblyTraceSource.htm" target="_self">AssemblyTraceSource Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Assertion.htm" target="_self">Assertion Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Assertion.htm" target="_self">Assertion Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.Assertion.-ctor.htm" target="_self">Assertion Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.-ctor.htm" target="_self">Assertion Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.-ctor_1.htm" target="_self">Assertion Constructor (String, Int32, Boolean)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.Assertion.htm" target="_self">Assertion Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert.htm" target="_self">Assert Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert.htm" target="_self">Assert Method (Boolean, Int16)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert_1.htm" target="_self">Assert Method (Boolean, Int16, String)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.Assertion.ThrowAssertion.htm" target="_self">ThrowAssertion Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.ThrowAssertion.htm" target="_self">ThrowAssertion Method (Boolean, Int16, String)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.ThrowAssertion_1.htm" target="_self">ThrowAssertion Method (Boolean, Int16, Boolean)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.Assertion.htm" target="_self">Assertion Properties</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Condition.htm" target="_self">Condition Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Condition.htm" target="_self">Condition Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.Condition.htm" target="_self">Condition Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Condition.IsAwaiting.htm" target="_self">IsAwaiting Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Condition.Notify.htm" target="_self">Notify Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Condition.NotifyAll.htm" target="_self">NotifyAll Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait.htm" target="_self">Wait Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait.htm" target="_self">Wait Method (Object)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait_1.htm" target="_self">Wait Method (Object, Int32)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Condition.Wait_2.htm" target="_self">Wait Method (Object, TimeSpan)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.htm" target="_self">EnvelopePool Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.htm" target="_self">EnvelopePool Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.-ctor.htm" target="_self">EnvelopePool Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.htm" target="_self">EnvelopePool Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.GetEmptyEnvelope.htm" target="_self">GetEmptyEnvelope Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.ReturnEmptyEnvelope.htm" target="_self">ReturnEmptyEnvelope Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.EnvelopePool.CreateEnvelope.htm" target="_self">EnvelopePool.CreateEnvelope Delegate</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Error.htm" target="_self">Error Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.ErrorCauseMask.htm" target="_self">ErrorCauseMask Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.ErrorCore.htm" target="_self">ErrorCore Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.EventLogEntryType.htm" target="_self">EventLogEntryType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.htm" target="_self">EventLogMonitor Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.htm" target="_self">EventLogMonitor Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.-ctor.htm" target="_self">EventLogMonitor Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.htm" target="_self">EventLogMonitor Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteEntry.htm" target="_self">WriteEntry Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteToEventLog.htm" target="_self">WriteToEventLog Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteToEventLog.htm" target="_self">WriteToEventLog Method (String, EventLogEntryType, Int32)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteToEventLog_1.htm" target="_self">WriteToEventLog Method (String, EventLogEntryType, Int32, Int16)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteToEventLog_2.htm" target="_self">WriteToEventLog Method (String, EventLogEntryType)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteToEventLogError.htm" target="_self">WriteToEventLogError Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.WriteToEventLogInfo.htm" target="_self">WriteToEventLogInfo Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.htm" target="_self">EventLogMonitor Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.GetMessage.htm" target="_self">GetMessage Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.SetCategory.htm" target="_self">SetCategory Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.EventLogMonitor.SetMessage.htm" target="_self">SetMessage Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.htm" target="_self">EventsSynchronization Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.htm" target="_self">EventsSynchronization Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.htm" target="_self">EventsSynchronization Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.GetEvent.htm" target="_self">GetEvent Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.GetEvent.htm" target="_self">GetEvent Method (Object, Int32, Object)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.GetEvent_1.htm" target="_self">GetEvent Method (Object, Int32)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.SetEvent.htm" target="_self">SetEvent Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.SetEvent.htm" target="_self">SetEvent Method (Object, Object)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventsSynchronization.SetEvent_1.htm" target="_self">SetEvent Method (Object)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.htm" target="_self">EventWaitHandleTimeOut Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.htm" target="_self">EventWaitHandleTimeOut Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.-ctor.htm" target="_self">EventWaitHandleTimeOut Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.htm" target="_self">EventWaitHandleTimeOut Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.Reset.htm" target="_self">Reset Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.Set.htm" target="_self">Set Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.WaitOne.htm" target="_self">WaitOne Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.htm" target="_self">EventWaitHandleTimeOut Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.EventWaitHandleTimeOut.State.htm" target="_self">State Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.htm" target="_self">HandlerWaitTimeList(TElement) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.htm" target="_self">HandlerWaitTimeList(TElement) Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.-ctor.htm" target="_self">HandlerWaitTimeList(TElement) Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.-ctor.htm" target="_self">HandlerWaitTimeList(TElement) Constructor (Boolean, String, Boolean)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.-ctor_1.htm" target="_self">HandlerWaitTimeList(TElement) Constructor (Boolean, String)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.htm" target="_self">HandlerWaitTimeList(TElement) Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.Handler.htm" target="_self">Handler Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.RemoveItem.htm" target="_self">RemoveItem Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.RemoveItem.htm" target="_self">RemoveItem Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.HandlerWaitTimeList-1.htm" target="_self">HandlerWaitTimeList(TElement) Properties</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.htm" target="_self">IDBuffer Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.htm" target="_self">IDBuffer Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.htm" target="_self">IDBuffer Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.CopyFromBuffor.htm" target="_self">CopyFromBuffor Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.CopyToBuffor.htm" target="_self">CopyToBuffor Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.htm" target="_self">IDBuffer Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.uMessagePtr.htm" target="_self">uMessagePtr Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.userBuffLength.htm" target="_self">userBuffLength Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.IDBuffer.userDataLength.htm" target="_self">userDataLength Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.htm" target="_self">IEnvelope Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.htm" target="_self">IEnvelope Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.htm" target="_self">IEnvelope Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.ReturnEmptyEnvelope.htm" target="_self">ReturnEmptyEnvelope Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.htm" target="_self">IEnvelope Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.IEnvelope.InPool.htm" target="_self">InPool Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Manager.htm" target="_self">Manager Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Manager.htm" target="_self">Manager Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.Manager.htm" target="_self">Manager Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Manager.AddToErrorQueue.htm" target="_self">AddToErrorQueue Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Manager.Assert.htm" target="_self">Assert Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.Manager.StartProcess.htm" target="_self">StartProcess Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Manager.StartProcess.htm" target="_self">StartProcess Method (ThreadStart)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Manager.StartProcess_1.htm" target="_self">StartProcess Method (ThreadStart, String)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Manager.StartProcess_2.htm" target="_self">StartProcess Method (ThreadStart, String, Boolean, ThreadPriority)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.Manager.htm" target="_self">Manager Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Manager.NumOfErrors.htm" target="_self">NumOfErrors Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.htm" target="_self">MonitoredThread Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.htm" target="_self">MonitoredThread Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.-ctor.htm" target="_self">MonitoredThread Constructor (UInt16, String, Int32, ThreadStart, String, Boolean, ThreadPriority)</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.htm" target="_self">MonitoredThread Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.ResetWatchDog.htm" target="_self">ResetWatchDog Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.ResetWatchDog.htm" target="_self">ResetWatchDog Method (Int16)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.MonitoredThread.ResetWatchDog_1.htm" target="_self">ResetWatchDog Method (Int16, UInt16)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Port.htm" target="_self">Port Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Port.htm" target="_self">Port Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.Port.htm" target="_self">Port Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Port.Clear.htm" target="_self">Clear Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Port.Close.htm" target="_self">Close Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Port.Open.htm" target="_self">Open Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Port.SendMsg.htm" target="_self">SendMsg Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Port.WaitMsg.htm" target="_self">WaitMsg Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.Port.htm" target="_self">Port Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Port.Count.htm" target="_self">Count Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.htm" target="_self">RunMethodAsynchronously Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.htm" target="_self">RunMethodAsynchronously Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.-ctor.htm" target="_self">RunMethodAsynchronously Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.htm" target="_self">RunMethodAsynchronously Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.RunAsync.htm" target="_self">RunAsync Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.RunAsync.htm" target="_self">RunAsync Method (Object[])</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.RunAsync_1.htm" target="_self">RunAsync Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.RunMethodAsynchronously.AsyncOperation.htm" target="_self">RunMethodAsynchronously.AsyncOperation Delegate</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.htm" target="_self">Stopwatch Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.htm" target="_self">Stopwatch Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.-ctor.htm" target="_self">Stopwatch Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.htm" target="_self">Stopwatch Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.ConvertTo_ms.htm" target="_self">ConvertTo_ms Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.ConvertTo_s.htm" target="_self">ConvertTo_s Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.ConvertTo_us.htm" target="_self">ConvertTo_us Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.StartReset.htm" target="_self">StartReset Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.htm" target="_self">Stopwatch Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.IsRunning.htm" target="_self">IsRunning Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.Read.htm" target="_self">Read Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.Reset.htm" target="_self">Reset Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.Start.htm" target="_self">Start Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.Stop.htm" target="_self">Stop Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Stopwatch.SWFrequency.htm" target="_self">SWFrequency Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.Timer.htm" target="_self">Timer Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Timer.htm" target="_self">Timer Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.Timer.htm" target="_self">Timer Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.FromUSeconds.htm" target="_self">FromUSeconds Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.Max.htm" target="_self">Max Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.Min.htm" target="_self">Min Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.ToUSeconds.htm" target="_self">ToUSeconds Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.Wait.htm" target="_self">Wait Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.Timer.WaitTimeout.htm" target="_self">WaitTimeout Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.WaitTimeout.htm" target="_self">WaitTimeout Method (TimeSpan, Stopwatch)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.Timer.WaitTimeout_1.htm" target="_self">WaitTimeout Method (TimeSpan, Stopwatch, Object)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.Timer.htm" target="_self">Timer Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.Timer.TInOneSecond.htm" target="_self">TInOneSecond Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.htm" target="_self">TraceEvent Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.htm" target="_self">TraceEvent Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.-ctor.htm" target="_self">TraceEvent Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.htm" target="_self">TraceEvent Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.GetMessageWithExceptionNameFromExceptionIncludingInnerException.htm" target="_self">GetMessageWithExceptionNameFromExceptionIncludingInnerException Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.Trace.htm" target="_self">Trace Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.TraceError.htm" target="_self">TraceError Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.TraceEventClose.htm" target="_self">TraceEventClose Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.TraceInformation.htm" target="_self">TraceInformation Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.TraceVerbose.htm" target="_self">TraceVerbose Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.TraceEvent.TraceWarning.htm" target="_self">TraceWarning Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.htm" target="_self">WaitTimeList(TElement) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.htm" target="_self">WaitTimeList(TElement) Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.-ctor.htm" target="_self">WaitTimeList(TElement) Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.-ctor.htm" target="_self">WaitTimeList(TElement) Constructor (String, Boolean)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.-ctor_1.htm" target="_self">WaitTimeList(TElement) Constructor (String)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.htm" target="_self">WaitTimeList(TElement) Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.DisableListManagerThread.htm" target="_self">DisableListManagerThread Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.Dispose.htm" target="_self">Dispose Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.EnableListManagerThread.htm" target="_self">EnableListManagerThread Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.NewOvertimeCoefficient.htm" target="_self">NewOvertimeCoefficient Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.RemoveItem.htm" target="_self">RemoveItem Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.RemoveItem.htm" target="_self">RemoveItem Method (Boolean)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.RemoveItem_1.htm" target="_self">RemoveItem Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.RemoveItem_2.htm" target="_self">RemoveItem Method (TElement)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.ToString.htm" target="_self">ToString Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.WaitRemoveItem.htm" target="_self">WaitRemoveItem Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.htm" target="_self">WaitTimeList(TElement) Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.IsReadyToRemoved.htm" target="_self">IsReadyToRemoved Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.QueueLength.htm" target="_self">QueueLength Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.htm" target="_self">WaitTimeList(TElement).TODescriptor Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.htm" target="_self">WaitTimeList(TElement).TODescriptor Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.-ctor.htm" target="_self">TODescriptor Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.htm" target="_self">WaitTimeList(TElement).TODescriptor Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.ClearCounter.htm" target="_self">ClearCounter Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.Remove.htm" target="_self">Remove Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.ResetCounter.htm" target="_self">ResetCounter Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.htm" target="_self">WaitTimeList(TElement).TODescriptor Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Processes.WaitTimeList-1.TODescriptor.Cycle.htm" target="_self">Cycle Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="N-UAOOI.ProcessObserver.RealTime.Utils.htm" target="_self">UAOOI.ProcessObserver.RealTime.Utils Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.DateTimeProvider.htm" target="_self">DateTimeProvider Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.DateTimeProvider.htm" target="_self">DateTimeProvider Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.DateTimeProvider.-ctor.htm" target="_self">DateTimeProvider Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.DateTimeProvider.htm" target="_self">DateTimeProvider Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.DateTimeProvider.GetCurrentTime.htm" target="_self">GetCurrentTime Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.htm" target="_self">GenericEnumTypeConverterHelper(EnumType) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.htm" target="_self">GenericEnumTypeConverterHelper(EnumType) Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.htm" target="_self">GenericEnumTypeConverterHelper(EnumType) Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.GetNameFromValue.htm" target="_self">GetNameFromValue Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.GetStandardValues.htm" target="_self">GetStandardValues Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.GetStandardValuesExclusive.htm" target="_self">GetStandardValuesExclusive Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.GetStandardValuesSupported.htm" target="_self">GetStandardValuesSupported Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.GenericEnumTypeConverterHelper-1.GetValueFromString.htm" target="_self">GetValueFromString Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.htm" target="_self">MinMaxAvr Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.htm" target="_self">MinMaxAvr Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.-ctor.htm" target="_self">MinMaxAvr Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.htm" target="_self">MinMaxAvr Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.ToString.htm" target="_self">ToString Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.htm" target="_self">MinMaxAvr Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.Add.htm" target="_self">Add Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.Avr.htm" target="_self">Avr Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.Max.htm" target="_self">Max Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.Min.htm" target="_self">Min Property </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Events.T-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.htm" target="_self">MinMaxAvr Events</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="E-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.MarkNewVal.htm" target="_self">MarkNewVal Event</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.MinMaxAvr.newVal.htm" target="_self">MinMaxAvr.newVal Delegate</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.htm" target="_self">UniqueNameGenerator Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.htm" target="_self">UniqueNameGenerator Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.-ctor.htm" target="_self">UniqueNameGenerator Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.htm" target="_self">UniqueNameGenerator Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.AddName.htm" target="_self">AddName Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.AddName.htm" target="_self">AddName Method (String, Boolean)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.AddName_1.htm" target="_self">AddName Method (String)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.CheckIfNameExists.htm" target="_self">CheckIfNameExists Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.CheckIfNameExistsAndReturnSuggestedName.htm" target="_self">CheckIfNameExistsAndReturnSuggestedName Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.GenerateNewName.htm" target="_self">GenerateNewName Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.RemoveName.htm" target="_self">RemoveName Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" target="_self">UniqueNameGenerator.UniqueNameGeneratorException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" target="_self">UniqueNameGenerator.UniqueNameGeneratorException Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" target="_self">UniqueNameGenerator.UniqueNameGeneratorException Methods</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Utils.UniqueNameGenerator.UniqueNameGeneratorException.htm" target="_self">UniqueNameGenerator.UniqueNameGeneratorException Properties</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="N-UAOOI.ProcessObserver.RealTime.Utils.Collections.htm" target="_self">UAOOI.ProcessObserver.RealTime.Utils.Collections Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.Collections.QuickSort.htm" target="_self">QuickSort Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.QuickSort.htm" target="_self">QuickSort Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.QuickSort.htm" target="_self">QuickSort Methods</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="N-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.htm" target="_self">UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.htm" target="_self">SortedTree(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.htm" target="_self">SortedTree(T) Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.-ctor.htm" target="_self">SortedTree(T) Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.htm" target="_self">SortedTree(T) Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.AddNode.htm" target="_self">AddNode Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.AddNode.htm" target="_self">AddNode Method (T)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.AddNode_1.htm" target="_self">AddNode Method (T, Int32, T, Int32)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.ConnectTheNodeToOtherNode.htm" target="_self">ConnectTheNodeToOtherNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.ConnectTheTreeToTheNode.htm" target="_self">ConnectTheTreeToTheNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.GetHeightOfTheNode.htm" target="_self">GetHeightOfTheNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.GetNextUnvisited.htm" target="_self">GetNextUnvisited Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.GetNode.htm" target="_self">GetNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.GetNodesFromLevel.htm" target="_self">GetNodesFromLevel Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.GetRoots.htm" target="_self">GetRoots Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.GetSubtreeFromNode.htm" target="_self">GetSubtreeFromNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.MarkAllUnvisited.htm" target="_self">MarkAllUnvisited Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.MoveNodeToRoots.htm" target="_self">MoveNodeToRoots Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots.htm" target="_self">RemoveConnectionBetweeenParentAndChildAndMoveElementToRoots Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.RemoveValue.htm" target="_self">RemoveValue Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.TestNodeIfCanBeConnected.htm" target="_self">TestNodeIfCanBeConnected Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.TestTreeIfCanBeConnected.htm" target="_self">TestTreeIfCanBeConnected Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.ToString.htm" target="_self">ToString Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.htm" target="_self">SortedTree(T) Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.Count.htm" target="_self">Count Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.Height.htm" target="_self">Height Property </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Events.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.htm" target="_self">SortedTree(T) Events</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="E-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.TreeHasChanged.htm" target="_self">TreeHasChanged Event</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm" target="_self">SortedTree(T).SortedTreeNode Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm" target="_self">SortedTree(T).SortedTreeNode Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm" target="_self">SortedTree(T).SortedTreeNode Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.AddThisNodeToAnotherTree.htm" target="_self">AddThisNodeToAnotherTree Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.Equals.htm" target="_self">Equals Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetChildNodes.htm" target="_self">GetChildNodes Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetFirstParentNode.htm" target="_self">GetFirstParentNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetHashCode.htm" target="_self">GetHashCode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetNextUnvisited.htm" target="_self">GetNextUnvisited Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetNode.htm" target="_self">GetNode Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetNodesFromLevel.htm" target="_self">GetNodesFromLevel Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetParentConnectorNumber.htm" target="_self">GetParentConnectorNumber Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.GetParentNodeByParentNodeNumber.htm" target="_self">GetParentNodeByParentNodeNumber Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.MarkAllUnvisited.htm" target="_self">MarkAllUnvisited Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.ToString.htm" target="_self">ToString Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.htm" target="_self">SortedTree(T).SortedTreeNode Properties</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.ParentNodesCount.htm" target="_self">ParentNodesCount Property </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="P-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNode.Value.htm" target="_self">Value Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" target="_self">SortedTree(T).SortedTreeNodeException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" target="_self">SortedTree(T).SortedTreeNodeException Members</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.-ctor.htm" target="_self">SortedTreeNodeException Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" target="_self">SortedTree(T).SortedTreeNodeException Methods</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeException.htm" target="_self">SortedTree(T).SortedTreeNodeException Properties</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm" target="_self">SortedTree(T).SortedTreeNodeList Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm" target="_self">SortedTree(T).SortedTreeNodeList Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor.htm" target="_self">SortedTreeNodeList Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor.htm" target="_self">SortedTreeNodeList Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor_1.htm" target="_self">SortedTreeNodeList Constructor (SortedTreeNodeSortedList)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.-ctor_2.htm" target="_self">SortedTreeNodeList Constructor (SortedTreeNodeList)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm" target="_self">SortedTree(T).SortedTreeNodeList Methods</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.Add.htm" target="_self">Add Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.Add.htm" target="_self">Add Method (SortedTreeNodeSortedList)</a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.Add_1.htm" target="_self">Add Method (SortedTreeNodeList)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.GetFirstNodeFromThisCollection.htm" target="_self">GetFirstNodeFromThisCollection Method </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="Properties.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeList.htm" target="_self">SortedTree(T).SortedTreeNodeList Properties</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm" target="_self">SortedTree(T).SortedTreeNodeSortedList Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm" target="_self">SortedTree(T).SortedTreeNodeSortedList Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Overload-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.-ctor.htm" target="_self">SortedTreeNodeSortedList Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.-ctor.htm" target="_self">SortedTreeNodeSortedList Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.-ctor_1.htm" target="_self">SortedTreeNodeSortedList Constructor (SortedTreeNodeSortedList)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="../Collapsed.png"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="Methods.T-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.htm" target="_self">SortedTree(T).SortedTreeNodeSortedList Methods</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.Add.htm" target="_self">Add Method </a>
+</div>
+<div class="TreeItem">
+<img src="../Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="M-UAOOI.ProcessObserver.RealTime.Utils.Collections.Generic.SortedTree-1.SortedTreeNodeSortedList.GetFirstNodeFromThisCollection.htm" target="_self">GetFirstNodeFromThisCollection Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+            </div>
+
+        </div>
+
+        <div id="TOCSizer" class="TOCSizer" onmousedown="OnMouseDown(event)" onselectstart="javascript: return false;"></div>
+        
+        <div id ="TopicContent" name="TopicContent" class="TopicContent" style="float: none; margin-left: 312px;height: -webkit-fill-available;display:block;overflow: auto;">
+          <div class="header" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+      <table class="headerBar cl_lightweight_topnav_slice" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="leftSection cl_lightweight_header_leftSection_wave leftSectionImageClusterOverride" />
+            <td class="rightSection cl_lightweight_header_rightSection_wave rightSectionImageClusterOverride">
+              <div class="tabContainer">UAOOI.ProcessObserver.RealTime</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+          <!-- Content Starts Here -->
+          <div class="contentPlaceHolder" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+      <div class="content">
+        <div class="topicContainer">
+          <div class="topic">
+            <p class="majorTitle" />
+            <h1 class="title">Assertion<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>Assert Method </h1>
+            <div id="mainSection">
+              <div id="mainBody">
+                <div class="LW_CollapsibleArea_Container">
+                  <div class="LW_CollapsibleArea_TitleDiv">
+                    <h2 class="LW_CollapsibleArea_Title">Overload List</h2>
+                    <div class="LW_CollapsibleArea_HrDiv">
+                      <hr class="LW_CollapsibleArea_Hr" />
+                    </div>
+                  </div>
+                  <a id="overloadMembersTableSection">
+                    <!---->
+                  </a>
+                  <table class="members">
+                    <tr>
+                      <th class="iconColumn">
+               
+            </th>
+                      <th class="nameColumn">Name</th>
+                      <th class="descriptionColumn">Description</th>
+                    </tr>
+                    <tr data="public;declared;notNetfw;">
+                      <td>
+                        <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+                      </td>
+                      <td>
+                        <a href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert.htm">Assert(Boolean, Int16)</a>
+                      </td>
+                      <td> <font color="brown"><b>Obsolete. </b></font><div class="summary">
+   Asserts the specified assertion.
+   </div></td>
+                    </tr>
+                    <tr data="public;declared;notNetfw;">
+                      <td>
+                        <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+                      </td>
+                      <td>
+                        <a href="M-UAOOI.ProcessObserver.RealTime.Processes.Assertion.Assert_1.htm">Assert(Boolean, Int16, String)</a>
+                      </td>
+                      <td>
+                        <div class="summary">
+   Asserts the specified assertion.
+   </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="LW_CollapsibleArea_Container">
+                  <div class="LW_CollapsibleArea_TitleDiv">
+                    <h2 class="LW_CollapsibleArea_Title">See Also</h2>
+                    <div class="LW_CollapsibleArea_HrDiv">
+                      <hr class="LW_CollapsibleArea_Hr" />
+                    </div>
+                  </div>
+                  <a id="seeAlsoSection">
+                    <!---->
+                  </a>
+                  <div class="seeAlsoStyle">
+                    <a href="T-UAOOI.ProcessObserver.RealTime.Processes.Assertion.htm">Assertion Class</a>
+                  </div>
+                  <div class="seeAlsoStyle">
+                    <a href="AllMembers.T-UAOOI.ProcessObserver.RealTime.Processes.Assertion.htm">Assertion Members</a>
+                  </div>
+                  <div class="seeAlsoStyle">
+                    <a href="N-UAOOI.ProcessObserver.RealTime.Processes.htm">UAOOI.ProcessObserver.RealTime.Processes Namespace</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div id="footer" class="footerContainer">
+          <div class="footerLogoContainer">
+            <div style="margin-top:5px">
+              <span class="customCopyrightFooter">Rel 6.6.0</span>
+            </div>
+            <div style="margin-top:5px" class="copyrightFooter">Help File generated with GhostDoc</div>
+            <div> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <!-- /Content Ends Here -->
+        </div>
+
+
+  </body>
+</html>
