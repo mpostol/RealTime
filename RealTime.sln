@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTime", "CAS.RealTime\RealTime.csproj", "{1F996BB4-0B43-4021-B575-82C176EFC524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTime", "RealTime\RealTime.csproj", "{1F996BB4-0B43-4021-B575-82C176EFC524}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeUnitTests", "CAS.RealTimeUnitTests\RealTimeUnitTests.csproj", "{F713B930-2BFD-4184-BBA3-5DA3002166BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeUnitTests", "RealTimeUnitTests\RealTimeUnitTests.csproj", "{F713B930-2BFD-4184-BBA3-5DA3002166BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Definitions", "T4Definitions\T4Definitions.csproj", "{D506423B-BA21-49E6-8C3B-88A771CA444E}"
 EndProject
