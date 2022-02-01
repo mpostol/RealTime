@@ -1,54 +1,51 @@
-﻿//<summary>
-//  Title   : RunMethodAsynchronouslyUnitTest
-//  System  : Microsoft VisulaStudio 2013 / C#
-//  $LastChangedDate:$
-//  $Rev:$
-//  $LastChangedBy:$
-//  $URL:$
-//  $Id:$
+﻿//__________________________________________________________________________________________________
 //
-//  Copyright (C) 2014, CAS LODZ POLAND.
-//  TEL: +48 (42) 686 25 47
-//  mailto://techsupp@cas.eu
-//  http://www.cas.eu
-//</summary>
+//  Copyright (C) 2022, Mariusz Postol LODZ POLAND.
+//
+//  To be in touch join the community at GitHub: https://github.com/mpostol/OPC-UA-OOI/discussions
+//__________________________________________________________________________________________________
 
-using UAOOI.ProcessObserver.RealTime.Processes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
+using UAOOI.ProcessObserver.RealTime.Processes;
 
 namespace CAS.RealTime.UnitTests
 {
-  [TestClass]
-  public class RunMethodAsynchronouslyUnitTest
-  {
-    [TestMethod]
-    public void RunMethodAsynchronouslyTestMethod()
+    [TestClass]
+    public class RunMethodAsynchronouslyUnitTest
     {
-      RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate (object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
-      runasync.RunAsync(new object[] { 5, 5 });
-      bool _res = false;
-      lock (this)
-        _res = m_MEthodFinished.Wait(this, 1200);
-      Assert.IsTrue(_res, "Calling asynchronous method filed.");
+        [TestMethod]
+        public void RunMethodAsynchronouslyTestMethod()
+        {
+            RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate (object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
+            runasync.RunAsync(new object[] { 5, 5 });
+            bool _res = false;
+            lock (this)
+                _res = m_MEthodFinished.Wait(this, 1200);
+            Assert.IsTrue(_res, "Calling asynchronous method filed.");
+        }
+
+        [TestMethod]
+        public void RunMethodAsynchronouslyTimeOutTestMethod()
+        {
+            RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate (object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
+            runasync.RunAsync(new object[] { 5, 5 });
+            bool _res = false;
+            lock (this)
+                _res = m_MEthodFinished.Wait(this, 500);
+            Assert.IsFalse(_res, "Calling asynchronous method filed.");
+        }
+
+        #region instrumentation
+
+        private Condition m_MEthodFinished = new Condition();
+
+        private void WaitAndCheckConsistency(int par1, int par2)
+        {
+            Thread.Sleep(1000);
+            m_MEthodFinished.Notify();
+        }
+
+        #endregion instrumentation
     }
-    [TestMethod]
-    public void RunMethodAsynchronouslyTimeOutTestMethod()
-    {
-      RunMethodAsynchronously runasync = new RunMethodAsynchronously(delegate (object[] param) { WaitAndCheckConsistency((int)param[0], (int)param[1]); });
-      runasync.RunAsync(new object[] { 5, 5 });
-      bool _res = false;
-      lock (this)
-        _res = m_MEthodFinished.Wait(this, 500);
-      Assert.IsFalse(_res, "Calling asynchronous method filed.");
-    }
-    #region instrumentation
-    private Condition m_MEthodFinished = new Condition();
-    private void WaitAndCheckConsistency(int par1, int par2)
-    {
-      Thread.Sleep(1000);
-      m_MEthodFinished.Notify();
-    }
-    #endregion
-  }
 }
